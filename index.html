@@ -76,12 +76,12 @@
       
         <h1 id="Hexo-绑定自定义域名"><a href="#Hexo-绑定自定义域名" class="headerlink" title="Hexo 绑定自定义域名"></a>Hexo 绑定自定义域名</h1><h2 id="如何将自己购买的域名连接到-Github-Pages？"><a href="#如何将自己购买的域名连接到-Github-Pages？" class="headerlink" title="如何将自己购买的域名连接到 Github Pages？"></a>如何将自己购买的域名连接到 Github Pages？</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在 source 目录下新建 CNAME 文件，在首行添加网站域名</span><br><span class="line">如：www.gmlyo.com</span><br><span class="line">注意前面没有 https://，http:// 等信息，然后重新重新生成并部署站点</span><br><span class="line">hexo clean    # 清楚 public 目录</span><br><span class="line">hexo g    # hexo generade</span><br><span class="line">hexo d    # hexo deploy</span><br><span class="line">或</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
 <h2 id="设置域名解析"><a href="#设置域名解析" class="headerlink" title="设置域名解析"></a>设置域名解析</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、先添加一个CNAME，主机记录写@，后面记录值写上你的 xxx.github.io</span><br><span class="line">2、再添加一个CNAME，主机记录写www，后面记录值也是 xxx.github.io</span><br><span class="line">这样别人用 www 和不用 www 都能访问你的网站</span><br><span class="line">其实 www 的方式，会先解析成 https://xxx.github.io，然后根据 CNAME 再变成 http://www.gmlyo.com，即中间是经过一次转换的。</span><br><span class="line">注：除了使用 CNAME 记录也有人使用 A 记录，后面的记录值是写 Github Page 里面的 IP 地址，但有时候 IP 地址会更改，导致最后解析不正确，所以还是推荐用 CNAME 别名记录要好些，不建议用 IP。</span><br><span class="line">3、等待10分钟左右，域名生效后刷新浏览器，使用自定义域名访问网站即可</span><br></pre></td></tr></table></figure>
-<h2 id="Hexo-部署后，CNAME-会被自动删除，如何解决？"><a href="#Hexo-部署后，CNAME-会被自动删除，如何解决？" class="headerlink" title="Hexo 部署后，CNAME 会被自动删除，如何解决？"></a>Hexo 部署后，CNAME 会被自动删除，如何解决？</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将需要上传至 Github 的内容放在 source 文件夹</span><br><span class="line">如：CNAME, README.md, favicon.ico, images 目录等</span><br><span class="line">将这些都放在 Source 文件夹下，每次上传就不会消失了</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo-部署后，CNAME-会被自动删除，如何解决？"><a href="#Hexo-部署后，CNAME-会被自动删除，如何解决？" class="headerlink" title="Hexo 部署后，CNAME 会被自动删除，如何解决？"></a>Hexo 部署后，CNAME 会被自动删除，如何解决？</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将需要上传至 Github 的文件放在 source 目录下</span><br><span class="line">如：CNAME, README.md, favicon.ico, images 目录等</span><br><span class="line">将这些都放在 source 目录下，每次上传就不会消失了</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Hexo 绑定自定义域名/" data-id="cjhy1mxq900024co45mm07fuc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/Hexo 绑定自定义域名/" data-id="cjhy1pcxy0002x4o4mblofa3u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,7 +108,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Hexo 删除文章/" data-id="cjhy1mxq600014co46691sz7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/Hexo 删除文章/" data-id="cjhy1pcxe0000x4o4t3cpjcjs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Hello-Python/" data-id="cjhy1mxq100004co4ciiowcf3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/Hello-Python/" data-id="cjhy1pcxi0001x4o4mnw67s4n" class="article-share-link">Share</a>
       
       
     </footer>
