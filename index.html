@@ -86,8 +86,9 @@
       
         <h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hexo 是一个快速、简洁且高效的博客框架。</span><br><span class="line">Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</span><br><span class="line">Hexo 安装</span><br></pre></td></tr></table></figure>
 <h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><blockquote>
-<p>进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">右击 Git Bash Here</span><br><span class="line">cd /d/Blog/gmlyo/</span><br><span class="line"></span><br><span class="line">npm install hexo -g 或 npm install hexo-cli -g</span><br><span class="line">hexo init 或 hexo init blog; cd blog/</span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">hexo g    # 或 hexo generate</span><br><span class="line">hexo s    # 或 hexo server，可以在 http://localhost:4000/ 查看</span><br></pre></td></tr></table></figure></p>
+<p>进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装</p>
 </blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">右击 Git Bash Here</span><br><span class="line">cd /d/Blog/gmlyo/</span><br><span class="line"></span><br><span class="line">npm install hexo -g 或 npm install hexo-cli -g</span><br><span class="line">hexo init 或 hexo init blog; cd blog/</span><br><span class="line"><span class="meta">#</span> 第一句是安装 hexo</span><br><span class="line"><span class="meta">#</span> 第二句是安装 hexo 部署到 git page 的 deployer</span><br><span class="line"><span class="meta">#</span> 两个都需要安装</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Hexo 初始化配置（有点漫长的等待。。。）</span><br><span class="line">npm init</span><br><span class="line">Hexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件</span><br><span class="line"></span><br><span class="line">hexo g    # 或 hexo generate</span><br><span class="line">hexo s    # 或 hexo server，可以在 http://localhost:4000/ 查看</span><br></pre></td></tr></table></figure>
 <h2 id="常用-Hexo-命令"><a href="#常用-Hexo-命令" class="headerlink" title="常用 Hexo 命令"></a>常用 Hexo 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹</span><br><span class="line">hexo generate (hexo g)</span><br><span class="line"><span class="meta">#</span> 启动本地 Web 服务，用于博客的预览</span><br><span class="line">hexo server (hexo s)</span><br><span class="line"><span class="meta">#</span> 部署播客到远端（比如github, heroku等平台）</span><br><span class="line">hexo deploy (hexo d)</span><br></pre></td></tr></table></figure>
 <h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName"      # 新建文章</span><br><span class="line">hexo new page "pageName" # 新建页面</span><br></pre></td></tr></table></figure>
 <h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
@@ -95,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/安装Hexo/" data-id="cjhyoggkm00010co4atj09njm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/安装Hexo/" data-id="cjhyoq4y00001yko4513ibheu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Hexo-绑定自定义域名/" data-id="cjhyoggkp00020co4yuanly47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/Hexo-绑定自定义域名/" data-id="cjhyoq4y30002yko4kjp8j5n9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Hexo-删除文章/" data-id="cjhyoggki00000co475md3g8f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/03/Hexo-删除文章/" data-id="cjhyoq4xv0000yko4mosg7ua7" class="article-share-link">Share</a>
       
       
     </footer>
