@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Next设置阅读全文]]></title>
     <url>%2F2018%2F06%2F03%2FNext%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%2F</url>
-    <content type="text"><![CDATA[如何设置「阅读全文」？ 在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。NexT 提供三种方式来控制文章在首页的显示方式。也就是说，在首页显示文章的摘录并显示 阅读全文 按钮，可以通过以下方法： 在文章中使用 &lt;!-- more --&gt; 手动进行截断，Hexo 提供的方式 推荐 在文章的 front-matter 中添加 description，并提供文章摘录 自动形成摘要，在 主题配置文件 中添加： 123auto_excerpt: enable: true # 改成 true length: 150 # 默认展示的高度 默认截取的长度为 150 字符，可以根据需要自行设定建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外，这种方式也可以让 Hexo 中的插件更好的识别。]]></content>
+    <content type="text"><![CDATA[如何设置「阅读全文」？ 在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。NexT 提供三种方式来控制文章在首页的显示方式。也就是说，在首页显示文章的摘录并显示 阅读全文 按钮，可以通过以下方法： 在文章中使用 &lt;!-- more --&gt; 手动进行截断，Hexo 提供的方式 推荐 在文章的 front-matter 中添加 description，并提供文章摘录 自动形成摘要，在 主题配置文件 中添加： 123auto_excerpt: enable: true # 改成 true length: 150 # 默认展示的高度 默认截取的长度为 150 字符，可以根据需要自行设定建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外，这种方式也可以让 Hexo 中的插件更好的识别。 需要注意的是，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：12# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.scroll_to_more: false]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
