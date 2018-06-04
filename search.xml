@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[不通过inventory文件，指定host运行Ansible]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F05%2F%E4%B8%8D%E9%80%9A%E8%BF%87inventory%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9Ahost%E8%BF%90%E8%A1%8CAnsible%2F</url>
+    <content type="text"><![CDATA[如何不通过 inventory 文件，直接指定 host 运行 Ansible？ 使用过 ansible 的都知道，不管是运行 Ad-Hoc 还是 playbook，都需要指定一个 inventory 文件，或者使用默认的 inventory 文件。但是现在有一个主机，它尚未在 inventory 文件中配置，那么我们该如何用 ansible 对其进行操作呢？ 一般我们执行都是这样的 12345# ansible 192.168.35.215 -m ping192.168.35.215 | SUCCESS =&gt; &#123; "changed": false, "ping": "pong"&#125; 这时需要在 inventory 文件 /etc/ansible/hosts 中配置 192.168.35.215 信息 12[NgxProxy]192.168.35.215 如果没有在 inventory 文件中配置该主机信息，又想用 ansible 对其进行操作就需要用到逗号 , 字符，使用方法如下 123456# Host and IP addressansible all -i example.com,ansible all -i 93.184.216.119,# Requires 'hosts: all' in your playbookansible-playbook -i example.com, playbook.yml 需要注意的是，需要指定范围为 all 12345# ansible all -i 192.168.35.215, -m ping192.168.35.215 | SUCCESS =&gt; &#123; "changed": false, "ping": "pong"&#125;]]></content>
+      <categories>
+        <category>Ansible笔记</category>
+      </categories>
+      <tags>
+        <tag>如何不通过 inventory 文件，直接指定 host 运行 Ansible？</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Next给博客生成一个站点地图]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%2F</url>
     <content type="text"><![CDATA[给博客生成一个站点地图 安装 hexo-generator-seo-friendly-sitemap 1npm install hexo-generator-seo-friendly-sitemap --save 在站点配置文件 _config.yml 中添加 12sitemap: path: sitemap.xml]]></content>
