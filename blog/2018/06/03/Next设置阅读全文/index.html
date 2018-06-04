@@ -423,7 +423,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true  # 改成 true</span><br><span class="line">  length: 150  # 默认展示的高度</span><br></pre></td></tr></table></figure>
 <p>默认截取的长度为 <code>150</code> 字符，可以根据需要自行设定<br>建议使用 <code>&lt;!-- more --&gt;</code>（即第一种方式），除了可以精确控制需要显示的摘录内容以外，<br>这种方式也可以让 Hexo 中的插件更好的识别。</p>
 <blockquote>
-<p><code>需要注意的是</code>，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span><br><span class="line">scroll_to_more: false</span><br></pre></td></tr></table></figure></p>
+<p><code>需要注意的是</code>，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Automatically scroll page to section <span class="built_in">which</span> is under &lt;!-- more --&gt; mark.</span></span><br><span class="line">scroll_to_more: false</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
