@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Next给博客生成一个站点地图]]></title>
-    <url>%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%2F</url>
     <content type="text"><![CDATA[给博客生成一个站点地图 安装 hexo-generator-seo-friendly-sitemap 1npm install hexo-generator-seo-friendly-sitemap --save 在站点配置文件 _config.yml 中添加 12sitemap: path: sitemap.xml]]></content>
       <categories>
         <category>Next笔记</category>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[Next给博客添加feed]]></title>
-    <url>%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed%2F</url>
     <content type="text"><![CDATA[给博客添加 feed 安装 hexo-generator-feed 1npm install hexo-generator-feed --save 配置到站点配置文件 _config.yml 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed:type: atompath: atom.xmllimit: 20 最后，在你 next 主题下的 _config.yml 下，添加 RSS 订阅链接即可 1rss: /atom.xml]]></content>
       <categories>
         <category>Next笔记</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[Typora快捷键]]></title>
-    <url>%2F2018%2F06%2F04%2FTypora%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F04%2FTypora%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[Typora快捷键 无序列表：输入-之后输入空格 有序列表：输入数字+“.”之后输入空格 任务列表：-[空格]空格 文字 标题：ctrl+数字 表格：ctrl+t 生成目录：[TOC]按回车 选中一整行：ctrl+l 选中单词：ctrl+d 选中相同格式的文字：ctrl+e 跳转到文章开头：ctrl+home 跳转到文章结尾：ctrl+end 搜索：ctrl+f 替换：ctrl+h 引用：输入&gt;之后输入空格 代码块：ctrl+alt+f 加粗：ctrl+b 斜体：ctrl+i 字体：ctrl+数字 下划线：ctrl+u 删除线：alt+shift+5 插入图片：直接拖动到指定位置即可或ctrl+shift+i 插入链接：ctrl+k]]></content>
       <categories>
         <category>Typora笔记</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[Nginx安全加固心得]]></title>
-    <url>%2F2018%2F06%2F04%2FNginx%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%E5%BF%83%E5%BE%97%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F04%2FNginx%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%E5%BF%83%E5%BE%97%2F</url>
     <content type="text"><![CDATA[Nginx安全加固心得 Nginx 发展多年，自身的安全漏洞比较少，发现软件漏洞，一般利用软件包管理器升级一下就好了。本文侧重讲述的不是 Nginx 自身的安全，而是利用 Nginx 来加固 Web应用，干一些应用防火墙（WAF）干的活。在做安全加固的时候，我们一定要头脑清晰，手里拿着刀，一刀一刀的切，将我们不想要的流量干掉，除去隐患。 屏蔽 IP 假设我们的网站只是一个国内小站，有着公司业务，不是靠广告生存的那种，那么可以用 Geoip 模块封杀掉除中国和美国外的所有IP。这样可以过滤大部分来自国外的恶意扫描或者无用访问。不用担心封杀了网络蜘蛛。主流的网络蜘蛛（百度/谷歌/必应/搜狗）已经包含在了我们的IP范围内了。如果是公网的登录后台，更应该屏蔽彻底一点。 123if ( $geoip_country_code !~ ^(CN|US)$ ) &#123; return 403;&#125; （很多人担心geoip库不够准确，诚然，中国城市级别的IP段会有误差，但是国家级别的IP段一般是没有问题的，并且geoip库可以随时在线更新） 封杀各种 user-agent user-agent 也即浏览器标识，每个正常的web请求都包含用户的浏览器信息，除非经过伪装，恶意扫描工具一般都会在user-agent里留下某些特征字眼，比如 scan，nmap 等。我们可以用正则匹配这些字眼，从而达到过滤的目的，请根据需要调整。 123456if ($http_user_agent ~* "java|python|perl|ruby|curl|bash|echo|uname|base64|decode|md5sum|select|concat|httprequest|httpclient|nmap|scan" ) &#123; return 403;&#125;if ($http_user_agent ~* "" ) &#123; return 403;&#125; 这里分析得不够细致，具体的非法 user-agent 还得慢慢从日志中逐个提取。通过上面两个大招，相信你的日志里很快就会有大量的 403 记录。，我们接着干。如果网站提供公共 api，注意与开发者约定好 UA，防止撞墙 封杀特定的 URL 特定的文件扩展名，比如 .bak 123location ~* \.(bak|save|sh|sql|mdb|svn|git|old)$ &#123; rewrite ^/(.*)$ $host permanent;&#125; 知名程序，比如 phpmyadmin 123location /(admin|phpadmin|status) &#123; deny all; &#125; 封杀特定的 http 方法和行为，比如 123456if ($request_method !~ ^(GET|POST|HEAD)$ ) &#123; return 405;&#125;if ($http_range ~ "\d&#123;9,&#125;") &#123; return 444;&#125; 强制网站使用域名访问，可以逃过IP扫描，比如123if ( $host !~* &apos;abc.com&apos; ) &#123; return 403;&#125; url 参数过滤敏感字，比如1234567if ($query_string ~* &quot;union.*select.*\(&quot;) &#123; rewrite ^/(.*)$ $host permanent;&#125; if ($query_string ~* &quot;concat.*\(&quot;) &#123; rewrite ^/(.*)$ $host permanent;&#125; 强制要求referer123if ($http_referer = &quot;&quot; ) ｛ return 403;｝ 如果不想用403，也可以rewrite一个url，比如一个400页面 123456&lt;html&gt; &lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt; &lt;body bgcolor=&quot;white&quot;&gt; &lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt; &lt;hr&gt;&lt;center&gt;nginx/1.2.0&lt;/center&gt; &lt;/body&gt;&lt;/html&gt; 小结 可以将上述规则结合起来使用，同时匹配多条规则时才会封杀，下面是一个来自老外的稍微复杂一点的例子： 123456789101112131415set $add 1; location /index.php &#123; limit_except GET POST &#123; deny all; &#125; set $ban &quot;&quot;; if ($http_referer = &quot;&quot; ) &#123;set $ban $ban$add;&#125; if ($request_method = POST ) &#123;set $ban $ban$add;&#125; if ($query_string = &quot;action=login&quot; )&#123;set $ban $ban$add;&#125; if ($ban = 111 ) &#123; access_log /var/log/[133]nginx/ban IP; return 404; &#125; proxy_pass http://127.0.0.1:8000; #here is a patch &#125; 其它方法 封杀IP 定时做日志分析，手动将恶意IP加入 iptables 拒绝名单，推荐使用 ipset 模块。 12yum install -y ipset ipset-serviceipset create badip hash:net maxelem 65535iptables -I INPUT -m set --match-set badip src -p tcp --dport 80 -j DROP/etc/init.d/iptables saveipset add badip 1.1.1.2ipset add badip 2.2.2.0/24/etc/init.d/ipset save ipset 还支持 timeout，类似 redis 的 TTL，timeout 之后会自动删除，比较人性化。比如下面的例子就是 timeout 默认 3600 秒，支持自定义 timeout 12ipset destroy badipipset create badip hash:net maxelem 65535 timeout 3600ipset add badip 1.1.1.1ipset add badip 2.2.2.0/24 timeout 60ipset add badip 3.3.3.0/24 timeout 7200 在日志分析的自动化程度比较高，准确率比较好的情况下，可以考虑通过条件触发 ipset。 限速 适当限制客户端的请求带宽，请求频率，请求连接数，这里不展开论述。根据具体需求，阀值应当稍稍宽泛一点。特别要注意办公室/网吧场景的用户，他们的特点是多人使用同一个网络出口。 目录只读 如果没有上传需求，完全可以把网站根目录弄成只读的，加固安全。做了一点小动作，给网站根目录搞了一个只读的挂载点。这里假设网站根目录为 /var/www/html 1234mkdir -pv /datamkdir -pv /var/www/htmlmount --bind /data /var/www/htmlmount -o remount,ro --bind /data /var/www/html 网站内容实际位于/data，网站内容更新就往/data里更新，目录/var/www/html无法执行任何写操作，否则会报错“Read-only file system”，极大程度上可以防止提权篡改。 overlayfs 这种方法跟上面的方法类似，但是有所区别假设网站根目录/var/www/html有一个目录upload是要求可读写的，其他只读即可，那么仔细看下面的操作 123456mkdir -pv /data/lowermkdir -pv /data/uppermkdir -pv /data/workermv /var/www/html/upload /data/upper/mv /var/www/html/* /data/lower/mount -t overlayfs overlay -o lower=/data/lower,upper=/data/upper,workdir=/data/worker /var/www/html 这样就完美实现了读写分离，底层目录只读，上层目录可写。如果程序被篡改，上层目录 /data/upper 除了 upload 内容之外，还会生成其他文件。overlayfs 因为特殊的机制，建议使用 Linux 内核4.0+，否则比较消耗硬盘的 inode。 定时总结和丰富过滤规则]]></content>
       <categories>
         <category>Nginx笔记</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[Next设置阅读全文]]></title>
-    <url>%2F2018%2F06%2F03%2FNext%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FNext%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%2F</url>
     <content type="text"><![CDATA[如何设置「阅读全文」？ 在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。NexT 提供三种方式来控制文章在首页的显示方式。也就是说，在首页显示文章的摘录并显示 阅读全文 按钮，可以通过以下方法： 在文章中使用 &lt;!-- more --&gt; 手动进行截断，Hexo 提供的方式 推荐 在文章的 front-matter 中添加 description，并提供文章摘录 自动形成摘要，在 主题配置文件 中添加： 123auto_excerpt: enable: true # 改成 true length: 150 # 默认展示的高度 默认截取的长度为 150 字符，可以根据需要自行设定建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外，这种方式也可以让 Hexo 中的插件更好的识别。 需要注意的是，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：12# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.scroll_to_more: false]]></content>
       <categories>
         <category>Next笔记</category>
@@ -57,7 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[Next开启站内搜索]]></title>
-    <url>%2F2018%2F06%2F03%2FNext%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FNext%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
     <content type="text"><![CDATA[Next 如何开启站内搜索？ NexT 主题支持集成 Swiftype、微搜索、Local Search 和 Algolia,Swiftype 和 Algolia 都只有一段时间的试用期，可以采用 Hexo 提供的Local Search，原理是通过 hexo-generator-search 插件在本地生成一个 search.xml 文件，搜索的时候从这个文件中根据关键字检索出相应的链接。 Local Search 由 flashlab 贡献 安装步骤安装 hexo-generator-search 在站点的根目录下执行以下命令 1npm install hexo-generator-search --save 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令1npm install hexo-generator-searchdb --save 启用搜索 编辑 站点配置 文件，新增以下内容到任意位置 12345search: path: search.xml field: post format: html limit: 10000 编辑 主题配置 文件，启用本地搜索功能 123# Local searchlocal_search: enable: true]]></content>
       <categories>
         <category>Next笔记</category>
@@ -68,7 +68,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo安装]]></title>
-    <url>%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Hexo 简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在 http://localhost:4000/ 查看 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
       <categories>
         <category>Hexo笔记</category>
@@ -79,7 +79,7 @@
   </entry>
   <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
-    <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件Cobblervim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
       <categories>
         <category>Cobbler笔记</category>
@@ -90,7 +90,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo 绑定自定义域名]]></title>
-    <url>%2F2018%2F06%2F03%2FHexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%2F</url>
     <content type="text"><![CDATA[如何将自己购买的域名连接到 Github Pages？ 12345678在 source 目录下新建 CNAME 文件，在首行添加网站域名如：www.gmlyo.com注意前面没有 https://，http:// 等信息，然后重新重新生成并部署站点hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # hexo generadehexo d # hexo deploy或hexo d -g 设置域名解析1234561、先添加一个CNAME，主机记录写@，后面记录值写上你的 xxx.github.io2、再添加一个CNAME，主机记录写www，后面记录值也是 xxx.github.io这样别人用 www 和不用 www 都能访问你的网站其实 www 的方式，会先解析成 https://xxx.github.io，然后根据 CNAME 再变成 http://www.gmlyo.com，即中间是经过一次转换的。注：除了使用 CNAME 记录也有人使用 A 记录，后面的记录值是写 Github Page 里面的 IP 地址，但有时候 IP 地址会更改，导致最后解析不正确，所以还是推荐用 CNAME 别名记录要好些，不建议用 IP。3、等待10分钟左右，域名生效后刷新浏览器，使用自定义域名访问网站即可 Hexo 部署后，CNAME 会被自动删除，如何解决？123将需要上传至 Github 的文件放在 source 目录下如：CNAME, README.md, favicon.ico, images 目录等将这些都放在 source 目录下，每次上传就不会消失了]]></content>
       <categories>
         <category>Hexo笔记</category>
@@ -101,7 +101,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo 删除文章]]></title>
-    <url>%2F2018%2F06%2F03%2FHexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0%2F</url>
     <content type="text"><![CDATA[Hexo 如何删除文章？ 1234567891011删除文章的过程很简单，先删除本地文件，然后通过生成和部署命令将远程仓库中的文件也一并删除。以最开始默认形成的 hello-world.md 这篇文章为例首先进入 D:\Blog\gmlyo\source\_posts\ 文件夹中找到 hello-world.md 文件，在本地直接执行删除。然后依次执行hexo cleanhexo ghexo d再去主页查看就会发现博客上面已经什么都没有了]]></content>
       <categories>
         <category>Hexo笔记</category>
