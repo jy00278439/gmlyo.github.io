@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Kickstart 自动应答文件Cobblervim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#">
+<meta name="description" content="Kickstart 自动应答文件">
 <meta name="keywords" content="Kickstart自动应答文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kickstart自动应答文件">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/03/Kickstart自动应答文件/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Kickstart 自动应答文件Cobblervim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#">
+<meta property="og:description" content="Kickstart 自动应答文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-04T10:16:59.242Z">
+<meta property="og:updated_time" content="2018-06-04T16:01:58.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kickstart自动应答文件">
-<meta name="twitter:description" content="Kickstart 自动应答文件Cobblervim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#">
+<meta name="twitter:description" content="Kickstart 自动应答文件">
 
 
 
@@ -408,7 +408,8 @@
       
 
       
-        <h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><p><strong>Cobbler</strong><br>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Cobbler for Kickstart Configurator for CentOS 7 by clsn</span><br><span class="line">install</span><br><span class="line">url --url=$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>Network information</span><br><span class="line"><span class="meta">$</span>SNIPPET('network_config')</span><br><span class="line"><span class="meta">#</span>network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span><br><span class="line"></span><br><span class="line">timezone --utc Asia/Shanghai</span><br><span class="line">authconfig --enableshadow --passalgo=sha512</span><br><span class="line">rootpw  --iscrypted $default_password_crypted</span><br><span class="line">clearpart --all --initlabel</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Disk partitioning information</span><br><span class="line">part pv.374 --fstype="lvmpv" --ondisk=sda --size=2052</span><br><span class="line">part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484</span><br><span class="line">part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --grow</span><br><span class="line">part /boot --fstype="xfs" --ondisk=sda --size=500</span><br><span class="line">volgroup vgswap --pesize=4096 pv.374</span><br><span class="line">volgroup vgroot --pesize=4096 pv.671</span><br><span class="line">volgroup vgdata --pesize=4096 pv.639</span><br><span class="line">logvol /  --fstype="xfs" --size=20480 --name=lvroot --vgname=vgroot</span><br><span class="line">logvol swap  --fstype="swap" --size=2048 --name=lvswap --vgname=vgswap</span><br><span class="line">logvol /data  --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdata</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot --disable</span><br><span class="line">selinux --disabled</span><br><span class="line">firewall --disabled</span><br><span class="line">logging --level=info</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>pre</span><br><span class="line"><span class="meta">$</span>SNIPPET('log_ks_pre')</span><br><span class="line"><span class="meta">$</span>SNIPPET('kickstart_start')</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_install_network_config')</span><br><span class="line"><span class="meta">#</span> Enable installation monitoring</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_anamon')</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line"><span class="meta">%</span>end</span><br></pre></td></tr></table></figure></p>
+        <h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><a id="more"></a>
+<p><strong>Cobbler</strong><br>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Cobbler for Kickstart Configurator for CentOS 7 by clsn</span><br><span class="line">install</span><br><span class="line">url --url=$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>Network information</span><br><span class="line"><span class="meta">$</span>SNIPPET('network_config')</span><br><span class="line"><span class="meta">#</span>network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span><br><span class="line"></span><br><span class="line">timezone --utc Asia/Shanghai</span><br><span class="line">authconfig --enableshadow --passalgo=sha512</span><br><span class="line">rootpw  --iscrypted $default_password_crypted</span><br><span class="line">clearpart --all --initlabel</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Disk partitioning information</span><br><span class="line">part pv.374 --fstype="lvmpv" --ondisk=sda --size=2052</span><br><span class="line">part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484</span><br><span class="line">part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --grow</span><br><span class="line">part /boot --fstype="xfs" --ondisk=sda --size=500</span><br><span class="line">volgroup vgswap --pesize=4096 pv.374</span><br><span class="line">volgroup vgroot --pesize=4096 pv.671</span><br><span class="line">volgroup vgdata --pesize=4096 pv.639</span><br><span class="line">logvol /  --fstype="xfs" --size=20480 --name=lvroot --vgname=vgroot</span><br><span class="line">logvol swap  --fstype="swap" --size=2048 --name=lvswap --vgname=vgswap</span><br><span class="line">logvol /data  --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdata</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot --disable</span><br><span class="line">selinux --disabled</span><br><span class="line">firewall --disabled</span><br><span class="line">logging --level=info</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>pre</span><br><span class="line"><span class="meta">$</span>SNIPPET('log_ks_pre')</span><br><span class="line"><span class="meta">$</span>SNIPPET('kickstart_start')</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_install_network_config')</span><br><span class="line"><span class="meta">#</span> Enable installation monitoring</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_anamon')</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line"><span class="meta">%</span>end</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -439,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/03/Hexo绑定自定义域名/" rel="next" title="Hexo 绑定自定义域名">
-                <i class="fa fa-chevron-left"></i> Hexo 绑定自定义域名
+              <a href="/blog/2018/06/03/Hexo安装/" rel="next" title="Hexo安装">
+                <i class="fa fa-chevron-left"></i> Hexo安装
               </a>
             
           </div>
@@ -449,8 +450,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/03/Hexo安装/" rel="prev" title="Hexo安装">
-                Hexo安装 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/03/Next开启站内搜索/" rel="prev" title="Next开启站内搜索">
+                Next开启站内搜索 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -571,6 +572,28 @@
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
           
 
           
