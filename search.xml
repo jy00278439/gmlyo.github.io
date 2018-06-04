@@ -13,8 +13,8 @@
   </entry>
   <entry>
     <title><![CDATA[Next开启本地搜索]]></title>
-    <url>%2F2018%2F06%2F03%2FNext%E5%BC%80%E5%90%AF%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%2F</url>
-    <content type="text"><![CDATA[Next如何开启本地搜索？ Local Search 由 flashlab 贡献添加百度/谷歌/本地 自定义站点内容搜索 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1$ npm install hexo-generator-searchdb --save 编辑 站点配置文件，新增以下内容到任意位置： 12345search: path: search.xml field: post format: html limit: 10000 编辑 主题配置文件，启用本地搜索功能： 123# Local searchlocal_search: enable: true]]></content>
+    <url>%2F2018%2F06%2F03%2FNext%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[Next 如何开启站内搜索？ Local Search 由 flashlab 贡献添加百度/谷歌/本地 自定义站点内容搜索 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令： 1$ npm install hexo-generator-searchdb --save 编辑 站点配置文件，新增以下内容到任意位置： 12345search: path: search.xml field: post format: html limit: 10000 编辑 主题配置文件，启用本地搜索功能： 123# Local searchlocal_search: enable: true]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
