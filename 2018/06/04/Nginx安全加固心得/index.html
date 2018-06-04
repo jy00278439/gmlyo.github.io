@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Nginx安全加固心得 Nginx 发展多年，自身的安全漏洞比较少，发现软件漏洞，一般利用软件包管理器升级一下就好了。本文侧重讲述的不是 Nginx 自身的安全，而是利用 Nginx 来加固 Web应用，干一些应用防火墙（WAF）干的活。在做安全加固的时候，我们一定要头脑清晰，手里拿着刀，一刀一刀的切，将我们不想要的流量干掉，除去隐患。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-04T05:16:10.378Z">
+<meta property="og:updated_time" content="2018-06-04T05:40:53.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx安全加固心得">
 <meta name="twitter:description" content="Nginx安全加固心得 Nginx 发展多年，自身的安全漏洞比较少，发现软件漏洞，一般利用软件包管理器升级一下就好了。本文侧重讲述的不是 Nginx 自身的安全，而是利用 Nginx 来加固 Web应用，干一些应用防火墙（WAF）干的活。在做安全加固的时候，我们一定要头脑清晰，手里拿着刀，一刀一刀的切，将我们不想要的流量干掉，除去隐患。">
@@ -462,7 +462,7 @@
 <h3 id="overlayfs"><a href="#overlayfs" class="headerlink" title="overlayfs"></a>overlayfs</h3><blockquote>
 <p>这种方法跟上面的方法类似，但是有所区别<br>假设网站根目录/var/www/html有一个目录upload是要求可读写的，其他只读即可，那么仔细看下面的操作</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/lower</span><br><span class="line">mkdir -p /data/upper</span><br><span class="line">mkdir -p /data/worker</span><br><span class="line">mv /var/www/html/upload /data/upper/</span><br><span class="line">mv /var/www/html/* /data/lower/</span><br><span class="line">mount -t overlayfs overlay -o lower=/data/lower,upper=/data/upper,workdir=/data/worker /var/www/html</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -pv /data/lower</span><br><span class="line">mkdir -pv /data/upper</span><br><span class="line">mkdir -pv /data/worker</span><br><span class="line">mv /var/www/html/upload /data/upper/</span><br><span class="line">mv /var/www/html/* /data/lower/</span><br><span class="line">mount -t overlayfs overlay -o lower=/data/lower,upper=/data/upper,workdir=/data/worker /var/www/html</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这样就完美实现了读写分离，底层目录只读，上层目录可写。<br>如果程序被篡改，上层目录 /data/upper 除了 upload 内容之外，还会生成其他文件。<br>overlayfs 因为特殊的机制，建议使用 Linux 内核4.0+，否则比较消耗硬盘的 inode。</p>
 </blockquote>
