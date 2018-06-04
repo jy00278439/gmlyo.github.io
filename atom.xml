@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>G加菲</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.gmlyo.com/"/>
+  <updated>2018-06-04T15:35:52.915Z</updated>
+  <id>http://www.gmlyo.com/</id>
+  
+  <author>
+    <name>G加菲</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next给博客生成一个站点地图</title>
+    <link href="http://www.gmlyo.com/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/"/>
+    <id>http://www.gmlyo.com/2018/06/04/Next给博客生成一个站点地图/</id>
+    <published>2018-06-04T15:34:51.000Z</published>
+    <updated>2018-06-04T15:35:52.915Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="给博客生成一个站点地图"><a href="#给博客生成一个站点地图" class="headerlink" title="给博客生成一个站点地图"></a>给博客生成一个站点地图</h3><ol><li>安装 hexo-generator-seo-friendly-sitemap</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure><ol start="2"><li>在<code>站点配置</code>文件 _config.yml 中添加</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;给博客生成一个站点地图&quot;&gt;&lt;a href=&quot;#给博客生成一个站点地图&quot; class=&quot;headerlink&quot; title=&quot;给博客生成一个站点地图&quot;&gt;&lt;/a&gt;给博客生成一个站点地图&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;安装 hexo-generator-seo-friend
+      
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next给博客生成一个站点地图" scheme="http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Next给博客添加feed</title>
+    <link href="http://www.gmlyo.com/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed/"/>
+    <id>http://www.gmlyo.com/2018/06/04/Next给博客添加feed/</id>
+    <published>2018-06-04T15:32:03.000Z</published>
+    <updated>2018-06-04T15:34:14.105Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="给博客添加-feed"><a href="#给博客添加-feed" class="headerlink" title="给博客添加 feed"></a>给博客添加 feed</h3><a id="more"></a><ol><li>安装 hexo-generator-feed</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure><ol start="2"><li>配置到站点配置文件 _config.yml</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Extensions</span><br><span class="line"><span class="meta">#</span># Plugins: http://hexo.io/plugins/</span><br><span class="line"><span class="meta">#</span>RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line"><span class="meta">#</span>Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure><ol start="3"><li>最后，在你 next 主题下的 _config.yml 下，添加 RSS 订阅链接即可</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;给博客添加-feed&quot;&gt;&lt;a href=&quot;#给博客添加-feed&quot; class=&quot;headerlink&quot; title=&quot;给博客添加 feed&quot;&gt;&lt;/a&gt;给博客添加 feed&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next给博客添加feed" scheme="http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora快捷键</title>
+    <link href="http://www.gmlyo.com/2018/06/04/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://www.gmlyo.com/2018/06/04/Typora快捷键/</id>
+    <published>2018-06-04T09:56:40.000Z</published>
+    <updated>2018-06-04T10:05:20.530Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Typora快捷键"><a href="#Typora快捷键" class="headerlink" title="Typora快捷键"></a>Typora快捷键</h3><ol><li>无序列表：输入<code>-</code>之后输入空格</li><li>有序列表：输入<code>数字+“.”</code>之后输入空格</li><li>任务列表：<code>-[空格]</code>空格 文字</li><li>标题：<code>ctrl+数字</code></li><li>表格：<code>ctrl+t</code></li><li>生成目录：<code>[TOC]</code>按回车</li><li>选中一整行：<code>ctrl+l</code></li><li>选中单词：<code>ctrl+d</code></li><li>选中相同格式的文字：<code>ctrl+e</code></li><li>跳转到文章开头：<code>ctrl+home</code></li><li>跳转到文章结尾：<code>ctrl+end</code></li><li>搜索：<code>ctrl+f</code></li><li>替换：<code>ctrl+h</code></li><li>引用：输入<code>&gt;之后输入空格</code></li><li>代码块：<code>ctrl+alt+f</code></li><li>加粗：<code>ctrl+b</code></li><li>斜体：<code>ctrl+i</code></li><li>字体：<code>ctrl+数字</code></li><li>下划线：<code>ctrl+u</code></li><li>删除线：<code>alt+shift+5</code></li><li>插入图片：直接拖动到指定位置即可或<code>ctrl+shift+i</code></li><li>插入链接：<code>ctrl+k</code></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Typora快捷键&quot;&gt;&lt;a href=&quot;#Typora快捷键&quot; class=&quot;headerlink&quot; title=&quot;Typora快捷键&quot;&gt;&lt;/a&gt;Typora快捷键&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;无序列表：输入&lt;code&gt;-&lt;/code&gt;之后输入空格&lt;/li&gt;
+&lt;li
+      
+    
+    </summary>
+    
+      <category term="Typora笔记" scheme="http://www.gmlyo.com/categories/Typora%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Typora快捷键" scheme="http://www.gmlyo.com/tags/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx安全加固心得</title>
+    <link href="http://www.gmlyo.com/2018/06/04/Nginx%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%E5%BF%83%E5%BE%97/"/>
+    <id>http://www.gmlyo.com/2018/06/04/Nginx安全加固心得/</id>
+    <published>2018-06-04T02:56:15.000Z</published>
+    <updated>2018-06-04T05:40:53.993Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Nginx安全加固心得"><a href="#Nginx安全加固心得" class="headerlink" title="Nginx安全加固心得"></a>Nginx安全加固心得</h3><blockquote><p>Nginx 发展多年，自身的安全漏洞比较少，发现软件漏洞，一般利用软件包管理器升级一下就好了。<br>本文侧重讲述的不是 Nginx 自身的安全，而是利用 Nginx 来加固 Web应用，干一些应用防火墙（WAF）干的活。<br>在做安全加固的时候，我们一定要头脑清晰，手里拿着刀，一刀一刀的切，将我们不想要的流量干掉，除去隐患。</p></blockquote><a id="more"></a><h3 id="屏蔽-IP"><a href="#屏蔽-IP" class="headerlink" title="屏蔽 IP"></a>屏蔽 IP</h3><blockquote><p>假设我们的网站只是一个国内小站，有着公司业务，不是靠广告生存的那种，那么可以用 Geoip 模块封杀掉除中国和美国外的所有IP。这样可以过滤大部分来自国外的恶意扫描或者无用访问。不用担心封杀了网络蜘蛛。主流的网络蜘蛛（百度/谷歌/必应/搜狗）已经包含在了我们的IP范围内了。如果是公网的登录后台，更应该屏蔽彻底一点。</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if ( $geoip_country_code !~  ^(CN|US)$ ) &#123;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>（很多人担心geoip库不够准确，诚然，中国城市级别的IP段会有误差，但是国家级别的IP段一般是没有问题的，并且geoip库可以随时在线更新）</p></blockquote><h3 id="封杀各种-user-agent"><a href="#封杀各种-user-agent" class="headerlink" title="封杀各种  user-agent"></a>封杀各种  user-agent</h3><blockquote><p>user-agent 也即浏览器标识，每个正常的web请求都包含用户的浏览器信息，除非经过伪装，恶意扫描工具一般都会在user-agent里留下某些特征字眼，比如 scan，nmap 等。我们可以用正则匹配这些字眼，从而达到过滤的目的，请根据需要调整。</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if ($http_user_agent ~* "java|python|perl|ruby|curl|bash|echo|uname|base64|decode|md5sum|select|concat|httprequest|httpclient|nmap|scan" ) &#123;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br><span class="line">if ($http_user_agent ~* "" ) &#123;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>这里分析得不够细致，具体的非法 user-agent 还得慢慢从日志中逐个提取。<br>通过上面两个大招，相信你的日志里很快就会有大量的 403 记录。，我们接着干。<br>如果网站提供公共 api，注意与开发者约定好 UA，防止撞墙</p></blockquote><h3 id="封杀特定的-URL"><a href="#封杀特定的-URL" class="headerlink" title="封杀特定的 URL"></a>封杀特定的 URL</h3><blockquote><p>特定的文件扩展名，比如 .bak</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location ~* \.(bak|save|sh|sql|mdb|svn|git|old)$ &#123;</span><br><span class="line">    rewrite ^/(.*)$  $host  permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>知名程序，比如 phpmyadmin</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /(admin|phpadmin|status) &#123;</span><br><span class="line">    deny all; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>封杀特定的 http 方法和行为，比如</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if ($request_method !~ ^(GET|POST|HEAD)$ ) &#123;</span><br><span class="line">    return 405;</span><br><span class="line">&#125;</span><br><span class="line">if ($http_range ~ "\d&#123;9,&#125;") &#123;</span><br><span class="line">    return 444;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="强制网站使用域名访问，可以逃过IP扫描，比如"><a href="#强制网站使用域名访问，可以逃过IP扫描，比如" class="headerlink" title="强制网站使用域名访问，可以逃过IP扫描，比如"></a>强制网站使用域名访问，可以逃过IP扫描，比如</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if ( $host !~* &apos;abc.com&apos; ) &#123;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="url-参数过滤敏感字，比如"><a href="#url-参数过滤敏感字，比如" class="headerlink" title="url 参数过滤敏感字，比如"></a>url 参数过滤敏感字，比如</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if ($query_string ~* &quot;union.*select.*\(&quot;) &#123;</span><br><span class="line">    rewrite ^/(.*)$  $host  permanent;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">if ($query_string ~* &quot;concat.*\(&quot;) &#123;</span><br><span class="line">    rewrite ^/(.*)$  $host  permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="强制要求referer"><a href="#强制要求referer" class="headerlink" title="强制要求referer"></a>强制要求referer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if ($http_referer = &quot;&quot; ) ｛</span><br><span class="line">    return 403;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure><blockquote><p>如果不想用403，也可以rewrite一个url，比如一个400页面</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;</span><br><span class="line">    &lt;body bgcolor=&quot;white&quot;&gt;</span><br><span class="line">        &lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt;</span><br><span class="line">        &lt;hr&gt;&lt;center&gt;nginx/1.2.0&lt;/center&gt;</span><br><span class="line">    &lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><blockquote><p>可以将上述规则结合起来使用，同时匹配多条规则时才会封杀，<br>下面是一个来自老外的稍微复杂一点的例子：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">set $add 1;</span><br><span class="line">   location /index.php &#123;</span><br><span class="line">       limit_except GET POST &#123;</span><br><span class="line">           deny all;</span><br><span class="line">       &#125;    </span><br><span class="line">       set $ban &quot;&quot;;</span><br><span class="line">       if ($http_referer = &quot;&quot; ) &#123;set $ban $ban$add;&#125;</span><br><span class="line">       if ($request_method = POST ) &#123;set $ban $ban$add;&#125;</span><br><span class="line">       if ($query_string = &quot;action=login&quot; )&#123;set $ban $ban$add;&#125;</span><br><span class="line">       if ($ban = 111 ) &#123;                   </span><br><span class="line">           access_log /var/log/[133]nginx/ban IP;</span><br><span class="line">           return 404;</span><br><span class="line">       &#125;               </span><br><span class="line">       proxy_pass http://127.0.0.1:8000; #here is a patch</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><p><strong>其它方法</strong></p><h3 id="封杀IP"><a href="#封杀IP" class="headerlink" title="封杀IP"></a>封杀IP</h3><blockquote><p>定时做日志分析，手动将恶意IP加入 iptables 拒绝名单，推荐使用 ipset 模块。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y ipset ipset-service</span><br><span class="line">ipset create badip hash:net maxelem 65535iptables -I INPUT -m set --match-set badip src -p tcp --dport 80 -j DROP/etc/init.d/iptables saveipset add badip 1.1.1.2ipset add badip 2.2.2.0/24/etc/init.d/ipset save</span><br></pre></td></tr></table></figure><blockquote><p>ipset 还支持 timeout，类似 redis 的 TTL，timeout 之后会自动删除，比较人性化。<br>比如下面的例子就是 timeout 默认 3600 秒，支持自定义 timeout</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ipset destroy badip</span><br><span class="line">ipset create badip hash:net maxelem 65535 timeout 3600ipset add badip 1.1.1.1ipset add badip 2.2.2.0/24 timeout 60ipset add badip 3.3.3.0/24 timeout 7200</span><br></pre></td></tr></table></figure><blockquote><p>在日志分析的自动化程度比较高，准确率比较好的情况下，可以考虑通过条件触发 ipset。</p></blockquote><h3 id="限速"><a href="#限速" class="headerlink" title="限速"></a>限速</h3><blockquote><p>适当限制客户端的请求带宽，请求频率，请求连接数，这里不展开论述。根据具体需求，阀值应当稍稍宽泛一点。特别要注意办公室/网吧场景的用户，他们的特点是多人使用同一个网络出口。</p></blockquote><h3 id="目录只读"><a href="#目录只读" class="headerlink" title="目录只读"></a>目录只读</h3><blockquote><p>如果没有上传需求，完全可以把网站根目录弄成只读的，加固安全。<br>做了一点小动作，给网站根目录搞了一个只读的挂载点。这里假设网站根目录为 /var/www/html</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -pv /data</span><br><span class="line">mkdir -pv /var/www/html</span><br><span class="line">mount --bind /data /var/www/html</span><br><span class="line">mount -o remount,ro --bind /data /var/www/html</span><br></pre></td></tr></table></figure><blockquote><p>网站内容实际位于/data，网站内容更新就往/data里更新，目录/var/www/html无法执行任何写操作，否则会报错“Read-only file system”，极大程度上可以防止提权篡改。</p></blockquote><h3 id="overlayfs"><a href="#overlayfs" class="headerlink" title="overlayfs"></a>overlayfs</h3><blockquote><p>这种方法跟上面的方法类似，但是有所区别<br>假设网站根目录/var/www/html有一个目录upload是要求可读写的，其他只读即可，那么仔细看下面的操作</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -pv /data/lower</span><br><span class="line">mkdir -pv /data/upper</span><br><span class="line">mkdir -pv /data/worker</span><br><span class="line">mv /var/www/html/upload /data/upper/</span><br><span class="line">mv /var/www/html/* /data/lower/</span><br><span class="line">mount -t overlayfs overlay -o lower=/data/lower,upper=/data/upper,workdir=/data/worker /var/www/html</span><br></pre></td></tr></table></figure><blockquote><p>这样就完美实现了读写分离，底层目录只读，上层目录可写。<br>如果程序被篡改，上层目录 /data/upper 除了 upload 内容之外，还会生成其他文件。<br>overlayfs 因为特殊的机制，建议使用 Linux 内核4.0+，否则比较消耗硬盘的 inode。</p></blockquote><h3 id="定时总结和丰富过滤规则"><a href="#定时总结和丰富过滤规则" class="headerlink" title="定时总结和丰富过滤规则"></a>定时总结和丰富过滤规则</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Nginx安全加固心得&quot;&gt;&lt;a href=&quot;#Nginx安全加固心得&quot; class=&quot;headerlink&quot; title=&quot;Nginx安全加固心得&quot;&gt;&lt;/a&gt;Nginx安全加固心得&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Nginx 发展多年，自身的安全漏洞比较少，发现软件漏洞，一般利用软件包管理器升级一下就好了。&lt;br&gt;本文侧重讲述的不是 Nginx 自身的安全，而是利用 Nginx 来加固 Web应用，干一些应用防火墙（WAF）干的活。&lt;br&gt;在做安全加固的时候，我们一定要头脑清晰，手里拿着刀，一刀一刀的切，将我们不想要的流量干掉，除去隐患。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Nginx笔记" scheme="http://www.gmlyo.com/categories/Nginx%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Nginx安全加固心得" scheme="http://www.gmlyo.com/tags/Nginx%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Next设置阅读全文</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Next%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Next设置阅读全文/</id>
+    <published>2018-06-03T13:49:56.000Z</published>
+    <updated>2018-06-04T01:48:53.019Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如何设置「阅读全文」？"><a href="#如何设置「阅读全文」？" class="headerlink" title="如何设置「阅读全文」？"></a>如何设置「阅读全文」？</h2><a id="more"></a><p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。<br>NexT 提供三种方式来控制文章在首页的显示方式。<br>也就是说，在首页显示文章的摘录并显示 <strong>阅读全文</strong> 按钮，可以通过以下方法：</p><ol><li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，Hexo 提供的方式 推荐</li><li>在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 <code>description</code>，并提供文章摘录</li><li>自动形成摘要，在 主题配置文件 中添加：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true  # 改成 true</span><br><span class="line">  length: 150  # 默认展示的高度</span><br></pre></td></tr></table></figure><p>默认截取的长度为 <code>150</code> 字符，可以根据需要自行设定<br>建议使用 <code>&lt;!-- more --&gt;</code>（即第一种方式），除了可以精确控制需要显示的摘录内容以外，<br>这种方式也可以让 Hexo 中的插件更好的识别。</p><blockquote><p><code>需要注意的是</code>，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</span><br><span class="line">scroll_to_more: false</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何设置「阅读全文」？&quot;&gt;&lt;a href=&quot;#如何设置「阅读全文」？&quot; class=&quot;headerlink&quot; title=&quot;如何设置「阅读全文」？&quot;&gt;&lt;/a&gt;如何设置「阅读全文」？&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next设置阅读全文" scheme="http://www.gmlyo.com/tags/Next%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Next开启站内搜索</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Next%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Next开启站内搜索/</id>
+    <published>2018-06-03T13:03:09.000Z</published>
+    <updated>2018-06-04T15:25:22.574Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Next-如何开启站内搜索？"><a href="#Next-如何开启站内搜索？" class="headerlink" title="Next 如何开启站内搜索？"></a>Next 如何开启站内搜索？</h3><blockquote><p> NexT 主题支持集成 Swiftype、微搜索、Local Search 和 Algolia,Swiftype 和 Algolia 都只有一段时间的试用期，可以采用 Hexo 提供的Local Search，原理是通过 hexo-generator-search 插件在本地生成一个 search.xml 文件，搜索的时候从这个文件中根据关键字检索出相应的链接。</p></blockquote><a id="more"></a><p><strong> Local Search 由 <a href="https://github.com/iissnan/hexo-theme-next/pull/694" target="_blank" rel="noopener">flashlab</a> 贡献 </strong></p><h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h4 id="安装-hexo-generator-search"><a href="#安装-hexo-generator-search" class="headerlink" title="安装 hexo-generator-search"></a>安装 hexo-generator-search</h4><blockquote><p>在站点的根目录下执行以下命令</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><h4 id="安装-hexo-generator-searchdb，在站点的根目录下执行以下命令"><a href="#安装-hexo-generator-searchdb，在站点的根目录下执行以下命令" class="headerlink" title="安装 hexo-generator-searchdb，在站点的根目录下执行以下命令"></a>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure><h4 id="启用搜索"><a href="#启用搜索" class="headerlink" title="启用搜索"></a>启用搜索</h4><blockquote><p>编辑 <code>站点配置</code> 文件，新增以下内容到任意位置</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure><blockquote><p>编辑 <code>主题配置</code> 文件，启用本地搜索功能</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Next-如何开启站内搜索？&quot;&gt;&lt;a href=&quot;#Next-如何开启站内搜索？&quot; class=&quot;headerlink&quot; title=&quot;Next 如何开启站内搜索？&quot;&gt;&lt;/a&gt;Next 如何开启站内搜索？&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt; NexT 主题支持集成 Swiftype、微搜索、Local Search 和 Algolia,Swiftype 和 Algolia 都只有一段时间的试用期，可以采用 Hexo 提供的Local Search，原理是通过 hexo-generator-search 插件在本地生成一个 search.xml 文件，搜索的时候从这个文件中根据关键字检索出相应的链接。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next开启站内搜索" scheme="http://www.gmlyo.com/tags/Next%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo安装</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Hexo%E5%AE%89%E8%A3%85/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Hexo安装/</id>
+    <published>2018-06-03T08:35:43.000Z</published>
+    <updated>2018-06-04T15:08:56.835Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><p>Hexo 是一个快速、简洁且高效的博客框架。<br>Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><a id="more"></a></p><h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><blockquote><p>进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">右击 Git Bash Here</span><br><span class="line">cd /d/Blog/gmlyo/</span><br><span class="line"></span><br><span class="line">npm install hexo -g 或 npm install hexo-cli -g</span><br><span class="line">hexo init 或 hexo init blog; cd blog/</span><br><span class="line"><span class="meta">#</span> 第一句是安装 hexo</span><br><span class="line"><span class="meta">#</span> 第二句是安装 hexo 部署到 git page 的 deployer</span><br><span class="line"><span class="meta">#</span> 两个都需要安装</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Hexo 初始化配置（有点漫长的等待。。。）</span><br><span class="line">npm init</span><br><span class="line">Hexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件</span><br><span class="line"></span><br><span class="line">hexo clean  # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题</span><br><span class="line">hexo g      # 或 hexo generate</span><br><span class="line">hexo s      # 或 hexo server</span><br></pre></td></tr></table></figure><blockquote><p> 可以在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看</p></blockquote><h2 id="常用-Hexo-命令"><a href="#常用-Hexo-命令" class="headerlink" title="常用 Hexo 命令"></a>常用 Hexo 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹</span><br><span class="line">hexo generate (hexo g)</span><br><span class="line"><span class="meta">#</span> 启动本地 Web 服务，用于博客的预览</span><br><span class="line">hexo server (hexo s)</span><br><span class="line"><span class="meta">#</span> 部署播客到远端（比如github, heroku等平台）</span><br><span class="line">hexo deploy (hexo d)</span><br></pre></td></tr></table></figure><h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName"      # 新建文章</span><br><span class="line">hexo new page "pageName" # 新建页面</span><br></pre></td></tr></table></figure><h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure><h2 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g    # 生成部署</span><br><span class="line">hexo s -g    # 生成预览</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hexo-简介&quot;&gt;&lt;a href=&quot;#Hexo-简介&quot; class=&quot;headerlink&quot; title=&quot;Hexo 简介&quot;&gt;&lt;/a&gt;Hexo 简介&lt;/h2&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。&lt;br&gt;Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo安装" scheme="http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kickstart自动应答文件</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Kickstart自动应答文件/</id>
+    <published>2018-06-03T08:35:43.000Z</published>
+    <updated>2018-06-04T10:16:59.242Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><p><strong>Cobbler</strong><br>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Cobbler for Kickstart Configurator for CentOS 7 by clsn</span><br><span class="line">install</span><br><span class="line">url --url=$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>Network information</span><br><span class="line"><span class="meta">$</span>SNIPPET('network_config')</span><br><span class="line"><span class="meta">#</span>network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span><br><span class="line"></span><br><span class="line">timezone --utc Asia/Shanghai</span><br><span class="line">authconfig --enableshadow --passalgo=sha512</span><br><span class="line">rootpw  --iscrypted $default_password_crypted</span><br><span class="line">clearpart --all --initlabel</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Disk partitioning information</span><br><span class="line">part pv.374 --fstype="lvmpv" --ondisk=sda --size=2052</span><br><span class="line">part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484</span><br><span class="line">part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --grow</span><br><span class="line">part /boot --fstype="xfs" --ondisk=sda --size=500</span><br><span class="line">volgroup vgswap --pesize=4096 pv.374</span><br><span class="line">volgroup vgroot --pesize=4096 pv.671</span><br><span class="line">volgroup vgdata --pesize=4096 pv.639</span><br><span class="line">logvol /  --fstype="xfs" --size=20480 --name=lvroot --vgname=vgroot</span><br><span class="line">logvol swap  --fstype="swap" --size=2048 --name=lvswap --vgname=vgswap</span><br><span class="line">logvol /data  --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdata</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot --disable</span><br><span class="line">selinux --disabled</span><br><span class="line">firewall --disabled</span><br><span class="line">logging --level=info</span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>pre</span><br><span class="line"><span class="meta">$</span>SNIPPET('log_ks_pre')</span><br><span class="line"><span class="meta">$</span>SNIPPET('kickstart_start')</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_install_network_config')</span><br><span class="line"><span class="meta">#</span> Enable installation monitoring</span><br><span class="line"><span class="meta">$</span>SNIPPET('pre_anamon')</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line"><span class="meta">%</span>end</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span>post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line"><span class="meta">%</span>end</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Kickstart-自动应答文件&quot;&gt;&lt;a href=&quot;#Kickstart-自动应答文件&quot; class=&quot;headerlink&quot; title=&quot;Kickstart 自动应答文件&quot;&gt;&lt;/a&gt;Kickstart 自动应答文件&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Cobble
+      
+    
+    </summary>
+    
+      <category term="Cobbler笔记" scheme="http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Kickstart自动应答文件" scheme="http://www.gmlyo.com/tags/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 绑定自定义域名</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Hexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Hexo绑定自定义域名/</id>
+    <published>2018-06-02T23:50:58.000Z</published>
+    <updated>2018-06-04T01:49:34.037Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如何将自己购买的域名连接到-Github-Pages？"><a href="#如何将自己购买的域名连接到-Github-Pages？" class="headerlink" title="如何将自己购买的域名连接到 Github Pages？"></a>如何将自己购买的域名连接到 Github Pages？</h2><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在 source 目录下新建 CNAME 文件，在首行添加网站域名</span><br><span class="line">如：www.gmlyo.com</span><br><span class="line">注意前面没有 https://，http:// 等信息，然后重新重新生成并部署站点</span><br><span class="line">hexo clean  # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题</span><br><span class="line">hexo g      # hexo generade</span><br><span class="line">hexo d      # hexo deploy</span><br><span class="line">或</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure><h2 id="设置域名解析"><a href="#设置域名解析" class="headerlink" title="设置域名解析"></a>设置域名解析</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、先添加一个CNAME，主机记录写@，后面记录值写上你的 xxx.github.io</span><br><span class="line">2、再添加一个CNAME，主机记录写www，后面记录值也是 xxx.github.io</span><br><span class="line">这样别人用 www 和不用 www 都能访问你的网站</span><br><span class="line">其实 www 的方式，会先解析成 https://xxx.github.io，然后根据 CNAME 再变成 http://www.gmlyo.com，即中间是经过一次转换的。</span><br><span class="line">注：除了使用 CNAME 记录也有人使用 A 记录，后面的记录值是写 Github Page 里面的 IP 地址，但有时候 IP 地址会更改，导致最后解析不正确，所以还是推荐用 CNAME 别名记录要好些，不建议用 IP。</span><br><span class="line">3、等待10分钟左右，域名生效后刷新浏览器，使用自定义域名访问网站即可</span><br></pre></td></tr></table></figure><h2 id="Hexo-部署后，CNAME-会被自动删除，如何解决？"><a href="#Hexo-部署后，CNAME-会被自动删除，如何解决？" class="headerlink" title="Hexo 部署后，CNAME 会被自动删除，如何解决？"></a>Hexo 部署后，CNAME 会被自动删除，如何解决？</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将需要上传至 Github 的文件放在 source 目录下</span><br><span class="line">如：CNAME, README.md, favicon.ico, images 目录等</span><br><span class="line">将这些都放在 source 目录下，每次上传就不会消失了</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何将自己购买的域名连接到-Github-Pages？&quot;&gt;&lt;a href=&quot;#如何将自己购买的域名连接到-Github-Pages？&quot; class=&quot;headerlink&quot; title=&quot;如何将自己购买的域名连接到 Github Pages？&quot;&gt;&lt;/a&gt;如何将自己购买的域名连接到 Github Pages？&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo 绑定自定义域名" scheme="http://www.gmlyo.com/tags/Hexo-%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 删除文章</title>
+    <link href="http://www.gmlyo.com/2018/06/03/Hexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/"/>
+    <id>http://www.gmlyo.com/2018/06/03/Hexo删除文章/</id>
+    <published>2018-06-02T23:49:59.000Z</published>
+    <updated>2018-06-04T01:49:13.532Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Hexo-如何删除文章？"><a href="#Hexo-如何删除文章？" class="headerlink" title="Hexo 如何删除文章？"></a>Hexo 如何删除文章？</h3><a id="more"></a> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">删除文章的过程很简单，先删除本地文件，然后通过生成和部署命令将远程仓库中的文件也一并删除。</span><br><span class="line">以最开始默认形成的 hello-world.md 这篇文章为例</span><br><span class="line">首先进入 D:\Blog\gmlyo\source\_posts\ 文件夹中</span><br><span class="line">找到 hello-world.md 文件，在本地直接执行删除。</span><br><span class="line"></span><br><span class="line">然后依次执行</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">再去主页查看就会发现博客上面已经什么都没有了</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hexo-如何删除文章？&quot;&gt;&lt;a href=&quot;#Hexo-如何删除文章？&quot; class=&quot;headerlink&quot; title=&quot;Hexo 如何删除文章？&quot;&gt;&lt;/a&gt;Hexo 如何删除文章？&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo 删除文章" scheme="http://www.gmlyo.com/tags/Hexo-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+</feed>

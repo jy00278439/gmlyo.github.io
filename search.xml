@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Next给博客生成一个站点地图]]></title>
+    <url>%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[给博客生成一个站点地图 安装 hexo-generator-seo-friendly-sitemap 1npm install hexo-generator-seo-friendly-sitemap --save 在站点配置文件 _config.yml 中添加 12sitemap: path: sitemap.xml]]></content>
+      <categories>
+        <category>Next笔记</category>
+      </categories>
+      <tags>
+        <tag>Next给博客生成一个站点地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Next给博客添加feed]]></title>
+    <url>%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed%2F</url>
+    <content type="text"><![CDATA[给博客添加 feed 安装 hexo-generator-feed 1npm install hexo-generator-feed --save 配置到站点配置文件 _config.yml 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed:type: atompath: atom.xmllimit: 20 最后，在你 next 主题下的 _config.yml 下，添加 RSS 订阅链接即可 1rss: /atom.xml]]></content>
+      <categories>
+        <category>Next笔记</category>
+      </categories>
+      <tags>
+        <tag>Next给博客添加feed</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Typora快捷键]]></title>
     <url>%2F2018%2F06%2F04%2FTypora%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[Typora快捷键 无序列表：输入-之后输入空格 有序列表：输入数字+“.”之后输入空格 任务列表：-[空格]空格 文字 标题：ctrl+数字 表格：ctrl+t 生成目录：[TOC]按回车 选中一整行：ctrl+l 选中单词：ctrl+d 选中相同格式的文字：ctrl+e 跳转到文章开头：ctrl+home 跳转到文章结尾：ctrl+end 搜索：ctrl+f 替换：ctrl+h 引用：输入&gt;之后输入空格 代码块：ctrl+alt+f 加粗：ctrl+b 斜体：ctrl+i 字体：ctrl+数字 下划线：ctrl+u 删除线：alt+shift+5 插入图片：直接拖动到指定位置即可或ctrl+shift+i 插入链接：ctrl+k]]></content>
