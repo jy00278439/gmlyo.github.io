@@ -115,17 +115,13 @@
     <link href="http://www.gmlyo.com//blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/"/>
     <id>http://www.gmlyo.com//blog/2018/06/04/Next给博客生成一个站点地图/</id>
     <published>2018-06-04T15:34:51.000Z</published>
-    <updated>2018-06-04T15:35:52.915Z</updated>
+    <updated>2018-06-05T17:25:29.186Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="给博客生成一个站点地图"><a href="#给博客生成一个站点地图" class="headerlink" title="给博客生成一个站点地图"></a>给博客生成一个站点地图</h3><ol><li>安装 hexo-generator-seo-friendly-sitemap</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure><ol start="2"><li>在<code>站点配置</code>文件 _config.yml 中添加</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="给博客生成一个站点地图"><a href="#给博客生成一个站点地图" class="headerlink" title="给博客生成一个站点地图"></a>给博客生成一个站点地图</h3><a id="more"></a><ol><li>安装 hexo-generator-seo-friendly-sitemap</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure><ol start="2"><li>在<code>站点配置</code>文件 _config.yml 中添加</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;给博客生成一个站点地图&quot;&gt;&lt;a href=&quot;#给博客生成一个站点地图&quot; class=&quot;headerlink&quot; title=&quot;给博客生成一个站点地图&quot;&gt;&lt;/a&gt;给博客生成一个站点地图&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;安装 hexo-generator-seo-friend
-      
+      &lt;h3 id=&quot;给博客生成一个站点地图&quot;&gt;&lt;a href=&quot;#给博客生成一个站点地图&quot; class=&quot;headerlink&quot; title=&quot;给博客生成一个站点地图&quot;&gt;&lt;/a&gt;给博客生成一个站点地图&lt;/h3&gt;
     
     </summary>
     
@@ -256,28 +252,6 @@
   </entry>
   
   <entry>
-    <title>Hexo安装</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/03/Hexo安装/</id>
-    <published>2018-06-03T08:35:43.000Z</published>
-    <updated>2018-06-04T15:08:56.835Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><p>Hexo 是一个快速、简洁且高效的博客框架。<br>Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><a id="more"></a></p><h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><blockquote><p>进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">右击 Git Bash Here</span><br><span class="line">cd /d/Blog/gmlyo/</span><br><span class="line"></span><br><span class="line">npm install hexo -g 或 npm install hexo-cli -g</span><br><span class="line">hexo init 或 hexo init blog; cd blog/</span><br><span class="line"><span class="meta">#</span><span class="bash"> 第一句是安装 hexo</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 第二句是安装 hexo 部署到 git page 的 deployer</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 两个都需要安装</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Hexo 初始化配置（有点漫长的等待。。。）</span></span><br><span class="line">npm init</span><br><span class="line">Hexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件</span><br><span class="line"></span><br><span class="line">hexo clean  # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题</span><br><span class="line">hexo g      # 或 hexo generate</span><br><span class="line">hexo s      # 或 hexo server</span><br></pre></td></tr></table></figure><blockquote><p> 可以在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看</p></blockquote><h2 id="常用-Hexo-命令"><a href="#常用-Hexo-命令" class="headerlink" title="常用 Hexo 命令"></a>常用 Hexo 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹</span></span><br><span class="line">hexo generate (hexo g)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动本地 Web 服务，用于博客的预览</span></span><br><span class="line">hexo server (hexo s)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 部署播客到远端（比如github, heroku等平台）</span></span><br><span class="line">hexo deploy (hexo d)</span><br></pre></td></tr></table></figure><h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName"      # 新建文章</span><br><span class="line">hexo new page "pageName" # 新建页面</span><br></pre></td></tr></table></figure><h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure><h2 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g    # 生成部署</span><br><span class="line">hexo s -g    # 生成预览</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Hexo-简介&quot;&gt;&lt;a href=&quot;#Hexo-简介&quot; class=&quot;headerlink&quot; title=&quot;Hexo 简介&quot;&gt;&lt;/a&gt;Hexo 简介&lt;/h2&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。&lt;br&gt;Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Hexo安装" scheme="http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Kickstart自动应答文件</title>
     <link href="http://www.gmlyo.com//blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
     <id>http://www.gmlyo.com//blog/2018/06/03/Kickstart自动应答文件/</id>
@@ -296,6 +270,28 @@
     
     
       <category term="Kickstart自动应答文件" scheme="http://www.gmlyo.com/tags/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo安装</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/03/Hexo安装/</id>
+    <published>2018-06-03T08:35:43.000Z</published>
+    <updated>2018-06-04T15:08:56.835Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><p>Hexo 是一个快速、简洁且高效的博客框架。<br>Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><a id="more"></a></p><h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><blockquote><p>进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">右击 Git Bash Here</span><br><span class="line">cd /d/Blog/gmlyo/</span><br><span class="line"></span><br><span class="line">npm install hexo -g 或 npm install hexo-cli -g</span><br><span class="line">hexo init 或 hexo init blog; cd blog/</span><br><span class="line"><span class="meta">#</span> 第一句是安装 hexo</span><br><span class="line"><span class="meta">#</span> 第二句是安装 hexo 部署到 git page 的 deployer</span><br><span class="line"><span class="meta">#</span> 两个都需要安装</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Hexo 初始化配置（有点漫长的等待。。。）</span><br><span class="line">npm init</span><br><span class="line">Hexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件</span><br><span class="line"></span><br><span class="line">hexo clean  # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题</span><br><span class="line">hexo g      # 或 hexo generate</span><br><span class="line">hexo s      # 或 hexo server</span><br></pre></td></tr></table></figure><blockquote><p> 可以在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看</p></blockquote><h2 id="常用-Hexo-命令"><a href="#常用-Hexo-命令" class="headerlink" title="常用 Hexo 命令"></a>常用 Hexo 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹</span><br><span class="line">hexo generate (hexo g)</span><br><span class="line"><span class="meta">#</span> 启动本地 Web 服务，用于博客的预览</span><br><span class="line">hexo server (hexo s)</span><br><span class="line"><span class="meta">#</span> 部署播客到远端（比如github, heroku等平台）</span><br><span class="line">hexo deploy (hexo d)</span><br></pre></td></tr></table></figure><h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName"      # 新建文章</span><br><span class="line">hexo new page "pageName" # 新建页面</span><br></pre></td></tr></table></figure><h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure><h2 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g    # 生成部署</span><br><span class="line">hexo s -g    # 生成预览</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hexo-简介&quot;&gt;&lt;a href=&quot;#Hexo-简介&quot; class=&quot;headerlink&quot; title=&quot;Hexo 简介&quot;&gt;&lt;/a&gt;Hexo 简介&lt;/h2&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。&lt;br&gt;Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo安装" scheme="http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
