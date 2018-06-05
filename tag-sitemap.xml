@@ -80,7 +80,14 @@
 
     <url>
         <loc>http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T16:03:41.596Z</lastmod>
+        <lastmod>2018-06-05T16:25:10.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Shadowsocks-%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-05T16:53:11.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-05T16:53:11.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/06/05/Tomcat%20APR%20%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T16:03:41.596Z</lastmod>
+        <lastmod>2018-06-05T16:25:10.632Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
