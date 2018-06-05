@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T17:04:33.652Z</lastmod>
+        <loc>http://www.gmlyo.com/blog/2018/06/06/Next%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0/</loc>
+        <lastmod>2018-06-05T17:18:46.948Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://www.gmlyo.com/blog/2018/06/05/Tomcat%20APR%20%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T16:25:10.632Z</lastmod>
+        <lastmod>2018-06-05T17:15:00.325Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-05T17:09:41.546Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

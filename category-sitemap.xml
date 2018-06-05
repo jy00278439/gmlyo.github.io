@@ -28,13 +28,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-04T15:35:52.915Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-04T16:01:58.116Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,15 +42,22 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-05T16:25:10.632Z</lastmod>
+        <loc>http://www.gmlyo.com/categories/Shadowsocks%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-05T17:09:41.546Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Shadowsocks%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-05T17:04:33.652Z</lastmod>
+        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-05T17:15:00.325Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-05T17:18:46.948Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
