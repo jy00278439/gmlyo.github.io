@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-04T15:08:56.835Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-04T16:01:58.116Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +51,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-05T17:25:29.186Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-05T17:30:24.015Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

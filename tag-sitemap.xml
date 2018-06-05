@@ -37,13 +37,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-04T15:08:56.835Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Next%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/</loc>
         <lastmod>2018-06-04T15:25:22.574Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -95,6 +88,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</loc>
         <lastmod>2018-06-05T17:25:29.186Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-05T17:30:24.015Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
