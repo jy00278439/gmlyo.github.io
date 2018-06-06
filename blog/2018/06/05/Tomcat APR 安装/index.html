@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
+<meta name="description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
 <meta name="keywords" content="Tomcat APR 安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat APR 安装">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/05/Tomcat APR 安装/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
+<meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T12:01:03.482Z">
+<meta property="og:updated_time" content="2018-06-06T13:43:25.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat APR 安装">
-<meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
+<meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
 
 
 
@@ -414,11 +414,11 @@
 
       
         <h3 id="Tomcat-APR-安装"><a href="#Tomcat-APR-安装" class="headerlink" title="Tomcat APR 安装"></a>Tomcat APR 安装</h3><blockquote>
-<p>Tomcat 的 APR(Apache portable Run-time libraries)<br>是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。<br>默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。<br>而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 I/O 问题，大幅度的提高性能。</p>
+<p>Tomcat 的 APR(Apache portable Run-time libraries)<br>是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API<br>是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。<br>默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低。<br>而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 I/O 问题，大幅度的提高性能。<br>如果操作系统不支持某个特定的功能，APR 将提供一个模拟的实现<br>这样程序员使用 APR 编写真正可在不同平台上移植的程序</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 和 <span class="keyword">JDK</span></span><br><span class="line"><span class="keyword">yum </span><span class="keyword">install </span>-y gcc gcc-devel</span><br><span class="line">yum <span class="keyword">install </span>-y openssl openssl-devel</span><br></pre></td></tr></table></figure>
-<h3 id="下载apr"><a href="#下载apr" class="headerlink" title="下载apr"></a>下载apr</h3><blockquote>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 和 <span class="keyword">JDK</span></span><br><span class="line"><span class="keyword">yum </span><span class="keyword">install </span>-y apr-devel</span><br><span class="line">yum <span class="keyword">install </span>-y gcc gcc-devel</span><br><span class="line">yum <span class="keyword">install </span>-y openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h3 id="下载-apr"><a href="#下载-apr" class="headerlink" title="下载 apr"></a>下载 apr</h3><blockquote>
 <p>下载地址：<a href="https://apr.apache.org/download.cgi" target="_blank" rel="noopener">https://apr.apache.org/download.cgi</a></p>
 </blockquote>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/data/</span>tools/</span><br><span class="line">wget -c <span class="string">http:</span><span class="comment">//mirrors.shu.edu.cn/apache//apr/apr-1.6.3.tar.gz</span></span><br><span class="line">wget -c <span class="string">http:</span><span class="comment">//mirrors.shu.edu.cn/apache//apr/apr-util-1.6.1.tar.gz</span></span><br><span class="line">wget -c <span class="string">http:</span><span class="comment">//mirrors.shu.edu.cn/apache//apr/apr-iconv-1.2.2.tar.gz</span></span><br></pre></td></tr></table></figure>
@@ -431,7 +431,7 @@
 <blockquote>
 <p>大致就是通过 tomcat-native 库，使 tomcat 运行时通过 APR 更多的调用本地 API，达到提升性能的目的。<br>由于依赖关系，安装时，先安装 APR，openssl，然后再安装 tomcat-native，最后配置 tomcat 启动时依赖的库路径。</p>
 </blockquote>
-<h4 id="有-两-种方式配置-Tomcat-使用-apr-库"><a href="#有-两-种方式配置-Tomcat-使用-apr-库" class="headerlink" title="有 两 种方式配置 Tomcat 使用 apr 库"></a>有 两 种方式配置 Tomcat 使用 apr 库</h4><blockquote>
+<h3 id="有-两-种方式配置-Tomcat-使用-apr-库"><a href="#有-两-种方式配置-Tomcat-使用-apr-库" class="headerlink" title="有 两 种方式配置 Tomcat 使用 apr 库"></a>有 两 种方式配置 Tomcat 使用 apr 库</h3><blockquote>
 <p>方式一：配置环境变量<br>在 Linux 系统中，只要 <code>$LD_LIBRARY_PATH</code> 变量值所在路径包含 Tomcat 本地库<br>默认就使用 <code>org.apache.coyote.http11.Http11AprProtocol</code></p>
 </blockquote>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LD_LIBRARY_PATH</span>=/data/apr/lib</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
@@ -680,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat-APR-安装"><span class="nav-number">1.</span> <span class="nav-text">Tomcat APR 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载apr"><span class="nav-number">3.</span> <span class="nav-text">下载apr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr"><span class="nav-number">4.</span> <span class="nav-text">安装 apr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-util"><span class="nav-number">5.</span> <span class="nav-text">安装 apr-util</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-iconv"><span class="nav-number">6.</span> <span class="nav-text">安装 apr-iconv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Tomcat-使用-apr-库"><span class="nav-number">7.</span> <span class="nav-text">配置 Tomcat 使用 apr 库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有-两-种方式配置-Tomcat-使用-apr-库"><span class="nav-number">7.1.</span> <span class="nav-text">有 两 种方式配置 Tomcat 使用 apr 库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置安装-Tomcat-native"><span class="nav-number">8.</span> <span class="nav-text">配置安装 Tomcat native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-Tomcat-Native-环境变量"><span class="nav-number">9.</span> <span class="nav-text">设置 Tomcat Native 环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">10.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat-APR-安装"><span class="nav-number">1.</span> <span class="nav-text">Tomcat APR 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-apr"><span class="nav-number">3.</span> <span class="nav-text">下载 apr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr"><span class="nav-number">4.</span> <span class="nav-text">安装 apr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-util"><span class="nav-number">5.</span> <span class="nav-text">安装 apr-util</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-iconv"><span class="nav-number">6.</span> <span class="nav-text">安装 apr-iconv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Tomcat-使用-apr-库"><span class="nav-number">7.</span> <span class="nav-text">配置 Tomcat 使用 apr 库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有-两-种方式配置-Tomcat-使用-apr-库"><span class="nav-number">8.</span> <span class="nav-text">有 两 种方式配置 Tomcat 使用 apr 库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置安装-Tomcat-native"><span class="nav-number">9.</span> <span class="nav-text">配置安装 Tomcat native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-Tomcat-Native-环境变量"><span class="nav-number">10.</span> <span class="nav-text">设置 Tomcat Native 环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">11.</span> <span class="nav-text">测试</span></a></li></ol></div>
             
 
           </div>

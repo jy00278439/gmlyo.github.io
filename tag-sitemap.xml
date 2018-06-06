@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Next%E5%A4%B4%E5%83%8F%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC/</loc>
-        <lastmod>2018-06-05T19:08:21.962Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/%E5%A6%82%E4%BD%95%E4%B8%8D%E9%80%9A%E8%BF%87-inventory-%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-host-%E8%BF%90%E8%A1%8C-Ansible%EF%BC%9F/</loc>
         <lastmod>2018-06-06T03:24:58.355Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -100,15 +93,22 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-06T12:01:03.482Z</lastmod>
+        <loc>http://www.gmlyo.com/tags/Next%E4%BF%AE%E6%94%B9%E5%B0%8F%E5%9E%8B%E4%BB%A3%E7%A0%81%E5%9D%97%E9%A2%9C%E8%89%B2/</loc>
+        <lastmod>2018-06-06T13:06:20.985Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Next%E4%BF%AE%E6%94%B9%E5%B0%8F%E5%9E%8B%E4%BB%A3%E7%A0%81%E5%9D%97%E9%A2%9C%E8%89%B2/</loc>
-        <lastmod>2018-06-06T13:06:20.985Z</lastmod>
+        <loc>http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-06T13:43:25.061Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Next%E5%A4%B4%E5%83%8F%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC/</loc>
+        <lastmod>2018-06-06T13:51:25.040Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
