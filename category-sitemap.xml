@@ -14,20 +14,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-04T16:01:58.116Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-05T17:32:34.005Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Nginx%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-05T19:04:33.991Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,15 +35,29 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-06T03:18:51.451Z</lastmod>
+        <loc>http://www.gmlyo.com/categories/Ansible%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-06T03:24:58.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Ansible%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-06T03:24:58.355Z</lastmod>
+        <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-06T03:28:00.094Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-06T03:28:14.919Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-06T03:29:44.143Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

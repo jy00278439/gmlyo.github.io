@@ -58,7 +58,7 @@
   <entry>
     <title><![CDATA[Next给博客生成一个站点地图]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%2F</url>
-    <content type="text"><![CDATA[给博客生成一个站点地图 安装 hexo-generator-seo-friendly-sitemap 1npm install hexo-generator-seo-friendly-sitemap --save 在站点配置文件 _config.yml 中添加 12sitemap: path: sitemap.xml]]></content>
+    <content type="text"><![CDATA[给博客生成一个站点地图 安装 hexo-generator-seo-friendly-sitemap1npm install hexo-generator-seo-friendly-sitemap --save 在站点配置文件 _config.yml 中添加12sitemap: path: sitemap.xml]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
@@ -69,7 +69,7 @@
   <entry>
     <title><![CDATA[Next给博客添加feed]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F04%2FNext%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed%2F</url>
-    <content type="text"><![CDATA[给博客添加 feed 安装 hexo-generator-feed 1npm install hexo-generator-feed --save 配置到站点配置文件 _config.yml 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed:type: atompath: atom.xmllimit: 20 最后，在你 next 主题下的 _config.yml 下，添加 RSS 订阅链接即可 1rss: /atom.xml]]></content>
+    <content type="text"><![CDATA[给博客添加 feed 安装 hexo-generator-feed1npm install hexo-generator-feed --save 配置到站点配置文件 _config.yml12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed:type: atompath: atom.xmllimit: 20 最后，在你 next 主题下的 _config.yml 下，添加 RSS 订阅链接即可1rss: /atom.xml]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
@@ -102,7 +102,7 @@
   <entry>
     <title><![CDATA[Next设置阅读全文]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FNext%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%2F</url>
-    <content type="text"><![CDATA[如何设置「阅读全文」？ 在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。NexT 提供三种方式来控制文章在首页的显示方式。也就是说，在首页显示文章的摘录并显示 阅读全文 按钮，可以通过以下方法： 在文章中使用 &lt;!-- more --&gt; 手动进行截断，Hexo 提供的方式 推荐 在文章的 front-matter 中添加 description，并提供文章摘录 自动形成摘要，在 主题配置文件 中添加： 123auto_excerpt: enable: true # 改成 true length: 150 # 默认展示的高度 默认截取的长度为 150 字符，可以根据需要自行设定建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外，这种方式也可以让 Hexo 中的插件更好的识别。 需要注意的是，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件：12# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.scroll_to_more: false]]></content>
+    <content type="text"><![CDATA[如何设置「阅读全文」？ 在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。NexT 提供三种方式来控制文章在首页的显示方式。也就是说，在首页显示文章的摘录并显示 阅读全文 按钮，可以通过以下方法： 在文章中使用 &lt;!-- more --&gt; 手动进行截断，Hexo 提供的方式 推荐 在文章的 front-matter 中添加 description，并提供文章摘录 自动形成摘要，在 主题配置文件 中添加： 123auto_excerpt: enable: true # 改成 true length: 150 # 默认展示的高度 默认截取的长度为 150 字符，可以根据需要自行设定建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外，这种方式也可以让 Hexo 中的插件更好的识别。 需要注意的是，点击「阅读全文」之后，文章会自动定位到 所在位置，想要修改成从头阅读需要修改 主题配置文件 _config.yml 文件： 12# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.scroll_to_more: false]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
@@ -122,25 +122,25 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Kickstart自动应答文件]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobblervim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
-      <categories>
-        <category>Cobbler笔记</category>
-      </categories>
-      <tags>
-        <tag>Kickstart自动应答文件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo安装]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
       <categories>
         <category>Hexo笔记</category>
       </categories>
       <tags>
         <tag>Hexo安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kickstart自动应答文件]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
+      <categories>
+        <category>Cobbler笔记</category>
+      </categories>
+      <tags>
+        <tag>Kickstart自动应答文件</tag>
       </tags>
   </entry>
   <entry>

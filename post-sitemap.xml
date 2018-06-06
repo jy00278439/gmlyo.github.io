@@ -7,8 +7,60 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/05/%E4%B8%8D%E9%80%9A%E8%BF%87inventory%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9Ahost%E8%BF%90%E8%A1%8CAnsible/</loc>
-        <lastmod>2018-06-06T03:24:58.355Z</lastmod>
+        <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-06T03:29:44.143Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+        <image:image>
+
+            <image:loc>http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg</image:loc>
+
+        </image:image>
+
+        <image:image>
+
+            <image:loc>http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg</image:loc>
+
+        </image:image>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</loc>
+        <lastmod>2018-06-06T03:28:31.641Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/</loc>
+        <lastmod>2018-06-06T03:28:14.919Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</loc>
+        <lastmod>2018-06-06T03:28:00.094Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed/</loc>
+        <lastmod>2018-06-06T03:27:48.250Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/03/Next%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/</loc>
+        <lastmod>2018-06-06T03:27:20.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +68,23 @@
 
     <url>
         <loc>http://www.gmlyo.com/blog/2018/06/06/Next%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0/</loc>
-        <lastmod>2018-06-06T03:18:51.451Z</lastmod>
+        <lastmod>2018-06-06T03:27:09.203Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/03/Next%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</loc>
+        <lastmod>2018-06-06T03:26:55.683Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/05/%E4%B8%8D%E9%80%9A%E8%BF%87inventory%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9Ahost%E8%BF%90%E8%A1%8CAnsible/</loc>
+        <lastmod>2018-06-06T03:24:58.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -55,58 +123,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T17:32:34.005Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-        <image:image>
-
-            <image:loc>http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg</image:loc>
-
-        </image:image>
-
-        <image:image>
-
-            <image:loc>http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg</image:loc>
-
-        </image:image>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</loc>
-        <lastmod>2018-06-05T17:25:29.186Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/</loc>
-        <lastmod>2018-06-04T16:01:58.116Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0feed/</loc>
-        <lastmod>2018-06-04T15:34:14.105Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/03/Next%E5%BC%80%E5%90%AF%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/</loc>
-        <lastmod>2018-06-04T15:25:22.574Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/blog/2018/06/04/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
         <lastmod>2018-06-04T10:05:20.530Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -115,24 +131,8 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</loc>
-        <lastmod>2018-06-04T01:49:34.037Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/</loc>
         <lastmod>2018-06-04T01:49:13.532Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/03/Next%E8%AE%BE%E7%BD%AE%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</loc>
-        <lastmod>2018-06-04T01:48:53.019Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
