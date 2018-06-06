@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T07:00:19.306Z">
+<meta property="og:updated_time" content="2018-06-06T07:06:04.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat APR 安装">
 <meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
@@ -438,7 +438,7 @@
 <blockquote>
 <p>方式二：将 apr 库路径参数添加到系统变量中（推荐）<br>编辑 <code>$CATALINA_HOME/bin/setenv.sh</code> 文件（如果文件不存在，新建文件）</p>
 </blockquote>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">CATALINA_OPTS</span>=<span class="string">"<span class="variable">$CATALINA_OPTS</span> -Djava.library.path=/usr/local/apr/lib"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">CATALINA_OPTS</span>=<span class="string">"<span class="variable">$CATALINA_OPTS</span> -Djava.library.path=/data/apr/lib"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>修改 <code>$TOMCAT_HOME/conf/server.xml</code></p>
 </blockquote>
