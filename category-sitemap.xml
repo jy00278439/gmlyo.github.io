@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-06T03:29:44.143Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Typora%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-06T05:53:08.769Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +51,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-06T14:03:59.640Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-06T14:18:28.032Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
