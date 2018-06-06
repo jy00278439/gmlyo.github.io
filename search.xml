@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo添加分类及标签]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F06%2FHexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%2F</url>
-    <content type="text"><![CDATA[Hexo添加分类及标签 创建“分类”选项 生成“分类”页并添加 type 属性打开命令行，进入博客所在文件夹，执行命令 1hexo new page categories 成功后会提示 1INFO Created: ~/hexo/source/categories/index.md 根据上面的路径，找到 index.md 这个文件，打开后默认内容是这样的 1234---title: 文章分类date: 2018-06-06 22:49:07--- 添加 type: “categories” 到内容中，添加后是这样的 12345---title: 文章分类date: 2018-06-06 22:49:07type: "categories"--- 给文章添加“categories”属性 打开需要添加分类的文章，为其添加 categories 属性下方的 categories: Hexo笔记 表示添加这篇文章到“Hexo笔记”这个分类注意：hexo 一篇文章只能属于一个分类，也就是说如果在“- Hexo笔记”下方添加“- xxx”hexo 不会产生两个分类，而是把分类嵌套（即该文章属于 “- Hexo笔记”下的“- xxx”分类） 123456---title: Hexo添加分类及标签date: 2018-06-06 22:44:41categories: - Hexo笔记--- 至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章当然，只有添加了 categories: xxx 的文章才会被收录到首页的“分类”中。 创建“标签”选项 生成“标签”页并添加 type 属性打开命令行，进入博客所在文件夹，执行命令 1hexo new page tags 成功后会提示 1INFO Created: ~/hexo/source/tags/index.md 根据上面的路径，找到index.md这个文件，打开后默认内容是这样的 1234---title: 标签date: 2018-06-06 22:49:07--- 添加type: &quot;tags&quot;到内容中，添加后是这样的 12345---title: 文章分类date: 2018-06-06 22:49:07type: "tags"--- 给文章添加tags属性打开需要添加标签的文章，为其添加tags属性下方的tags:Hexo添加分类及标签- 表格- 表单验证就是这篇文章的标签了 12345678910---title: Hexo添加分类及标签date: 2018-06-06 22:49:07categories: - Hexo笔记tags:- Hexo添加分类及标签- 表格- 表单验证--- 至此，成功给文章添加分类，点击首页的标签可以看到该标签下的所有文章当然，只有添加了 tags: xxx 的文章才会被收录到首页的标签中细心的朋友可能已经发现，这两个的设置几乎一模一样！是的，没错，思路都是一样的所以我们可以打开 \hexo\scaffolds/post.md 文件，在 tages:上面加入categories:1234567vim /hexo/scaffolds/post.md---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;categories:tags:--- 保存后执行hexo new &quot;文章名&quot;命令生成的文件，页面里就有categories:项了\hexo\scaffolds\ 目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值]]></content>
+    <content type="text"><![CDATA[Hexo添加分类及标签创建 分类 选项 生成 分类 页并添加 type 属性打开命令行，进入博客所在文件夹，执行命令 1hexo new page categories 成功后会提示 1INFO Created: ~/hexo/source/categories/index.md 根据上面的路径，找到 index.md 这个文件，打开后默认内容是这样的 1234---title: 文章分类date: 2018-06-06 22:49:07--- 添加 type: &quot;categories&quot; 到内容中，添加后是这样的 12345---title: 文章分类date: 2018-06-06 22:49:07type: "categories"--- 给文章添加 “categories” 属性 打开需要添加分类的文章，为其添加 categories 属性下方的 categories: Hexo笔记 表示添加这篇文章到 Hexo笔记 这个分类注意：hexo 一篇文章只能属于一个分类，也就是说如果在 - Hexo笔记 下方添加 - xxxhexo 不会产生两个分类，而是把分类嵌套（即该文章属于 - Hexo笔记 下的 - xxx 分类） 123456---title: Hexo添加分类及标签date: 2018-06-06 22:44:41categories: - Hexo笔记--- 至此，成功给文章添加分类，点击首页的 分类 可以看到该分类下的所有文章当然，只有添加了 categories: xxx 的文章才会被收录到首页的 分类 中 创建标签选项 生成 标签 页并添加 type 属性打开命令行，进入博客所在文件夹，执行命令 1hexo new page tags 成功后会提示 1INFO Created: ~/hexo/source/tags/index.md 根据上面的路径，找到index.md这个文件，打开后默认内容是这样的 1234---title: 标签date: 2018-06-06 22:49:07--- 添加 type: &quot;tags&quot; 到内容中，添加后是这样的 12345---title: 文章分类date: 2018-06-06 22:49:07type: "tags"--- 给文章添加tags属性打开需要添加标签的文章，为其添加 tags 属性下方的tags:Hexo添加分类及标签- 表格- 表单验证就是这篇文章的标签了 12345678910---title: Hexo添加分类及标签date: 2018-06-06 22:49:07categories: - Hexo笔记tags:- Hexo添加分类及标签- 表格- 表单验证--- 至此，成功给文章添加分类，点击首页的标签可以看到该标签下的所有文章当然，只有添加了 tags: xxx 的文章才会被收录到首页的标签中细心的朋友可能已经发现，这两个的设置几乎一模一样！是的，没错，思路都是一样的所以我们可以打开 \hexo\scaffolds/post.md 文件，在 tages:上面加入categories:1234567vim /hexo/scaffolds/post.md---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;categories:tags:--- 保存后执行hexo new &quot;文章名&quot;命令生成的文件，页面里就有categories:项了\hexo\scaffolds\ 目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值]]></content>
       <categories>
         <category>Hexo笔记</category>
       </categories>
@@ -166,17 +166,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo安装]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
-      <categories>
-        <category>Hexo笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
@@ -185,6 +174,17 @@
       </categories>
       <tags>
         <tag>Kickstart自动应答文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo安装]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo安装</tag>
       </tags>
   </entry>
   <entry>
