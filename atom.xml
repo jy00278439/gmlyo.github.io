@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-06T16:03:39.766Z</updated>
+  <updated>2018-06-06T16:24:22.224Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next添加文章结束标记</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/07/Next%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/07/Next添加文章结束标记/</id>
+    <published>2018-06-06T16:16:33.000Z</published>
+    <updated>2018-06-06T16:24:22.224Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="添加文章结束标记"><a href="#添加文章结束标记" class="headerlink" title="添加文章结束标记"></a>添加文章结束标记</h3><blockquote><p>编辑 <code>/hexo/themes/next/layout/_macro/post.swig</code> 文件<br>在 <code>if theme.wechat_subscriber.enabled and not is_index</code> 上面添加如下代码</p></blockquote><a id="more"></a><h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>---------------- The End ----------------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> theme.wechat_subscriber.enabled and not is_index %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">include</span></span> 'wechat-subscriber.swig' %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure><h3 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">————— The <span class="keyword">End</span> —————</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;添加文章结束标记&quot;&gt;&lt;a href=&quot;#添加文章结束标记&quot; class=&quot;headerlink&quot; title=&quot;添加文章结束标记&quot;&gt;&lt;/a&gt;添加文章结束标记&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;编辑 &lt;code&gt;/hexo/themes/next/layout/_macro/post.swig&lt;/code&gt; 文件&lt;br&gt;在 &lt;code&gt;if theme.wechat_subscriber.enabled and not is_index&lt;/code&gt; 上面添加如下代码&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next添加文章结束标记" scheme="http://www.gmlyo.com/tags/Next%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Next添加音乐</title>
@@ -396,6 +420,28 @@
   </entry>
   
   <entry>
+    <title>Kickstart自动应答文件</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/03/Kickstart自动应答文件/</id>
+    <published>2018-06-03T08:35:43.000Z</published>
+    <updated>2018-06-06T03:28:14.919Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><a id="more"></a><p><strong>Cobbler</strong></p><p>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Cobbler for Kickstart Configurator for CentOS 7 by clsn</span></span><br><span class="line">install</span><br><span class="line">url <span class="params">--url=</span>$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader <span class="params">--location=mbr</span> <span class="params">--driveorder=sda</span> <span class="params">--append=</span><span class="string">"crashkernel=auto rhgb quiet"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Network information</span></span><br><span class="line">$SNIPPET<span class="params">('network_config')</span></span><br><span class="line"><span class="comment">#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span></span><br><span class="line"></span><br><span class="line">timezone <span class="params">--utc</span> Asia/Shanghai</span><br><span class="line">authconfig <span class="params">--enableshadow</span> <span class="params">--passalgo=sha512</span></span><br><span class="line">rootpw  <span class="params">--iscrypted</span> $default_password_crypted</span><br><span class="line">clearpart <span class="params">--all</span> <span class="params">--initlabel</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Disk partitioning information</span></span><br><span class="line">part pv.374 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=2052</span></span><br><span class="line">part pv.671 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=20484</span></span><br><span class="line">part pv.639 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=1</span> <span class="params">--grow</span></span><br><span class="line">part <span class="string">/boot</span> <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=500</span></span><br><span class="line">volgroup vgswap <span class="params">--pesize=4096</span> pv.374</span><br><span class="line">volgroup vgroot <span class="params">--pesize=4096</span> pv.671</span><br><span class="line">volgroup vgdata <span class="params">--pesize=4096</span> pv.639</span><br><span class="line">logvol /  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=20480</span> <span class="params">--name=lvroot</span> <span class="params">--vgname=vgroot</span></span><br><span class="line">logvol swap  <span class="params">--fstype=</span><span class="string">"swap"</span> <span class="params">--size=2048</span> <span class="params">--name=lvswap</span> <span class="params">--vgname=vgswap</span></span><br><span class="line">logvol <span class="string">/data</span>  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=1</span> <span class="params">--grow</span> <span class="params">--name=lvdata</span> <span class="params">--vgname=vgdata</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot <span class="params">--disable</span></span><br><span class="line">selinux <span class="params">--disabled</span></span><br><span class="line">firewall <span class="params">--disabled</span></span><br><span class="line">logging <span class="params">--level=info</span></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line">%pre</span><br><span class="line">$SNIPPET<span class="params">('log_ks_pre')</span></span><br><span class="line">$SNIPPET<span class="params">('kickstart_start')</span></span><br><span class="line">$SNIPPET<span class="params">('pre_install_network_config')</span></span><br><span class="line"><span class="comment"># Enable installation monitoring</span></span><br><span class="line">$SNIPPET<span class="params">('pre_anamon')</span></span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line">%end</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Kickstart-自动应答文件&quot;&gt;&lt;a href=&quot;#Kickstart-自动应答文件&quot; class=&quot;headerlink&quot; title=&quot;Kickstart 自动应答文件&quot;&gt;&lt;/a&gt;Kickstart 自动应答文件&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Cobbler笔记" scheme="http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Kickstart自动应答文件" scheme="http://www.gmlyo.com/tags/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo安装</title>
     <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/"/>
     <id>http://www.gmlyo.com//blog/2018/06/03/Hexo安装/</id>
@@ -420,28 +466,6 @@
   </entry>
   
   <entry>
-    <title>Kickstart自动应答文件</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/03/Kickstart自动应答文件/</id>
-    <published>2018-06-03T08:35:43.000Z</published>
-    <updated>2018-06-06T03:28:14.919Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><a id="more"></a><p><strong>Cobbler</strong></p><p>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Cobbler for Kickstart Configurator for CentOS 7 by clsn</span></span><br><span class="line">install</span><br><span class="line">url <span class="params">--url=</span>$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader <span class="params">--location=mbr</span> <span class="params">--driveorder=sda</span> <span class="params">--append=</span><span class="string">"crashkernel=auto rhgb quiet"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Network information</span></span><br><span class="line">$SNIPPET<span class="params">('network_config')</span></span><br><span class="line"><span class="comment">#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span></span><br><span class="line"></span><br><span class="line">timezone <span class="params">--utc</span> Asia/Shanghai</span><br><span class="line">authconfig <span class="params">--enableshadow</span> <span class="params">--passalgo=sha512</span></span><br><span class="line">rootpw  <span class="params">--iscrypted</span> $default_password_crypted</span><br><span class="line">clearpart <span class="params">--all</span> <span class="params">--initlabel</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Disk partitioning information</span></span><br><span class="line">part pv.374 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=2052</span></span><br><span class="line">part pv.671 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=20484</span></span><br><span class="line">part pv.639 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=1</span> <span class="params">--grow</span></span><br><span class="line">part <span class="string">/boot</span> <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=500</span></span><br><span class="line">volgroup vgswap <span class="params">--pesize=4096</span> pv.374</span><br><span class="line">volgroup vgroot <span class="params">--pesize=4096</span> pv.671</span><br><span class="line">volgroup vgdata <span class="params">--pesize=4096</span> pv.639</span><br><span class="line">logvol /  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=20480</span> <span class="params">--name=lvroot</span> <span class="params">--vgname=vgroot</span></span><br><span class="line">logvol swap  <span class="params">--fstype=</span><span class="string">"swap"</span> <span class="params">--size=2048</span> <span class="params">--name=lvswap</span> <span class="params">--vgname=vgswap</span></span><br><span class="line">logvol <span class="string">/data</span>  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=1</span> <span class="params">--grow</span> <span class="params">--name=lvdata</span> <span class="params">--vgname=vgdata</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot <span class="params">--disable</span></span><br><span class="line">selinux <span class="params">--disabled</span></span><br><span class="line">firewall <span class="params">--disabled</span></span><br><span class="line">logging <span class="params">--level=info</span></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line">%pre</span><br><span class="line">$SNIPPET<span class="params">('log_ks_pre')</span></span><br><span class="line">$SNIPPET<span class="params">('kickstart_start')</span></span><br><span class="line">$SNIPPET<span class="params">('pre_install_network_config')</span></span><br><span class="line"><span class="comment"># Enable installation monitoring</span></span><br><span class="line">$SNIPPET<span class="params">('pre_anamon')</span></span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line">%end</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Kickstart-自动应答文件&quot;&gt;&lt;a href=&quot;#Kickstart-自动应答文件&quot; class=&quot;headerlink&quot; title=&quot;Kickstart 自动应答文件&quot;&gt;&lt;/a&gt;Kickstart 自动应答文件&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Cobbler笔记" scheme="http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Kickstart自动应答文件" scheme="http://www.gmlyo.com/tags/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo 绑定自定义域名</title>
     <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
     <id>http://www.gmlyo.com//blog/2018/06/03/Hexo绑定自定义域名/</id>
@@ -460,28 +484,6 @@
     
     
       <category term="Hexo 绑定自定义域名" scheme="http://www.gmlyo.com/tags/Hexo-%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 删除文章</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/03/Hexo删除文章/</id>
-    <published>2018-06-02T23:49:59.000Z</published>
-    <updated>2018-06-04T01:49:13.532Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Hexo-如何删除文章？"><a href="#Hexo-如何删除文章？" class="headerlink" title="Hexo 如何删除文章？"></a>Hexo 如何删除文章？</h3><a id="more"></a> <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">删除文章的过程很简单，先删除本地文件，然后通过生成和部署命令将远程仓库中的文件也一并删除。</span><br><span class="line">以最开始默认形成的 hello-world.md 这篇文章为例</span><br><span class="line">首先进入 D:<span class="symbol">\B</span>log<span class="symbol">\g</span>mlyo<span class="symbol">\s</span>ource<span class="symbol">\_</span>posts<span class="symbol">\ </span>文件夹中</span><br><span class="line">找到 hello-world.md 文件，在本地直接执行删除。</span><br><span class="line"></span><br><span class="line">然后依次执行</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">再去主页查看就会发现博客上面已经什么都没有了</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hexo-如何删除文章？&quot;&gt;&lt;a href=&quot;#Hexo-如何删除文章？&quot; class=&quot;headerlink&quot; title=&quot;Hexo 如何删除文章？&quot;&gt;&lt;/a&gt;Hexo 如何删除文章？&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Hexo 删除文章" scheme="http://www.gmlyo.com/tags/Hexo-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
