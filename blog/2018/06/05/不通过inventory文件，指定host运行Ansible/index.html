@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="如何不通过 inventory 文件，直接指定 host 运行 Ansible？ 使用过 ansible 的都知道，不管是运行 Ad-Hoc 还是 playbook，都需要指定一个 inventory 文件，或者使用默认的 inventory 文件。但是现在有一个主机，它尚未在 inventory 文件中配置，那么我们该如何用 ansible 对其进行操作呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-04T18:18:24.942Z">
+<meta property="og:updated_time" content="2018-06-06T03:24:58.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不通过inventory文件，指定host运行Ansible">
 <meta name="twitter:description" content="如何不通过 inventory 文件，直接指定 host 运行 Ansible？ 使用过 ansible 的都知道，不管是运行 Ad-Hoc 还是 playbook，都需要指定一个 inventory 文件，或者使用默认的 inventory 文件。但是现在有一个主机，它尚未在 inventory 文件中配置，那么我们该如何用 ansible 对其进行操作呢？">
@@ -420,11 +420,11 @@
 <blockquote>
 <p>一般我们执行都是这样的</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible 192.168.35.215 -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    "changed": false, </span><br><span class="line">    "ping": "pong"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible 192.168.35.215 -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    <span class="string">"changed"</span>: <span class="literal">false</span>, </span><br><span class="line">    <span class="string">"ping"</span>: <span class="string">"pong"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这时需要在 inventory 文件 <code>/etc/ansible/hosts</code> 中配置 192.168.35.215 信息</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[NgxProxy]</span><br><span class="line">192.168.35.215</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[NgxProxy]</span></span><br><span class="line">192<span class="selector-class">.168</span><span class="selector-class">.35</span><span class="selector-class">.215</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>如果没有在 inventory 文件中配置该主机信息，又想用 ansible 对其进行操作<br>就需要用到逗号 <code>,</code> 字符，使用方法如下</p>
 </blockquote>
@@ -432,7 +432,7 @@
 <blockquote>
 <p>需要注意的是，需要指定范围为 <code>all</code></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible all -i 192.168.35.215, -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    "changed": false, </span><br><span class="line">    "ping": "pong"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible all -i 192.168.35.215, -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    <span class="string">"changed"</span>: <span class="literal">false</span>, </span><br><span class="line">    <span class="string">"ping"</span>: <span class="string">"pong"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>

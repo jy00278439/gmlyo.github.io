@@ -51,13 +51,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/%E5%A6%82%E4%BD%95%E4%B8%8D%E9%80%9A%E8%BF%87-inventory-%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-host-%E8%BF%90%E8%A1%8C-Ansible%EF%BC%9F/</loc>
-        <lastmod>2018-06-04T18:18:24.942Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</loc>
         <lastmod>2018-06-05T17:25:29.186Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -102,6 +95,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Next%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0/</loc>
         <lastmod>2018-06-06T03:18:51.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/%E5%A6%82%E4%BD%95%E4%B8%8D%E9%80%9A%E8%BF%87-inventory-%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-host-%E8%BF%90%E8%A1%8C-Ansible%EF%BC%9F/</loc>
+        <lastmod>2018-06-06T03:24:58.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
