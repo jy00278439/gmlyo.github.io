@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-06T15:12:27.741Z</updated>
+  <updated>2018-06-06T16:03:39.766Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Next添加音乐</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/06/Next%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/06/Next添加音乐/</id>
+    <published>2018-06-06T15:58:39.000Z</published>
+    <updated>2018-06-06T16:03:39.766Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Next-添加音乐"><a href="#Next-添加音乐" class="headerlink" title="Next 添加音乐"></a>Next 添加音乐</h3><blockquote><p>去网易云音乐搜索喜欢的音乐，点击生成外链播放器，复制代码直接放到博文末尾即可<br><code>height</code> 设为 <code>0</code> 可隐藏播放器，但仍然可以播放音乐<br><code>auto</code> 设成 <code>0</code> 可手动播放，默认是 <code>1</code> 自动播放</p></blockquote><a id="more"></a><blockquote><p>编辑 <code>/hexo/themes/next/layout/_custom/sidebar.swig</code> 文件里，播放器会显示在站点预览中<br>或<br>编辑 <code>/hexo/themes/next/layout/_macro/sidebar.swig</code> 文件里</p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将代码粘贴到一个合适的位置</span></span><br><span class="line">&lt;iframe <span class="attribute">frameborder</span>=<span class="string">"no"</span> <span class="attribute">border</span>=<span class="string">"0"</span> <span class="attribute">marginwidth</span>=<span class="string">"0"</span> <span class="attribute">marginheight</span>=<span class="string">"0"</span> <span class="attribute">width</span>=330 <span class="attribute">height</span>=110 </span><br><span class="line"><span class="attribute">src</span>=<span class="string">"//music.163.com/outchain/player?type=0&amp;id=2188265841&amp;auto=1&amp;height=90"</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Next-添加音乐&quot;&gt;&lt;a href=&quot;#Next-添加音乐&quot; class=&quot;headerlink&quot; title=&quot;Next 添加音乐&quot;&gt;&lt;/a&gt;Next 添加音乐&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;去网易云音乐搜索喜欢的音乐，点击生成外链播放器，复制代码直接放到博文末尾即可&lt;br&gt;&lt;code&gt;height&lt;/code&gt; 设为 &lt;code&gt;0&lt;/code&gt; 可隐藏播放器，但仍然可以播放音乐&lt;br&gt;&lt;code&gt;auto&lt;/code&gt; 设成 &lt;code&gt;0&lt;/code&gt; 可手动播放，默认是 &lt;code&gt;1&lt;/code&gt; 自动播放&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Next添加音乐" scheme="http://www.gmlyo.com/tags/Next%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo添加分类及标签</title>
