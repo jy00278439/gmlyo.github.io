@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[Next设置首页隐藏指定文章]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F06%2FNext%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[Next设置首页隐藏指定文章 修改 next 主题文件夹下的 layout 中的 index.swig 文件定位修改 post_template.render(post, true) 1234567891011D:\Blog\gmlyo\themes\next\layout\index.swig...省略...&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.visible !== 'hide' %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt;...省略... 其中修改的是为文章的首页显示添加判断条件 在新的 post 中添加 visible 字段来控制是否首页显示 例如：当前这篇文章 12345title: Next设置首页隐藏指定文章date: 2018-06-06 01:08:59categories: Next笔记tags: Next设置首页隐藏指定文章visible: hide 这里如果加上 hide 则该文章就不会在文章首页显示，如果留空则表示默认显示]]></content>
+    <content type="text"><![CDATA[Next设置首页隐藏指定文章 修改 next 主题文件夹下的 layout 中的 index.swig 文件定位修改 post_template.render(post, true) 1234567891011\themes\next\layout\index.swig...省略...&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.visible !== 'hide' %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt;...省略... 其中修改的是为文章的首页显示添加判断条件 在新的 post 中添加 visible 字段来控制是否首页显示 例如：当前这篇文章 12345title: Next设置首页隐藏指定文章date: 2018-06-06 01:08:59categories: Next笔记tags: Next设置首页隐藏指定文章visible: hide 这里如果加上 hide 则该文章就不会在文章首页显示，如果留空则表示默认显示]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
