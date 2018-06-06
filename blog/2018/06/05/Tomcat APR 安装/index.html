@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T06:58:26.898Z">
+<meta property="og:updated_time" content="2018-06-06T07:00:19.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat APR 安装">
 <meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat是用 BIO 的方式来实现网络通信的，性能非常低。而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决">
@@ -432,15 +432,15 @@
 <p>大致就是通过 tomcat-native 库，使 tomcat 运行时通过 APR 更多的调用本地 API，达到提升性能的目的。<br>由于依赖关系，安装时，先安装 APR，openssl，然后再安装 tomcat-native，最后配置 tomcat 启动时依赖的库路径。</p>
 </blockquote>
 <h4 id="有-两-种方式配置-Tomcat-使用-apr-库"><a href="#有-两-种方式配置-Tomcat-使用-apr-库" class="headerlink" title="有 两 种方式配置 Tomcat 使用 apr 库"></a>有 两 种方式配置 Tomcat 使用 apr 库</h4><blockquote>
-<p>方式一：配置环境变量<br>在 Linux 系统中，只要 $LD_LIBRARY_PATH 变量值所在路径包含 Tomcat 本地库<br>默认就使用 org.apache.coyote.http11.Http11AprProtocol</p>
+<p>方式一：配置环境变量<br>在 Linux 系统中，只要 <code>$LD_LIBRARY_PATH</code> 变量值所在路径包含 Tomcat 本地库<br>默认就使用 <code>org.apache.coyote.http11.Http11AprProtocol</code></p>
 </blockquote>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LD_LIBRARY_PATH</span>=/data/apr/lib</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>方式二：将 apr 库路径参数添加到系统变量中（推荐）<br>编辑 $CATALINA_HOME/bin/setenv.sh 文件（如果文件不存在，新建文件）</p>
+<p>方式二：将 apr 库路径参数添加到系统变量中（推荐）<br>编辑 <code>$CATALINA_HOME/bin/setenv.sh</code> 文件（如果文件不存在，新建文件）</p>
 </blockquote>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">CATALINA_OPTS</span>=<span class="string">"<span class="variable">$CATALINA_OPTS</span> -Djava.library.path=/usr/local/apr/lib"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>修改 $TOMCAT_HOME/conf/server.xml</p>
+<p>修改 <code>$TOMCAT_HOME/conf/server.xml</code></p>
 </blockquote>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">"8000"</span> protocol=<span class="string">"org.apache.coyote.http11.Http11NioProtocol"</span></span><br><span class="line">            connectionTimeout=<span class="string">"20000"</span></span><br><span class="line">            redirectPort=<span class="string">"8443"</span></span><br><span class="line">protocal 修改为 org<span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.http11</span><span class="selector-class">.Http11AprProtocol</span>，重启 tomcat</span><br></pre></td></tr></table></figure>
 <h3 id="配置安装-Tomcat-native"><a href="#配置安装-Tomcat-native" class="headerlink" title="配置安装 Tomcat native"></a>配置安装 Tomcat native</h3><blockquote>
