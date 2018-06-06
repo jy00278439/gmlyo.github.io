@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[Next添加访问量]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F06%2FNext%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[Next添加访问量 使用 Next 主题自带的不蒜子统计，仅限于在文章页面显示阅读量，不在首页显示 修改 themes\next\ _config.yml 文件123456789101112131415busuanzi_count: # count values only if the other configs are false enable: true # custom uv span for the whole site site_uv: true site_uv_header: &lt;i class="fa fa-user"&gt;&lt;/i&gt; 访问人数(UV) site_uv_footer: 人 # custom pv span for the whole site site_pv: true site_pv_header: &lt;i class="fa fa-eye"&gt;&lt;/i&gt; 总访问量(PV) site_pv_footer: 次 # custom pv span for one page only page_pv: true page_pv_header: &lt;i class="fa fa-file-o"&gt;&lt;/i&gt; 浏览 page_pv_footer: 次 查看底部显示效果]]></content>
+    <content type="text"><![CDATA[Next添加访问量 使用 Next 主题自带的不蒜子统计，仅限于在文章页面显示阅读量，不在首页显示 修改 themes\next\ _config.yml 文件123456789101112131415busuanzi_count: # count values only if the other configs are false enable: true # custom uv span for the whole site site_uv: true site_uv_header: &lt;i class="fa fa-user"&gt;&lt;/i&gt; 访问人数(UV) site_uv_footer: 人 # custom pv span for the whole site site_pv: true site_pv_header: &lt;i class="fa fa-eye"&gt;&lt;/i&gt; 总访问量(PV) site_pv_footer: 次 # custom pv span for one page only page_pv: true page_pv_header: &lt;i class="fa fa-file-o"&gt;&lt;/i&gt; 浏览 page_pv_footer: 次 总访问量 (PV) 总访问量独立访客 (UV) 访问人数网站的浏览次数为 PV网站的访客数为 UVPV 计算方式，单个用户连续点击 N 篇文章，记录 N 次访问量UV 计算方式，单个用户连续点击 N 篇文章，只记录 1 次访客数可以根据需要添加相应的统计功能 查看底部显示效果]]></content>
       <categories>
         <category>Next笔记</category>
       </categories>
