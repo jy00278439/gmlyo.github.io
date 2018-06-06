@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-06T16:24:22.224Z</updated>
+  <updated>2018-06-06T17:12:09.142Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LVM 磁盘扩展</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/07/LVM%20%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/07/LVM 磁盘扩展/</id>
+    <published>2018-06-06T17:11:42.000Z</published>
+    <updated>2018-06-06T17:12:09.142Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LVM-磁盘扩展"><a href="#LVM-磁盘扩展" class="headerlink" title="LVM 磁盘扩展"></a>LVM 磁盘扩展</h2><a id="more"></a><h3 id="查看磁盘空间"><a href="#查看磁盘空间" class="headerlink" title="查看磁盘空间"></a>查看磁盘空间</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">df -h</span></span><br></pre></td></tr></table></figure><h3 id="查看-lv-信息"><a href="#查看-lv-信息" class="headerlink" title="查看 lv 信息"></a>查看 lv 信息</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">lvs</span></span><br></pre></td></tr></table></figure><h3 id="查看-VG-信息"><a href="#查看-VG-信息" class="headerlink" title="查看 VG 信息"></a>查看 VG 信息</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vgs</span></span><br></pre></td></tr></table></figure><h3 id="创建-PV"><a href="#创建-PV" class="headerlink" title="创建 PV"></a>创建 PV</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvcreate <span class="regexp">/dev/</span>vdb</span><br></pre></td></tr></table></figure><h3 id="扩展已有的-VG-容量"><a href="#扩展已有的-VG-容量" class="headerlink" title="扩展已有的 VG 容量"></a>扩展已有的 VG 容量</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgextend vgdata <span class="regexp">/dev/</span>vdb</span><br></pre></td></tr></table></figure><blockquote><p><code>Couldn&#39;t&#39; create temporary archive name.</code><br>因为磁盘实在太小了或已经没有空间了，无法执行，删除一些数据就好了</p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vgextend vgdata /dev/sda</span><br><span class="line">Volume<span class="built_in"> group </span><span class="string">"vgdata"</span> successfully extended</span><br></pre></td></tr></table></figure><h3 id="查看-VG-信息-1"><a href="#查看-VG-信息-1" class="headerlink" title="查看 VG 信息"></a>查看 VG 信息</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vgs</span></span><br></pre></td></tr></table></figure><h3 id="扩展已有-LV-容量"><a href="#扩展已有-LV-容量" class="headerlink" title="扩展已有 LV 容量"></a>扩展已有 LV 容量</h3><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lvextend -L +99.99G -n /dev/vgdata/lvdata</span><br><span class="line">lvextend -L +1020M -n /dev/vgdata/lvdata</span><br><span class="line">-<span class="ruby">L    <span class="comment"># 指定逻辑卷的大小，单位为“kKmMgGtT”字节，也就是Size</span></span></span><br><span class="line"><span class="ruby">-l    <span class="comment"># 指定逻辑卷的大小，单位为 PE 数</span></span></span><br></pre></td></tr></table></figure><h3 id="重新加载逻辑卷"><a href="#重新加载逻辑卷" class="headerlink" title="重新加载逻辑卷"></a>重新加载逻辑卷</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 加载 ext 文件系统</span></span><br><span class="line">resize2fs <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br><span class="line"></span><br><span class="line"><span class="meta"># 加载 xfs 文件系统</span></span><br><span class="line">xfs_growfs <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LVM-磁盘扩展&quot;&gt;&lt;a href=&quot;#LVM-磁盘扩展&quot; class=&quot;headerlink&quot; title=&quot;LVM 磁盘扩展&quot;&gt;&lt;/a&gt;LVM 磁盘扩展&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="LVM笔记" scheme="http://www.gmlyo.com/categories/LVM%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="LVM 磁盘扩展" scheme="http://www.gmlyo.com/tags/LVM-%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建LVM</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/07/LVM%20%E5%88%9B%E5%BB%BA/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/07/LVM 创建/</id>
+    <published>2018-06-06T17:05:31.000Z</published>
+    <updated>2018-06-06T17:10:04.790Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建-LVM"><a href="#创建-LVM" class="headerlink" title="创建 LVM"></a>创建 LVM</h2><a id="more"></a><h3 id="安装-LVM"><a href="#安装-LVM" class="headerlink" title="安装 LVM"></a>安装 LVM</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> lvm2</span><br></pre></td></tr></table></figure><h3 id="创建-PV"><a href="#创建-PV" class="headerlink" title="创建 PV"></a>创建 PV</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pvcreate /dev/vdb</span><br><span class="line">Physical <span class="keyword">volume</span><span class="bash"> <span class="string">"/dev/vdb"</span> successfully created</span></span><br></pre></td></tr></table></figure><h3 id="创建-VG"><a href="#创建-VG" class="headerlink" title="创建 VG"></a>创建 VG</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vgcreate vgdata /dev/vdb</span><br><span class="line">Volume<span class="built_in"> group </span><span class="string">"vgdata"</span> successfully created</span><br></pre></td></tr></table></figure><h3 id="创建-LV"><a href="#创建-LV" class="headerlink" title="创建 LV"></a>创建 LV</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lvcreate -L <span class="number">49.99</span>G -n lvdata vgdata /dev/vdb</span><br><span class="line">Logical <span class="keyword">volume</span><span class="bash"> <span class="string">"lvdata"</span> created.</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">lvcreate -L 99.99G -n lvdata vgdata /dev/vdb</span></span><br><span class="line"><span class="bash">Logical volume <span class="string">"lvdata"</span> created.</span></span><br></pre></td></tr></table></figure><h3 id="文件系统格式化"><a href="#文件系统格式化" class="headerlink" title="文件系统格式化"></a>文件系统格式化</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 格式化 ext 文件系统</span></span><br><span class="line">mkfs.ext4 <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br><span class="line"></span><br><span class="line"><span class="meta"># 格式化 xfs 文件系统</span></span><br><span class="line">mkfs.xfs <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br></pre></td></tr></table></figure><h3 id="挂载逻辑卷到目录"><a href="#挂载逻辑卷到目录" class="headerlink" title="挂载逻辑卷到目录"></a>挂载逻辑卷到目录</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mkdir</span> -pv /<span class="class"><span class="keyword">data</span></span></span><br><span class="line"><span class="title">mount</span> /dev/vgdata/lvdata /<span class="class"><span class="keyword">data</span></span></span><br></pre></td></tr></table></figure><h3 id="编辑-etc-fstab"><a href="#编辑-etc-fstab" class="headerlink" title="编辑 /etc/fstab"></a>编辑 /etc/fstab</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="string">/etc/fstab</span></span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br><span class="line"><span class="string">/dev/mapper/vgdata-lvdata</span>                 <span class="string">/data</span>   xfs     defaults        0 0</span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br></pre></td></tr></table></figure><p>### </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建-LVM&quot;&gt;&lt;a href=&quot;#创建-LVM&quot; class=&quot;headerlink&quot; title=&quot;创建 LVM&quot;&gt;&lt;/a&gt;创建 LVM&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="LVM笔记" scheme="http://www.gmlyo.com/categories/LVM%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="创建LVM" scheme="http://www.gmlyo.com/tags/%E5%88%9B%E5%BB%BALVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Next添加文章结束标记</title>
@@ -420,28 +464,6 @@
   </entry>
   
   <entry>
-    <title>Kickstart自动应答文件</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/03/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/03/Kickstart自动应答文件/</id>
-    <published>2018-06-03T08:35:43.000Z</published>
-    <updated>2018-06-06T03:28:14.919Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Kickstart-自动应答文件"><a href="#Kickstart-自动应答文件" class="headerlink" title="Kickstart 自动应答文件"></a>Kickstart 自动应答文件</h3><a id="more"></a><p><strong>Cobbler</strong></p><p>vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Cobbler for Kickstart Configurator for CentOS 7 by clsn</span></span><br><span class="line">install</span><br><span class="line">url <span class="params">--url=</span>$tree</span><br><span class="line">text</span><br><span class="line">lang en_US.UTF-8</span><br><span class="line">keyboard us</span><br><span class="line">zerombr</span><br><span class="line">bootloader <span class="params">--location=mbr</span> <span class="params">--driveorder=sda</span> <span class="params">--append=</span><span class="string">"crashkernel=auto rhgb quiet"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Network information</span></span><br><span class="line">$SNIPPET<span class="params">('network_config')</span></span><br><span class="line"><span class="comment">#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7</span></span><br><span class="line"></span><br><span class="line">timezone <span class="params">--utc</span> Asia/Shanghai</span><br><span class="line">authconfig <span class="params">--enableshadow</span> <span class="params">--passalgo=sha512</span></span><br><span class="line">rootpw  <span class="params">--iscrypted</span> $default_password_crypted</span><br><span class="line">clearpart <span class="params">--all</span> <span class="params">--initlabel</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Disk partitioning information</span></span><br><span class="line">part pv.374 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=2052</span></span><br><span class="line">part pv.671 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=20484</span></span><br><span class="line">part pv.639 <span class="params">--fstype=</span><span class="string">"lvmpv"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=1</span> <span class="params">--grow</span></span><br><span class="line">part <span class="string">/boot</span> <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--ondisk=sda</span> <span class="params">--size=500</span></span><br><span class="line">volgroup vgswap <span class="params">--pesize=4096</span> pv.374</span><br><span class="line">volgroup vgroot <span class="params">--pesize=4096</span> pv.671</span><br><span class="line">volgroup vgdata <span class="params">--pesize=4096</span> pv.639</span><br><span class="line">logvol /  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=20480</span> <span class="params">--name=lvroot</span> <span class="params">--vgname=vgroot</span></span><br><span class="line">logvol swap  <span class="params">--fstype=</span><span class="string">"swap"</span> <span class="params">--size=2048</span> <span class="params">--name=lvswap</span> <span class="params">--vgname=vgswap</span></span><br><span class="line">logvol <span class="string">/data</span>  <span class="params">--fstype=</span><span class="string">"xfs"</span> <span class="params">--size=1</span> <span class="params">--grow</span> <span class="params">--name=lvdata</span> <span class="params">--vgname=vgdata</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firstboot <span class="params">--disable</span></span><br><span class="line">selinux <span class="params">--disabled</span></span><br><span class="line">firewall <span class="params">--disabled</span></span><br><span class="line">logging <span class="params">--level=info</span></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line">%pre</span><br><span class="line">$SNIPPET<span class="params">('log_ks_pre')</span></span><br><span class="line">$SNIPPET<span class="params">('kickstart_start')</span></span><br><span class="line">$SNIPPET<span class="params">('pre_install_network_config')</span></span><br><span class="line"><span class="comment"># Enable installation monitoring</span></span><br><span class="line">$SNIPPET<span class="params">('pre_anamon')</span></span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%packages</span><br><span class="line">@^minimal</span><br><span class="line">@compat-libraries</span><br><span class="line">@core</span><br><span class="line">@debugging</span><br><span class="line">@development</span><br><span class="line">bash-completion</span><br><span class="line">chrony</span><br><span class="line">dos2unix</span><br><span class="line">kexec-tools</span><br><span class="line">lrzsz</span><br><span class="line">nmap</span><br><span class="line">sysstat</span><br><span class="line">telnet</span><br><span class="line">tree</span><br><span class="line">vim</span><br><span class="line">wget</span><br><span class="line">net-tools</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%post</span><br><span class="line">systemctl disable postfix.service</span><br><span class="line">%end</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Kickstart-自动应答文件&quot;&gt;&lt;a href=&quot;#Kickstart-自动应答文件&quot; class=&quot;headerlink&quot; title=&quot;Kickstart 自动应答文件&quot;&gt;&lt;/a&gt;Kickstart 自动应答文件&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Cobbler笔记" scheme="http://www.gmlyo.com/categories/Cobbler%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Kickstart自动应答文件" scheme="http://www.gmlyo.com/tags/Kickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo安装</title>
     <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/"/>
     <id>http://www.gmlyo.com//blog/2018/06/03/Hexo安装/</id>
@@ -462,28 +484,6 @@
     
     
       <category term="Hexo安装" scheme="http://www.gmlyo.com/tags/Hexo%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 绑定自定义域名</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/03/Hexo%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/03/Hexo绑定自定义域名/</id>
-    <published>2018-06-02T23:50:58.000Z</published>
-    <updated>2018-06-06T03:28:31.641Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="如何将自己购买的域名连接到-Github-Pages？"><a href="#如何将自己购买的域名连接到-Github-Pages？" class="headerlink" title="如何将自己购买的域名连接到 Github Pages？"></a>如何将自己购买的域名连接到 Github Pages？</h3><a id="more"></a><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在 source 目录下新建 CNAME 文件，在首行添加网站域名</span><br><span class="line">如：www.gmlyo.com</span><br><span class="line">注意前面没有 https:<span class="regexp">//</span>，http:<span class="regexp">//</span> 等信息，然后重新重新生成并部署站点</span><br><span class="line">hexo clean  <span class="comment"># 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题</span></span><br><span class="line">hexo g      <span class="comment"># hexo generade</span></span><br><span class="line">hexo d      <span class="comment"># hexo deploy</span></span><br><span class="line">或</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure><h3 id="设置域名解析"><a href="#设置域名解析" class="headerlink" title="设置域名解析"></a>设置域名解析</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、先添加一个CNAME，主机记录写@，后面记录值写上你的 xxx<span class="selector-class">.github</span><span class="selector-class">.io</span></span><br><span class="line"><span class="number">2</span>、再添加一个CNAME，主机记录写www，后面记录值也是 xxx<span class="selector-class">.github</span><span class="selector-class">.io</span></span><br><span class="line">这样别人用 www 和不用 www 都能访问你的网站</span><br><span class="line">其实 www 的方式，会先解析成 https:<span class="comment">//xxx.github.io，然后根据 CNAME 再变成 http://www.gmlyo.com，即中间是经过一次转换的。</span></span><br><span class="line">注：除了使用 CNAME 记录也有人使用 A 记录，后面的记录值是写 Github Page 里面的 IP 地址，但有时候 IP 地址会更改，导致最后解析不正确，所以还是推荐用 CNAME 别名记录要好些，不建议用 IP。</span><br><span class="line"><span class="number">3</span>、等待<span class="number">10</span>分钟左右，域名生效后刷新浏览器，使用自定义域名访问网站即可</span><br></pre></td></tr></table></figure><h3 id="Hexo-部署后，CNAME-会被自动删除，如何解决？"><a href="#Hexo-部署后，CNAME-会被自动删除，如何解决？" class="headerlink" title="Hexo 部署后，CNAME 会被自动删除，如何解决？"></a>Hexo 部署后，CNAME 会被自动删除，如何解决？</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将需要上传至 Github 的文件放在 source 目录下</span><br><span class="line">如：CNAME, README<span class="selector-class">.md</span>, favicon<span class="selector-class">.ico</span>, images 目录等</span><br><span class="line">将这些都放在 source 目录下，每次上传就不会消失了</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;如何将自己购买的域名连接到-Github-Pages？&quot;&gt;&lt;a href=&quot;#如何将自己购买的域名连接到-Github-Pages？&quot; class=&quot;headerlink&quot; title=&quot;如何将自己购买的域名连接到 Github Pages？&quot;&gt;&lt;/a&gt;如何将自己购买的域名连接到 Github Pages？&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Hexo笔记" scheme="http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Hexo 绑定自定义域名" scheme="http://www.gmlyo.com/tags/Hexo-%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/"/>
     
   </entry>
   
