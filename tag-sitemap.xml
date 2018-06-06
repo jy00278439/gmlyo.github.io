@@ -58,13 +58,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Next%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0/</loc>
-        <lastmod>2018-06-05T17:18:46.948Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</loc>
         <lastmod>2018-06-05T17:25:29.186Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -102,6 +95,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Next%E5%A4%B4%E5%83%8F%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC/</loc>
         <lastmod>2018-06-05T19:08:21.962Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Next%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E7%AB%A0/</loc>
+        <lastmod>2018-06-06T03:18:51.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
