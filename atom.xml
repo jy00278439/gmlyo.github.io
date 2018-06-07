@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-07T18:45:31.851Z</updated>
+  <updated>2018-06-07T18:51:43.803Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -17,33 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Shell日志切割</title>
+    <title>Shell脚本日志切割</title>
     <link href="http://www.gmlyo.com//blog/2018/06/08/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2/"/>
     <id>http://www.gmlyo.com//blog/2018/06/08/Shell脚本日志切割/</id>
     <published>2018-06-07T18:42:03.000Z</published>
-    <updated>2018-06-07T18:45:31.851Z</updated>
+    <updated>2018-06-07T18:51:43.803Z</updated>
     
-    <content type="html"><![CDATA[<p>Shell 脚本日志切割</p><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim logcut.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line">yesterday=$(date -d <span class="string">"yesterday"</span> +%Y-%m-%d)</span><br><span class="line">logsdir=(/data/app/*/logs)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> logdir <span class="keyword">in</span> <span class="variable">$&#123;logsdir[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> logfile <span class="keyword">in</span> $(ls <span class="variable">$&#123;logdir[@]&#125;</span> | egrep <span class="string">"stdout.log|catalina.out"</span>)</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        cp <span class="variable">$logdir</span>/<span class="variable">$logfile</span> <span class="variable">$logdir</span>/<span class="variable">$&#123;logfile%.log&#125;</span>.<span class="variable">$&#123;day&#125;</span>.<span class="built_in">log</span></span><br><span class="line">        cp <span class="variable">$logs</span>/<span class="variable">$file</span> <span class="variable">$logs</span>/<span class="variable">$&#123;file%.out&#125;</span>.<span class="variable">$&#123;day&#125;</span>.out</span><br><span class="line">        cat /dev/null &gt; <span class="variable">$logdir</span>/<span class="variable">$logfile</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="Shell-脚本日志切割"><a href="#Shell-脚本日志切割" class="headerlink" title="Shell 脚本日志切割"></a>Shell 脚本日志切割</h3><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim logcut.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line">yesterday=$(date -d <span class="string">"yesterday"</span> +%Y-%m-%d)</span><br><span class="line">logsdir=(/data/app/*/logs)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> logdir <span class="keyword">in</span> <span class="variable">$&#123;logsdir[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> logfile <span class="keyword">in</span> $(ls <span class="variable">$&#123;logdir[@]&#125;</span> | egrep <span class="string">"stdout.log|catalina.out"</span>)</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        cp <span class="variable">$logdir</span>/<span class="variable">$logfile</span> <span class="variable">$logdir</span>/<span class="variable">$&#123;logfile%.log&#125;</span>.<span class="variable">$&#123;day&#125;</span>.<span class="built_in">log</span></span><br><span class="line">        cp <span class="variable">$logs</span>/<span class="variable">$file</span> <span class="variable">$logs</span>/<span class="variable">$&#123;file%.out&#125;</span>.<span class="variable">$&#123;day&#125;</span>.out</span><br><span class="line">        cat /dev/null &gt; <span class="variable">$logdir</span>/<span class="variable">$logfile</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Shell 脚本日志切割&lt;/p&gt;
+      &lt;h3 id=&quot;Shell-脚本日志切割&quot;&gt;&lt;a href=&quot;#Shell-脚本日志切割&quot; class=&quot;headerlink&quot; title=&quot;Shell 脚本日志切割&quot;&gt;&lt;/a&gt;Shell 脚本日志切割&lt;/h3&gt;
     
     </summary>
     
       <category term="Shell笔记" scheme="http://www.gmlyo.com/categories/Shell%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Shell日志切割" scheme="http://www.gmlyo.com/tags/Shell%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2/"/>
+      <category term="Shell脚本日志切割" scheme="http://www.gmlyo.com/tags/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2/"/>
     
   </entry>
   
   <entry>
-    <title>Shell日志压缩</title>
+    <title>Shell脚本日志压缩</title>
     <link href="http://www.gmlyo.com//blog/2018/06/08/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%8E%8B%E7%BC%A9/"/>
     <id>http://www.gmlyo.com//blog/2018/06/08/Shell脚本日志压缩/</id>
     <published>2018-06-07T16:51:39.000Z</published>
-    <updated>2018-06-07T18:43:58.247Z</updated>
+    <updated>2018-06-07T18:52:01.150Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Shell-脚本日志压缩打包"><a href="#Shell-脚本日志压缩打包" class="headerlink" title="Shell 脚本日志压缩打包"></a>Shell 脚本日志压缩打包</h3><blockquote><p>压缩 <code>7</code> 天前日志<br>每个月 <code>1</code> 号，创建上个月的目录，<code>年-月</code> <code>2018-04</code><br>将 <code>gz</code> 压缩文件拷贝到 <code>年-月</code> <code>2018-04</code> 目录中</p></blockquote><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vim compresslog.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +<span class="string">"%d"</span>)</span><br><span class="line">month=$(date +<span class="string">"%Y-%d"</span>)</span><br><span class="line">lastmonth=$(date +<span class="string">"%Y-%m"</span> -d <span class="string">"last month"</span>)</span><br><span class="line">lastweek=$(date +<span class="string">"%Y-%m-%d"</span> -d <span class="string">"last week"</span>)</span><br><span class="line">logsdir=(/data/app/*/logs)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> logs <span class="keyword">in</span> <span class="variable">$&#123;logsdir[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    find <span class="variable">$logs</span>/ -mtime +7 -regextype posix-extended -regex <span class="string">".*\.(log|out|txt)"</span> -<span class="built_in">exec</span> gzip &#123;&#125; \;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">[ <span class="variable">$day</span> == 01 ] &amp;&amp; <span class="built_in">cd</span> <span class="variable">$&#123;logsdir[@]&#125;</span> &amp;&amp; mkdir -pv <span class="variable">$lastmonth</span></span><br><span class="line"><span class="keyword">for</span> logdir <span class="keyword">in</span> <span class="variable">$&#123;logsdir[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    [ -d <span class="variable">$logdir</span>/<span class="variable">$lastmonth</span> ] || mkdir -pv <span class="variable">$logdir</span>/<span class="variable">$lastmonth</span></span><br><span class="line">    mv <span class="variable">$logdir</span>/*gz <span class="variable">$logdir</span>/<span class="variable">$lastmonth</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -58,7 +58,7 @@
       <category term="Shell笔记" scheme="http://www.gmlyo.com/categories/Shell%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Shell日志压缩" scheme="http://www.gmlyo.com/tags/Shell%E6%97%A5%E5%BF%97%E5%8E%8B%E7%BC%A9/"/>
+      <category term="Shell脚本日志压缩" scheme="http://www.gmlyo.com/tags/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%8E%8B%E7%BC%A9/"/>
     
   </entry>
   

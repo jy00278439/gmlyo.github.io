@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Shell日志切割]]></title>
+    <title><![CDATA[Shell脚本日志切割]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F08%2FShell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2%2F</url>
     <content type="text"><![CDATA[Shell 脚本日志切割 12345678910111213141516vim logcut.sh#!/bin/bashday=$(date +"%Y-%m-%d")yesterday=$(date -d "yesterday" +%Y-%m-%d)logsdir=(/data/app/*/logs)for logdir in $&#123;logsdir[@]&#125;do for logfile in $(ls $&#123;logdir[@]&#125; | egrep "stdout.log|catalina.out") do cp $logdir/$logfile $logdir/$&#123;logfile%.log&#125;.$&#123;day&#125;.log cp $logs/$file $logs/$&#123;file%.out&#125;.$&#123;day&#125;.out cat /dev/null &gt; $logdir/$logfile donedone]]></content>
       <categories>
         <category>Shell笔记</category>
       </categories>
       <tags>
-        <tag>Shell日志切割</tag>
+        <tag>Shell脚本日志切割</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Shell日志压缩]]></title>
+    <title><![CDATA[Shell脚本日志压缩]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F08%2FShell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%8E%8B%E7%BC%A9%2F</url>
     <content type="text"><![CDATA[Shell 脚本日志压缩打包 压缩 7 天前日志每个月 1 号，创建上个月的目录，年-月 2018-04将 gz 压缩文件拷贝到 年-月 2018-04 目录中 1234567891011121314151617181920vim compresslog.sh#!/bin/bashday=$(date +"%d")month=$(date +"%Y-%d")lastmonth=$(date +"%Y-%m" -d "last month")lastweek=$(date +"%Y-%m-%d" -d "last week")logsdir=(/data/app/*/logs)for logs in $&#123;logsdir[@]&#125;do find $logs/ -mtime +7 -regextype posix-extended -regex ".*\.(log|out|txt)" -exec gzip &#123;&#125; \;done[ $day == 01 ] &amp;&amp; cd $&#123;logsdir[@]&#125; &amp;&amp; mkdir -pv $lastmonthfor logdir in $&#123;logsdir[@]&#125;do [ -d $logdir/$lastmonth ] || mkdir -pv $logdir/$lastmonth mv $logdir/*gz $logdir/$lastmonthdone]]></content>
       <categories>
         <category>Shell笔记</category>
       </categories>
       <tags>
-        <tag>Shell日志压缩</tag>
+        <tag>Shell脚本日志压缩</tag>
       </tags>
   </entry>
   <entry>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Shell日志切割," />
+  <meta name="keywords" content="Shell脚本日志切割," />
 
 
 
@@ -82,16 +82,16 @@
 
 
 <meta name="description" content="Shell 脚本日志切割">
-<meta name="keywords" content="Shell日志切割">
+<meta name="keywords" content="Shell脚本日志切割">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell日志切割">
+<meta property="og:title" content="Shell脚本日志切割">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/08/Shell脚本日志切割/index.html">
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Shell 脚本日志切割">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-07T18:45:31.851Z">
+<meta property="og:updated_time" content="2018-06-07T18:51:43.803Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell日志切割">
+<meta name="twitter:title" content="Shell脚本日志切割">
 <meta name="twitter:description" content="Shell 脚本日志切割">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>Shell日志切割 | G加菲</title>
+  <title>Shell脚本日志切割 | G加菲</title>
   
 
 
@@ -336,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell日志切割</h1>
+          <h1 class="post-title" itemprop="name headline">Shell脚本日志切割</h1>
         
 
         <div class="post-meta">
@@ -413,8 +413,7 @@
       
 
       
-        <p>Shell 脚本日志切割</p>
-<a id="more"></a>
+        <h3 id="Shell-脚本日志切割"><a href="#Shell-脚本日志切割" class="headerlink" title="Shell 脚本日志切割"></a>Shell 脚本日志切割</h3><a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim logcut.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">day=$(date +<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line">yesterday=$(date -d <span class="string">"yesterday"</span> +%Y-%m-%d)</span><br><span class="line">logsdir=(/data/app/*/logs)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> logdir <span class="keyword">in</span> <span class="variable">$&#123;logsdir[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> logfile <span class="keyword">in</span> $(ls <span class="variable">$&#123;logdir[@]&#125;</span> | egrep <span class="string">"stdout.log|catalina.out"</span>)</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        cp <span class="variable">$logdir</span>/<span class="variable">$logfile</span> <span class="variable">$logdir</span>/<span class="variable">$&#123;logfile%.log&#125;</span>.<span class="variable">$&#123;day&#125;</span>.<span class="built_in">log</span></span><br><span class="line">        cp <span class="variable">$logs</span>/<span class="variable">$file</span> <span class="variable">$logs</span>/<span class="variable">$&#123;file%.out&#125;</span>.<span class="variable">$&#123;day&#125;</span>.out</span><br><span class="line">        cat /dev/null &gt; <span class="variable">$logdir</span>/<span class="variable">$logfile</span></span><br><span class="line">    <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
       
@@ -434,7 +433,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Shell日志切割/" rel="tag"># Shell日志切割</a>
+            <a href="/tags/Shell脚本日志切割/" rel="tag"># Shell脚本日志切割</a>
           
         </div>
       
@@ -447,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/08/Shell脚本日志压缩/" rel="next" title="Shell日志压缩">
-                <i class="fa fa-chevron-left"></i> Shell日志压缩
+              <a href="/blog/2018/06/08/Shell脚本日志压缩/" rel="next" title="Shell脚本日志压缩">
+                <i class="fa fa-chevron-left"></i> Shell脚本日志压缩
               </a>
             
           </div>
@@ -507,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -618,6 +626,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell-脚本日志切割"><span class="nav-number">1.</span> <span class="nav-text">Shell 脚本日志切割</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
