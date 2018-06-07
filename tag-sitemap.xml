@@ -156,13 +156,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/LVM-%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95/</loc>
-        <lastmod>2018-06-06T17:12:09.142Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2/</loc>
         <lastmod>2018-06-07T18:51:43.803Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -172,6 +165,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Shell%E8%84%9A%E6%9C%AC%E6%97%A5%E5%BF%97%E5%8E%8B%E7%BC%A9/</loc>
         <lastmod>2018-06-07T18:52:01.150Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/LVM-%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95/</loc>
+        <lastmod>2018-06-07T18:57:45.323Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
