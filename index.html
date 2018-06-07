@@ -860,7 +860,10 @@
 
       
         
-          <h2 id="创建-LVM"><a href="#创建-LVM" class="headerlink" title="创建 LVM"></a>创建 LVM</h2>
+          <h2 id="创建-LVM"><a href="#创建-LVM" class="headerlink" title="创建 LVM"></a>创建 LVM</h2><blockquote>
+<p>LVM 创建过程<br><code>创建PV</code> -&gt; <code>创建VG</code> -&gt; <code>创建LV</code> -&gt; <code>格式化LV</code> -&gt; <code>mount挂载</code></p>
+<p>常用命令<br><code>pvcreate</code> 设备名<br><code>vgcreate</code> 卷组名 物理卷<br><code>lvcreate</code> <code>-L</code> 大小 <code>-n</code> 逻辑卷名 卷组名</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/2018/06/07/LVM创建/" rel="contents">

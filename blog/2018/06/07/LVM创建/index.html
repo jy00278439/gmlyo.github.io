@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="创建 LVM">
+<meta name="description" content="创建 LVM LVM 创建过程创建PV -&amp;gt; 创建VG -&amp;gt; 创建LV -&amp;gt; 格式化LV -&amp;gt; mount挂载 常用命令pvcreate 设备名vgcreate 卷组名 物理卷lvcreate -L 大小 -n 逻辑卷名 卷组名">
 <meta name="keywords" content="创建LVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建LVM">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/07/LVM创建/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="创建 LVM">
+<meta property="og:description" content="创建 LVM LVM 创建过程创建PV -&amp;gt; 创建VG -&amp;gt; 创建LV -&amp;gt; 格式化LV -&amp;gt; mount挂载 常用命令pvcreate 设备名vgcreate 卷组名 物理卷lvcreate -L 大小 -n 逻辑卷名 卷组名">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T17:10:04.790Z">
+<meta property="og:updated_time" content="2018-06-07T19:24:25.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建LVM">
-<meta name="twitter:description" content="创建 LVM">
+<meta name="twitter:description" content="创建 LVM LVM 创建过程创建PV -&amp;gt; 创建VG -&amp;gt; 创建LV -&amp;gt; 格式化LV -&amp;gt; mount挂载 常用命令pvcreate 设备名vgcreate 卷组名 物理卷lvcreate -L 大小 -n 逻辑卷名 卷组名">
 
 
 
@@ -413,7 +413,59 @@
       
 
       
-        <h2 id="创建-LVM"><a href="#创建-LVM" class="headerlink" title="创建 LVM"></a>创建 LVM</h2><a id="more"></a>
+        <h2 id="创建-LVM"><a href="#创建-LVM" class="headerlink" title="创建 LVM"></a>创建 LVM</h2><blockquote>
+<p>LVM 创建过程<br><code>创建PV</code> -&gt; <code>创建VG</code> -&gt; <code>创建LV</code> -&gt; <code>格式化LV</code> -&gt; <code>mount挂载</code></p>
+<p>常用命令<br><code>pvcreate</code> 设备名<br><code>vgcreate</code> 卷组名 物理卷<br><code>lvcreate</code> <code>-L</code> 大小 <code>-n</code> 逻辑卷名 卷组名</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="LVM-常用命令表"><a href="#LVM-常用命令表" class="headerlink" title="LVM 常用命令表"></a>LVM 常用命令表</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>管理物理卷</th>
+<th>管理卷组</th>
+<th>管理逻辑卷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan 扫描</td>
+<td>pvscan</td>
+<td>vgscan</td>
+<td>lvscan</td>
+</tr>
+<tr>
+<td>Create 创建</td>
+<td>pvcreate</td>
+<td>vgcreate</td>
+<td>lvcreate</td>
+</tr>
+<tr>
+<td>Display 显示</td>
+<td>pvdisplay</td>
+<td>vgdisplay</td>
+<td>lvdisplay</td>
+</tr>
+<tr>
+<td>Remove 删除</td>
+<td>pvremove</td>
+<td>vgremove</td>
+<td>lvremove</td>
+</tr>
+<tr>
+<td>Extend 扩展</td>
+<td></td>
+<td>vgextend</td>
+<td>lvextend</td>
+</tr>
+<tr>
+<td>Reduce 减少</td>
+<td></td>
+<td>vgreduce</td>
+<td>lvreduce</td>
+</tr>
+</tbody>
+</table>
 <h3 id="安装-LVM"><a href="#安装-LVM" class="headerlink" title="安装 LVM"></a>安装 LVM</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> lvm2</span><br></pre></td></tr></table></figure>
 <h3 id="创建-PV"><a href="#创建-PV" class="headerlink" title="创建 PV"></a>创建 PV</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pvcreate /dev/vdb</span><br><span class="line">Physical <span class="keyword">volume</span><span class="bash"> <span class="string">"/dev/vdb"</span> successfully created</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建-VG"><a href="#创建-VG" class="headerlink" title="创建 VG"></a>创建 VG</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vgcreate vgdata /dev/vdb</span><br><span class="line">Volume<span class="built_in"> group </span><span class="string">"vgdata"</span> successfully created</span><br></pre></td></tr></table></figure>
@@ -647,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-LVM"><span class="nav-number">1.</span> <span class="nav-text">创建 LVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-LVM"><span class="nav-number">1.1.</span> <span class="nav-text">安装 LVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-PV"><span class="nav-number">1.2.</span> <span class="nav-text">创建 PV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-VG"><span class="nav-number">1.3.</span> <span class="nav-text">创建 VG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-LV"><span class="nav-number">1.4.</span> <span class="nav-text">创建 LV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统格式化"><span class="nav-number">1.5.</span> <span class="nav-text">文件系统格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载逻辑卷到目录"><span class="nav-number">1.6.</span> <span class="nav-text">挂载逻辑卷到目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-etc-fstab"><span class="nav-number">1.7.</span> <span class="nav-text">编辑 /etc/fstab</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-LVM"><span class="nav-number">1.</span> <span class="nav-text">创建 LVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LVM-常用命令表"><span class="nav-number">1.1.</span> <span class="nav-text">LVM 常用命令表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-LVM"><span class="nav-number">1.2.</span> <span class="nav-text">安装 LVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-PV"><span class="nav-number">1.3.</span> <span class="nav-text">创建 PV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-VG"><span class="nav-number">1.4.</span> <span class="nav-text">创建 VG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-LV"><span class="nav-number">1.5.</span> <span class="nav-text">创建 LV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统格式化"><span class="nav-number">1.6.</span> <span class="nav-text">文件系统格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载逻辑卷到目录"><span class="nav-number">1.7.</span> <span class="nav-text">挂载逻辑卷到目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-etc-fstab"><span class="nav-number">1.8.</span> <span class="nav-text">编辑 /etc/fstab</span></a></li></ol></li></ol></div>
             
 
           </div>
