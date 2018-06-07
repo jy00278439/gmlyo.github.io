@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[LVM 磁盘扩展]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F07%2FLVM%20%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F07%2FLVM%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95%2F</url>
     <content type="text"><![CDATA[LVM 磁盘扩展 查看磁盘空间1df -h 查看 lv 信息1lvs 查看 VG 信息1vgs 创建 PV1pvcreate /dev/vdb 扩展已有的 VG 容量1vgextend vgdata /dev/vdb Couldn&#39;t&#39; create temporary archive name.因为磁盘实在太小了或已经没有空间了，无法执行，删除一些数据就好了 12vgextend vgdata /dev/sdaVolume group "vgdata" successfully extended 查看 VG 信息1vgs 扩展已有 LV 容量1234lvextend -L +99.99G -n /dev/vgdata/lvdatalvextend -L +1020M -n /dev/vgdata/lvdata-L # 指定逻辑卷的大小，单位为“kKmMgGtT”字节，也就是Size-l # 指定逻辑卷的大小，单位为 PE 数 重新加载逻辑卷12345# 加载 ext 文件系统resize2fs /dev/vgdata/lvdata# 加载 xfs 文件系统xfs_growfs /dev/vgdata/lvdata]]></content>
       <categories>
         <category>LVM笔记</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[创建LVM]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F07%2FLVM%20%E5%88%9B%E5%BB%BA%2F</url>
+    <url>%2F%2Fblog%2F2018%2F06%2F07%2FLVM%E5%88%9B%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[创建 LVM 安装 LVM1yum -y install lvm2 创建 PV12pvcreate /dev/vdbPhysical volume "/dev/vdb" successfully created 创建 VG12vgcreate vgdata /dev/vdbVolume group "vgdata" successfully created 创建 LV12345lvcreate -L 49.99G -n lvdata vgdata /dev/vdbLogical volume "lvdata" created.lvcreate -L 99.99G -n lvdata vgdata /dev/vdbLogical volume "lvdata" created. 文件系统格式化12345# 格式化 ext 文件系统mkfs.ext4 /dev/vgdata/lvdata# 格式化 xfs 文件系统mkfs.xfs /dev/vgdata/lvdata 挂载逻辑卷到目录12mkdir -pv /datamount /dev/vgdata/lvdata /data 编辑 /etc/fstab1234vim /etc/fstab...省略.../dev/mapper/vgdata-lvdata /data xfs defaults 0 0...省略... ###]]></content>
       <categories>
         <category>LVM笔记</category>
