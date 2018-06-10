@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo添加在线联系]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F10%2FHexo%E6%B7%BB%E5%8A%A0%E5%9C%A8%E7%BA%BF%E8%81%94%E7%B3%BB%2F</url>
+    <content type="text"><![CDATA[Hexo添加在线联系 当有用户在网页上给你留言后会通过邮件或者微信通知你，可以及时的解答用户的疑问。 配置方法 首先到 DaoVoice 上注册一个账号，注册完成后会得到一个 app_idhttp://dashboard.daovoice.io 获取 appid 的步骤 在 DaoVoice 的应用设置 -&gt; 安装到网站中的找到自己的 app_id然后在主题 /next/layout/_partials/head.swig 文件中最后添加代码 123456789&#123;% if theme.daovoice %&#125; &lt;script&gt; (function(i,s,o,g,r,a,m)&#123;i["DaoVoiceObject"]=r;i[r]=i[r]||function()&#123;(i[r].q=i[r].q||[]).push(arguments)&#125;,i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)&#125;)(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice") daovoice('init', &#123; app_id: "&#123;&#123;theme.daovoice_app_id&#125;&#125;" &#125;); daovoice('update'); &lt;/script&gt;&#123;% endif %&#125; 主题配置文件中添加配置 在主题配置文件 /next/_config.yml 中添加相应的配置 123# Online contactdaovoice: truedaovoice_app_id: 这里输入前面获取的app_id 调整位置 最后聊天图标的位置可能和一些东西重叠这个使用可以在控制面板中应用设置 -&gt; 聊天设置里面设置相对右边和底部的位置 参考文档https://www.ezlippi.com/blog/2018/01/next-chat.htmlhttps://meta.tn/a/c40f12eb1b892bbb8cda053c03c688e3f20e4f642164080ef463cd4a7bc3b042http://www.niww.me/2018/03/02/hexo-daovoice/]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo添加在线联系</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Next主题背景]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F10%2FNext%E4%B8%BB%E9%A2%98%E8%83%8C%E6%99%AF%2F</url>
     <content type="text"><![CDATA[Next主题背景个性化DIY 整理了一下博客，加个背景图片（BackGroundImage）调整一下视觉感官，背景图片 是动态变化的，每次刷新都会更新一张图 一个图片网站 分享一个非常 Nice 的图片网站，感觉这个国外的图片社区网站真的秒杀一众图片网站啊，不仅图片质量高，免费，而且还提供了随机拉取图片的服务 API，太赞，对于想实现动态背景，简直是福音https://source.unsplash.com/ 添加背景图片 修改 \themes\next\source\css\_custom\custom.styl 文件这个是 Next 故意留给用户自己个性化定制一些样式的文件，添加以下代码 123456body &#123; background:url(https://source.unsplash.com/random/1600x900); background-repeat: no-repeat; background-attachment:fixed; background-position:50% 50%;&#125; URL 括号中直接添加图片的地址链接，也可以置换成你所喜欢的任意图片。repeat、attachment、position 就是调整图片的位置，不重复出现、不滚动等。]]></content>
