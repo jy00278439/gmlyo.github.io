@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-10T07:23:58.993Z</updated>
+  <updated>2018-06-10T10:04:23.546Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>添加看板娘</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/10/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/10/添加看板娘/</id>
+    <published>2018-06-10T09:52:57.000Z</published>
+    <updated>2018-06-10T10:04:23.546Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="添加看板娘"><a href="#添加看板娘" class="headerlink" title="添加看板娘"></a>添加看板娘</h2><p>实现效果</p><blockquote><p>用 <code>Git Bash Here</code> 在站点根目录执行如下代码</p></blockquote><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> D:\hexo\</span><br><span class="line">npm install hexo-helper-live2d <span class="params">--save</span></span><br></pre></td></tr></table></figure><blockquote><p>然后打开 <code>/themes/next/layout/_layout.swig</code> 将下面代码放到 <code>&lt;/body&gt;</code> 之前</p></blockquote><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; live2d() &#125;&#125;</span><br></pre></td></tr></table></figure><h3 id="在-配置文件-末尾添加代码"><a href="#在-配置文件-末尾添加代码" class="headerlink" title="在 配置文件 末尾添加代码"></a>在 <code>配置文件</code> 末尾添加代码</h3><p>在 <code>Hexo 的 _config.yml 文件</code> 或 <code>主题的 _config.yml 文件</code> 中添加配置</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 看板娘</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  model:</span> <span class="string">hijiki</span></span><br><span class="line"><span class="attr">  position:</span> <span class="string">left</span></span><br><span class="line"><span class="attr">  bottom:</span> <span class="bullet">-30</span></span><br><span class="line"><span class="attr">  mobileShow:</span> <span class="literal">false</span>  <span class="comment">#手机端不显示</span></span><br></pre></td></tr></table></figure><h3 id="详细配置"><a href="#详细配置" class="headerlink" title="详细配置"></a>详细配置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span>      <span class="comment"># 是否开启</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span> <span class="comment"># 默认</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-wanko</span> <span class="comment"># 调用模型名，必须要先下载</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">right</span>    <span class="comment"># 在博客的左边还是右边显示</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span>         <span class="comment"># 边框宽度</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span>        <span class="comment"># 边框高度</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">true</span>         <span class="comment"># 是否在手机上显示</span></span><br></pre></td></tr></table></figure><p>参考文档<br><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;添加看板娘&quot;&gt;&lt;a href=&quot;#添加看板娘&quot; class=&quot;headerlink&quot; title=&quot;添加看板娘&quot;&gt;&lt;/a&gt;添加看板娘&lt;/h2&gt;&lt;p&gt;实现效果&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用 &lt;code&gt;Git Bash Here&lt;/code&gt; 在站点根
+      
+    
+    </summary>
+    
+      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="添加看板娘" scheme="http://www.gmlyo.com/tags/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Chrome自带的长截屏功能</title>
@@ -464,30 +491,6 @@
     
     
       <category term="Tomcat APR 安装" scheme="http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不通过inventory文件，指定host运行Ansible</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/05/%E4%B8%8D%E9%80%9A%E8%BF%87inventory%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9Ahost%E8%BF%90%E8%A1%8CAnsible/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/05/不通过inventory文件，指定host运行Ansible/</id>
-    <published>2018-06-04T17:51:34.000Z</published>
-    <updated>2018-06-06T03:24:58.355Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="如何不通过-inventory-文件，直接指定-host-运行-Ansible？"><a href="#如何不通过-inventory-文件，直接指定-host-运行-Ansible？" class="headerlink" title="如何不通过 inventory 文件，直接指定 host 运行 Ansible？"></a>如何不通过 inventory 文件，直接指定 host 运行 Ansible？</h3><blockquote><p>使用过 ansible 的都知道，不管是运行 Ad-Hoc 还是 playbook，都需要指定一个 inventory 文件，或者使用默认的 inventory 文件。但是现在有一个主机，它尚未在 inventory 文件中配置，那么我们该如何用 ansible 对其进行操作呢？</p></blockquote><a id="more"></a><blockquote><p>一般我们执行都是这样的</p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible 192.168.35.215 -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    <span class="string">"changed"</span>: <span class="literal">false</span>, </span><br><span class="line">    <span class="string">"ping"</span>: <span class="string">"pong"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>这时需要在 inventory 文件 <code>/etc/ansible/hosts</code> 中配置 192.168.35.215 信息</p></blockquote><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[NgxProxy]</span></span><br><span class="line">192<span class="selector-class">.168</span><span class="selector-class">.35</span><span class="selector-class">.215</span></span><br></pre></td></tr></table></figure><blockquote><p>如果没有在 inventory 文件中配置该主机信息，又想用 ansible 对其进行操作<br>就需要用到逗号 <code>,</code> 字符，使用方法如下</p></blockquote><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Host <span class="keyword">and</span> IP address</span><br><span class="line">ansible <span class="keyword">all</span> -i example.com,</span><br><span class="line">ansible <span class="keyword">all</span> -i <span class="number">93.184</span>.<span class="number">216.119</span>,</span><br><span class="line"></span><br><span class="line"># Requires <span class="symbol">'hosts</span>: <span class="keyword">all</span>' <span class="keyword">in</span> your playbook</span><br><span class="line">ansible-playbook -i example.com, playbook.yml</span><br></pre></td></tr></table></figure><blockquote><p>需要注意的是，需要指定范围为 <code>all</code></p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ansible all -i 192.168.35.215, -m ping</span><br><span class="line">192.168.35.215 | SUCCESS =&gt; &#123;</span><br><span class="line">    <span class="string">"changed"</span>: <span class="literal">false</span>, </span><br><span class="line">    <span class="string">"ping"</span>: <span class="string">"pong"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;如何不通过-inventory-文件，直接指定-host-运行-Ansible？&quot;&gt;&lt;a href=&quot;#如何不通过-inventory-文件，直接指定-host-运行-Ansible？&quot; class=&quot;headerlink&quot; title=&quot;如何不通过 inventory 文件，直接指定 host 运行 Ansible？&quot;&gt;&lt;/a&gt;如何不通过 inventory 文件，直接指定 host 运行 Ansible？&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;使用过 ansible 的都知道，不管是运行 Ad-Hoc 还是 playbook，都需要指定一个 inventory 文件，或者使用默认的 inventory 文件。但是现在有一个主机，它尚未在 inventory 文件中配置，那么我们该如何用 ansible 对其进行操作呢？&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Ansible笔记" scheme="http://www.gmlyo.com/categories/Ansible%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="如何不通过 inventory 文件，直接指定 host 运行 Ansible？" scheme="http://www.gmlyo.com/tags/%E5%A6%82%E4%BD%95%E4%B8%8D%E9%80%9A%E8%BF%87-inventory-%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-host-%E8%BF%90%E8%A1%8C-Ansible%EF%BC%9F/"/>
     
   </entry>
   
