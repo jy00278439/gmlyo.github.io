@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/10/Chevereto%E5%9B%BE%E5%BA%8A/</loc>
+        <lastmod>2018-06-10T06:03:01.462Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/10/%E5%85%B3%E4%BA%8E%E5%9B%BE%E5%BA%8A%E7%9A%84%E9%80%89%E6%8B%A9/</loc>
+        <lastmod>2018-06-10T05:51:16.058Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/06/03/Hexo%E5%AE%89%E8%A3%85/</loc>
         <lastmod>2018-06-09T16:46:07.249Z</lastmod>
         <changefreq>weekly</changefreq>
