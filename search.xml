@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Chrome自带的长截屏功能]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F10%2FChrome%E8%87%AA%E5%B8%A6%E7%9A%84%E9%95%BF%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[Chrome自带的长截屏功能 在 Google Chrome 里面，打开开发人员工具 按F12或网站上任意空白处右键 – 选择 “检查” 或者“审查元素” 快捷键 Ctrl + Shift + P，会看到右边的审查元素出现了一个输入框输入 screenshot 然后回车保存图片]]></content>
+      <categories>
+        <category>Chrome笔记</category>
+      </categories>
+      <tags>
+        <tag>Chrome自带的长截屏功能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Chevereto图床]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F10%2FChevereto%E5%9B%BE%E5%BA%8A%2F</url>
     <content type="text"><![CDATA[Chevereto图床 Chevereto 是一款采用 PHP 语言开发的网络相册脚本程序，支持多语言，提供中文语言包的下载的开源在线图片存储分享服务系统，支持本地上传和在线获取两种图像上传方式，并集成了 TinyURL 网址缩短服务。Chevereto 这套程序可以像 Discuz 或 WordPress 一样随意架设在任何空间上。而它的功能除了一般图片空间单纯的从电脑上传图片外，也支援利用网址也可以上传，最屌的是还有 TinyURL 的缩短网址的功能可以使用，因此这套 Chevereto 可以说是比市面上的图片空间好太多了。他是把图片上传到空间的，相信一般大家都一定会使用免费空间，在此建议大家在挑主机时尽可能使用 cPanel 的空间，因为可以使用 cPanel 特有的 「Cron Jobs」 来备份你上传的图片。 Chevereto 是一款分享照片的程序，可以非常轻松得在自己的服务器上搭建照片分享程序，功能强大，外观精美。Chevereto 本身是收费使用的，一次性付费，终身使用，但是其开源版本可以免费使用。https://chevereto.com/https://github.com/Chevereto/Chevereto-Freehttps://chevereto.com/docs/requirements Clevereto 错误 404 解决方法 如果 Web服务 是 Nginx，基本第一步安装好后再次打开网站会出现 404 错误。因为 Chevereto 默认提供基于 Apache 环境的伪静态规则 需要设置以下 Rewrite 伪静态规则123456789101112131415location / &#123; if (-f $request_filename/index.html)&#123; rewrite (.*) $1/index.html break; &#125; if (-f $request_filename/index.php)&#123; rewrite (.*) $1/index.php; &#125; if (!-f $request_filename)&#123; rewrite (.*) /index.php; &#125; try_files $uri $uri/ /api.php;&#125;location /admin &#123; try_files $uri /admin/index.php?$args;&#125; 官方推荐配置123456789101112131415161718192021222324252627282930# Disable access to .ht* fileslocation ~ /\.ht &#123; deny all;&#125;# Disable access to sensitive files in app pathlocation ~ /(app|content|lib)/.*\.(po|php|lock|sql)$ &#123; deny all;&#125;# Disable log on not found images + image replacement# Image not found replacementlocation ~* (jpe?g|png|gif) &#123; log_not_found off; error_page 404 /content/images/system/default/404.gif;&#125;# Enable CORS header (avoids font rendering issues)location ~ \.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$ &#123; add_header Access-Control-Allow-Origin "*";&#125;# Force serve upload path as static contentlocation ~ /images &#123;&#125;# Pretty URLs# Route dynamic request to index.phplocation / &#123; try_files $uri $uri/ /index.php?$query_string;&#125; 参考文档 https://www.zhujibiji.com/2017/11/install-chevere-to-build-your-image-sharing-website/https://lala.im/2478.html]]></content>

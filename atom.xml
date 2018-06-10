@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-10T07:03:34.569Z</updated>
+  <updated>2018-06-10T07:23:58.993Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chrome自带的长截屏功能</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/10/Chrome%E8%87%AA%E5%B8%A6%E7%9A%84%E9%95%BF%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/10/Chrome自带的长截屏功能/</id>
+    <published>2018-06-10T07:22:15.000Z</published>
+    <updated>2018-06-10T07:23:58.993Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Chrome自带的长截屏功能"><a href="#Chrome自带的长截屏功能" class="headerlink" title="Chrome自带的长截屏功能"></a>Chrome自带的长截屏功能</h2><blockquote><p>在 <code>Google Chrome</code> 里面，打开开发人员工具 <code>按F12</code><br>或<br>网站上任意空白处右键 – 选择 “检查” 或者“审查元素”</p><p>快捷键 <code>Ctrl + Shift + P</code>，会看到右边的审查元素出现了一个输入框<br>输入 <code>screenshot</code> 然后回车<br>保存图片</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Chrome自带的长截屏功能&quot;&gt;&lt;a href=&quot;#Chrome自带的长截屏功能&quot; class=&quot;headerlink&quot; title=&quot;Chrome自带的长截屏功能&quot;&gt;&lt;/a&gt;Chrome自带的长截屏功能&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在 &lt;code&gt;G
+      
+    
+    </summary>
+    
+      <category term="Chrome笔记" scheme="http://www.gmlyo.com/categories/Chrome%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Chrome自带的长截屏功能" scheme="http://www.gmlyo.com/tags/Chrome%E8%87%AA%E5%B8%A6%E7%9A%84%E9%95%BF%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>Chevereto图床</title>
@@ -462,28 +488,6 @@
     
     
       <category term="如何不通过 inventory 文件，直接指定 host 运行 Ansible？" scheme="http://www.gmlyo.com/tags/%E5%A6%82%E4%BD%95%E4%B8%8D%E9%80%9A%E8%BF%87-inventory-%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%B4%E6%8E%A5%E6%8C%87%E5%AE%9A-host-%E8%BF%90%E8%A1%8C-Ansible%EF%BC%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Next给博客生成一个站点地图</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/04/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/04/Next给博客生成一个站点地图/</id>
-    <published>2018-06-04T15:34:51.000Z</published>
-    <updated>2018-06-06T03:28:00.094Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="给博客生成一个站点地图"><a href="#给博客生成一个站点地图" class="headerlink" title="给博客生成一个站点地图"></a>给博客生成一个站点地图</h3><a id="more"></a><h3 id="安装-hexo-generator-seo-friendly-sitemap"><a href="#安装-hexo-generator-seo-friendly-sitemap" class="headerlink" title="安装 hexo-generator-seo-friendly-sitemap"></a>安装 hexo-generator-seo-friendly-sitemap</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-seo-friendly-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure><h3 id="在站点配置文件-config-yml-中添加"><a href="#在站点配置文件-config-yml-中添加" class="headerlink" title="在站点配置文件 _config.yml 中添加"></a>在<code>站点配置</code>文件 _config.yml 中添加</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sitemap:</span></span><br><span class="line"><span class="symbol">    path:</span> sitemap.xml</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;给博客生成一个站点地图&quot;&gt;&lt;a href=&quot;#给博客生成一个站点地图&quot; class=&quot;headerlink&quot; title=&quot;给博客生成一个站点地图&quot;&gt;&lt;/a&gt;给博客生成一个站点地图&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Next给博客生成一个站点地图" scheme="http://www.gmlyo.com/tags/Next%E7%BB%99%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/"/>
     
   </entry>
   
