@@ -86,13 +86,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-06T13:43:25.061Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Next%E5%A4%B4%E5%83%8F%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC/</loc>
         <lastmod>2018-06-06T13:55:15.770Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -235,6 +228,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/</loc>
         <lastmod>2018-06-11T06:44:42.277Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Tomcat-APR-%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-11T18:59:03.994Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

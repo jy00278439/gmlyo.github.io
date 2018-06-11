@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-06T13:43:25.061Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Shell%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-07T18:52:01.150Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -100,6 +93,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-11T06:44:42.277Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-11T18:59:03.994Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
