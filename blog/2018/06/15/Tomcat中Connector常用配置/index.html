@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
+<meta name="description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编">
 <meta name="keywords" content="Tomcat中Connector常用配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat中Connector常用配置">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/15/Tomcat中Connector常用配置/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
+<meta property="og:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T17:20:12.281Z">
+<meta property="og:updated_time" content="2018-06-14T17:40:37.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat中Connector常用配置">
-<meta name="twitter:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
+<meta name="twitter:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编">
 
 
 
@@ -433,7 +433,7 @@
 <tbody>
 <tr>
 <td>BIO</td>
-<td>阻塞式 <code>I/O</code>，采用传统的 <code>java I/O</code>进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</td>
+<td>阻塞式 <code>I/O</code>，采用传统的 <code>java I/O</code> 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</td>
 </tr>
 <tr>
 <td>NIO</td>
@@ -441,7 +441,7 @@
 </tr>
 <tr>
 <td>APR</td>
-<td><code>Tomcat</code> 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译安装 <code>APR</code>库</td>
+<td><code>Tomcat</code> 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译安装 <code>APR</code> 库</td>
 </tr>
 <tr>
 <td>AIO</td>
@@ -449,18 +449,33 @@
 </tr>
 </tbody>
 </table>
-<p>BIO（<code>blocking I/O</code>，阻塞式 <code>I/O</code> 操作），表示 <code>Tomcat</code> 使用的是传统的 <code>Java I/O</code> 操作（即 <code>java.io</code> 包及其子包）。<br>默认的模式，性能最差，没有经过任何优化处理和支持。</p>
+<blockquote>
+<p>配置方法：在 <code>tomcat/conf/</code> 下 <code>server.xml</code></p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">`&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span> <span class="attribute">protocol</span>=<span class="string">"HTTP/1.1"</span>/&gt;`</span><br><span class="line">BIO: <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11Protocol"</span></span><br><span class="line">NIO: <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11NioProtocol"</span></span><br><span class="line">AIO: <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11Nio2Protocol"</span></span><br><span class="line">APR: <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11AprProtocol"</span></span><br></pre></td></tr></table></figure>
+<p><code>BIO（blocking I/O）</code> 阻塞式 <code>I/O</code> 操作，表示 <code>Tomcat</code> 使用的是传统的 <code>Java I/O</code> 操作（即 <code>java.io</code> 包及其子包）。<br>默认的模式，性能最差，没有经过任何优化处理和支持。</p>
 <p><code>NIO（non-blocking I/O）</code> Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 <code>java.nio</code> 包及其子包）。<br>Java nio 是一个基于缓冲区、并能提供非阻塞 <code>I/O</code> 操作的 <code>Java API</code>。<br>拥有比传统 <code>I/O</code> 操作（BIO）更好的并发运行性能。<br>要让 <code>Tomcat</code> 以 <code>NIO</code> 模式来运行，修改配置文件：<code>tomcat/conf/server.xml</code></p>
 <p>修改以下内容<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span> <span class="attribute">protocol</span>=<span class="string">"HTTP/1.1"</span></span><br><span class="line">         <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span></span><br><span class="line">         <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>修改 protocol 的值为 org.apache.coyote.http11.Http11NioProtocol<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span></span><br><span class="line">           <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11NioProtocol"</span></span><br><span class="line">           <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span></span><br><span class="line">           <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>重启 <code>Tomcat</code> 后生效</p>
-<p>在 Tomcat 6.0 之后，提供了 NIO 的方式，可以有效的提升性能，特别是在大量长连接/数据上传+下载等 Web 应用中<br>此时 portocal=”org.apache.coyote.http11.Http11NioProtocol”<br>Tomcat 支持：BIO，NIO，NIO2，APR 四种 I/O 模式，默认为 BIO</p>
+<p>在 Tomcat 6.0 之后，提供了 NIO 的方式，可以有效的提升性能，特别是在大量长连接/数据上传+下载等 Web 应用中<br>此时 portocal=”org.apache.coyote.http11.Http11NioProtocol”<br><code>Tomcat</code> 支持：<code>BIO</code>，<code>NIO</code>，<code>NIO2</code>，<code>APR</code> 四种 <code>I/O</code> 模式，<code>Tomcat 8.5</code> 之前 默认为 BIO</p>
 <p><code>Tomcat 8.5 and 9.0 have completely dropped the BIO connector.</code><br><code>Tomcat 8.5</code> 和 <code>9.0</code> 完全删除了 <code>BIO</code> 连接器<br>默认 <code>NIO</code> 模式</p>
 <p>对于互联网应用，我们应该在 NIO、NIO2 之间做选择，因为它能够有效的提升性能（主要是并发能力）<br>其中 NIO2 即为 AIO，需要 JDK 1.7+、Linux 2.6+ 才能支持。<br>BIO：JDK 1.5+，tomcat 5.x+<br>NIO：JDK 1.6+，tomcat 6.x+<br>NIO2：JDK 1.7+，tomcat 7.x+<br>为了保守起见，我们暂且基于 NIO 模式</p>
 <h3 id="查看-Tomcat-Connector-运行模式"><a href="#查看-Tomcat-Connector-运行模式" class="headerlink" title="查看 Tomcat Connector 运行模式"></a>查看 Tomcat Connector 运行模式</h3><p>方法一：在 <a href="http://x.x.x.x:8080/manager/status" target="_blank" rel="noopener">http://x.x.x.x:8080/manager/status</a> 中查看服务器状态 </p>
 <p>方法二：根据 <code>Tomcat</code> 启动日志信息判断<br>BIO<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">INFO</span>: <span class="selector-tag">Initializing</span> <span class="selector-tag">ProtocolHandler</span> <span class="selector-attr">["http-bio-8080"]</span></span><br><span class="line"><span class="selector-tag">Aug</span> 04, 2015 10<span class="selector-pseudo">:20</span><span class="selector-pseudo">:35</span> <span class="selector-tag">PM</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.AbstractProtocol</span> <span class="selector-tag">init</span></span><br></pre></td></tr></table></figure></p>
 <p>NIO<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">INFO</span>: <span class="selector-tag">Initializing</span> <span class="selector-tag">ProtocolHandler</span> <span class="selector-attr">["http-nio-8080"]</span></span><br><span class="line"><span class="selector-tag">Aug</span> 04, 2015 10<span class="selector-pseudo">:27</span><span class="selector-pseudo">:58</span> <span class="selector-tag">PM</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.AbstractProtocol</span> <span class="selector-tag">init</span></span><br></pre></td></tr></table></figure></p>
 <p>APR<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">INFO</span>: <span class="selector-tag">Initializing</span> <span class="selector-tag">ProtocolHandler</span> <span class="selector-attr">["http-apr-8080"]</span></span><br><span class="line"><span class="selector-tag">Aug</span> 04, 2015 10<span class="selector-pseudo">:33</span><span class="selector-pseudo">:45</span> <span class="selector-tag">PM</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.AbstractProtocol</span> <span class="selector-tag">init</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>整合<code>Tomcat apr</code></p>
+</blockquote>
+<p>设置环境变量<br>方法一：在 <code>tomcat/bin/catalina.sh</code> 中增加1行<br>在 <code>echo “Using CATALINA_BASE: $CATALINA_BASE”</code> 的上一行添加<br>CATALINA_OPTS=”-Djava.library.path=/data/apr/lib”</p>
+<p>方法二：在 <code>/etc/profile</code> 中加入<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">CATALINA_OPTS</span>=-Djava.library.path=/usr/local/apr/lib</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使配置生效<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="regexp">/etc/</span>profile</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>修改配置文件<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim tomcat/conf/server.xml </span><br><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span> <span class="attribute">protocol</span>=<span class="string">"HTTP/1.1"</span> <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span> <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 `protocol` 的值为 `org.apache.coyote.http11.Http11NioProtocol`</span></span><br><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span></span><br><span class="line">           <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11AprProtocol"</span></span><br><span class="line">           <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span> <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>重启 <code>Tomcat</code>，启动日志出现以下内容证明此时以 <code>APR</code> 模式启动 </p>
+<p>参考文档：<br><a href="https://blog.csdn.net/fd2025/article/details/80007435" target="_blank" rel="noopener">https://blog.csdn.net/fd2025/article/details/80007435</a></p>
 
       
     </div>
