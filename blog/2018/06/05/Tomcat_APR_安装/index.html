@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
+<meta name="description" content="Tomcat APR 安装 APR(Apache portable Run-time libraries) 可移植运行时库，是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API。Tomcat 将以 JNI 的形式调用 Apache HTTP 服务器的核心动态链接库来处理文件读取或网络传输操作，从而大大地提高 Tomcat 对静态文件的处理性能。改善 Tomcat 对静态">
 <meta name="keywords" content="Tomcat_APR_安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat_APR_安装">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_安装/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
+<meta property="og:description" content="Tomcat APR 安装 APR(Apache portable Run-time libraries) 可移植运行时库，是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API。Tomcat 将以 JNI 的形式调用 Apache HTTP 服务器的核心动态链接库来处理文件读取或网络传输操作，从而大大地提高 Tomcat 对静态文件的处理性能。改善 Tomcat 对静态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T17:04:55.984Z">
+<meta property="og:updated_time" content="2018-06-14T17:15:24.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat_APR_安装">
-<meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
+<meta name="twitter:description" content="Tomcat APR 安装 APR(Apache portable Run-time libraries) 可移植运行时库，是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API。Tomcat 将以 JNI 的形式调用 Apache HTTP 服务器的核心动态链接库来处理文件读取或网络传输操作，从而大大地提高 Tomcat 对静态文件的处理性能。改善 Tomcat 对静态">
 
 
 
@@ -424,7 +424,7 @@
 
       
         <h3 id="Tomcat-APR-安装"><a href="#Tomcat-APR-安装" class="headerlink" title="Tomcat APR 安装"></a>Tomcat APR 安装</h3><blockquote>
-<p><code>Tomcat</code> 的 <code>APR(Apache portable Run-time libraries)</code><br>是 <code>Apache HTTP</code> 服务的支持库，提供了一组映射到下层操作系统的 API<br>是用来改善 <code>Tomcat</code> 对静态文件的处理性能，同时如果使用了 <code>HTTPS</code> 方式传输的话，也可以提升 <code>SSL</code> 的处理性能。<br>默认情况下，<code>Tomcat</code> 是用 <code>BIO</code> 的方式来实现网络通信的，性能非常低。<br>而 <code>APR</code> 使用 <code>JNI</code> 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 <code>I/O</code> 问题，大幅度的提高性能。<br>如果操作系统不支持某个特定的功能，<code>APR</code> 将提供一个模拟的实现<br>这样程序员使用 <code>APR</code> 编写真正可在不同平台上移植的程序</p>
+<p><code>APR(Apache portable Run-time libraries)</code> 可移植运行时库，是 <code>Apache HTTP</code> 服务的支持库，提供了一组映射到下层操作系统的 API。<code>Tomcat</code> 将以 <code>JNI</code> 的形式调用 <code>Apache HTTP</code> 服务器的核心动态链接库来处理文件读取或网络传输操作，从而大大地提高 <code>Tomcat</code> 对静态文件的处理性能。改善 <code>Tomcat</code> 对静态文件的处理性能，同时如果使用了 <code>HTTPS</code> 方式传输的话，也可以提升 <code>SSL</code> 的处理性能。默认情况下，<code>Tomcat</code> 是用 <code>BIO</code> 的方式来实现网络通信的，性能非常低。<code>Tomcat apr</code> 也是在 <code>Tomcat</code> 上运行高并发应用的首选模式。<code>APR</code> 使用 <code>JNI</code> 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 <code>I/O</code> 问题，大幅度的提高性能。如果操作系统不支持某个特定的功能，<code>APR</code> 将提供一个模拟的实现，这样程序员使用 <code>APR</code> 编写真正可在不同平台上移植的程序</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 和 <span class="keyword">JDK</span></span><br><span class="line"><span class="keyword">yum </span><span class="keyword">install </span>-y apr-devel</span><br><span class="line">yum <span class="keyword">install </span>-y gcc gcc-devel</span><br><span class="line">yum <span class="keyword">install </span>-y openssl openssl-devel</span><br></pre></td></tr></table></figure>
@@ -623,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

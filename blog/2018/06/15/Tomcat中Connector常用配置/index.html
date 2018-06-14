@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Tomcat中Connector常用配置," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="Tomcat 中 Connector 常用配置 BIO（blocking I/O，阻塞式 I/O 操作），表示 Tomcat 使用的是传统的 Java I/O 操作（即 java.io 包及其子包）。默认的模式，性能最差，没有经过任何优化处理和支持。 NIO（non-blocking I/O）Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 java.nio 包及其子包）。J">
+<meta name="description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
+<meta name="keywords" content="Tomcat中Connector常用配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="G加菲">
+<meta property="og:title" content="Tomcat中Connector常用配置">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/15/Tomcat中Connector常用配置/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Tomcat 中 Connector 常用配置 BIO（blocking I/O，阻塞式 I/O 操作），表示 Tomcat 使用的是传统的 Java I/O 操作（即 java.io 包及其子包）。默认的模式，性能最差，没有经过任何优化处理和支持。 NIO（non-blocking I/O）Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 java.nio 包及其子包）。J">
+<meta property="og:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T16:59:22.910Z">
+<meta property="og:updated_time" content="2018-06-14T17:12:50.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="G加菲">
-<meta name="twitter:description" content="Tomcat 中 Connector 常用配置 BIO（blocking I/O，阻塞式 I/O 操作），表示 Tomcat 使用的是传统的 Java I/O 操作（即 java.io 包及其子包）。默认的模式，性能最差，没有经过任何优化处理和支持。 NIO（non-blocking I/O）Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 java.nio 包及其子包）。J">
+<meta name="twitter:title" content="Tomcat中Connector常用配置">
+<meta name="twitter:description" content="Tomcat 中 Connector 常用配置   模式 描述     BIO 阻塞式 I/O，采用传统的 java I/O进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景   NIO 同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式   APR Tomcat 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译">
 
 
 
@@ -137,7 +138,7 @@
   </script>
 
 
-  <title> | G加菲</title>
+  <title>Tomcat中Connector常用配置 | G加菲</title>
   
 
 
@@ -345,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Tomcat中Connector常用配置</h1>
         
 
         <div class="post-meta">
@@ -357,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T00:50:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T01:12:31+08:00">
                 2018-06-15
               </time>
             
@@ -367,6 +368,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tomcat笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Tomcat笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -400,9 +423,34 @@
       
 
       
-        <p>Tomcat 中 Connector 常用配置</p>
+        <h2 id="Tomcat-中-Connector-常用配置"><a href="#Tomcat-中-Connector-常用配置" class="headerlink" title="Tomcat 中 Connector 常用配置"></a>Tomcat 中 Connector 常用配置</h2><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIO</td>
+<td>阻塞式 <code>I/O</code>，采用传统的 <code>java I/O</code>进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</td>
+</tr>
+<tr>
+<td>NIO</td>
+<td>同步非阻塞，比传统 <code>BIO</code> 能更好的支持大并发，<code>Tomcat 8.0</code> 后默认采用该模式</td>
+</tr>
+<tr>
+<td>APR</td>
+<td><code>Tomcat</code> 以JNI形式调用http服务器的核心动态链接库来处理文件读取或网络传输操作，需要编译安装 <code>APR</code>库</td>
+</tr>
+<tr>
+<td>AIO</td>
+<td>异步非阻塞，Tomcat 8.0 后支持</td>
+</tr>
+</tbody>
+</table>
 <p>BIO（<code>blocking I/O</code>，阻塞式 <code>I/O</code> 操作），表示 <code>Tomcat</code> 使用的是传统的 <code>Java I/O</code> 操作（即 <code>java.io</code> 包及其子包）。<br>默认的模式，性能最差，没有经过任何优化处理和支持。</p>
-<p>NIO（non-blocking I/O）Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 java.nio 包及其子包）。<br>Java nio 是一个基于缓冲区、并能提供非阻塞 <code>I/O</code> 操作的 <code>Java API</code>。<br>拥有比传统 <code>I/O</code> 操作（BIO）更好的并发运行性能。<br>要让 <code>Tomcat</code> 以 <code>NIO</code> 模式来运行，修改配置文件：<code>tomcat/conf/server.xml</code></p>
+<p><code>NIO（non-blocking I/O）</code> Java SE 1.4 及后续版本提供的一种新的 I/O 操作方式（即 <code>java.nio</code> 包及其子包）。<br>Java nio 是一个基于缓冲区、并能提供非阻塞 <code>I/O</code> 操作的 <code>Java API</code>。<br>拥有比传统 <code>I/O</code> 操作（BIO）更好的并发运行性能。<br>要让 <code>Tomcat</code> 以 <code>NIO</code> 模式来运行，修改配置文件：<code>tomcat/conf/server.xml</code></p>
 <p>修改以下内容<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span> <span class="attribute">protocol</span>=<span class="string">"HTTP/1.1"</span></span><br><span class="line">         <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span></span><br><span class="line">         <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>修改 protocol 的值为 org.apache.coyote.http11.Http11NioProtocol<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector <span class="attribute">port</span>=<span class="string">"8080"</span></span><br><span class="line">           <span class="attribute">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11NioProtocol"</span></span><br><span class="line">           <span class="attribute">connectionTimeout</span>=<span class="string">"20000"</span></span><br><span class="line">           <span class="attribute">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>重启 <code>Tomcat</code> 后生效</p>
@@ -429,6 +477,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tomcat中Connector常用配置/" rel="tag"># Tomcat中Connector常用配置</a>
+          
+        </div>
       
 
       
@@ -499,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,7 +607,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -610,6 +673,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat-中-Connector-常用配置"><span class="nav-number">1.</span> <span class="nav-text">Tomcat 中 Connector 常用配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
