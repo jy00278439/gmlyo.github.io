@@ -85,11 +85,11 @@
 <meta name="keywords" content="Tomcat_APR_安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat_APR_安装">
-<meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/05/Tomcat APR 安装/index.html">
+<meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_安装/index.html">
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T16:25:31.204Z">
+<meta property="og:updated_time" content="2018-06-14T17:04:55.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat_APR_安装">
 <meta name="twitter:description" content="Tomcat APR 安装 Tomcat 的 APR(Apache portable Run-time libraries)是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/blog/2018/06/05/Tomcat APR 安装/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_安装/"/>
 
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/blog/2018/06/05/Tomcat APR 安装/">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="G加菲">
@@ -452,7 +452,7 @@
 <blockquote>
 <p>修改 <code>$TOMCAT_HOME/conf/server.xml</code></p>
 </blockquote>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">"8000"</span></span><br><span class="line">           protocol=<span class="string">"org.apache.coyote.http11.Http11NioProtocol"</span></span><br><span class="line">           connectionTimeout=<span class="string">"20000"</span></span><br><span class="line">           redirectPort=<span class="string">"8443"</span></span><br><span class="line">protocal 修改为 org<span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.http11</span><span class="selector-class">.Http11AprProtocol</span>，重启 tomcat</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=<span class="string">"8000"</span></span><br><span class="line">           protocol=<span class="string">"org.apache.coyote.http11.Http11AprProtocol"</span></span><br><span class="line">           connectionTimeout=<span class="string">"20000"</span></span><br><span class="line">           redirectPort=<span class="string">"8443"</span></span><br><span class="line">protocal 修改为 org<span class="selector-class">.apache</span><span class="selector-class">.coyote</span><span class="selector-class">.http11</span><span class="selector-class">.Http11AprProtocol</span>，重启 tomcat</span><br></pre></td></tr></table></figure>
 <h3 id="安装配置-Tomcat-native"><a href="#安装配置-Tomcat-native" class="headerlink" title="安装配置 Tomcat native"></a>安装配置 Tomcat native</h3><blockquote>
 <p>具体的安装步骤其实在 tomcat 自带的 tomcat-native.tar.gz 文件中就有</p>
 </blockquote>
@@ -601,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

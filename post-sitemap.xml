@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/05/Tomcat%20APR%20%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-14T16:25:31.204Z</lastmod>
+        <loc>http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-06-14T17:04:55.984Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/15/Tomcat%E4%B8%ADConnector%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-06-14T16:59:22.910Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
