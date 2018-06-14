@@ -575,7 +575,7 @@
       
         
           <h3 id="Tomcat-APR-安装"><a href="#Tomcat-APR-安装" class="headerlink" title="Tomcat APR 安装"></a>Tomcat APR 安装</h3><blockquote>
-<p>Tomcat 的 APR(Apache portable Run-time libraries)<br>是 Apache HTTP 服务的支持库，提供了一组映射到下层操作系统的 API<br>是用来改善 Tomcat 对静态文件的处理性能，同时如果使用了 HTTPS 方式传输的话，也可以提升 SSL 的处理性能。<br>默认情况下，Tomcat 是用 BIO 的方式来实现网络通信的，性能非常低。<br>而 APR 使用 JNI 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 I/O 问题，大幅度的提高性能。<br>如果操作系统不支持某个特定的功能，APR 将提供一个模拟的实现<br>这样程序员使用 APR 编写真正可在不同平台上移植的程序</p>
+<p><code>Tomcat</code> 的 <code>APR(Apache portable Run-time libraries)</code><br>是 <code>Apache HTTP</code> 服务的支持库，提供了一组映射到下层操作系统的 API<br>是用来改善 <code>Tomcat</code> 对静态文件的处理性能，同时如果使用了 <code>HTTPS</code> 方式传输的话，也可以提升 <code>SSL</code> 的处理性能。<br>默认情况下，<code>Tomcat</code> 是用 <code>BIO</code> 的方式来实现网络通信的，性能非常低。<br>而 <code>APR</code> 使用 <code>JNI</code> 的方式来读取文件以及进行网络传输，从操作系统级别来解决异步的 <code>I/O</code> 问题，大幅度的提高性能。<br>如果操作系统不支持某个特定的功能，<code>APR</code> 将提供一个模拟的实现<br>这样程序员使用 <code>APR</code> 编写真正可在不同平台上移植的程序</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
