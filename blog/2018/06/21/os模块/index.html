@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="os 模块 os 模块是与操作系统交互的一个接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T00:23:22.170Z">
+<meta property="og:updated_time" content="2018-06-21T00:25:41.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="os模块">
 <meta name="twitter:description" content="os 模块 os 模块是与操作系统交互的一个接口">
@@ -436,123 +436,123 @@
 </thead>
 <tbody>
 <tr>
-<td>os.getcwd()</td>
+<td><code>os.getcwd()</code></td>
 <td>获取当前工作目录，即当前 <code>python</code> 脚本工作的目录路径</td>
 </tr>
 <tr>
-<td>os.chdir(“dirname”)</td>
+<td><code>os.chdir(&quot;dirname&quot;)</code></td>
 <td>改变当前脚本工作目录；相当于 <code>shell</code> 下 <code>cd</code></td>
 </tr>
 <tr>
-<td>os.curdir</td>
+<td><code>os.curdir</code></td>
 <td>返回当前目录: (<code>&#39;.&#39;</code>)</td>
 </tr>
 <tr>
-<td>os.pardir</td>
+<td><code>os.pardir</code></td>
 <td>获取当前目录的父目录字符串名：(<code>&#39;..&#39;</code>)</td>
 </tr>
 <tr>
-<td>os.makedirs(‘dirname1/dirname2’)</td>
+<td><code>os.makedirs(&#39;dirname1/dirname2&#39;)</code></td>
 <td>可生成多层递归目录</td>
 </tr>
 <tr>
-<td>os.removedirs(‘dirname1’)</td>
+<td><code>os.removedirs(&#39;dirname1&#39;)</code></td>
 <td>若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推</td>
 </tr>
 <tr>
-<td>os.mkdir(‘dirname’)</td>
+<td><code>os.mkdir(&#39;dirname&#39;)</code></td>
 <td>生成单级目录；相当于 <code>shell</code> 中 <code>mkdir dirname</code></td>
 </tr>
 <tr>
-<td>os.rmdir(‘dirname’)</td>
+<td><code>os.rmdir(&#39;dirname&#39;)</code></td>
 <td>删除单级空目录，若目录不为空则无法删除，报错；相当于 <code>shell</code> 中 <code>rmdir dirname</code></td>
 </tr>
 <tr>
-<td>os.listdir(‘dirname’)</td>
+<td><code>os.listdir(&#39;dirname&#39;)</code></td>
 <td>列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印</td>
 </tr>
 <tr>
-<td>os.remove()</td>
+<td><code>os.remove()</code></td>
 <td>删除一个文件</td>
 </tr>
 <tr>
-<td>os.rename(“oldname”,”newname”)</td>
+<td><code>os.rename(&quot;oldname&quot;,&quot;newname&quot;)</code></td>
 <td>重命名文件/目录</td>
 </tr>
 <tr>
-<td>os.stat(‘path/filename’)</td>
+<td><code>os.stat(&#39;path/filename&#39;)</code></td>
 <td>获取文件/目录信息</td>
 </tr>
 <tr>
-<td>os.sep</td>
+<td><code>os.sep</code></td>
 <td>输出操作系统特定的路径分隔符，Windows下为<code>&quot;\\&quot;</code>，Linux下为<code>&quot;/&quot;</code></td>
 </tr>
 <tr>
-<td>os.linesep</td>
+<td><code>os.linesep</code></td>
 <td>输出当前平台使用的行终止符，Windows下为<code>&quot;\t\n&quot;</code>，Linux下为<code>&quot;\n&quot;</code></td>
 </tr>
 <tr>
-<td>os.pathsep</td>
+<td><code>os.pathsep</code></td>
 <td>输出用于分割文件路径的字符串，Windows下为<code>;</code>，Linux下为<code>:</code></td>
 </tr>
 <tr>
-<td>os.name</td>
+<td><code>os.name</code></td>
 <td>输出字符串指示当前使用平台。Windows-&gt;<code>&#39;nt&#39;</code>，Linux-&gt;<code>&#39;posix&#39;</code></td>
 </tr>
 <tr>
-<td>os.system(“bash command”)</td>
+<td><code>os.system(&quot;bash command&quot;)</code></td>
 <td>运行<code>shell</code>命令，直接显示</td>
 </tr>
 <tr>
-<td>os.environ</td>
+<td><code>os.environ</code></td>
 <td>获取系统环境变量</td>
 </tr>
 <tr>
-<td>os.path.abspath(path)</td>
+<td><code>os.path.abspath(path)</code></td>
 <td>返回 <code>path</code> 规范化的绝对路径</td>
 </tr>
 <tr>
-<td>os.path.split(path)</td>
+<td><code>os.path.split(path)</code></td>
 <td>将 <code>path</code> 分割成目录和文件名二元组返回</td>
 </tr>
 <tr>
-<td>os.path.dirname(path)</td>
+<td><code>os.path.dirname(path)</code></td>
 <td>返回 <code>path</code> 的目录。其实就是 <code>os.path.split(path)</code> 的第一个元素</td>
 </tr>
 <tr>
-<td>os.path.basename(path)</td>
+<td><code>os.path.basename(path)</code></td>
 <td>返回 <code>path</code> 最后的文件名。如何 <code>path</code> 以 <code>/</code> 或 <code>\</code> 结尾，那么就会返回空值。即 <code>os.path.split(path)</code> 的第二个元素</td>
 </tr>
 <tr>
-<td>os.path.exists(path)</td>
+<td><code>os.path.exists(path)</code></td>
 <td>如果 <code>path</code> 存在，返回 <code>True</code>；如果 <code>path</code> 不存在，返回 <code>False</code></td>
 </tr>
 <tr>
-<td>os.path.isabs(path)</td>
+<td><code>os.path.isabs(path)</code></td>
 <td>如果 <code>path</code> 是绝对路径，返回 <code>True</code></td>
 </tr>
 <tr>
-<td>os.path.isfile(path)</td>
+<td><code>os.path.isfile(path)</code></td>
 <td>如果 <code>path</code> 是一个存在的文件，返回 <code>True</code>。否则返回 <code>False</code></td>
 </tr>
 <tr>
-<td>os.path.isdir(path)</td>
+<td><code>os.path.isdir(path)</code></td>
 <td>如果 <code>path</code> 是一个存在的目录，则返回 <code>True</code>。否则返回 <code>False</code></td>
 </tr>
 <tr>
-<td>os.path.join(path1[, path2[, …]])</td>
+<td><code>os.path.join(path1[, path2[, ...]])</code></td>
 <td>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</td>
 </tr>
 <tr>
-<td>os.path.getatime(path)</td>
+<td><code>os.path.getatime(path)</code></td>
 <td>返回 <code>path</code> 所指向的文件或者目录的最后存取时间</td>
 </tr>
 <tr>
-<td>os.path.getmtime(path)</td>
+<td><code>os.path.getmtime(path)</code></td>
 <td>返回 <code>path</code> 所指向的文件或者目录的最后修改时间</td>
 </tr>
 <tr>
-<td>os.path.getsize(path)</td>
+<td><code>os.path.getsize(path)</code></td>
 <td>返回 <code>path</code> 的大小</td>
 </tr>
 </tbody>
