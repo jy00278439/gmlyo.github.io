@@ -49,13 +49,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Python%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-08T16:30:08.201Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Java%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-09T16:24:52.630Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -107,6 +100,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Linux%E5%86%85%E6%A0%B8%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-20T14:54:06.725Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Python%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-21T00:17:52.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
