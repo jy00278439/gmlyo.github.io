@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="os 模块 os 模块是与操作系统交互的一个接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T00:35:16.944Z">
+<meta property="og:updated_time" content="2018-06-21T00:38:33.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="os模块">
 <meta name="twitter:description" content="os 模块 os 模块是与操作系统交互的一个接口">
@@ -584,8 +584,9 @@
 </blockquote>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">os</span>.<span class="built_in">path</span>.basename(<span class="string">'a/b/c/d.txt'</span>))</span><br><span class="line"># 输出结果</span><br><span class="line">d.txt</span><br></pre></td></tr></table></figure>
 <h3 id="os-path-join-path1-path2-…-方法"><a href="#os-path-join-path1-path2-…-方法" class="headerlink" title="os.path.join(path1[, path2[, …]]) 方法"></a>os.path.join(path1[, path2[, …]]) 方法</h3><blockquote>
-<p>用于拼接路径<br>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略<br><figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">os</span>.path.join(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d.txt'</span>))</span><br><span class="line"># 输出结果</span><br><span class="line">a\b\c\d.txt</span><br></pre></td></tr></table></figure></p>
+<p>用于拼接路径<br>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</p>
 </blockquote>
+<figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">os</span>.path.join(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d.txt'</span>))</span><br><span class="line"># 输出结果</span><br><span class="line">a\b\c\d.txt</span><br></pre></td></tr></table></figure>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(os.path.join(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'D:\\'</span>, <span class="string">'c'</span>, <span class="string">'d.txt'</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">D:<span class="string">\c\d.txt</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">os</span>.<span class="built_in">path</span>.join(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'/'</span>, <span class="string">'d.txt'</span>))</span><br><span class="line"># 输出结果</span><br><span class="line">/d.txt</span><br></pre></td></tr></table></figure>
 <h3 id="os-path-normcase-path-方法"><a href="#os-path-normcase-path-方法" class="headerlink" title="os.path.normcase(path) 方法"></a><code>os.path.normcase(path)</code> 方法</h3><blockquote>
