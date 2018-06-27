@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/27/ActiveMQ%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-06-27T14:37:47.798Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/06/05/Tomcat_APR_%E5%AE%89%E8%A3%85/</loc>
         <lastmod>2018-06-22T05:47:18.621Z</lastmod>
         <changefreq>weekly</changefreq>
