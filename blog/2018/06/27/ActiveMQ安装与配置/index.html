@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="ActiveMQ安装与配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T14:37:47.798Z">
+<meta property="og:updated_time" content="2018-06-27T14:47:48.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ安装与配置">
 <meta name="twitter:description" content="ActiveMQ安装与配置">
@@ -430,7 +430,7 @@
 </blockquote>
 <h3 id="点对点传递模型"><a href="#点对点传递模型" class="headerlink" title="点对点传递模型"></a>点对点传递模型</h3><blockquote>
 <ol>
-<li>点对点（point-to-point，简称PTP）Queue消息传递模型。<br>通过该消息传递模型，一个应用程序（即消息生产者）可以向另外一个应用程序（即消息消费者）发送消息。</li>
+<li>点对点（<code>point-to-point</code>，简称 <code>PTP</code>）<code>Queue</code> 消息传递模型。<br> 通过该消息传递模型，一个应用程序（即消息生产者）可以向另外一个应用程序（即消息消费者）发送消息。</li>
 <li>在此传递模型中，消息目的地类型是队列（即 <code>Destination</code> 接口实现类实例由 <code>Session</code> 接口实现类实例通过调用其 <code>createQueue</code> 方法并传入队列名称而创建）。</li>
 <li>消息首先被传送至消息服务器端特定的队列中，然后从此对列中将消息传送至对此队列进行监听的某个消费者。同一个队列可以关联多个消息生产者和消息消费者，但一条消息仅能传递给一个消息消费者。</li>
 <li>如果多个消息消费者正在监听队列上的消息，JMS消息服务器将根据“先来者优先”的原则确定由哪个消息消费者接收下一条消息。</li>
@@ -485,9 +485,6 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>该段引用连接<br><a href="http://blog.csdn.net/lspj201007186/article/details/70176427" target="_blank" rel="noopener">http://blog.csdn.net/lspj201007186/article/details/70176427</a></p>
-</blockquote>
 <h3 id="初始化环境"><a href="#初始化环境" class="headerlink" title="初始化环境"></a>初始化环境</h3><p>在此我们安装的是 <code>ActiveMQ 5.14.5</code>，<code>ActiveMQ 5.14.5</code> 使用的是 <code>jdk1.7</code>。<br><code>ActiveMQ 5.15.0</code> 使用的是 <code>jdk1.8</code>。</p>
 <h4 id="安装-jdk1-7"><a href="#安装-jdk1-7" class="headerlink" title="安装 jdk1.7"></a>安装 <code>jdk1.7</code></h4><p>cd /data/tools/<br>wget -c <a href="http://mirrors.linuxeye.com/jdk/jdk-7u80-linux-x64.tar.gz" target="_blank" rel="noopener">http://mirrors.linuxeye.com/jdk/jdk-7u80-linux-x64.tar.gz</a><br>tar -zxvf jdk-7u80-linux-x64.tar.gz -C /data/<br>chown -R root:root  /data/jdk1.7.0_80</p>
 <h4 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/data/jdk1.7.0_80</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
@@ -558,23 +555,32 @@
 </table>
 <h4 id="启动-ActiveMQ"><a href="#启动-ActiveMQ" class="headerlink" title="启动 ActiveMQ"></a>启动 <code>ActiveMQ</code></h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/<span class="class"><span class="keyword">data</span>/app/activemq/bin/activemq start</span></span><br><span class="line"><span class="title">tail</span> -f /<span class="class"><span class="keyword">data</span>/app/activemq/<span class="keyword">data</span>/activemq.log</span></span><br></pre></td></tr></table></figure>
 <p><code>ActiveMQ</code> 启动方式</p>
+<blockquote>
 <ol>
-<li><p>普通启动</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="meta">data</span>/app/activemq/<span class="keyword">bin/activemq </span>start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>后台启动并指定日志文件</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup <span class="regexp">/data/</span>app<span class="regexp">/activemq/</span>bin<span class="regexp">/activemq start &gt; /</span>data<span class="regexp">/app/</span>activemq<span class="regexp">/logs/</span>smlog <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+<li>普通启动<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="meta">data</span>/app/activemq/<span class="keyword">bin/activemq </span>start</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>后台启动并指定日志文件<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup <span class="regexp">/data/</span>app<span class="regexp">/activemq/</span>bin<span class="regexp">/activemq start &gt; /</span>data<span class="regexp">/app/</span>activemq<span class="regexp">/logs/</span>smlog <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
 <h3 id="ActiveMQ-管理控制台"><a href="#ActiveMQ-管理控制台" class="headerlink" title="ActiveMQ 管理控制台"></a><code>ActiveMQ</code> 管理控制台</h3><blockquote>
 <p><code>ActiveMQ</code> 默认的管理后台端口是 <code>8161</code>，默认管理用户名和密码均是 <code>admin</code>。<br><code>ActiveMQ</code> 默认的管理后台端口，可以在 <code>ActiveMQ</code> 的配置文件 <code>jetty.xml</code> 中查看到<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /data/app/activemq/conf/jetty.xml +110</span><br><span class="line">&lt;property <span class="attribute">name</span>=”port” <span class="attribute">value</span>=”8161″/&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p><code>ActiveMQ</code> 默认管理用户名和密码均是 <code>admin</code>，如果要修改默认用户名和密码的话，可以通过修改 <code>jetty-realm.properties</code> 文件来达到目的<br><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /data/app/activemq/conf/jetty-realm.properties</span><br><span class="line"><span class="literal">admin</span>: password@<span class="number">123</span>, <span class="literal">admin</span></span><br><span class="line"><span class="literal">user</span>: <span class="literal">user</span>@<span class="number">123</span>, <span class="literal">user</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<blockquote>
 <p>注意：<code>ActiveMQ</code> 用户名和密码的格式是<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">username:</span> password, rolename</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <h4 id="登陆管理控制台"><a href="#登陆管理控制台" class="headerlink" title="登陆管理控制台"></a>登陆管理控制台</h4><p><a href="http://x.x.x.x:8161/admin" target="_blank" rel="noopener">http://x.x.x.x:8161/admin</a></p>
-<h4 id="管理控制台介绍"><a href="#管理控制台介绍" class="headerlink" title="管理控制台介绍"></a>管理控制台介绍</h4><p>在 <code>ActiveMQ</code> 的管理控制台，关注比较多的是 <code>Queues队列</code> 和 <code>Topics主题</code>。<br><code>Queues队列</code> 选项</p>
+<h4 id="管理控制台介绍"><a href="#管理控制台介绍" class="headerlink" title="管理控制台介绍"></a>管理控制台介绍</h4><blockquote>
+<p>在 <code>ActiveMQ</code> 的管理控制台，关注比较多的是 <code>Queues队列</code> 和 <code>Topics主题</code>。</p>
+</blockquote>
+<p><code>Queues队列</code> 选项</p>
 <table>
 <thead>
 <tr>
