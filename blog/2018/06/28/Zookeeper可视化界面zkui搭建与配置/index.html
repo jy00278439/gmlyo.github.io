@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Zookeeper可视化界面zkui搭建与配置一个允许在 Zookeeper 上进行 CRUD 操作的 UI 控制面板。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T16:40:26.974Z">
+<meta property="og:updated_time" content="2018-06-27T16:52:11.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zookeeper可视化界面zkui搭建与配置">
 <meta name="twitter:description" content="Zookeeper可视化界面zkui搭建与配置一个允许在 Zookeeper 上进行 CRUD 操作的 UI 控制面板。">
@@ -445,7 +445,9 @@
 <h4 id="默认用户信息"><a href="#默认用户信息" class="headerlink" title="默认用户信息"></a>默认用户信息</h4><blockquote>
 <p>用户名：Admin（Admin权限，支持CRUD操作）<br>密码：manager<br>用户名：appconfig（Readonly权限，支持读取操作）<br>密码：appconfig</p>
 </blockquote>
-<h4 id="LDAP-配置"><a href="#LDAP-配置" class="headerlink" title="LDAP 配置"></a><code>LDAP</code> 配置</h4><p>如果您想使用 <code>LDAP</code> 身份验证，则提供 <code>LDAP url</code>。<br>这将优先于 <code>roleSet property</code> 文件认证。<br><code>ldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=com</code><br>如果不提供此功能，则将使用默认 roleSet 文件认证。</p>
+<h4 id="LDAP-配置"><a href="#LDAP-配置" class="headerlink" title="LDAP 配置"></a><code>LDAP</code> 配置</h4><blockquote>
+<p>如果你想使用 <code>LDAP</code> 身份验证，则提供 <code>LDAP url</code>。<br>这将优先于 <code>roleSet property</code> 文件认证。<br><code>ldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=com</code><br>如果不提供此功能，则将使用默认 <code>roleSet</code> 文件认证。</p>
+</blockquote>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar zkui<span class="number">-2.0</span>-SNAPSHOT-jar-with-dependencies.jar &gt; /data/app/zkui/logs/stdout.log <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">netstat -tunlp | grep <span class="number">9090</span></span><br></pre></td></tr></table></figure>
 <p>访问 <a href="http://x.x.x.x:9090" target="_blank" rel="noopener">http://x.x.x.x:9090</a></p>
 <h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="https://www.ilanni.com/?p=13646" target="_blank" rel="noopener">https://www.ilanni.com/?p=13646</a></p>
