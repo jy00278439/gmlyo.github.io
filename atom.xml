@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-27T15:57:10.638Z</updated>
+  <updated>2018-06-27T16:31:47.844Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zookeeper可视化界面zkui搭建与配置</title>
+    <link href="http://www.gmlyo.com//blog/2018/06/28/Zookeeper%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2zkui%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.gmlyo.com//blog/2018/06/28/Zookeeper可视化界面zkui搭建与配置/</id>
+    <published>2018-06-27T16:02:45.000Z</published>
+    <updated>2018-06-27T16:31:47.844Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Zookeeper可视化界面zkui搭建与配置"><a href="#Zookeeper可视化界面zkui搭建与配置" class="headerlink" title="Zookeeper可视化界面zkui搭建与配置"></a>Zookeeper可视化界面zkui搭建与配置</h2><blockquote><p>一个允许在 Zookeeper 上进行 CRUD 操作的 UI 控制面板。</p></blockquote><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/DeemOpen/zkui" target="_blank" rel="noopener">https://github.com/DeemOpen/zkui</a></p><h4 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h4><p>jdk 7</p><h3 id="初始化环境"><a href="#初始化环境" class="headerlink" title="初始化环境"></a>初始化环境</h3><blockquote><p><code>zkui</code> 是基于 <code>java</code> 语言开发，首先就要我们安装 <code>jdk</code> 环境。<br>因为 <code>zkui</code> 需要我们手工进行编译、构建和打包，所以还需要安装 <code>maven</code> 环境。</p></blockquote><h3 id="安装-jdk1-7"><a href="#安装-jdk1-7" class="headerlink" title="安装 jdk1.7"></a>安装 jdk1.7</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">tar</span> -zxvf jdk<span class="number">-7</span>u80-linux-x64.tar.gz -<span class="type">C</span> /<span class="class"><span class="keyword">data</span>/</span></span><br><span class="line"><span class="title">chown</span> -<span class="type">R</span> root:root /<span class="class"><span class="keyword">data</span>/jdk1.7.0_80/</span></span><br></pre></td></tr></table></figure><h4 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;&gt; /etc/profile.d/jdk.sh &lt;&lt; “EOF”</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/data/jdk1.7.0_80</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line">java –version</span><br></pre></td></tr></table></figure><h3 id="生成-zkui-的-jar-包"><a href="#生成-zkui-的-jar-包" class="headerlink" title="生成 zkui 的 jar 包"></a>生成 <code>zkui</code> 的 <code>jar</code> 包</h3><blockquote><p><code>zkui</code> 的源码包，我们可以在 <code>github</code> 上进行下载<br><a href="https://github.com/DeemOpen/zkui.git" target="_blank" rel="noopener">https://github.com/DeemOpen/zkui.git</a><br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/data/tools/</span></span><br><span class="line">git clone https:<span class="string">//github.com/DeemOpen/zkui.git</span></span><br><span class="line"><span class="keyword">cd</span> zkui/</span><br><span class="line">ll -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 mvn 命令进行编译构建打包</span></span><br><span class="line">mvn clean install</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>可以看到 <code>maven</code> 打包后生成了 <code>zkui-2.0-SNAPSHOT.jar</code> 和 <code>zkui-2.0-SNAPSHOT-jar-with-dependencies.jar</code> 两个文件，其中 <code>zkui-2.0-SNAPSHOT-jar-with-dependencies.jar</code> 是我们需要的 <code>jar</code> 文件。</p></blockquote><h3 id="启动-zkui"><a href="#启动-zkui" class="headerlink" title="启动 zkui"></a>启动 <code>zkui</code></h3><blockquote><p><code>zkui</code> 运行的 <code>jar</code> 文件生成后，我们就可以直接运行该文件了。<br>在运行该文件之前，我们还需要修改 <code>zkui</code> 的配置文件 <code>config.cfg</code>。<br><code>config.cfg</code> 文件中配置了，<code>zkui</code> 需要连接的 <code>zookeeper</code> 集群的 <code>IP</code> 地址和端口，访问 <code>ui</code> 的用户名和密码，以及 <code>zkui</code> 监听的端口号</p></blockquote><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd zkui/</span><br><span class="line">vim config.cfg</span><br><span class="line">serverPort=9090  <span class="comment"># Web服务端口</span></span><br><span class="line">zkServer=10.1.1.127:2181,10.1.1.128:2181,10.1.1.129:2181  <span class="comment"># 一个或多个 Zookeeper 节点地址</span></span><br><span class="line">ldapAuth=false</span><br><span class="line">ldapDomain=mycompany,mydomain</span><br><span class="line">ldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=com</span><br><span class="line">ldapRoleSet=&#123;<span class="string">"users"</span>: [&#123; <span class="string">"username"</span>:<span class="string">"domain\\user1"</span> , <span class="string">"role"</span>: <span class="string">"ADMIN"</span> &#125;]&#125;</span><br><span class="line">userSet = &#123;<span class="string">"users"</span>: [&#123; <span class="string">"username"</span>:<span class="string">"admin"</span> , <span class="string">"password"</span>:<span class="string">"manager"</span>,<span class="string">"role"</span>: <span class="string">"ADMIN"</span> &#125;,&#123; <span class="string">"username"</span>:<span class="string">"appconfig"</span> , <span class="string">"password"</span>:<span class="string">"appconfig"</span>,<span class="string">"role"</span>: <span class="string">"USER"</span> &#125;]&#125;</span><br></pre></td></tr></table></figure><h4 id="默认用户信息"><a href="#默认用户信息" class="headerlink" title="默认用户信息"></a>默认用户信息</h4><blockquote><p>用户名：Admin（Admin权限，支持CRUD操作）<br>密码：manager<br>用户名：appconfig（Readonly权限，支持读取操作）<br>密码：appconfig</p></blockquote><h4 id="LDAP-配置"><a href="#LDAP-配置" class="headerlink" title="LDAP 配置"></a><code>LDAP</code> 配置</h4><p>如果您想使用 <code>LDAP</code> 身份验证，则提供 <code>LDAP url</code>。<br>这将优先于 <code>roleSet property</code> 文件认证。<br><code>ldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=com</code><br>如果不提供此功能，则将使用默认 roleSet 文件认证。</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar zkui<span class="number">-2.0</span>-SNAPSHOT-jar-with-dependencies.jar &gt; /data/app/zkui/logs/stdout.log <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">netstat -tunlp | grep <span class="number">9090</span></span><br></pre></td></tr></table></figure><p>访问 <a href="http://x.x.x.x:9090" target="_blank" rel="noopener">http://x.x.x.x:9090</a></p><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="https://www.ilanni.com/?p=13646" target="_blank" rel="noopener">https://www.ilanni.com/?p=13646</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Zookeeper可视化界面zkui搭建与配置&quot;&gt;&lt;a href=&quot;#Zookeeper可视化界面zkui搭建与配置&quot; class=&quot;headerlink&quot; title=&quot;Zookeeper可视化界面zkui搭建与配置&quot;&gt;&lt;/a&gt;Zookeeper可视化界面zku
+      
+    
+    </summary>
+    
+      <category term="Zookeeper笔记" scheme="http://www.gmlyo.com/categories/Zookeeper%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Zookeeper可视化界面zkui搭建与配置" scheme="http://www.gmlyo.com/tags/Zookeeper%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2zkui%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>ActiveMQ集群安装与配置</title>
@@ -462,30 +487,6 @@
     
     
       <category term="Next添加文章结束标记" scheme="http://www.gmlyo.com/tags/Next%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Next添加音乐</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/06/Next%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/06/Next添加音乐/</id>
-    <published>2018-06-06T15:58:39.000Z</published>
-    <updated>2018-06-06T16:03:39.766Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Next-添加音乐"><a href="#Next-添加音乐" class="headerlink" title="Next 添加音乐"></a>Next 添加音乐</h3><blockquote><p>去网易云音乐搜索喜欢的音乐，点击生成外链播放器，复制代码直接放到博文末尾即可<br><code>height</code> 设为 <code>0</code> 可隐藏播放器，但仍然可以播放音乐<br><code>auto</code> 设成 <code>0</code> 可手动播放，默认是 <code>1</code> 自动播放</p></blockquote><a id="more"></a><blockquote><p>编辑 <code>/hexo/themes/next/layout/_custom/sidebar.swig</code> 文件里，播放器会显示在站点预览中<br>或<br>编辑 <code>/hexo/themes/next/layout/_macro/sidebar.swig</code> 文件里</p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将代码粘贴到一个合适的位置</span></span><br><span class="line">&lt;iframe <span class="attribute">frameborder</span>=<span class="string">"no"</span> <span class="attribute">border</span>=<span class="string">"0"</span> <span class="attribute">marginwidth</span>=<span class="string">"0"</span> <span class="attribute">marginheight</span>=<span class="string">"0"</span> <span class="attribute">width</span>=330 <span class="attribute">height</span>=110 </span><br><span class="line"><span class="attribute">src</span>=<span class="string">"//music.163.com/outchain/player?type=0&amp;id=2188265841&amp;auto=1&amp;height=90"</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Next-添加音乐&quot;&gt;&lt;a href=&quot;#Next-添加音乐&quot; class=&quot;headerlink&quot; title=&quot;Next 添加音乐&quot;&gt;&lt;/a&gt;Next 添加音乐&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;去网易云音乐搜索喜欢的音乐，点击生成外链播放器，复制代码直接放到博文末尾即可&lt;br&gt;&lt;code&gt;height&lt;/code&gt; 设为 &lt;code&gt;0&lt;/code&gt; 可隐藏播放器，但仍然可以播放音乐&lt;br&gt;&lt;code&gt;auto&lt;/code&gt; 设成 &lt;code&gt;0&lt;/code&gt; 可手动播放，默认是 &lt;code&gt;1&lt;/code&gt; 自动播放&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Next添加音乐" scheme="http://www.gmlyo.com/tags/Next%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
