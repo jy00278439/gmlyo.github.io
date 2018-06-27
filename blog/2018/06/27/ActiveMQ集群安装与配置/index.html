@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="ActiveMQ集群安装与配置">
+<meta name="description" content="ActiveMQ集群安装与配置ActiveMQ 集群是依赖于 ZooKeeper 集群而存在的在此我们把 ZooKeeper 集群和 ActiveMQ 集群安装在同样三台机器上。">
 <meta name="keywords" content="ActiveMQ集群安装与配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ActiveMQ集群安装与配置">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/06/27/ActiveMQ集群安装与配置/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="ActiveMQ集群安装与配置">
+<meta property="og:description" content="ActiveMQ集群安装与配置ActiveMQ 集群是依赖于 ZooKeeper 集群而存在的在此我们把 ZooKeeper 集群和 ActiveMQ 集群安装在同样三台机器上。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-27T15:48:02.187Z">
+<meta property="og:updated_time" content="2018-06-27T15:57:10.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ集群安装与配置">
-<meta name="twitter:description" content="ActiveMQ集群安装与配置">
+<meta name="twitter:description" content="ActiveMQ集群安装与配置ActiveMQ 集群是依赖于 ZooKeeper 集群而存在的在此我们把 ZooKeeper 集群和 ActiveMQ 集群安装在同样三台机器上。">
 
 
 
@@ -423,8 +423,8 @@
       
 
       
-        <h2 id="ActiveMQ集群安装与配置"><a href="#ActiveMQ集群安装与配置" class="headerlink" title="ActiveMQ集群安装与配置"></a>ActiveMQ集群安装与配置</h2><a id="more"></a>
-<p><code>ActiveMQ</code> 集群是依赖于 <code>ZooKeeper</code> 集群而存在的<br>在此我们把 <code>ZooKeeper</code> 集群和 <code>ActiveMQ</code> 集群安装在同样三台机器上。</p>
+        <h2 id="ActiveMQ集群安装与配置"><a href="#ActiveMQ集群安装与配置" class="headerlink" title="ActiveMQ集群安装与配置"></a>ActiveMQ集群安装与配置</h2><p><code>ActiveMQ</code> 集群是依赖于 <code>ZooKeeper</code> 集群而存在的<br>在此我们把 <code>ZooKeeper</code> 集群和 <code>ActiveMQ</code> 集群安装在同样三台机器上。</p>
+<a id="more"></a>
 <h3 id="ActiveMQ-集群原理"><a href="#ActiveMQ-集群原理" class="headerlink" title="ActiveMQ 集群原理"></a><code>ActiveMQ</code> 集群原理</h3><blockquote>
 <p><code>ActiveMQ</code> 集群原理，使用 <code>ZooKeeper</code> 集群注册所有的 <code>ActiveMQ Broker</code>。只有其中的一个 <code>Broker</code> 可以对外提供服务，被视为 <code>master</code>。而其他的 <code>Broker</code> 处于待机状态，被视为 <code>slave</code>。而此时 <code>slave</code> 只是做数据的主从同步。</p>
 </blockquote>
@@ -447,7 +447,9 @@
 <p>至少需要三台机器，这三台机器都已经安装 <code>ActiveMQ</code> 服务，<code>ZooKeeper</code> 集群也已经配置完毕。<br>这三台机器的 <code>IP</code> 分别为 <code>10.1.1.127</code>，<code>10.1.1.128</code>，<code>10.1.1.129</code></p>
 </blockquote>
 <h4 id="查看-ZooKeeper-集群的情况"><a href="#查看-ZooKeeper-集群的情况" class="headerlink" title="查看 ZooKeeper 集群的情况"></a>查看 <code>ZooKeeper</code> 集群的情况</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="meta">data</span>/app/zookeeper/<span class="keyword">bin/zkServer.sh </span>status</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>环境初始化完毕后，开始配置 <code>ActiveMQ</code> 集群。</p>
+</blockquote>
 <h4 id="配置-ActiveMQ-集群"><a href="#配置-ActiveMQ-集群" class="headerlink" title="配置 ActiveMQ 集群"></a>配置 <code>ActiveMQ</code> 集群</h4><blockquote>
 <p><code>ActiveMQ</code> 集群的配置比较简单，我们只需要修改 <code>ActiveMQ</code> 的配置文件 <code>activemq.xml</code> 中部分内容即可。<br><code>ActiveMQ</code> 根目录下的 <code>conf/activemq.xml</code> 文件，原来默认内容如下：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">vim conf/activemq.xml +81</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">persistenceAdapter</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">kahaDB</span> <span class="attr">directory</span>=<span class="string">”$</span></span></span><span class="template-variable">&#123;activemq.data&#125;</span><span class="xml"><span class="tag">/<span class="attr">kahadb</span>”/&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">persistenceAdapter</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
