@@ -42,13 +42,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/LVM%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-07T19:29:24.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Java%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-09T16:24:52.630Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,6 +114,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Zookeeper%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-27T16:52:11.235Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/LVM%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-06-29T08:12:21.788Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

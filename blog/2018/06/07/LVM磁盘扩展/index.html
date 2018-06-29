@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="LVM 磁盘扩展">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-07T18:57:45.323Z">
+<meta property="og:updated_time" content="2018-06-29T08:12:21.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LVM 磁盘扩展">
 <meta name="twitter:description" content="LVM 磁盘扩展">
@@ -434,7 +434,7 @@
 </blockquote>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vgextend vgdata /dev/sda</span><br><span class="line">Volume<span class="built_in"> group </span><span class="string">"vgdata"</span> successfully extended</span><br></pre></td></tr></table></figure>
 <h3 id="查看-VG-信息-1"><a href="#查看-VG-信息-1" class="headerlink" title="查看 VG 信息"></a>查看 VG 信息</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vgs</span></span><br></pre></td></tr></table></figure>
-<h3 id="扩展已有-LV-容量"><a href="#扩展已有-LV-容量" class="headerlink" title="扩展已有 LV 容量"></a>扩展已有 LV 容量</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lvextend -L +<span class="number">99.99</span>G -n <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br><span class="line">lvextend -L +<span class="number">1020</span>M -n <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br></pre></td></tr></table></figure>
+<h3 id="扩展已有-LV-容量"><a href="#扩展已有-LV-容量" class="headerlink" title="扩展已有 LV 容量"></a>扩展已有 LV 容量</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lvextend -l +<span class="number">100</span>%FREE <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br><span class="line">lvextend -L +<span class="number">99.99</span>G -n <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br><span class="line">lvextend -L +<span class="number">1020</span>M -n <span class="meta-keyword">/dev/</span>vgdata/lvdata</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>-L    # 指定逻辑卷的大小，单位为 <code>kKmMgGtT</code> 字节，也就是 <code>Size</code><br>-l    # 指定逻辑卷的大小，单位为 <code>PE</code> 数</p>
 </blockquote>

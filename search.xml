@@ -190,7 +190,7 @@
   <entry>
     <title><![CDATA[LVM 磁盘扩展]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F07%2FLVM%E7%A3%81%E7%9B%98%E6%89%A9%E5%B1%95%2F</url>
-    <content type="text"><![CDATA[LVM 磁盘扩展 查看磁盘空间1df -h 查看 LV 信息1lvs 查看 VG 信息1vgs 创建 PV1pvcreate /dev/vdb 扩展已有的 VG 容量1vgextend vgdata /dev/vdb Couldn&#39;t&#39; create temporary archive name.因为磁盘实在太小了或已经没有空间了，无法执行，删除一些数据就好了 12vgextend vgdata /dev/sdaVolume group "vgdata" successfully extended 查看 VG 信息1vgs 扩展已有 LV 容量12lvextend -L +99.99G -n /dev/vgdata/lvdatalvextend -L +1020M -n /dev/vgdata/lvdata -L # 指定逻辑卷的大小，单位为 kKmMgGtT 字节，也就是 Size-l # 指定逻辑卷的大小，单位为 PE 数 重新加载逻辑卷12345# 加载 ext 文件系统resize2fs /dev/vgdata/lvdata# 加载 xfs 文件系统xfs_growfs /dev/vgdata/lvdata]]></content>
+    <content type="text"><![CDATA[LVM 磁盘扩展 查看磁盘空间1df -h 查看 LV 信息1lvs 查看 VG 信息1vgs 创建 PV1pvcreate /dev/vdb 扩展已有的 VG 容量1vgextend vgdata /dev/vdb Couldn&#39;t&#39; create temporary archive name.因为磁盘实在太小了或已经没有空间了，无法执行，删除一些数据就好了 12vgextend vgdata /dev/sdaVolume group "vgdata" successfully extended 查看 VG 信息1vgs 扩展已有 LV 容量123lvextend -l +100%FREE /dev/vgdata/lvdatalvextend -L +99.99G -n /dev/vgdata/lvdatalvextend -L +1020M -n /dev/vgdata/lvdata -L # 指定逻辑卷的大小，单位为 kKmMgGtT 字节，也就是 Size-l # 指定逻辑卷的大小，单位为 PE 数 重新加载逻辑卷12345# 加载 ext 文件系统resize2fs /dev/vgdata/lvdata# 加载 xfs 文件系统xfs_growfs /dev/vgdata/lvdata]]></content>
       <categories>
         <category>LVM笔记</category>
       </categories>
