@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-06-27T16:52:11.235Z</updated>
+  <updated>2018-07-03T13:10:27.355Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS禁止密码登录</title>
+    <link href="http://www.gmlyo.com//blog/2018/07/03/CentOS%E7%A6%81%E6%AD%A2%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/"/>
+    <id>http://www.gmlyo.com//blog/2018/07/03/CentOS禁止密码登录/</id>
+    <published>2018-07-03T13:09:45.000Z</published>
+    <updated>2018-07-03T13:10:27.355Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CentOS-禁止密码登录"><a href="#CentOS-禁止密码登录" class="headerlink" title="CentOS 禁止密码登录"></a>CentOS 禁止密码登录</h2><blockquote><p>允许 <code>sshkey</code> 密钥登录，禁止密码登录</p></blockquote><a id="more"></a><h3 id="编辑-SSH-配置文件"><a href="#编辑-SSH-配置文件" class="headerlink" title="编辑 SSH 配置文件"></a>编辑 <code>SSH</code> 配置文件</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">vim</span> <span class="string">/etc/ssh/sshd_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到以下配置项</span></span><br><span class="line"><span class="comment">#RSAAuthentication yes</span></span><br><span class="line"><span class="comment">#PubkeyAuthentication yes</span></span><br><span class="line"><span class="comment">#AuthorizedKeysFile .ssh/authorized_keys</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 去调上面 3 行前面的 (#)注释</span></span><br><span class="line"><span class="comment"># 找到下面 1 行</span></span><br><span class="line"></span><br><span class="line"><span class="string">PasswordAuthentication</span> <span class="literal">yes</span></span><br><span class="line"><span class="string">PermitRootLogin</span> <span class="literal">yes</span></span><br><span class="line"><span class="comment"># 修改为</span></span><br><span class="line"><span class="string">PasswordAuthentication</span> <span class="literal">no</span>           <span class="comment"># 禁止密码登录</span></span><br><span class="line"><span class="string">PermitRootLogin</span> <span class="literal">no</span>                  <span class="comment"># 禁止 root 登录</span></span><br><span class="line"><span class="string">PermitRootLogin</span> <span class="string">without-password</span>    <span class="comment"># 禁止 root 密码登录</span></span><br></pre></td></tr></table></figure><h3 id="重启-SSH-服务"><a href="#重启-SSH-服务" class="headerlink" title="重启 SSH 服务"></a>重启 <code>SSH</code> 服务</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">systemctl reload sshd</span></span><br><span class="line"><span class="attribute">systemctl -l status sshd</span></span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="https://blog.csdn.net/u013372487/article/details/71307323" target="_blank" rel="noopener">https://blog.csdn.net/u013372487/article/details/71307323</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CentOS-禁止密码登录&quot;&gt;&lt;a href=&quot;#CentOS-禁止密码登录&quot; class=&quot;headerlink&quot; title=&quot;CentOS 禁止密码登录&quot;&gt;&lt;/a&gt;CentOS 禁止密码登录&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;允许 &lt;code&gt;sshkey&lt;/code&gt; 密钥登录，禁止密码登录&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Linux笔记" scheme="http://www.gmlyo.com/categories/Linux%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="CentOS禁止密码登录" scheme="http://www.gmlyo.com/tags/CentOS%E7%A6%81%E6%AD%A2%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Zookeeper可视化界面zkui搭建与配置</title>
@@ -460,30 +484,6 @@
     
     
       <category term="创建LVM" scheme="http://www.gmlyo.com/tags/%E5%88%9B%E5%BB%BALVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Next添加文章结束标记</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/07/Next%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/07/Next添加文章结束标记/</id>
-    <published>2018-06-06T16:16:33.000Z</published>
-    <updated>2018-06-06T16:24:22.224Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="添加文章结束标记"><a href="#添加文章结束标记" class="headerlink" title="添加文章结束标记"></a>添加文章结束标记</h3><blockquote><p>编辑 <code>/hexo/themes/next/layout/_macro/post.swig</code> 文件<br>在 <code>if theme.wechat_subscriber.enabled and not is_index</code> 上面添加如下代码</p></blockquote><a id="more"></a><h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>---------------- The End ----------------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> theme.wechat_subscriber.enabled and not is_index %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">include</span></span> 'wechat-subscriber.swig' %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure><h3 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">————— The <span class="keyword">End</span> —————</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;添加文章结束标记&quot;&gt;&lt;a href=&quot;#添加文章结束标记&quot; class=&quot;headerlink&quot; title=&quot;添加文章结束标记&quot;&gt;&lt;/a&gt;添加文章结束标记&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;编辑 &lt;code&gt;/hexo/themes/next/layout/_macro/post.swig&lt;/code&gt; 文件&lt;br&gt;在 &lt;code&gt;if theme.wechat_subscriber.enabled and not is_index&lt;/code&gt; 上面添加如下代码&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Next笔记" scheme="http://www.gmlyo.com/categories/Next%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Next添加文章结束标记" scheme="http://www.gmlyo.com/tags/Next%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AE%B0/"/>
     
   </entry>
   

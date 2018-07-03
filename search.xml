@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS禁止密码登录]]></title>
+    <url>%2F%2Fblog%2F2018%2F07%2F03%2FCentOS%E7%A6%81%E6%AD%A2%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[CentOS 禁止密码登录 允许 sshkey 密钥登录，禁止密码登录 编辑 SSH 配置文件12345678910111213141516vim /etc/ssh/sshd_config# 找到以下配置项#RSAAuthentication yes#PubkeyAuthentication yes#AuthorizedKeysFile .ssh/authorized_keys# 去调上面 3 行前面的 (#)注释# 找到下面 1 行PasswordAuthentication yesPermitRootLogin yes# 修改为PasswordAuthentication no # 禁止密码登录PermitRootLogin no # 禁止 root 登录PermitRootLogin without-password # 禁止 root 密码登录 重启 SSH 服务12systemctl reload sshdsystemctl -l status sshd 参考文档https://blog.csdn.net/u013372487/article/details/71307323]]></content>
+      <categories>
+        <category>Linux笔记</category>
+      </categories>
+      <tags>
+        <tag>CentOS禁止密码登录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Zookeeper可视化界面zkui搭建与配置]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F28%2FZookeeper%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2zkui%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[Zookeeper可视化界面zkui搭建与配置一个允许在 Zookeeper 上进行 CRUD 操作的 UI 控制面板。 下载地址https://github.com/DeemOpen/zkui 运行环境jdk 7 初始化环境 zkui 是基于 java 语言开发，首先就要我们安装 jdk 环境。因为 zkui 需要我们手工进行编译、构建和打包，所以还需要安装 maven 环境。 安装 jdk1.712tar -zxvf jdk-7u80-linux-x64.tar.gz -C /data/chown -R root:root /data/jdk1.7.0_80/ 添加环境变量12345678910cat &gt;&gt; /etc/profile.d/jdk.sh &lt;&lt; “EOF”#!/bin/bashexport JAVA_HOME=/data/jdk1.7.0_80export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jarexport PATH=$PATH:$JAVA_HOME/binEOFsource /etc/profilejava –version 生成 zkui 的 jar 包 zkui 的源码包，我们可以在 github 上进行下载https://github.com/DeemOpen/zkui.git1234567cd /data/tools/git clone https://github.com/DeemOpen/zkui.gitcd zkui/ll -h# 使用 mvn 命令进行编译构建打包mvn clean install 可以看到 maven 打包后生成了 zkui-2.0-SNAPSHOT.jar 和 zkui-2.0-SNAPSHOT-jar-with-dependencies.jar 两个文件，其中 zkui-2.0-SNAPSHOT-jar-with-dependencies.jar 是我们需要的 jar 文件。 启动 zkui zkui 运行的 jar 文件生成后，我们就可以直接运行该文件了。在运行该文件之前，我们还需要修改 zkui 的配置文件 config.cfg。config.cfg 文件中配置了，zkui 需要连接的 zookeeper 集群的 IP 地址和端口，访问 ui 的用户名和密码，以及 zkui 监听的端口号 123456789cd zkui/vim config.cfgserverPort=9090 # Web服务端口zkServer=10.1.1.127:2181,10.1.1.128:2181,10.1.1.129:2181 # 一个或多个 Zookeeper 节点地址ldapAuth=falseldapDomain=mycompany,mydomainldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=comldapRoleSet=&#123;"users": [&#123; "username":"domain\\user1" , "role": "ADMIN" &#125;]&#125;userSet = &#123;"users": [&#123; "username":"admin" , "password":"manager","role": "ADMIN" &#125;,&#123; "username":"appconfig" , "password":"appconfig","role": "USER" &#125;]&#125; 默认用户信息 用户名：Admin（Admin权限，支持CRUD操作）密码：manager用户名：appconfig（Readonly权限，支持读取操作）密码：appconfig LDAP 配置 如果你想使用 LDAP 身份验证，则提供 LDAP url。这将优先于 roleSet property 文件认证。ldapUrl=ldap://&lt;ldap_host&gt;:&lt;ldap_port&gt;/dc=mycom,dc=com如果不提供此功能，则将使用默认 roleSet 文件认证。 12nohup java -jar zkui-2.0-SNAPSHOT-jar-with-dependencies.jar &gt; /data/app/zkui/logs/stdout.log 2&gt;&amp;1 &amp;netstat -tunlp | grep 9090 访问 http://x.x.x.x:9090 参考文档https://www.ilanni.com/?p=13646]]></content>
