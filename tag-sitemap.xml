@@ -303,8 +303,15 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/tags/Python%E5%88%97%E8%A1%A8%E7%B1%BB%E5%9E%8B/</loc>
+        <lastmod>2018-07-10T16:17:26.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/tags/Python%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/</loc>
-        <lastmod>2018-07-10T14:43:54.483Z</lastmod>
+        <lastmod>2018-07-10T16:17:50.394Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
