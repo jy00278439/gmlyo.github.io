@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-07-12T16:51:31.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/07/11/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</loc>
         <lastmod>2018-07-10T17:11:47.589Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -357,14 +365,6 @@
     <url>
         <loc>http://www.gmlyo.com/blog/2018/06/05/%E4%B8%8D%E9%80%9A%E8%BF%87inventory%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9Ahost%E8%BF%90%E8%A1%8CAnsible/</loc>
         <lastmod>2018-06-06T03:24:58.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-05T19:05:37.814Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
