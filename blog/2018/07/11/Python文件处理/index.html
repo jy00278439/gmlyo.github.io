@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="文件处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T15:59:21.231Z">
+<meta property="og:updated_time" content="2018-07-16T16:04:51.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python文件处理">
 <meta name="twitter:description" content="文件处理">
@@ -521,9 +521,12 @@
 </blockquote>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">l</span> = <span class="keyword">f</span>.readlines()</span><br><span class="line">    <span class="keyword">print</span>(<span class="keyword">l</span>)</span><br><span class="line">    <span class="keyword">print</span>(<span class="built_in">type</span>(<span class="keyword">l</span>))</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">[<span class="string">'1111\n'</span>, <span class="string">'2222\n'</span>, <span class="string">'3333'</span>]</span><br><span class="line">&lt;class <span class="string">'list'</span>&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>注意：</code><br><code>write()</code> 将</p>
+<p><code>write()</code> 将内容一次性写入文件中</p>
 </blockquote>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>writelines()</code> 将内容循环写入文件中</p>
+</blockquote>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相当于</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">'hello'</span>:</span><br><span class="line">        f.<span class="built_in">write</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
 <h4 id="a-模式，只追加写模式"><a href="#a-模式，只追加写模式" class="headerlink" title="a 模式，只追加写模式"></a><code>a</code> 模式，只追加写模式</h4><blockquote>
 <p>文件不存在，则创建一个空文件，并且将文件指针跳到文件的末尾<br>文件存在，则会将文件指针跳到文件的末尾</p>
