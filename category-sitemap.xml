@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Nginx%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-05T19:04:33.991Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Ansible%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-06T03:24:58.355Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,6 +121,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Shadowsocks%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-07-16T17:43:55.070Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Nginx%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-07-17T13:00:51.078Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
