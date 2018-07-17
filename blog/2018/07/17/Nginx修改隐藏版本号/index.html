@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Nginx修改隐藏版本号Nginx 配置文件 配置文件里增加 server_tokens off;server_tokens 作用域是 http server location 语句块server_tokens 默认值是 on，表示显示版本信息，设置 server_tokens 值是 off，就可以在所有地方隐藏 nginx 的版本信息">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T13:14:20.036Z">
+<meta property="og:updated_time" content="2018-07-17T13:15:12.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx修改隐藏版本号">
 <meta name="twitter:description" content="Nginx修改隐藏版本号Nginx 配置文件 配置文件里增加 server_tokens off;server_tokens 作用域是 http server location 语句块server_tokens 默认值是 on，表示显示版本信息，设置 server_tokens 值是 off，就可以在所有地方隐藏 nginx 的版本信息">
@@ -428,9 +428,9 @@
 </blockquote>
 <a id="more"></a>
 <h3 id="隐藏-Nginx-版本号"><a href="#隐藏-Nginx-版本号" class="headerlink" title="隐藏 Nginx 版本号"></a>隐藏 <code>Nginx</code> 版本号</h3><blockquote>
-<p>在 <code>/usr/local/nginx/conf/nginx.conf</code> 里</p>
+<p>在 <code>/data/app/nginx/conf/nginx.conf</code> 里</p>
 </blockquote>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="string">/usr/local/nginx/conf/nginx.conf</span></span><br><span class="line">host &#123;</span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br><span class="line">    server_tokens off;</span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="string">/data/app/nginx/conf/nginx.conf</span></span><br><span class="line">host &#123;</span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br><span class="line">    server_tokens off;</span><br><span class="line"><span class="string">...</span>省略<span class="string">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这样修改之后能隐藏掉 <code>nginx</code> 的版本号，但是还是可以显示 Web 软件为 nginx</p>
 </blockquote>
