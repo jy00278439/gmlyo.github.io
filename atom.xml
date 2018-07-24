@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-07-24T12:00:41.801Z</updated>
+  <updated>2018-07-24T12:25:55.717Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RabbitMQ用户管理</title>
+    <link href="http://www.gmlyo.com//blog/2018/07/24/RabbitMQ%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"/>
+    <id>http://www.gmlyo.com//blog/2018/07/24/RabbitMQ用户管理/</id>
+    <published>2018-07-24T12:25:29.000Z</published>
+    <updated>2018-07-24T12:25:55.717Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="RabbitMQ-用户管理"><a href="#RabbitMQ-用户管理" class="headerlink" title="RabbitMQ 用户管理"></a>RabbitMQ 用户管理</h2><a id="more"></a><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><blockquote><p>在 <code>RabbitMQ</code> 中，用户是访问控制（Access Control）的基本单元，且单个用户可以跨越多个<code>vhost</code> 进行授权。<br>针对一至多个 <code>vhost</code>，用户可以被赋予不同级别的访问权限，并使用标准的用户名和密码来认证用户。<br>创建用户的命令为：<code>rabbitmqctl add_user {username} {password}</code>。<br>其中<br><code>username</code> 表示要创建的用户名称。<br><code>password</code> 表示创建用户登录的密码。<br>具体创建一个用户名为 <code>root</code>、密码为 <code>root123</code> 的用户</p></blockquote><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]# rabbitmqctl add_user root root123</span><br><span class="line">Creating<span class="built_in"> user </span><span class="string">"root"</span>12</span><br></pre></td></tr></table></figure><h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><p>可以通过<br><code>rabbitmqctl change_password {username} {newpassword}</code><br>命令来更改指定用户的密码<br>其中<br><code>username</code> 表示要变更密码的用户名称<br><code>newpassword</code> 表示要变更的新的密码</p><blockquote><p>举例：将 <code>root</code>用户的密码变更为 <code>root321</code><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]# rabbitmqctl change_password root root321</span><br><span class="line">Changing password <span class="keyword">for</span><span class="built_in"> user </span><span class="string">"root"</span>12</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="清除密码"><a href="#清除密码" class="headerlink" title="清除密码"></a>清除密码</h3><p>同样可以清除密码，这样用户就不能使用密码登录了<br>对于的操作命令为：<br><code>rabbitmqctl clear_password {username}</code><br>其中<br><code>username</code> 表示要清楚密码的用户名称</p><h3 id="验证用户"><a href="#验证用户" class="headerlink" title="验证用户"></a>验证用户</h3><p>使用<br><code>rabbitmqctl authenticate_user {username} {password}</code><br>可以通过密码来验证用户<br>其中<br><code>username</code> 表示需要被验证的用户名称<br><code>password</code> 表示密码</p><blockquote><p>下面示例中分别采用 <code>root321</code> 和 <code>root322</code> 来验证 <code>root</code> 用户<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]# rabbitmqctl authenticate_user root root321</span><br><span class="line">Authenticating<span class="built_in"> user </span><span class="string">"root"</span></span><br><span class="line">Success</span><br><span class="line">[root@node1 ~]# rabbitmqctl authenticate_user root root322</span><br><span class="line">Authenticating<span class="built_in"> user </span><span class="string">"root"</span></span><br><span class="line">Error: failed <span class="keyword">to</span> authenticate<span class="built_in"> user </span><span class="string">"root"</span>123456</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><p>删除用户的命令是<br><code>rabbitmqctl delete_user {username}</code><br>其中<br><code>username</code> 表示要删除的用户名称</p><blockquote><p>删除用户 <code>root</code> 的示例如下<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]# rabbitmqctl delete_user root</span><br><span class="line">Deleting<span class="built_in"> user </span><span class="string">"root"</span>12</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="查询用户列表"><a href="#查询用户列表" class="headerlink" title="查询用户列表"></a>查询用户列表</h3><p><code>rabbitmqctl list_users</code> 命令可以用来罗列当前的所有用户<br>每个结果行都包含用户名称，其后紧跟用户的角色（tags）</p><blockquote><p>示例代码如下：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]# rabbitmqctl list_users</span><br><span class="line">Listing users</span><br><span class="line">guest        [administrator]</span><br><span class="line">root          []</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="用户的角色分为-5-种类型"><a href="#用户的角色分为-5-种类型" class="headerlink" title="用户的角色分为 5 种类型"></a>用户的角色分为 <code>5</code> 种类型</h3><p><code>none</code>：无任何角色。新创建的用户的角色默认为 <code>none</code>。<br><code>management</code>：可以访问 <code>Web</code> 管理页面。<br><code>policymaker</code>：包含 <code>management</code> 的所有权限，并且可以管理策略（policy）和参数（parameter）。<br><code>monitoring</code>：包含 <code>management</code> 的所有权限，并且可以看到所有连接（connections）、信道（channels）以及节点相关的信息。<br><code>administartor</code>：包含 <code>monitoring</code> 的所有权限，并且可以管理用户、虚拟主机、权限、策略、参数等等。<code>administator</code> 代表了最高的权限。 </p><h3 id="设置用户角色"><a href="#设置用户角色" class="headerlink" title="设置用户角色"></a>设置用户角色</h3><p>用户的角色可以通过<br><code>rabbitmqctl set_user_tags {username} {tag...}</code><br>命令设置。<br>其中<br><code>username</code> 参数表示需要设置角色的用户名称。<br><code>tag</code> 参数用于设置 <code>0</code> 个、<code>1</code> 个 或者 <code>多</code> 个的角色，设置之后任何之前现有的身份都会被删除。</p><blockquote><p>使用示例如下：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl set_user_tags root monitoring</span></span><br><span class="line">Setting tags <span class="keyword">for</span> user <span class="string">"root"</span> <span class="keyword">to</span> [monitoring]</span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl list_users -q</span></span><br><span class="line">guest        [administrator]</span><br><span class="line">root         [monitoring]</span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl set_user_tags root policymaker -q</span></span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl list_users -q</span></span><br><span class="line">guest        [administrator]</span><br><span class="line">root         [policymaker]</span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl set_user_tags root</span></span><br><span class="line">Setting tags <span class="keyword">for</span> user <span class="string">"root"</span> <span class="keyword">to</span> []</span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl list_users -q</span></span><br><span class="line">guest        [administrator]</span><br><span class="line">root         []</span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl set_user_tags root policymaker,management</span></span><br><span class="line">Setting tags <span class="keyword">for</span> user <span class="string">"root"</span> <span class="keyword">to</span> [<span class="string">'policymaker,management'</span>]</span><br><span class="line">[root<span class="symbol">@node1</span> ~]<span class="meta"># rabbitmqctl list_users -q</span></span><br><span class="line">guest        [administrator]</span><br><span class="line">root         [policymaker,management]</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;RabbitMQ-用户管理&quot;&gt;&lt;a href=&quot;#RabbitMQ-用户管理&quot; class=&quot;headerlink&quot; title=&quot;RabbitMQ 用户管理&quot;&gt;&lt;/a&gt;RabbitMQ 用户管理&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="RabbitMQ笔记" scheme="http://www.gmlyo.com/categories/RabbitMQ%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="RabbitMQ用户管理" scheme="http://www.gmlyo.com/tags/RabbitMQ%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>RabbitMQ集群管理</title>
@@ -453,32 +475,6 @@
     
     
       <category term="添加看板娘" scheme="http://www.gmlyo.com/tags/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chrome自带的长截屏功能</title>
-    <link href="http://www.gmlyo.com//blog/2018/06/10/Chrome%E8%87%AA%E5%B8%A6%E7%9A%84%E9%95%BF%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD/"/>
-    <id>http://www.gmlyo.com//blog/2018/06/10/Chrome自带的长截屏功能/</id>
-    <published>2018-06-10T07:22:15.000Z</published>
-    <updated>2018-06-10T07:23:58.993Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Chrome自带的长截屏功能"><a href="#Chrome自带的长截屏功能" class="headerlink" title="Chrome自带的长截屏功能"></a>Chrome自带的长截屏功能</h2><blockquote><p>在 <code>Google Chrome</code> 里面，打开开发人员工具 <code>按F12</code><br>或<br>网站上任意空白处右键 – 选择 “检查” 或者“审查元素”</p><p>快捷键 <code>Ctrl + Shift + P</code>，会看到右边的审查元素出现了一个输入框<br>输入 <code>screenshot</code> 然后回车<br>保存图片</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Chrome自带的长截屏功能&quot;&gt;&lt;a href=&quot;#Chrome自带的长截屏功能&quot; class=&quot;headerlink&quot; title=&quot;Chrome自带的长截屏功能&quot;&gt;&lt;/a&gt;Chrome自带的长截屏功能&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;在 &lt;code&gt;G
-      
-    
-    </summary>
-    
-      <category term="Chrome笔记" scheme="http://www.gmlyo.com/categories/Chrome%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Chrome自带的长截屏功能" scheme="http://www.gmlyo.com/tags/Chrome%E8%87%AA%E5%B8%A6%E7%9A%84%E9%95%BF%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD/"/>
     
   </entry>
   
