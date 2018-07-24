@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/07/24/RabbitMQ%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/</loc>
+        <lastmod>2018-07-24T11:52:22.514Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/07/24/RabbitMQ%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2018-07-24T11:41:40.766Z</lastmod>
         <changefreq>weekly</changefreq>
