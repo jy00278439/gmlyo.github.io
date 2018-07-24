@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="RabbitMQ应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
+<meta name="description" content="RabbitMQ 应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
 <meta name="keywords" content="RabbitMQ应用管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ应用管理">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/07/24/RabbitMQ应用管理/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="RabbitMQ应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
+<meta property="og:description" content="RabbitMQ 应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T12:31:30.299Z">
+<meta property="og:updated_time" content="2018-07-24T12:38:47.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ应用管理">
-<meta name="twitter:description" content="RabbitMQ应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
+<meta name="twitter:description" content="RabbitMQ 应用管理本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。">
 
 
 
@@ -423,7 +423,7 @@
       
 
       
-        <h2 id="RabbitMQ应用管理"><a href="#RabbitMQ应用管理" class="headerlink" title="RabbitMQ应用管理"></a><code>RabbitMQ</code>应用管理</h2><p>本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。</p>
+        <h2 id="RabbitMQ-应用管理"><a href="#RabbitMQ-应用管理" class="headerlink" title="RabbitMQ 应用管理"></a>RabbitMQ 应用管理</h2><p>本文主要阐述应用与集群相关的一些操作管理命令，包括关闭、重置、开启服务，还有建立集群的一些信息。</p>
 <a id="more"></a>
 <h3 id="rabbitmqctl-stop-pid-file"><a href="#rabbitmqctl-stop-pid-file" class="headerlink" title="rabbitmqctl stop [pid_file]"></a>rabbitmqctl stop [pid_file]</h3><blockquote>
 <p>用于停止运行 <code>RabbitMQ</code> 的 <code>Erlang</code> 虚拟机和 <code>RabbitMQ</code> 服务应用。<br>如果指定了 <code>pid_file</code>，还需要等待指定进程的结束。<br>其中 <code>pid_file</code> 是通过调用 <code>rabbitmq-server</code> 启动 <code>RabbitMQ</code> 服务时创建的，默认情况下存放于 <code>Mnesia</code> 目录中，可以通过 <code>RABBITMQ_PID_FILE</code> 这个环境变量来改变存放路径。<br><code>注意</code>，如果是 <code>rabbitmq-server –detach</code> 启动的 <code>RabbitMQ</code> 服务则不会生成 <code>pid_file</code> 这个文件。</p>
@@ -705,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RabbitMQ应用管理"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ应用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-stop-pid-file"><span class="nav-number">1.1.</span> <span class="nav-text">rabbitmqctl stop [pid_file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-shutdown"><span class="nav-number">1.2.</span> <span class="nav-text">rabbitmqctl shutdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-stop-app"><span class="nav-number">1.3.</span> <span class="nav-text">rabbitmqctl stop_app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-start-app"><span class="nav-number">1.4.</span> <span class="nav-text">rabbitmqctl start_app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-wait-pid-file"><span class="nav-number">1.5.</span> <span class="nav-text">rabbitmqctl wait [pid_file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-reset"><span class="nav-number">1.6.</span> <span class="nav-text">rabbitmqctl reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-force-reset"><span class="nav-number">1.7.</span> <span class="nav-text">rabbitmqctl force_reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-rotate-logs-suffix"><span class="nav-number">1.8.</span> <span class="nav-text">rabbitmqctl rotate_logs {suffix}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-hipe-compile-directory"><span class="nav-number">1.9.</span> <span class="nav-text">rabbitmqctl hipe_compile {directory}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.10.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RabbitMQ-应用管理"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ 应用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-stop-pid-file"><span class="nav-number">1.1.</span> <span class="nav-text">rabbitmqctl stop [pid_file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-shutdown"><span class="nav-number">1.2.</span> <span class="nav-text">rabbitmqctl shutdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-stop-app"><span class="nav-number">1.3.</span> <span class="nav-text">rabbitmqctl stop_app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-start-app"><span class="nav-number">1.4.</span> <span class="nav-text">rabbitmqctl start_app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-wait-pid-file"><span class="nav-number">1.5.</span> <span class="nav-text">rabbitmqctl wait [pid_file]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-reset"><span class="nav-number">1.6.</span> <span class="nav-text">rabbitmqctl reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-force-reset"><span class="nav-number">1.7.</span> <span class="nav-text">rabbitmqctl force_reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-rotate-logs-suffix"><span class="nav-number">1.8.</span> <span class="nav-text">rabbitmqctl rotate_logs {suffix}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rabbitmqctl-hipe-compile-directory"><span class="nav-number">1.9.</span> <span class="nav-text">rabbitmqctl hipe_compile {directory}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.10.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
             
 
           </div>
