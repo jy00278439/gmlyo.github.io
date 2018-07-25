@@ -331,13 +331,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/RabbitMQ%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/</loc>
-        <lastmod>2018-07-24T14:44:20.426Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/RabbitMQ%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2018-07-24T14:45:14.612Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -354,6 +347,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/RabbitMQ%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-07-24T15:09:37.141Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/RabbitMQ%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/</loc>
+        <lastmod>2018-07-25T14:56:51.663Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
