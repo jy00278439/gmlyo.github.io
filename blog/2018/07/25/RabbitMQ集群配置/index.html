@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-25T18:25:31.522Z">
+<meta property="og:updated_time" content="2018-07-25T18:30:37.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ集群配置">
 <meta name="twitter:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
@@ -426,7 +426,7 @@
         <h2 id="RabbitMQ-集群配置"><a href="#RabbitMQ-集群配置" class="headerlink" title="RabbitMQ 集群配置"></a>RabbitMQ 集群配置</h2><p>这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署</p>
 <a id="more"></a>
 <p>选用三台主机，主机名分别是<br>pro-rabbitmq01<br>pro-rabbitmq02<br>pro-rabbitmq03</p>
-<h3 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h3><p>RabbitMQ 是用 Erlang 开发的，集群非常方便，因为 Erlang 天生就是一门分布式语言，但其本身并不支持负载均衡。<br>RabbitMQ 利用 Erlang 的分布式特性组建集群，erlang 集群通过 magic cookie 实现，<br>此 cookie 保存在 $HOME/.erlang.cookie<br>这里即：/var/lib/rabbitmq/.erlang.cookie，需要保证集群各节点的此 cookie 一致，<br>可以选取一个节点的 cookie，用 <code>rsync</code>，<code>scp</code> 同步到其余节点。</p>
+<h3 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h3><p>RabbitMQ 是用 Erlang 开发的，集群非常方便，因为 Erlang 天生就是一门分布式语言，但其本身并不支持负载均衡。<br>RabbitMQ 利用 Erlang 的分布式特性组建集群，erlang 集群通过 magic cookie 实现，<br>此 cookie 保存在 $HOME/.erlang.cookie<br>rpm安装即 <code>/var/lib/rabbitmq/.erlang.cookie</code><br>二进制安装在 <code>/data/erlang/.erlang.cookie</code><br>需要保证集群各节点的此 cookie 一致，可以选取一个节点的 cookie，用 <code>rsync</code>，<code>scp</code> 同步到其余节点。</p>
 <h3 id="同步-Cookie"><a href="#同步-Cookie" class="headerlink" title="同步 Cookie"></a>同步 Cookie</h3><p>读取其中一个节点的 cookie，并复制到其他节点<br>节点之间通过 cookie 确定相互是否可通信。<br>cookie 存放在 /var/lib/rabbitmq/.erlang.cookie<br>或<br>$HOME/.erlang.cookie 中</p>
 <h3 id="设置-Erlang-Cookie"><a href="#设置-Erlang-Cookie" class="headerlink" title="设置 Erlang Cookie"></a>设置 Erlang Cookie</h3><p>RabbitMQ 的集群是依赖于 Erlang 的集群来工作的，所以必须先构建起 Erlang 的集群环境。<br>Erlang 的集群中各节点是通过一个 magic cookie 来实现的，这个 Cookie 存放在 /data/erlang/.erlang.cookie 中，文件是 400 的权限。<br>所以必须保证各节点 Cookie 保持一致，否则节点之间就无法通信。<br>我们是删除其中两台的 /data/erlang/.erlang.cookie，然后将另一台的 /data/erlang/.erlang.cookie 拷贝到这两台上。<br>文件权限是 400</p>
 <blockquote>
