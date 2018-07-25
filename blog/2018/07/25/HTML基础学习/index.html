@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/13/5916a911da775.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/10/5912b5a503af6.png">
-<meta property="og:updated_time" content="2018-07-25T18:48:08.045Z">
+<meta property="og:updated_time" content="2018-07-25T18:56:32.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础学习">
 <meta name="twitter:description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端  12345678910111213141516171819import socketdef handle_request(client):    buf = client.recv(1024)    client.send(bytes(&quot;HTTP/1">
@@ -524,6 +524,88 @@
 <h4 id="常用属性解释-1"><a href="#常用属性解释-1" class="headerlink" title="常用属性解释"></a>常用属性解释</h4><blockquote>
 <p>属性：type编号类型，默认为整数。可选（1、A、a、Ⅰ、i）<br>属性：start起始编号，默认为1，即由最小编号开始</p>
 </blockquote>
+<h3 id="HTML常用标签之a标签"><a href="#HTML常用标签之a标签" class="headerlink" title="HTML常用标签之a标签"></a>HTML常用标签之a标签</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p><code>&lt;a 属性=“属性值”&gt;标签内容&lt;/a&gt;</code></p>
+</blockquote>
+<h4 id="常见的属性"><a href="#常见的属性" class="headerlink" title="常见的属性"></a>常见的属性</h4><ul>
+<li><p>href – 指定目标网页的地址，该地址可以有如下类型：</p>
+<blockquote>
+<p>链接远程目标：通过URL地址链接到远程目标。</p>
+<p>链接本地页面：可以通过相对路径或者绝对路径链接本地页面。</p>
+<blockquote>
+<p>相对路径：指相对于当前页面位置的路径<br>./：表示当前页面所在的目录<br>../：表示当前页面所在的上一级目录</p>
+<p>绝对路径：绝对路径指当前站点中确切的路径，一般以”/”开始 例如：<code>&lt;a href=&quot;/admin/index.py&quot;&gt;后台首页&lt;/a&gt;</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>target</p>
+<blockquote>
+<p>_blank 表示在 <code>新窗口</code> 中打开目标网页<br>_self 表示在 <code>当前窗口</code> 中打开目标网页</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="常见例子"><a href="#常见例子" class="headerlink" title="常见例子"></a>常见例子</h4><blockquote>
+<p>链接到远程地址</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">a</span> href=“http:<span class="comment">//www.sina.com.cn”&gt;新浪网&lt;/a&gt;</span></span><br><span class="line">&lt;<span class="selector-tag">a</span> href=“http:<span class="comment">//www.qq.com”&gt;腾讯网&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>链接到本地文件</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">相对路径：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“include/login.html”</span>&gt;</span>登录页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">绝对路径：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“/html/123.html”</span>&gt;</span>国内新闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>链接到邮箱</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“mailto:976296751@qq.com”</span>&gt;</span>给我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>下载文件</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“/download/winRAR.rar”</span>&gt;</span>下载WinRAR<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“download/office2007.rar”</span>&gt;</span>下载office2007<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="HTML常用标签之div和span元素"><a href="#HTML常用标签之div和span元素" class="headerlink" title="HTML常用标签之div和span元素"></a>HTML常用标签之div和span元素</h3><h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><blockquote>
+<p><code>&lt;div&gt;&lt;/div&gt;</code><br><code>&lt;div&gt;</code>只是一个块级元素，并无实际的意义. 主要通过CSS为其赋予不同的表现</p>
+</blockquote>
+<h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><blockquote>
+<p><code>&lt;span&gt;&lt;/span&gt;</code><br><code>&lt;span&gt;</code>内联行(行内元素),并无实际的意义. 主要通过CSS为其赋予不同的表现</p>
+</blockquote>
+<h4 id="块级元素与行内元素的区别"><a href="#块级元素与行内元素的区别" class="headerlink" title="块级元素与行内元素的区别"></a><code>块级元素与行内元素的区别</code></h4><blockquote>
+<p>所谓块元素，是以另起一行开始渲染的元素，行内元素则不需另起一行<br>如果单独在网页中插入这两个元素，不会对页面产生任何的影响<br>这两个元素是专门为定义CSS样式而生的</p>
+</blockquote>
+<h3 id="HTML常用标签之img标签"><a href="#HTML常用标签之img标签" class="headerlink" title="HTML常用标签之img标签"></a>HTML常用标签之img标签</h3><h4 id="常见的用法"><a href="#常见的用法" class="headerlink" title="常见的用法"></a>常见的用法</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">"URL"</span> <span class="attribute">alt</span>=<span class="string">"图片说明"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="常见的属性用法说明"><a href="#常见的属性用法说明" class="headerlink" title="常见的属性用法说明"></a>常见的属性用法说明</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>图像URL</td>
+<td>规定图像的URL</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>字符串</td>
+<td>规定图像的替代文本</td>
+</tr>
+<tr>
+<td>width</td>
+<td>px / %</td>
+<td>规定图像的宽</td>
+</tr>
+<tr>
+<td>height</td>
+<td>px / %</td>
+<td>规定图像的高</td>
+</tr>
+<tr>
+<td>border</td>
+<td>px</td>
+<td>图像的边框粗细</td>
+</tr>
+</tbody>
+</table>
 <h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.shangzekai.xyz/2017/05/07/html基础目录/" target="_blank" rel="noopener">http://www.shangzekai.xyz/2017/05/07/html基础目录/</a></p>
 
       
@@ -750,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML基础学习"><span class="nav-number">1.</span> <span class="nav-text">HTML基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web运行本质"><span class="nav-number">1.1.</span> <span class="nav-text">Web运行本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-相关概念"><span class="nav-number">1.2.</span> <span class="nav-text">HTML 相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html是什么"><span class="nav-number">1.2.1.</span> <span class="nav-text">html是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#w3c（了解）"><span class="nav-number">1.2.2.</span> <span class="nav-text">w3c（了解）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-文件结构以及标签格式"><span class="nav-number">1.3.</span> <span class="nav-text">HTML 文件结构以及标签格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html-的文件格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">html 的文件格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上述代码说明"><span class="nav-number">1.3.2.</span> <span class="nav-text">上述代码说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html-标签格式"><span class="nav-number">1.3.3.</span> <span class="nav-text">html 标签格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html-常用标签之Meta"><span class="nav-number">1.4.</span> <span class="nav-text">html 常用标签之Meta</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Meta介绍"><span class="nav-number">1.4.1.</span> <span class="nav-text">Meta介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于meta常见的用法"><span class="nav-number">1.4.2.</span> <span class="nav-text">关于meta常见的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单示例"><span class="nav-number">1.4.3.</span> <span class="nav-text">简单示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-常用标签之字体以及排版标签"><span class="nav-number">1.5.</span> <span class="nav-text">HTML 常用标签之字体以及排版标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#排版元素（常用）"><span class="nav-number">1.5.1.</span> <span class="nav-text">排版元素（常用）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#marquee标签（跑马灯的实现）"><span class="nav-number">1.5.2.</span> <span class="nav-text">marquee标签（跑马灯的实现）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML常用标签之列表"><span class="nav-number">1.6.</span> <span class="nav-text">HTML常用标签之列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表"><span class="nav-number">1.6.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用属性解释"><span class="nav-number">1.6.2.</span> <span class="nav-text">常用属性解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序列表"><span class="nav-number">1.6.3.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用属性解释-1"><span class="nav-number">1.6.4.</span> <span class="nav-text">常用属性解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.7.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML基础学习"><span class="nav-number">1.</span> <span class="nav-text">HTML基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web运行本质"><span class="nav-number">1.1.</span> <span class="nav-text">Web运行本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-相关概念"><span class="nav-number">1.2.</span> <span class="nav-text">HTML 相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html是什么"><span class="nav-number">1.2.1.</span> <span class="nav-text">html是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#w3c（了解）"><span class="nav-number">1.2.2.</span> <span class="nav-text">w3c（了解）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-文件结构以及标签格式"><span class="nav-number">1.3.</span> <span class="nav-text">HTML 文件结构以及标签格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html-的文件格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">html 的文件格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上述代码说明"><span class="nav-number">1.3.2.</span> <span class="nav-text">上述代码说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html-标签格式"><span class="nav-number">1.3.3.</span> <span class="nav-text">html 标签格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html-常用标签之Meta"><span class="nav-number">1.4.</span> <span class="nav-text">html 常用标签之Meta</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Meta介绍"><span class="nav-number">1.4.1.</span> <span class="nav-text">Meta介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于meta常见的用法"><span class="nav-number">1.4.2.</span> <span class="nav-text">关于meta常见的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单示例"><span class="nav-number">1.4.3.</span> <span class="nav-text">简单示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-常用标签之字体以及排版标签"><span class="nav-number">1.5.</span> <span class="nav-text">HTML 常用标签之字体以及排版标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#排版元素（常用）"><span class="nav-number">1.5.1.</span> <span class="nav-text">排版元素（常用）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#marquee标签（跑马灯的实现）"><span class="nav-number">1.5.2.</span> <span class="nav-text">marquee标签（跑马灯的实现）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML常用标签之列表"><span class="nav-number">1.6.</span> <span class="nav-text">HTML常用标签之列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表"><span class="nav-number">1.6.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用属性解释"><span class="nav-number">1.6.2.</span> <span class="nav-text">常用属性解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序列表"><span class="nav-number">1.6.3.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用属性解释-1"><span class="nav-number">1.6.4.</span> <span class="nav-text">常用属性解释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML常用标签之a标签"><span class="nav-number">1.7.</span> <span class="nav-text">HTML常用标签之a标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">1.7.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的属性"><span class="nav-number">1.7.2.</span> <span class="nav-text">常见的属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见例子"><span class="nav-number">1.7.3.</span> <span class="nav-text">常见例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML常用标签之div和span元素"><span class="nav-number">1.8.</span> <span class="nav-text">HTML常用标签之div和span元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素"><span class="nav-number">1.8.1.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素"><span class="nav-number">1.8.2.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素与行内元素的区别"><span class="nav-number">1.8.3.</span> <span class="nav-text">块级元素与行内元素的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML常用标签之img标签"><span class="nav-number">1.9.</span> <span class="nav-text">HTML常用标签之img标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的用法"><span class="nav-number">1.9.1.</span> <span class="nav-text">常见的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的属性用法说明"><span class="nav-number">1.9.2.</span> <span class="nav-text">常见的属性用法说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.10.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
             
 
           </div>
