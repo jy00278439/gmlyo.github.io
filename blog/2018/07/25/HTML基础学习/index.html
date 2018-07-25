@@ -81,23 +81,23 @@
 
 
 
-<meta name="description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端  12345678910111213141516171819import socketdef handle_request(client):    buf = client.recv(1024)    client.send(bytes(&quot;HTTP/1">
+<meta name="description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端">
 <meta name="keywords" content="HTML基础学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML基础学习">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/07/25/HTML基础学习/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端  12345678910111213141516171819import socketdef handle_request(client):    buf = client.recv(1024)    client.send(bytes(&quot;HTTP/1">
+<meta property="og:description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/13/5916a911da775.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/10/5912b5a503af6.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/10/5912b5a507092.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/10/5912b5a4e8a6a.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/05/10/5912b5a50507f.png">
-<meta property="og:updated_time" content="2018-07-25T19:06:23.452Z">
+<meta property="og:updated_time" content="2018-07-25T19:08:10.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML基础学习">
-<meta name="twitter:description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端  12345678910111213141516171819import socketdef handle_request(client):    buf = client.recv(1024)    client.send(bytes(&quot;HTTP/1">
+<meta name="twitter:description" content="HTML基础学习Web运行本质 对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/13/5916a911da775.png">
 
 
@@ -432,6 +432,7 @@
         <h2 id="HTML基础学习"><a href="#HTML基础学习" class="headerlink" title="HTML基础学习"></a>HTML基础学习</h2><h3 id="Web运行本质"><a href="#Web运行本质" class="headerlink" title="Web运行本质"></a>Web运行本质</h3><blockquote>
 <p>对于所有的 Web 应用，本质上其实就是一个 socket 服务端，用户的浏览器其实就是一个 socket 客户端</p>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import <span class="built_in">socket</span></span><br><span class="line"></span><br><span class="line">def handle_request(client):</span><br><span class="line">    buf = client.recv(<span class="number">1024</span>)</span><br><span class="line">    client.<span class="built_in">send</span>(<span class="keyword">bytes</span>(<span class="string">"HTTP/1.1 200 OK\r\n\r\n"</span>,encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">    client.<span class="built_in">send</span>(<span class="keyword">bytes</span>(<span class="string">"Hello, World"</span>,encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">    </span><br><span class="line">def main():</span><br><span class="line">    sock = <span class="built_in">socket</span>.<span class="built_in">socket</span>(<span class="built_in">socket</span>.AF_INET, <span class="built_in">socket</span>.SOCK_STREAM)</span><br><span class="line">    sock.bind((<span class="string">'localhost'</span>, <span class="number">8000</span>))</span><br><span class="line">    sock.listen(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        connection, address = sock.accept()</span><br><span class="line">        handle_request(connection)</span><br><span class="line">        connection.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <p><img src="https://ooo.0o0.ooo/2017/05/13/5916a911da775.png" alt="原理.png"></p>
 <h3 id="HTML-相关概念"><a href="#HTML-相关概念" class="headerlink" title="HTML 相关概念"></a>HTML 相关概念</h3><h4 id="html是什么"><a href="#html是什么" class="headerlink" title="html是什么"></a>html是什么</h4><blockquote>
