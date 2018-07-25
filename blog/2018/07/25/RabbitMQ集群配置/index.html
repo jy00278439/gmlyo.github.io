@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="RabbitMQ集群配置," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="很喜欢吃~吃完就睡~所以长得很胖">
-<meta property="og:type" content="website">
-<meta property="og:title" content="G加菲">
-<meta property="og:url" content="http://www.gmlyo.com/archives/2018/07/index.html">
+<meta name="description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
+<meta name="keywords" content="RabbitMQ集群配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ集群配置">
+<meta property="og:url" content="http://www.gmlyo.com/blog/2018/07/25/RabbitMQ集群配置/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="很喜欢吃~吃完就睡~所以长得很胖">
+<meta property="og:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-25T15:36:14.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="G加菲">
-<meta name="twitter:description" content="很喜欢吃~吃完就睡~所以长得很胖">
+<meta name="twitter:title" content="RabbitMQ集群配置">
+<meta name="twitter:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
 
 
 
@@ -120,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/archives/2018/07/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/blog/2018/07/25/RabbitMQ集群配置/"/>
 
 
 
@@ -136,7 +138,7 @@
   </script>
 
 
-  <title>归档 | G加菲</title>
+  <title>RabbitMQ集群配置 | G加菲</title>
   
 
 
@@ -155,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -313,410 +315,204 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/blog/2018/07/25/RabbitMQ集群配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">RabbitMQ集群配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T23:25:46+08:00">
+                2018-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        好! 目前共计 52 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RabbitMQ笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">RabbitMQ笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/25/RabbitMQ集群配置/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ集群配置</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-25T23:25:46+08:00"
-              content="2018-07-25" >
-          07-25
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/24/RabbitMQ常用命令/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ常用命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T22:57:49+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/24/RabbitMQ用户管理/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ用户管理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T20:25:29+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/24/RabbitMQ集群管理/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ集群管理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T19:51:56+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <h2 id="RabbitMQ-集群配置"><a href="#RabbitMQ-集群配置" class="headerlink" title="RabbitMQ 集群配置"></a>RabbitMQ 集群配置</h2><p>这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署</p>
+<a id="more"></a>
+<p>选用三台主机，主机名分别是<br>pro-rabbitmq01<br>pro-rabbitmq02<br>pro-rabbitmq03</p>
+<h3 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h3><p>RabbitMQ 是用 Erlang 开发的，集群非常方便，因为 Erlang 天生就是一门分布式语言，但其本身并不支持负载均衡。<br>RabbitMQ 利用 Erlang 的分布式特性组建集群，erlang 集群通过 magic cookie 实现，<br>此 cookie 保存在 $HOME/.erlang.cookie<br>这里即：/var/lib/rabbitmq/.erlang.cookie，需要保证集群各节点的此 cookie 一致，<br>可以选取一个节点的 cookie，用 <code>rsync</code>，<code>scp</code> 同步到其余节点。</p>
+<h3 id="同步-Cookie"><a href="#同步-Cookie" class="headerlink" title="同步 Cookie"></a>同步 Cookie</h3><p>读取其中一个节点的 cookie，并复制到其他节点<br>节点之间通过 cookie 确定相互是否可通信。<br>cookie 存放在 /var/lib/rabbitmq/.erlang.cookie<br>或<br>$HOME/.erlang.cookie 中</p>
+<h3 id="设置-Erlang-Cookie"><a href="#设置-Erlang-Cookie" class="headerlink" title="设置 Erlang Cookie"></a>设置 Erlang Cookie</h3><p>RabbitMQ 的集群是依赖于 Erlang 的集群来工作的，所以必须先构建起 Erlang 的集群环境。<br>Erlang 的集群中各节点是通过一个 magic cookie 来实现的，这个 Cookie 存放在 /data/erlang/.erlang.cookie 中，文件是 400 的权限。<br>所以必须保证各节点 Cookie 保持一致，否则节点之间就无法通信。<br>我们是删除其中两台的 /data/erlang/.erlang.cookie，然后将另一台的 /data/erlang/.erlang.cookie 拷贝到这两台上。<br>文件权限是 400</p>
+<blockquote>
+<p>注意：<code>.erlang.cookie</code> 文件的权限，RabbitMQ账号，权限 <code>400</code> 或 <code>600</code> 即可，为组或 other 账号赋权会报错</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rsync -avzP <span class="regexp">/data/</span>erlang<span class="regexp">/.erlang.cookie root@10.21.20.94:/</span>data<span class="regexp">/erlang/</span></span><br><span class="line"># scp <span class="regexp">/var/</span>lib<span class="regexp">/rabbitmq/</span>.erlang.cookie root@<span class="number">1.1</span>.<span class="number">1.2</span>:<span class="regexp">/var/</span>lib<span class="regexp">/rabbitmq/</span></span><br><span class="line"># scp <span class="regexp">/var/</span>lib<span class="regexp">/rabbitmq/</span>.erlang.cookie root@<span class="number">1.1</span>.<span class="number">1.3</span>:<span class="regexp">/var/</span>lib<span class="regexp">/rabbitmq/</span></span><br></pre></td></tr></table></figure>
+<h3 id="逐个启动节点"><a href="#逐个启动节点" class="headerlink" title="逐个启动节点"></a>逐个启动节点</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmq-<span class="keyword">server</span> -detached</span><br></pre></td></tr></table></figure>
+<h3 id="查看各节点的状态"><a href="#查看各节点的状态" class="headerlink" title="查看各节点的状态"></a>查看各节点的状态</h3><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rabbitmqctl <span class="keyword">status</span></span><br><span class="line">rabbitmqctl cluster_status</span><br></pre></td></tr></table></figure>
+<h3 id="配置各节点的-hosts-文件"><a href="#配置各节点的-hosts-文件" class="headerlink" title="配置各节点的 hosts 文件"></a>配置各节点的 hosts 文件</h3><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line"><span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> pro-rabbitmq<span class="number">01</span></span><br><span class="line"><span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> pro-rabbitmq<span class="number">02</span></span><br><span class="line"><span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> pro-rabbitmq<span class="number">03</span></span><br></pre></td></tr></table></figure>
+<h3 id="组建集群"><a href="#组建集群" class="headerlink" title="组建集群"></a>组建集群</h3><p>pro-rabbitmq02 和 pro-rabbitmq03<br>以 pro-rabbitmq01 为主节点<br>在 pro-rabbitmq02 上</p>
+<blockquote>
+<p><code>rabbitmqctl join_cluster rabbit@pro-rabbitmq01</code> 中的 <code>rabbit@pro-rabbitmq01</code>，<br><code>rabbit</code> 代表集群名<br><code>pro-rabbitmq01</code> 代表集群节点<br>节点名同 hostname，<code>hostname</code> 与 <code>/etc/hosts</code> 中设置必须保持一致<br><code>pro-rabbitmq02</code> 与 <code>pro-rabbitmq03</code> 均连接到 <code>pro-rabbitmq01</code>，它们之间也会自动建立连接。<br>如果需要使用内存节点，增加一个 <code>--ram</code> 的参数即可<br>如：<br><code>rabbitmqctl join_cluster --ram rabbit@pro-rabbitmq01</code><br><code>rabbitmqctl join_cluster rabbit@pro-rabbitmq01 --ram</code><br>一个集群中至少需要一个 <code>disk</code> 节点<br>默认是磁盘节点，如果是内存节点的话，需要加 <code>--ram</code> 参数</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@pro-rabbitmq02 ~]<span class="comment"># rabbitmqctl stop_app</span></span><br><span class="line">[root@pro-rabbitmq02 ~]<span class="comment"># rabbitmqctl reset</span></span><br><span class="line">[root@pro-rabbitmq02 ~]<span class="comment"># rabbitmqctl join_cluster rabbit<span class="doctag">@pro</span>-rabbitmq01</span></span><br><span class="line">[root@pro-rabbitmq02 ~]<span class="comment"># rabbitmqctl start_app</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>pro-rabbitmq03</code> 上的操作与 <code>pro-rabbitmq02</code> 的相同</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@pro-rabbitmq03 ~]<span class="comment"># rabbitmqctl stop_app</span></span><br><span class="line">[root@pro-rabbitmq03 ~]<span class="comment"># rabbitmqctl reset</span></span><br><span class="line">[root@pro-rabbitmq03 ~]<span class="comment"># rabbitmqctl join_cluster rabbit<span class="doctag">@pro</span>-rabbitmq01</span></span><br><span class="line">[root@pro-rabbitmq03 ~]<span class="comment"># rabbitmqctl start_app</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># rabbitmqctl stop_app</span></span><br><span class="line">Stopping rabbit application on node rabbit@pro-rabbitmq02 ...</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># netstat -ntlp</span></span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    </span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:</span><span class="number">4369</span>            <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:*</span>               LISTEN      <span class="number">2556</span>/epmd           </span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:</span><span class="number">22</span>              <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:*</span>               LISTEN      <span class="number">2717</span>/sshd           </span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:</span><span class="number">25672</span>           <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:*</span>               LISTEN      <span class="number">2467</span>/beam.smp       </span><br><span class="line">tcp6       <span class="number">0</span>      <span class="number">0</span> <span class="symbol">:</span><span class="symbol">:</span><span class="symbol">:</span><span class="number">4369</span>                 <span class="symbol">:</span><span class="symbol">:</span><span class="symbol">:*</span>                    LISTEN      <span class="number">2556</span>/epmd           </span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># rabbitmqctl reset</span></span><br><span class="line">Resetting node rabbit@pro-rabbitmq02 ...</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># rabbitmqctl join_cluster rabbit<span class="doctag">@pro</span>-rabbitmq01</span></span><br><span class="line">Clustering node rabbit@pro-rabbitmq02 with rabbit@pro-rabbitmq01</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># rabbitmqctl start_app</span></span><br><span class="line">Starting node rabbit@pro-rabbitmq02 ...</span><br><span class="line"> completed with <span class="number">0</span> plugins.</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 rabbitmq]<span class="comment"># rabbitmqctl cluster_status</span></span><br><span class="line">Cluster status of node rabbit@pro-rabbitmq02 ...</span><br><span class="line">[&#123;nodes,[&#123;disc,[<span class="string">'rabbit@pro-rabbitmq01'</span>,<span class="string">'rabbit@pro-rabbitmq02'</span>]&#125;]&#125;,</span><br><span class="line"> &#123;running_nodes,[<span class="string">'rabbit@pro-rabbitmq01'</span>,<span class="string">'rabbit@pro-rabbitmq02'</span>]&#125;,</span><br><span class="line"> &#123;cluster_name,&lt;&lt;<span class="string">"rabbit@pro-rabbitmq01"</span><span class="meta">&gt;&gt;</span>&#125;,</span><br><span class="line"> &#123;partitions,[]&#125;,</span><br><span class="line"> &#123;alarms,[&#123;<span class="string">'rabbit@pro-rabbitmq01'</span>,[]&#125;,&#123;<span class="string">'rabbit@pro-rabbitmq02'</span>,[]&#125;]&#125;]</span><br></pre></td></tr></table></figure>
+<h3 id="修改集群类型"><a href="#修改集群类型" class="headerlink" title="修改集群类型"></a>修改集群类型</h3><blockquote>
+<p>修改 <code>disk</code> 节点到 <code>内存</code> 节点</p>
+</blockquote>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@pro-rabbitmq02 ~]# rabbitmqctl change_cluster_node_type ram</span><br><span class="line"><span class="symbol">Turning</span> rabbit@pro-rabbitmq02 into a ram node</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 ~]# rabbitmqctl start_app</span><br><span class="line"><span class="symbol">Starting</span> node rabbit@pro-rabbitmq02 ...</span><br><span class="line"> completed with <span class="number">3</span> plugins.</span><br><span class="line"></span><br><span class="line">[root@pro-rabbitmq02 ~]# rabbitmqctl cluster_status</span><br><span class="line"><span class="symbol">Cluster</span> status of node rabbit@pro-rabbitmq02 ...</span><br><span class="line">[&#123;nodes,[&#123;disc,[<span class="string">'rabbit@pro-rabbitmq01'</span>]&#125;,&#123;ram,[<span class="string">'rabbit@pro-rabbitmq02'</span>]&#125;]&#125;,</span><br><span class="line"> &#123;running_nodes,[<span class="string">'rabbit@pro-rabbitmq01'</span>,<span class="string">'rabbit@pro-rabbitmq02'</span>]&#125;,</span><br><span class="line"> &#123;cluster_name,&lt;&lt;<span class="string">"rabbit@pro-rabbitmq01"</span>&gt;&gt;&#125;,</span><br><span class="line"> &#123;partitions,[]&#125;,</span><br><span class="line"> &#123;alarms,[&#123;<span class="string">'rabbit@pro-rabbitmq01'</span>,[]&#125;,&#123;<span class="string">'rabbit@pro-rabbitmq02'</span>,[]&#125;]&#125;]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>默认是磁盘节点，如果是内存节点的话，需要加 <code>--ram</code> 参数<br>RabbitMQ 集群节点有 <code>disc</code> 和 <code>ram</code> 两种类型，一个集群中至少要有一个 <code>disc</code> 类型的节点，不指定默认加入为 <code>disc</code><br>将集群类型修改成 <code>disk</code> 节点</p>
+</blockquote>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">rabbitmqctl</span> change_cluster_node_<span class="keyword">type</span> disc</span><br></pre></td></tr></table></figure>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/24/RabbitMQ应用管理/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ应用管理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T19:38:57+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/17/Nginx修改隐藏版本号/" itemprop="url">
-              
-                <span itemprop="name">Nginx修改隐藏版本号</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-17T21:00:20+08:00"
-              content="2018-07-17" >
-          07-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/11/Python文件处理/" itemprop="url">
-              
-                <span itemprop="name">Python文件处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T00:24:39+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/10/Python列表类型/" itemprop="url">
-              
-                <span itemprop="name">Python列表类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T22:58:44+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/10/Python集合类型/" itemprop="url">
-              
-                <span itemprop="name">Python集合类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T22:34:26+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/07/05/Python字符串类型/" itemprop="url">
-              
-                <span itemprop="name">Python字符串类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-05T00:47:16+08:00"
-              content="2018-07-05" >
-          07-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/RabbitMQ集群配置/" rel="tag"># RabbitMQ集群配置</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/07/24/RabbitMQ常用命令/" rel="next" title="RabbitMQ常用命令">
+                <i class="fa fa-chevron-left"></i> RabbitMQ常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/07/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -724,6 +520,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -744,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -855,6 +664,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RabbitMQ-集群配置"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ 集群配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集群配置"><span class="nav-number">1.1.</span> <span class="nav-text">集群配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步-Cookie"><span class="nav-number">1.2.</span> <span class="nav-text">同步 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-Erlang-Cookie"><span class="nav-number">1.3.</span> <span class="nav-text">设置 Erlang Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐个启动节点"><span class="nav-number">1.4.</span> <span class="nav-text">逐个启动节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看各节点的状态"><span class="nav-number">1.5.</span> <span class="nav-text">查看各节点的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置各节点的-hosts-文件"><span class="nav-number">1.6.</span> <span class="nav-text">配置各节点的 hosts 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组建集群"><span class="nav-number">1.7.</span> <span class="nav-text">组建集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改集群类型"><span class="nav-number">1.8.</span> <span class="nav-text">修改集群类型</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1019,6 +844,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
