@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-25T18:30:37.113Z">
+<meta property="og:updated_time" content="2018-07-26T06:50:37.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ集群配置">
 <meta name="twitter:description" content="RabbitMQ 集群配置这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署">
@@ -425,7 +425,34 @@
       
         <h2 id="RabbitMQ-集群配置"><a href="#RabbitMQ-集群配置" class="headerlink" title="RabbitMQ 集群配置"></a>RabbitMQ 集群配置</h2><p>这里展示的是多机集群的部署，如果机器受限，可以选择单机集群部署</p>
 <a id="more"></a>
-<p>选用三台主机，主机名分别是<br>pro-rabbitmq01<br>pro-rabbitmq02<br>pro-rabbitmq03</p>
+<p>RabbitMQ 可以通过三种方法来部署分布式集群系统<br>分别是：cluster，federation，shovel</p>
+<p><strong>cluster</strong></p>
+<blockquote>
+<ul>
+<li>不支持跨网段，用于同一个网段内的局域网</li>
+<li>可以随意的动态增加或者减少</li>
+<li>节点之间需要运行相同版本的 RabbitMQ 和 Erlang</li>
+</ul>
+</blockquote>
+<p><strong>federation</strong></p>
+<blockquote>
+<p>应用于广域网，允许单台服务器上的交换机或队列接收发布到另一台服务器上交换机或队列的消息，可以是单独机器或集群。federation 队列类似于单向点对点连接，消息会在联盟队列之间转发任意次，直到被消费者接受。通常使用 federation 来连接 internet 上的中间服务器，用作订阅分发消息或工作队列。</p>
+</blockquote>
+<p><strong>shovel</strong></p>
+<blockquote>
+<p>连接方式与 federation 的连接方式类似，但它工作在更低层次。可以应用于广域网。</p>
+</blockquote>
+<p><strong>节点类型</strong></p>
+<blockquote>
+<p>Ram node：内存节点将所有的队列、交换机、绑定、用户、权限和 vhost 的元数据定义存储在内存中，好处是可以使得像交换机和队列声明等操作更加的快速。</p>
+</blockquote>
+<blockquote>
+<p>Disk node：将元数据存储在磁盘中，单节点系统只允许磁盘类型的节点，防止重启 RabbitMQ 的时候，丢失系统的配置信息。</p>
+</blockquote>
+<p>选用三台主机，主机名分别是</p>
+<blockquote>
+<p>pro-rabbitmq01<br>pro-rabbitmq02<br>pro-rabbitmq03</p>
+</blockquote>
 <h3 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h3><p>RabbitMQ 是用 Erlang 开发的，集群非常方便，因为 Erlang 天生就是一门分布式语言，但其本身并不支持负载均衡。<br>RabbitMQ 利用 Erlang 的分布式特性组建集群，erlang 集群通过 magic cookie 实现，<br>此 cookie 保存在 $HOME/.erlang.cookie<br>rpm安装即 <code>/var/lib/rabbitmq/.erlang.cookie</code><br>二进制安装在 <code>/data/erlang/.erlang.cookie</code><br>需要保证集群各节点的此 cookie 一致，可以选取一个节点的 cookie，用 <code>rsync</code>，<code>scp</code> 同步到其余节点。</p>
 <h3 id="同步-Cookie"><a href="#同步-Cookie" class="headerlink" title="同步 Cookie"></a>同步 Cookie</h3><p>读取其中一个节点的 cookie，并复制到其他节点<br>节点之间通过 cookie 确定相互是否可通信。<br>cookie 存放在 /var/lib/rabbitmq/.erlang.cookie<br>或<br>$HOME/.erlang.cookie 中</p>
 <h3 id="设置-Erlang-Cookie"><a href="#设置-Erlang-Cookie" class="headerlink" title="设置 Erlang Cookie"></a>设置 Erlang Cookie</h3><p>RabbitMQ 的集群是依赖于 Erlang 的集群来工作的，所以必须先构建起 Erlang 的集群环境。<br>Erlang 的集群中各节点是通过一个 magic cookie 来实现的，这个 Cookie 存放在 /data/erlang/.erlang.cookie 中，文件是 400 的权限。<br>所以必须保证各节点 Cookie 保持一致，否则节点之间就无法通信。<br>我们是删除其中两台的 /data/erlang/.erlang.cookie，然后将另一台的 /data/erlang/.erlang.cookie 拷贝到这两台上。<br>文件权限是 400</p>
@@ -494,6 +521,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/07/28/Python文件内光标移动/" rel="prev" title="Python文件内指针移动">
+                Python文件内指针移动 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -577,7 +608,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -599,7 +630,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

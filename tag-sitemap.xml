@@ -310,13 +310,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</loc>
-        <lastmod>2018-07-16T17:37:34.181Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Shadowsocks-%E5%AE%89%E8%A3%85/</loc>
         <lastmod>2018-07-16T17:43:55.070Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -359,15 +352,29 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/RabbitMQ%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2018-07-25T18:30:37.113Z</lastmod>
+        <loc>http://www.gmlyo.com/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-07-26T03:33:00.423Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-07-26T03:33:00.423Z</lastmod>
+        <loc>http://www.gmlyo.com/tags/RabbitMQ%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-07-26T06:50:37.982Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Python%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</loc>
+        <lastmod>2018-07-27T17:17:45.226Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Python%E6%96%87%E4%BB%B6%E5%86%85%E6%8C%87%E9%92%88%E7%A7%BB%E5%8A%A8/</loc>
+        <lastmod>2018-07-27T17:20:35.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
