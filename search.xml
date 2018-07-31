@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Python修改文件内容]]></title>
     <url>%2F%2Fblog%2F2018%2F08%2F01%2FPython%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%2F</url>
-    <content type="text"><![CDATA[Python修改文件内容 想要修改文件中的的内容，没有办法直接实现。 12vim db.txt你好我擦啊哈哈哈 1234567with open('db.txt' mode='r+t', encoding='utf-8') as f: f.seek(6, 0) f.write('上上上')# 执行结果cat db.txt你好上上上哈哈哈 使用 seek() 会覆盖其他内容 方法一 先将文件内容全部读入内存 在内存中修改完毕 将修改的结果覆盖写回硬盘中 12vim db.txtHello World! 优点：在修改期间硬盘上同一时刻只有一份数据缺点：占用内存过高 1234567891011with open('db.txt', mode='rt', encoding='utf-8') as f: data = f.read() new_data = data.replace('World', 'Python') print(new_data)with open('db.txt', mode='wt', encoding='utf-8') as f: f.write(new_data)# 执行结果cat db.txtHello Python! 方法二（推荐使用） 一行一行的读，一行一行的改 以读的模式打开源文件，以写的模式打开一个临时文件（解决占用内存的问题） 然后用 for 循环读取原文件一行行内容，每读一行则修改一行，将修改的内容写入临时文件，直到把源文件都遍历完， 删除原文件，将临时文件重命名为原文件名 1234567891011import oswith open('db.txt', mode='rt', encoding='utf-8') as src_f, \ open('.db.txt.swap', mode='wt', encoding='utf-8') as temp_f: for line in src_f: if 'World' in line: line = line.replace('World', 'Python') temp_f.write(line)os.remove('db.txt')os.rename('.db.txt.swap', 'db.txt') 优点：同一时刻在内存中只存在文件的一行内容缺点：在修改期间，硬盘上同一份数据会保存两份]]></content>
+    <content type="text"><![CDATA[Python修改文件内容 想要修改文件中的内容，没有办法直接实现。 12vim db.txt你好我擦啊哈哈哈 1234567with open('db.txt' mode='r+t', encoding='utf-8') as f: f.seek(6, 0) f.write('上上上')# 执行结果cat db.txt你好上上上哈哈哈 使用 seek() 会覆盖其他内容 方法一 先将文件内容全部读入内存 在内存中修改完毕 将修改的结果覆盖写回硬盘中 12vim db.txtHello World! 优点：在修改期间硬盘上同一时刻只有一份数据缺点：占用内存过高 1234567891011with open('db.txt', mode='rt', encoding='utf-8') as f: data = f.read() new_data = data.replace('World', 'Python') print(new_data)with open('db.txt', mode='wt', encoding='utf-8') as f: f.write(new_data)# 执行结果cat db.txtHello Python! 方法二（推荐使用） 一行一行的读，一行一行的改 以读的模式打开源文件，以写的模式打开一个临时文件（解决占用内存的问题） 然后用 for 循环读取原文件一行行内容，每读一行则修改一行，将修改的内容写入临时文件，直到把源文件都遍历完， 删除原文件，将临时文件重命名为原文件名 1234567891011import oswith open('db.txt', mode='rt', encoding='utf-8') as src_f, \ open('.db.txt.swap', mode='wt', encoding='utf-8') as temp_f: for line in src_f: if 'World' in line: line = line.replace('World', 'Python') temp_f.write(line)os.remove('db.txt')os.rename('.db.txt.swap', 'db.txt') 优点：同一时刻在内存中只存在文件的一行内容缺点：在修改期间，硬盘上同一份数据会保存两份]]></content>
       <categories>
         <category>Python笔记</category>
       </categories>
@@ -573,17 +573,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo安装]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
-      <categories>
-        <category>Hexo笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
@@ -592,6 +581,17 @@
       </categories>
       <tags>
         <tag>Kickstart自动应答文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo安装]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo安装</tag>
       </tags>
   </entry>
   <entry>
