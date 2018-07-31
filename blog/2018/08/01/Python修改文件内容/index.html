@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Python修改文件内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-31T18:04:32.095Z">
+<meta property="og:updated_time" content="2018-07-31T18:26:21.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python修改文件内容">
 <meta name="twitter:description" content="Python修改文件内容">
@@ -431,7 +431,7 @@
 </blockquote>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'db.txt'</span> mode=<span class="string">'r+t'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">seek</span>(<span class="number">6</span>, <span class="number">0</span>)    <span class="comment"># 移动了6个bytes</span></span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'上上上'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line">cat db.txt</span><br><span class="line">你好上上上</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>使用 seek() 文件指针偏移 会覆盖其他内容，不好掌控</p>
+<p>使用 <code>seek()</code> 文件指针偏移 会覆盖其他内容，不好掌控</p>
 </blockquote>
 <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
 <ol>
