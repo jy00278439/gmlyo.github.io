@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[持续集成CI持续交付CD]]></title>
+    <url>%2F%2Fblog%2F2018%2F08%2F06%2F%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90CI%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98CD%2F</url>
+    <content type="text"><![CDATA[持续集成CI/持续交付CD CI 很容易理解，就是持续集成。但是 CD 既可以指代码持续交付，也可理解为代码持续部署。CI 和 CD 之间有很多相似的部分，但是也有很大的区别。 持续集成 (Continuous Integration)在持续集成环境中，开发人员将会频繁的提交代码到主干。这些新提交在最终合并到主线之前，都需要通过编译和自动化测试流进行验证。这样做是基于之前持续集成过程中很重视自动化测试验证结果，以保障所有的提交在合并主线之后的质量问题，对可能出现的一些问题进行预警。 持续交付 (Continuous Delivery)持续交付就是讲我们的应用发布出去的过程。这个过程可以确保我们尽可能快的实现交付。这就意味着除了自动化测试，我们还需要有自动化的发布流，以及通过一个按键就可以随时随地实现应用的部署上线。通过持续交付，可以决定每天，每周，每两周发布一次，这完全可以根据自己的业务进行设置。但是，如果您真的希望体验持续交付的优势，就需要先进行小批量发布，尽快部署到生产线，以便在出现问题时方便进行故障排除。 持续部署 (Continuous Deployment)如果我们想更加深入一步的话，就是持续部署了。通过这个方式，任何修改通过了所有已有的工作流就会直接和客户见面。没有人为干预（没有一键部署按钮），只有当一个修改在工作流中构建失败才能阻止它部署到产品线。持续部署是一个很优秀的方式，可以加速与客户的反馈循环，但是会给团队带来压力，因为不再有“发布日”了。开发人员可以专注于构建软件，他们看到他们的修改在他们完成工作后几分钟就上线了。基本上，当开发人员在主分支中合并一个提交时，这个分支将被构建、测试，如果一切顺利，则部署到生产环境中。 合并 CI CD and CD？当然，正如我所说，他们每部分都更加接近生产环境。你可以构建自己的持续集成环境，然后，一旦团队适应，你可以添加持续交付流，最后，可以添加持续部署流到整个工作流中。 http://pa2bdkuiw.bkt.clouddn.com/20180806102619.jpg 举例 CI，CD 和 CD 流水线 到底值不值这样做？ 持续集成 需要具备哪些条件？ 你的团队需要为每个新功能，代码改进，或者问题修复创建自动化测试用例。你需要一个持续集成服务器，它可以监控代码提交情况，对每个新的提交进行自动化测试。研发团队需要尽可能快的提交代码，至少每天一次提交。 可以获得什么？ 通过自动化测试可以提早拿到回归测试的结果，避免将一些问题提交到交付生产中发布编译将会更加容易，因为合并之初已经将所有问题都规避了减少工作问题切换，研发可以很快获得构建失败的消息，在开始下一个任务之前就可以很快解决。测试成本大幅降低-你的 CI 服务器可以在几秒钟之内运行上百条测试。你的 QA 团队花费在测试上面的时间会大幅缩短，将会更加侧重于质量文化的提升上面。 持续交付 需要具备的条件 你需要有强大的持续集成组件和足够多的测试项可以满足你代码的需求部署需要自动化。触发是手动的，但是部署一旦开始，就不能人为干预。你的团队可能需要接受特性开关，没有完成的功能模块不会影响到线上产品。 可以获得什么？ 繁琐的部署工作没有了。你的团队不在需要花费几天的时间去准备一个发布。你可以更快的进行交付，这样就加快了与客户之间的反馈环。轻松应对小变更，加速迭代 持续部署 需要具备的条件 研发团队测试理念比较完善。测试单元的健壮性直接决定你的交付质量。你的文档和部署频率要保持一致。特征标志成为发布重大变化过程的固有部分，以确保您可以与其他部门（支持，市场营销，公关…）协调。 可以获得什么？ 发布频率更快，因为你不需要停下来等待发布。每一处提交都会自动触发发布流。在小批量发布的时候，风险降低了，发现问题也可以很轻松的修复。客户每天都可以看到我们的持续改进和提升，而不是每个月或者每季度，或者每年。如前所述，您可以采用持续集成，持续交付和持续部署。你怎么做取决于你的需求和你的业务情况。如果你刚刚开始一个项目，并且还没有客户，那么你就可以去创建这些工作流，最好是将这三个方面都实现，并且在你的项目迭代和需求增长中同时迭代它们。如果您已经有一个生产项目，那么您可以一步一步地分阶段去实现他们。 参考文档https://www.sohu.com/a/204652724_640923]]></content>
+      <categories>
+        <category>CI/CD笔记</category>
+      </categories>
+      <tags>
+        <tag>持续集成CI持续交付CD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python函数基础]]></title>
     <url>%2F%2Fblog%2F2018%2F08%2F03%2FPython%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[Python函数基础 什么是函数？ 函数就是具备某一功能的工具 函数的使用必须遵循先定义，后调用的原则 实现准备工具的过程即函数的定义 拿来就用即函数的调用 函数氛围两大类 内置函数 自定义函数 为什么要用函数？ 不用函数的问题 代码的组织结构不清晰，可读性差 遇到重复的功能只能重复编写实现代码，代码冗余过多 程序的扩展性差，功能需要扩展时，需要找出所有实现该功能的地方修改之，无法统一管理且维护难度极大 怎么用函数？ 定义函数语法12345678910def 函数名(参数1,参数2,参数3,...): """ 文档注释 """ 函数体 code1 code2 code3 ...... return 返回值 自定义函数的三种形式无参函数1234567891011def func1(): print('hello1') print('hello2') print('hello3')func1()# 输出结果hello1hello2hello3 有参函数1234567891011121314def func2(x, y): if x &gt; y: print(x) else: print(y)func2(1, 3)func2(2, 3)func2(2, 4)# 输出结果334 空函数 用于预设程序的框架 12345678910def get(): # 下载功能 passdef put(): # 上传功能 passdef auth(): # 认证功能 passdef ls(): # 浏览功能 passdef cd(): # 切换目录的功能 pass 定义函数阶段 相当于定义了一个名字，名字指向了一个值，值是内存地址，该地址包含了函数体代码定义函数阶段，只检测语法，不执行函数体代码 123456789101112131415def foo(): # foo = 函数的内存地址 print('first') print('second') print('third')print(foo) # 打印输出函数值内存地址# 输出结果&lt;function for at 0x000001E71A588950&gt;foo() # 函数调用阶段# 输出结果firstsecondthird 测试一123456789101112def bar(): print('from bar')def foo(): print('from foo') bar()foo()# 输出结果from foofrom bar 测试二123456789101112def foo(): print('from foo') bar()def bar(): print('from bar')foo() # 调用阶段# 输出结果from foofrom bar 调用函数语法1函数名() 调用函数过程 根据函数名找到函数的内存地址函数的内存地址加括号可以触发函数体代码的运行 调用函数的三种形式无参函数1234567def f1(): print('from f1')f1()# 输出结果from f1 有参函数1234567891011def max(x, y): if x &gt; y: return x else: return yres = max(1, 2)print(res)# 输出结果2 1234567891011def max(x, y): if x &gt; y: return x else: return yres = max(1, 2)*10print(res)# 输出结果20 当作参数传给其他函数 1234567891011def max(x, y): if x &gt; y: return x else: return yres = max(max(1, 2), 3)print(res)# 输出结果3 函数的返回值什么是返回值？函数的返回值是函数体代码运行的一个结果 什么时候使用返回值？如何使用？ return 返回值： 返回值没有类型限制 返回值没有个数限制逗号分隔多个值，返回一个元组一个值，返回值本身没有return，默认返回None 12345678def f1(): return [1, 2,]res = f1()print(res)# 输出结果[1, 2] 逗号分隔多个值，返回一个元组12345678def f1(): return 1, 2, [1, 2, 3]res = f1()print(res)# 输出结果(1, 2, [1, 2, 3]) 没有return，默认返回None12345678def f1(): passres = f1()print(res)# 输出结果None return 是函数结束的标志函数内可以有多个return，但只要执行一次，整个函数就立即结束，并且将return后的值当作本次调用的结果返回123456789101112def f1(): print(1) return 'first' print(2) return 'second' print(3) return 'third'f1()# 输出结果1 总结 函数使用的原则：先定义，再调用 函数名即“变量名”，“变量名”必须先定义后引用。未定义而直接引用函数，就相当于在引用一个不存在的变量名 我们在使用函数时，一定要明确地区分定义阶段和调用阶段 函数在定义阶段都做了哪些事？ 只检测语法，不执行代码 也就说，语法错误在函数定义阶段就会检测出来，而代码的逻辑错误只有在执行时才会知道 函数名：是用来访问到函数的内存地址，拿到函数的内存地址加括号就可以触发函数体代码函数参数：是外部调用者为函数体传值的媒介函数体代码：是函数功能的具体实现 return 函数返回值：函数的返回值是函数体执行的成果 返回值没有类型限制 返回值没有个数限制 没有return，默认返回None return 值1：返回值1 return 值1, 值2, 值3：返回(值1, 值2, 值3) return 注意点： return 是函数结束运行的标志，函数体内可以都有多个 return 但是只有执行一次，整个函数就终止运行]]></content>
@@ -584,17 +595,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo安装]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
-      <categories>
-        <category>Hexo笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
@@ -603,6 +603,17 @@
       </categories>
       <tags>
         <tag>Kickstart自动应答文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo安装]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo安装</tag>
       </tags>
   </entry>
   <entry>
