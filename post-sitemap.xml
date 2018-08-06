@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/blog/2018/06/08/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-08-06T07:37:11.195Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/blog/2018/08/06/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90CI%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98CD/</loc>
-        <lastmod>2018-08-06T05:11:38.050Z</lastmod>
+        <lastmod>2018-08-06T07:31:33.827Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -309,14 +317,6 @@
     <url>
         <loc>http://www.gmlyo.com/blog/2018/06/10/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E5%A0%86%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86/</loc>
         <lastmod>2018-06-09T16:24:52.630Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/blog/2018/06/08/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-06-08T16:30:08.201Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
