@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SaltStack常用模块," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="G加菲" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="SaltStack 常用模块">
+<meta name="keywords" content="SaltStack常用模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SaltStack常用模块">
+<meta property="og:url" content="http://www.gmlyo.com/blog/2018/08/07/SaltStack常用模块/index.html">
+<meta property="og:site_name" content="G加菲">
+<meta property="og:description" content="SaltStack 常用模块">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-07T10:04:16.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SaltStack常用模块">
+<meta name="twitter:description" content="SaltStack 常用模块">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gmlyo.com/blog/2018/08/07/SaltStack常用模块/"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d322328"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>SaltStack常用模块 | G加菲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G加菲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/blog/2018/08/07/SaltStack常用模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SaltStack常用模块</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T18:03:47+08:00">
+                2018-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SaltStack笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">SaltStack笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="SaltStack-常用模块"><a href="#SaltStack-常用模块" class="headerlink" title="SaltStack 常用模块"></a>SaltStack 常用模块</h2><a id="more"></a>
+<h3 id="SaltStack-内置模块汇总"><a href="#SaltStack-内置模块汇总" class="headerlink" title="SaltStack 内置模块汇总"></a>SaltStack 内置模块汇总</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acl, aliases, alternatives, apache, archive, artifactory, <span class="keyword">blockdev, </span><span class="keyword">btrfs, </span><span class="keyword">buildout, </span><span class="keyword">cloud, </span>cmd, composer, <span class="built_in">config</span>, container_resource, cp, cron, data, defaults, devmap, <span class="keyword">dig, </span><span class="keyword">disk, </span>django, dnsmasq, dnsutil, drbd, elasticsearch, environ, etcd, event, <span class="keyword">extfs, </span>file, gem, genesis, git, grains, group, grub, hashutil, hg, hipchat, hosts, http, img, incron, ini, introspect, ip, iptables, <span class="keyword">jboss7, </span><span class="keyword">jboss7_cli, </span>key, kmod, locale, locate, logrotate, lowpkg, match, mine, modjk, mount, network, openstack_config, pagerduty, pillar, pip, pkg, pkg_resource, postfix, publish, puppet, pyenv, raid, <span class="built_in">random</span>, random_org, rbenv, ret, rsync, runit, rvm, <span class="built_in">s3</span>, saltutil, <span class="keyword">schedule, </span><span class="keyword">scsi, </span>sdb, seed, selinux, serverdensity_device, service, <span class="keyword">shadow, </span>slack, smtp, sqlite3, ssh, state, status, supervisord, sys, sysctl, syslog_ng, system, test, timezone, user, vbox_guest, virtualenv, webutil, xfs</span><br></pre></td></tr></table></figure>
+<h3 id="SaltStack-常用模块介绍"><a href="#SaltStack-常用模块介绍" class="headerlink" title="SaltStack 常用模块介绍"></a>SaltStack 常用模块介绍</h3><p>这里重点是要将经常用到的模块记录的用法记录下来，直接在 master 端用 salt 命令可以做一些简单的操作，也为做 .sls文件 打基础。</p>
+<h4 id="cmd-模块常用方法"><a href="#cmd-模块常用方法" class="headerlink" title="cmd 模块常用方法"></a>cmd 模块常用方法</h4><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'agent1.salt'</span> sys.doc <span class="keyword">cmd</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 可以看 cmd 模块都有哪些使用方法，这里只列举常用的。</span></span></span><br><span class="line"><span class="bash">cmd.has_exec 的用法（如果可执行文件在 minion 上可用，则返回<span class="literal">true</span>，否则返回<span class="literal">false</span>）</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">例子：</span></span><br><span class="line"><span class="bash">salt <span class="string">'*'</span> cmd.has_exec ifconfig</span></span><br><span class="line"><span class="bash"><span class="comment"># 这里只能是单个命令，如果你用 'ip addr' 这种形式的话，肯定返回的是 False</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="cmd-retcode-用法"><a href="#cmd-retcode-用法" class="headerlink" title="cmd.retcode 用法"></a>cmd.retcode 用法</h5><blockquote>
+<p>在 minion 端执行一个 shell 命令并返回命令的返回码。0 表示成功，0 以外表示失败有问题。<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> <span class="keyword">cmd</span>.<span class="bash">retcode <span class="string">'ls -l /etc/hostname'</span></span></span><br><span class="line"><span class="bash"><span class="comment"># 如我们可以查看一个文件是否存在根据返回码来判断，或者执行一个脚本等，''里面就是你要执行的命令。正好跟 cmd.has_exec 相反</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="cmd-run-用法"><a href="#cmd-run-用法" class="headerlink" title="cmd.run 用法"></a>cmd.run 用法</h5><blockquote>
+<p>这个执行 shell 命令跟 cmd.retcode 类似，但是不同的是，cmd.run 就像在本地执行一样。<br>cmd.run_stderr 意思只会在出问题的时候返回信息。</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# salt <span class="string">'*'</span> cmd.retcode <span class="string">'cat /root/1'</span></span><br><span class="line">zwidc_kvm_192.<span class="number">168.1</span>.<span class="number">104</span>:</span><br><span class="line">    <span class="number">0</span></span><br><span class="line">agent1.<span class="keyword">sal</span><span class="variable">t:</span></span><br><span class="line">    <span class="number">0</span></span><br><span class="line">[root@master ~]# salt <span class="string">'*'</span> cmd.run <span class="string">'cat /root/1'</span></span><br><span class="line">agent1.<span class="keyword">sal</span><span class="variable">t:</span></span><br><span class="line">    <span class="number">123</span></span><br><span class="line">zwidc_kvm_192.<span class="number">168.1</span>.<span class="number">104</span>:</span><br><span class="line">[root@master ~]# salt <span class="string">'*'</span> cmd.run_stderr <span class="string">'cat /root/1'</span></span><br><span class="line">agentl.<span class="keyword">sal</span><span class="variable">t:</span></span><br><span class="line">zwidc_kvm_192.<span class="number">168.1</span>.<span class="number">104</span>:</span><br><span class="line">[root@master ~]# salt <span class="string">'*'</span> cmd.run_stderr <span class="string">'cat /root/6'</span></span><br><span class="line">agent1.<span class="keyword">sal</span><span class="variable">t:</span></span><br><span class="line">    <span class="keyword">ca</span><span class="variable">t:</span> /root/<span class="number">6</span>: No such <span class="keyword">file</span> <span class="built_in">or</span> directory</span><br><span class="line">zwidc_kvm_192.<span class="number">168.1</span>.<span class="number">104</span>:</span><br><span class="line">    <span class="keyword">ca</span><span class="variable">t:</span> /root/<span class="number">6</span>: No such <span class="keyword">file</span> <span class="built_in">or</span> directory</span><br></pre></td></tr></table></figure>
+<h5 id="cmd-script-和-cmd-script-retcode"><a href="#cmd-script-和-cmd-script-retcode" class="headerlink" title="cmd.script 和 cmd.script_retcode"></a>cmd.script 和 cmd.script_retcode</h5><blockquote>
+<p>从远程 salt 服务器 或 ftp 服务器 或 http 服务器 下载脚本到本地执行<br>示例：（这里就引用 man 中的例子）</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> cmd.script <span class="keyword">sal</span><span class="variable">t:</span>//scripts/runme.<span class="keyword">sh</span></span><br><span class="line">salt <span class="string">'*'</span> cmd.script <span class="keyword">sal</span><span class="variable">t:</span>//scripts/runme.<span class="keyword">sh</span> <span class="string">'arg1 arg2 "arg 3"'</span></span><br></pre></td></tr></table></figure>
+<h5 id="cmd-shell-和-cmd-shells"><a href="#cmd-shell-和-cmd-shells" class="headerlink" title="cmd.shell 和 cmd.shells"></a>cmd.shell 和 cmd.shells</h5><p>cmd.shell 跟 cmd.run 一样，一般用 cmd.run, cmd.shells 是通过 /etc/shells 文件列出此系统上的有效 shell<br>示例：（这个基本也用不到也是引用man中的例子）<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@master ~]# salt '*' cmd.shells</span><br><span class="line"></span><br><span class="line">zwidc_kvm_192.168.1.104:</span><br><span class="line">    -<span class="ruby"> /bin/sh</span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/bin/bash</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/sbin/nologin</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/user/bin</span><span class="regexp">/sh</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/usr/bin</span><span class="regexp">/bash</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/usr/sbin</span><span class="regexp">/nologin</span></span></span><br><span class="line"><span class="ruby">agent1.<span class="symbol">salt:</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/bin/sh</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/bin/bash</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/sbin/nologin</span></span></span><br><span class="line"><span class="ruby">    - <span class="regexp">/bin/dash</span></span></span><br></pre></td></tr></table></figure></p>
+<h5 id="cmd-which-和-cmd-which-bin-用法"><a href="#cmd-which-和-cmd-which-bin-用法" class="headerlink" title="cmd.which 和 cmd.which_bin 用法"></a>cmd.which 和 cmd.which_bin 用法</h5><blockquote>
+<p>就是查找执行文件所在的位置，<code>which</code> 命令嘛都不陌生<br>示例<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> <span class="keyword">cmd</span>.<span class="bash"><span class="built_in">which</span> ifconfig</span></span><br><span class="line"><span class="bash"><span class="comment"># 查看节点所有 ifconfig 命令的位置，在写脚本或者定时任务的时候很有用，因为系统不同执行文件的绝对路径也不同</span></span></span><br><span class="line"><span class="bash">和 salt <span class="string">'*'</span> cmd.run  <span class="string">"which ifconfig"</span> 一个效果</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">salt <span class="string">'*'</span> cmd.which_bin <span class="string">'[cat, ifconfig, touch]'</span></span></span><br><span class="line"><span class="bash"><span class="comment"># 这是定义了一个列表，返回在命令列表中找到的第一个命令</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 存在就返回第一个命令的路径</span></span></span><br><span class="line"><span class="bash">[root@master ~]<span class="comment"># salt '*' cmd.which_bin '[cat, ifconfig, touch]'</span></span></span><br><span class="line"><span class="bash">agent1.salt:</span></span><br><span class="line"><span class="bash">    /bin/cat</span></span><br><span class="line"><span class="bash">zwidc_kvm_192.168.1.104:</span></span><br><span class="line"><span class="bash">    /usr/bin/cat</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 如果第一个命令不存在就往后寻找</span></span></span><br><span class="line"><span class="bash">[root@master ~]<span class="comment"># salt '*' cmd.which_bin '[cat, ifconfig, touch]'</span></span></span><br><span class="line"><span class="bash">zwidc_kvm_192.168.1.104:</span></span><br><span class="line"><span class="bash">    /usr/bin/ifconfig</span></span><br><span class="line"><span class="bash">agent1.salt:</span></span><br><span class="line"><span class="bash">    /bin/ifconfig</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="cp模块常用方法"><a href="#cp模块常用方法" class="headerlink" title="cp模块常用方法"></a>cp模块常用方法</h4><blockquote>
+<p>只列举一些常用的，详细的可以自行执行此命令查看</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'agent1.salt'</span> sys<span class="selector-class">.doc</span> cp</span><br></pre></td></tr></table></figure>
+<h5 id="cp-get-dir-和-cp-get-file-用法"><a href="#cp-get-dir-和-cp-get-file-用法" class="headerlink" title="cp.get_dir 和 cp.get_file 用法"></a>cp.get_dir 和 cp.get_file 用法</h5><blockquote>
+<p>就是从 master 端 cp 目录 或 文件 到 minion 端的目录，get_dir 支持与 get_file 相同的模板和 gzip 参数。<br>对应的是 cp.push，cp.push_dir，就是把客户端的文件 或 目录推送到 master 端的 cachedir，默认为 /var/cache/salt/master/minions/minion-id/files，但是这种用法是禁用状态，一般不让 minion 端的文件或目录发送到 master 端，这里只是记录一下有这种用法。</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 从 salt master 递归复制目录到 minion 客户端的 /minion/dest 目录下面</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">cp</span>.get_dir <span class="keyword">sal</span><span class="variable">t:</span>//path/<span class="keyword">to</span>/dir/ /minion/dest</span><br><span class="line"></span><br><span class="line"># 从服务端拷贝单个文件到 minion 端的 /minion/dest 目录下面</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">cp</span>.get_file <span class="keyword">sal</span><span class="variable">t:</span>//path/<span class="keyword">to</span>/<span class="keyword">file</span> /minion/dest</span><br><span class="line"></span><br><span class="line"># 所有 Salt minions 从与其 os 粒度相同名称的目录下载 vimrc，并将其复制到 /etc/vimrc</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">cp</span>.get_file <span class="string">"salt://&#123;&#123;grains.os&#125;&#125;/vimrc"</span> /etc/vimrc template=jinja</span><br></pre></td></tr></table></figure>
+<h5 id="cp-get-url-用法"><a href="#cp-get-url-用法" class="headerlink" title="cp.get_url 用法"></a>cp.get_url 用法</h5><blockquote>
+<p>用于从 URL 获取单个文件</p>
+</blockquote>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">salt <span class="string">'*'</span> cp.get_url salt:<span class="comment">//cptest1/cptest1file /tmp/test</span></span><br><span class="line"># 将 salt:<span class="comment">//cptest1/cptest1file 文件里面的内容写入到 /tmp/test 文件里面，每次都会覆盖里面的内容。这种就跟 cp.get_file 一样。</span></span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> cp.get_url http:<span class="comment">//blog.51niux.com/?id=116 /tmp/test</span></span><br><span class="line"># 如这种就把一个页面的 html 信息写入到了客户端的 /tmp/test 文件，切记只能是这种文本形式的文件，不要是压缩包啥的。</span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> cp.get_url http:<span class="comment">//blog.51niux.com/zb_users/upload/2017/03/201703091489030442220789.txt  /tmp/load_one_check.sh</span></span><br><span class="line"># 最主要的用法还是这种，我们可以以 httpd 的形式去下载一个 sh 脚本，config 文件等。</span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> cmd.run <span class="string">" cat /tmp/load_one_check.sh"</span></span><br><span class="line"># 下面是部分内容，这样我们很多文本类的文件就不用从 salt 服务端发布了，直接做个 ftp 服务 或 http 服务来发布文本类的东西什么的就可以了。当然 cmd.run 命令也可以了...</span><br><span class="line">agent1.salt:</span><br><span class="line">    #!/bin/bash</span><br><span class="line">    # ========================================================================================</span><br><span class="line">    # System loadavg  plugin for Nagios</span><br><span class="line">    #</span><br><span class="line">    # Written by    : chaishao</span><br><span class="line">    # From          : <span class="number">51</span>niux.com</span><br><span class="line">    # Release       : <span class="number">1.1</span><span class="number">.0</span></span><br><span class="line">    # Creation date : <span class="number">2017</span><span class="number">-03</span><span class="number">-08</span></span><br><span class="line">    # Revision date : <span class="number">2017</span><span class="number">-03</span><span class="number">-08</span></span><br><span class="line">    # Description   : Nagios plugin (script) to check <span class="keyword">system</span> load_one .</span><br><span class="line">    #               This script has been designed and written on Linux System.</span><br><span class="line">    #</span><br><span class="line">    # USAGE         : ./$PROGNAME [-w -c]</span><br><span class="line">    #</span><br><span class="line">    # Exemple:      : ./$PROGNAME -w n1 -c n2</span><br><span class="line">    # ========================================================================================</span><br></pre></td></tr></table></figure>
+<h5 id="cp-list-master-和-cp-list-master-dirs-用法"><a href="#cp-list-master-和-cp-list-master-dirs-用法" class="headerlink" title="cp.list_master 和 cp.list_master_dirs 用法"></a>cp.list_master 和 cp.list_master_dirs 用法</h5><blockquote>
+<p>这个就是查看 salt master 本地的 file 服务器又哪些文件 或 目录</p>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 这种就不要指定所有机器了，匹配一台机器就可以了，列出存储在主机上的所有文件</span></span><br><span class="line">salt <span class="string">'agent1.salt'</span> cp.list_master</span><br><span class="line"></span><br><span class="line"><span class="meta"># 列出存储在 master 主机上面的所有目录</span></span><br><span class="line">salt <span class="string">'agent1.salt'</span> cp.list_master_dirs</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看目录下的文件</span></span><br><span class="line">[root@<span class="keyword">master</span> <span class="title">cptest2</span>]<span class="comment"># salt 'agent1.salt' cp.list_master</span></span><br><span class="line">agent1.salt:</span><br><span class="line">    - cptest1/cptest1file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只会将目录列出来以及子目录</span></span><br><span class="line">[root@<span class="keyword">master</span> <span class="title">cptest2</span>]<span class="comment"># salt 'agent1.salt' cp.list_master_dirs</span></span><br><span class="line">agent1.salt:</span><br><span class="line">    - .</span><br><span class="line">    - cptest1</span><br><span class="line">    - cptest2</span><br><span class="line">    - cptest2/cptest2dir</span><br></pre></td></tr></table></figure>
+<h4 id="file-模块常用方法"><a href="#file-模块常用方法" class="headerlink" title="file 模块常用方法"></a>file 模块常用方法</h4><h5 id="file-access-用法"><a href="#file-access-用法" class="headerlink" title="file.access 用法"></a>file.access 用法</h5><blockquote>
+<p>f 代表存在<br>rwx 分别代表读、写、执行权限<br>file.file_exists、file.get_mode 和 file.stats 的用法<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 查看 /opt/check.sh 文件是否存在，这个挺有用的</span></span><br><span class="line">salt <span class="string">'*'</span> file.access /opt/check.sh f</span><br><span class="line"><span class="meta"># 我们查看某个脚本或者某个文件是否存在</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 上面的例子也可以写成这种</span></span><br><span class="line">salt <span class="string">'*'</span> file.file_exists /opt/check.sh</span><br><span class="line"><span class="meta"># 文件存在就返回True，否则返回False</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果有此脚本之后，我们还可以查看此脚本是否具有执行权限</span></span><br><span class="line">salt <span class="string">'*'</span> file.access /opt/check.sh x</span><br><span class="line"><span class="meta"># f、r、w、x 只能写一种，真就返回true，否则false</span></span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> file.get_mode /etc/passwd</span><br><span class="line"><span class="meta"># file.get_mode 后面指定目录或者文件，可以查看其授权情况，如文件一般是0644，如果文件或目录不存在无信息</span></span><br><span class="line"><span class="meta"># 还有</span></span><br><span class="line"><span class="meta"># file.is_blkdev 检查文件是否存在并且是块设备</span></span><br><span class="line"><span class="meta"># file.is_chrdev 检查文件是否存在并且是字符设备</span></span><br><span class="line"><span class="meta"># file.is_fifo 检查文件是否存在并且是FIFO</span></span><br><span class="line"><span class="meta"># file.is_link 检查路径是否是符号链接）</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># file.stats 返回一个文件 或 目录的统计信息</span></span><br><span class="line">salt <span class="string">'*'</span> file.stats /etc/passwd</span><br><span class="line"><span class="meta"># 这里是返回 /etc/passwd 文件的统计信息（类型，时间，属组，权限等）</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="file-append-和-file-write-用法"><a href="#file-append-和-file-write-用法" class="headerlink" title="file.append 和 file.write 用法"></a>file.append 和 file.write 用法</h5><blockquote>
+<p>前者将内容追加到文件的末尾，后者是直接覆盖类似于 echo &gt;，但是格式跟前者一样</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一组：单引号 和 双引号 的区别，还有 ! 需要注意的地方</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> <span class="regexp">/tmp/</span><span class="number">1</span> <span class="string">"`hostname` This is a good day\!"</span></span><br><span class="line"># 用双引号，就是里面可以接变量，但是这个 ! 需要注意，不用 \ 转义的话会报错</span><br><span class="line"></span><br><span class="line"># salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> <span class="regexp">/tmp/</span><span class="number">1</span> <span class="string">'`hostname` This is a good day!'</span></span><br><span class="line"># 所以如果出现 ! 最好放到单引号里面来引用，因为上面就算转义了也显示的不对</span><br><span class="line"></span><br><span class="line"># 第二组：换行符的使用</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> <span class="regexp">/tmp/</span><span class="number">1</span> <span class="string">"Two"</span><span class="string">"Two Two"</span></span><br><span class="line"># 这表示两组字符串在一行，中间默认加个空格隔开</span><br><span class="line"></span><br><span class="line"># 这表示两组字符串是换行的</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> <span class="regexp">/tmp/</span><span class="number">1</span> <span class="string">"Two"</span> <span class="string">"Two Two"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@activemq ~]<span class="comment"># cat /tmp/1</span></span><br><span class="line">master.hadoop This <span class="keyword">is</span> a good day<span class="string">\!</span></span><br><span class="line"><span class="string">'hostname'</span> This <span class="keyword">is</span> a good day!</span><br><span class="line">TwoTwo Two</span><br><span class="line">Two</span><br><span class="line">Two Two</span><br><span class="line">[root@activemq ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面两组测试结果，可以明显的比较出差别</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 第三组：! 是不知道怎么解决了，要么就放单引号</span><br><span class="line"># 还有个 = 是需要注意的，有个 <span class="keyword">args</span> 用法，以及 [] 外面加不加双引号的区别</span><br><span class="line"></span><br><span class="line"># 如果字符串里面有等号要用这种 <span class="keyword">args</span> 的用法</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> /tmp/<span class="number">1</span> <span class="keyword">args</span>=<span class="string">'Hostname=`hostname`'</span></span><br><span class="line"></span><br><span class="line"># <span class="keyword">args</span> 用 单引号 和 双引号 的区别就在于里面的变量是否解析为变量的值还是字符串</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> /tmp/<span class="number">1</span> <span class="keyword">args</span>=<span class="string">"Hostname=`hostname`"</span></span><br><span class="line"></span><br><span class="line"># 这里就是定义一个并排的两个字符串</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> /tmp/<span class="number">1</span> <span class="keyword">args</span>=[<span class="string">'Hostname=`hostname`'</span><span class="string">'rel=`cat /etc/redhat-release`'</span>]</span><br><span class="line"></span><br><span class="line"># 可见 <span class="keyword">args</span> 默认是单引号的形式，两组字符串中间加逗号</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> /tmp/<span class="number">1</span> <span class="keyword">args</span>=[<span class="string">'Hostname=`hostname`'</span>,<span class="string">'rel=`cat /etc/redhat-release`'</span>]</span><br><span class="line"></span><br><span class="line"># 双引号 不是默认的，所以要单独的加上</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">append</span> /tmp/<span class="number">1</span> <span class="keyword">args</span>=<span class="string">"['Hostname=`hostname`','rel=`cat /etc/redhat-release`']"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[root@activemq !]</span><span class="comment"># cat /tmp/1</span></span><br><span class="line"><span class="attr">Hostname</span>= hostname</span><br><span class="line"><span class="attr">Hostname</span>=master.hadoop</span><br><span class="line"><span class="attr">Hostname</span>=<span class="string">'hostname'</span>rel=<span class="string">'cat /etc/redhat-release'</span></span><br><span class="line"><span class="attr">Hostname</span>=<span class="string">'hostname'</span></span><br><span class="line"><span class="attr">rel</span>=<span class="string">'cat /etc/redhat-release'</span></span><br><span class="line"><span class="attr">Hostname</span>=master.hadoop</span><br><span class="line"><span class="attr">rel</span>=CentOS release <span class="number">6.4</span> (Final)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从结果我们可以看出，两个字符串之间如果没有逗号的话，不换行，但是中间也没有分隔，可以学习 awk，在两个字符串中间加 “ “ 来进行添加空格的操作。<br>其实主要还是字符串里面有=就用 args 的形式，如果是多组字符串可以用[]的形式，如果要是用变量就用双引号的形式，默认是单引号的形式。</p>
+</blockquote>
+<h5 id="file-chgrp、file-chown-和-file-set-mode-用法"><a href="#file-chgrp、file-chown-和-file-set-mode-用法" class="headerlink" title="file.chgrp、file.chown 和 file.set_mode 用法"></a>file.chgrp、file.chown 和 file.set_mode 用法</h5><blockquote>
+<blockquote>
+<p>前者是更改文件的属组，中者是更改文件数的属主属组，后者是更改文件或目录的权限</p>
+</blockquote>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 将 minion 端的 /tmp/1 文件更改用户组为 test9</span></span><br><span class="line">salt <span class="string">'*'</span> file.chgrp /tmp/<span class="number">1</span> test9</span><br><span class="line"><span class="meta"># 如果客户端有此用户组则返回 None，没有此用户组则返回用户组不存在</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 第一个是用户，第二个是用户组，固定格式必须存在</span></span><br><span class="line">salt <span class="string">'*'</span> file.chown /tmp/<span class="number">1</span> test7 test9</span><br><span class="line"><span class="meta"># 将 /tmp/1 的用户组设置为 test7，用户组设置为 test9</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置 /opt/cs 目录权限为 0550</span></span><br><span class="line">salt <span class="string">'*'</span> file.set_mode /opt/cs <span class="number">0550</span></span><br><span class="line"><span class="meta"># 如果授权成功会显示授权后的权限，如果没有此文件或目录会提示</span></span><br></pre></td></tr></table></figure>
+<h5 id="file-comment-和-file-comment-line-用法"><a href="#file-comment-和-file-comment-line-用法" class="headerlink" title="file.comment 和 file.comment_line 用法"></a>file.comment 和 file.comment_line 用法</h5><blockquote>
+<p>注释指定内容的行，每次操作前都会更新文件名命令的 .bak 备份文件<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这就是将以 /tmp/passwd 文件以 ftp 开头的行注释掉</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.comment /tmp/passwd <span class="keyword">ftp</span></span><br><span class="line"><span class="comment"># 如果注释会显示注释行的信息，如果没注释则返回False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 另外还支持正则表达式，这里就表示以 ftp 开头以 nologin 结尾的行，多行注释</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.comment /tmp/passwd <span class="keyword">ftp</span>.*nologin$</span><br><span class="line"></span><br><span class="line"><span class="comment"># 后面可以指定在行开头加什么字符，当然默认是 #</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.comment /tmp/passwd <span class="keyword">ftp</span>.*nologin$ <span class="string">'-'</span></span><br><span class="line"><span class="comment"># 前面也可以这样后面指定要行头添加的字符</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="file-copy-用法"><a href="#file-copy-用法" class="headerlink" title="file.copy 用法"></a>file.copy 用法</h5><blockquote>
+<p>复制文件 或 目录到指定的目录下面，成功返回True，失败会有提示的<br>另外还有 file.move，移动文件的用法</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 这里是文件拷贝，将文件 /path/<span class="keyword">to</span>/src 拷贝到 /path/<span class="keyword">to</span>/ 目录下面，其名称为 dst</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">copy</span> /path/<span class="keyword">to</span>/src /path/<span class="keyword">to</span>/dst</span><br><span class="line"># 切记这里一定要是文件名</span><br><span class="line"></span><br><span class="line"># 目录复制的区别看下面的例子</span><br><span class="line"># 复制目录的话，要加 recurse=True 递归标记</span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">copy</span> /<span class="keyword">opt</span>/file2 /tmp/haha/ recurse=True</span><br><span class="line"># 这种不管是 /tmp/haha/ 还是 /tmp/haha，如果这个 haha 存在的话，就是将 /<span class="keyword">opt</span>/file2 下面的内容 <span class="keyword">cp</span> -r 拷贝到 /tmp/haha 目录下面，如果 haha 目录不存在的话，就是将 /<span class="keyword">opt</span>/file2 目录变为 /tmp/haha 目录</span><br><span class="line"></span><br><span class="line"># 这种才是正确的将 /<span class="keyword">opt</span>/file2 目录复制到 /tmp/haha/ 目录下方</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">copy</span> /<span class="keyword">opt</span>/file2 /tmp/haha/file2 recurse=True</span><br><span class="line"># 如 haha 目录不存在会创建</span><br><span class="line"></span><br><span class="line"># remove_existing=True 这种就是完全覆盖的形式</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="keyword">copy</span> /path/<span class="keyword">to</span>/src_dir /path/<span class="keyword">to</span>/dst_dir recurse=True remove_existing=True</span><br></pre></td></tr></table></figure>
+<h5 id="file-directory-exists-和-file-dirname-用法"><a href="#file-directory-exists-和-file-dirname-用法" class="headerlink" title="file.directory_exists 和 file.dirname 用法"></a>file.directory_exists 和 file.dirname 用法</h5><blockquote>
+<p>前者检查一个目录是否存在，后者取文件的路径</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /tmp/haha/file 目录存在就会返回True，不存在就会返回False</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.directory_exists /tmp/haha/file2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出来的结果是 /opt/file2，这就是末尾加 /，认为这两个都是目录，当然不管是否有这个目录</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.dirname <span class="string">'/opt/file2/'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出来的结果是 /opt/file2</span></span><br><span class="line">salt <span class="string">'*'</span> <span class="built_in">file</span>.dirname <span class="string">'/opt/file2/test1'</span></span><br></pre></td></tr></table></figure>
+<h5 id="file-find-用法"><a href="#file-find-用法" class="headerlink" title="file.find 用法"></a>file.find 用法</h5><blockquote>
+<p>类似于 Linux下面的 find 命令</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">salt '*' file.find / type=f name=\*.bak size=+10m</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找/目录下，文件类型为文件的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> a：所有文件类型</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> b：块设备</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> c：字符设备</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> d：目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> p：FIFO（命名管道）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> f：普通文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> l：符号链接</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> s：套接字，名称为 .bak 结尾的（这里支持正则表达式），大小大于 10MB 的文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> b：字节</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> k：千字节</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> m：兆字节</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> g：GB</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> t：太字节也是TB</span></span><br><span class="line"></span><br><span class="line">salt '*' file.find /var mtime=+30d size=+10m print=path,size,mtime</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里是查找 /var 目录下，最后一次更改时间是 30 天以前</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> w：周</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> d：天</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> h：小时</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> m：分钟</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> s：秒，大小大于 10MB 的文件，并打印文件的路径，大小，更改时间</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可打印的内容有</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> group：组名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> md5：文件内容的 MD5 摘要</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> mode：文件权限（以整数形式）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> mtime：最后修改时间</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> name：文件基础名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> path：文件绝对路径</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> size：文件大小（以字节为单位）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">type</span>：文件类型</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> user：用户名</span></span><br><span class="line"></span><br><span class="line">salt '*' file.find /var/log name=\*.[0-9] mtime=+30d size=+10m delete</span><br><span class="line"><span class="meta">#</span><span class="bash"> find 的匹配条件有（name区分大小写，iname不区分大小写，<span class="built_in">type</span>类型，user用户，group用户组，size[+-]大小，mtime修改时间，grep搜索文件内容），最后执行的动作除了 delete 和 <span class="built_in">print</span>，还有 <span class="built_in">exec</span> <span class="built_in">command</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="file-get-gid、file-get-uid-和-file-get-group、file-get-user-用法"><a href="#file-get-gid、file-get-uid-和-file-get-group、file-get-user-用法" class="headerlink" title="file.get_gid、file.get_uid 和 file.get_group、file.get_user 用法"></a>file.get_gid、file.get_uid 和 file.get_group、file.get_user 用法</h5><blockquote>
+<p>前一组返回文件或目录的 gid号 和 uid号，后一组返回文件或目录 group 和 user</p>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 查看 /etc 目录的属组</span></span><br><span class="line">salt <span class="string">'*'</span> file.get_user /etc</span><br><span class="line"><span class="meta"># 如果文件或目录不存在返回 false</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看 /etc 目录的属组的 uid 号</span></span><br><span class="line">salt <span class="string">'*'</span> file.get_uid /etc</span><br><span class="line"><span class="meta"># 如果目录或者文件不存在返回 -1</span></span><br></pre></td></tr></table></figure>
+<h5 id="file-grep-用法"><a href="#file-grep-用法" class="headerlink" title="file.grep 用法"></a>file.grep 用法</h5><blockquote>
+<p>类似于 Linux上面的 grep 命令</p>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> file.grep /etc/passwd nobody</span><br><span class="line"><span class="meta"># 过滤 /ect/passwd 文件中包含 nobody 的行</span></span><br><span class="line"><span class="meta"># 输出：pid: 是 grep 运行的 pid 号</span></span><br><span class="line"><span class="meta"># retcode: 为状态码</span></span><br><span class="line"><span class="meta"># 0 是成功过滤 1 为非成功过滤</span></span><br><span class="line"><span class="meta"># stderr: 错误输出</span></span><br><span class="line"><span class="meta"># stdout: 正常输出也就是我们要过滤的内容</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># "-i" 的目的是不区分大小写，注意 -i 前面有空格，额外的参数之间都有空格</span></span><br><span class="line">salt <span class="string">'*'</span> file.grep /etc/sysconfig/network-scripts/ifcfg-eth0 ipaddr <span class="string">" -i"</span> </span><br><span class="line"></span><br><span class="line"><span class="meta"># -B2 就是连上面两行也过滤出来，-A2 就是连下两行也过滤出来</span></span><br><span class="line">salt <span class="string">'*'</span> file.grep /etc/sysconfig/network-scripts/ifcfg-eth0 ipaddr <span class="string">" -i -B2 -A2"</span></span><br></pre></td></tr></table></figure>
+<h5 id="file-link-和-file-symlink-用法"><a href="#file-link-和-file-symlink-用法" class="headerlink" title="file.link 和 file.symlink 用法"></a>file.link 和 file.symlink 用法</h5><blockquote>
+<p>前者是创建文件的硬链接，后者是创建符号链接也就是软链接</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 为 <span class="regexp">/tmp/</span><span class="number">1</span> 创建一个硬链接是 <span class="regexp">/tmp/</span><span class="number">2</span>，只能是文件</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.link <span class="regexp">/tmp/</span><span class="number">1</span> <span class="regexp">/tmp/</span><span class="number">2</span></span><br><span class="line"></span><br><span class="line"># 为 <span class="regexp">/tmp/</span>haha 目录创建一个软链接 <span class="regexp">/tmp/</span>buhaha，成功返回 Ture，失败有提示信息</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.symlink <span class="regexp">/tmp/</span>haha <span class="regexp">/tmp/</span>buhaha</span><br></pre></td></tr></table></figure>
+<h5 id="file-mkdir-和-file-makedirs-用法"><a href="#file-mkdir-和-file-makedirs-用法" class="headerlink" title="file.mkdir 和 file.makedirs 用法"></a>file.mkdir 和 file.makedirs 用法</h5><blockquote>
+<p>两种都是创建目录，前者对结尾的/不敏感，后者对/敏感</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 这就是在 /<span class="keyword">opt</span>/ 目录下面创建 <span class="keyword">cs</span> 目录，并在 <span class="keyword">cs</span> 目录下面创建 <span class="keyword">ds</span> 目录</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="built_in">mkdir</span> /<span class="keyword">opt</span>/<span class="keyword">cs</span>/<span class="keyword">ds</span></span><br><span class="line"># 如果 <span class="keyword">cs</span> 目录不存在就创建。目录存不存在也不会有提示</span><br><span class="line"></span><br><span class="line"># 这里只会创建 /<span class="keyword">opt</span>/<span class="keyword">cs</span> 目录，首先如果 /<span class="keyword">opt</span> 要创建的目录是存在的会有提示</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.makedirs /<span class="keyword">opt</span>/<span class="keyword">cs</span>/<span class="keyword">ds</span></span><br><span class="line"># /<span class="keyword">opt</span>/<span class="keyword">cs</span>/<span class="keyword">ds</span>/ 才会在 <span class="keyword">cs</span> 目录下面创建 <span class="keyword">ds</span> 目录</span><br></pre></td></tr></table></figure>
+<h5 id="file-remove、file-rmdir-和-file-rename-用法"><a href="#file-remove、file-rmdir-和-file-rename-用法" class="headerlink" title="file.remove、file.rmdir 和 file.rename 用法"></a>file.remove、file.rmdir 和 file.rename 用法</h5><blockquote>
+<p>前者是删除文件或者目录，中间是删除目录但是目录一定要为空、后者是重命名文件或目录</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 删除 /<span class="keyword">opt</span> 目录下面的 <span class="keyword">cs</span> 目录</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="built_in">remove</span> /<span class="keyword">opt</span>/<span class="keyword">cs</span>/</span><br><span class="line"></span><br><span class="line"># 删除 /<span class="keyword">opt</span>/<span class="keyword">cs</span> 目录</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.rmdir /<span class="keyword">opt</span>/<span class="keyword">cs</span></span><br><span class="line"># 如果 <span class="keyword">cs</span> 目录下面有内容会提示目录不会空删除失败，如果为空则会执行并返回 True</span><br><span class="line"></span><br><span class="line"># 更改 /<span class="keyword">opt</span>/<span class="keyword">cs</span> 目录下的 <span class="keyword">ds</span> 目录为 dss 目录</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.<span class="built_in">rename</span> /<span class="keyword">opt</span>/<span class="keyword">cs</span>/<span class="keyword">ds</span> /<span class="keyword">opt</span>/<span class="keyword">cs</span>/dss</span><br></pre></td></tr></table></figure>
+<h5 id="file-touch-和-file-truncate-的用法"><a href="#file-touch-和-file-truncate-的用法" class="headerlink" title="file.touch 和 file.truncate 的用法"></a>file.touch 和 file.truncate 的用法</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 文件不存在则创建此文件，如果文件存在里面的内容不会发生变化，但是它的 time 信息会更新，上级目录必须存在</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.touch <span class="regexp">/tmp/</span>test1</span><br><span class="line"></span><br><span class="line"># 将 <span class="regexp">/tmp/</span>passwd 第三个字段以后的内容全删除掉了，就剩下了 roo 三个字段</span><br><span class="line">salt <span class="string">'*'</span> <span class="keyword">file</span>.truncate <span class="regexp">/tmp/</span>passwd <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h4 id="hosts模块常用方法"><a href="#hosts模块常用方法" class="headerlink" title="hosts模块常用方法"></a>hosts模块常用方法</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过这个命令可以查看详细用法，如果没有用 内建DNS服务，使用 hosts 模块修改 /etc/hosts 还是经常会用到的</span></span><br><span class="line"><span class="attribute">salt</span> <span class="string">'*'</span> sys.doc hosts</span><br></pre></td></tr></table></figure>
+<h5 id="hosts-add-host、hosts-rm-host-和-hosts-set-host-用法"><a href="#hosts-add-host、hosts-rm-host-和-hosts-set-host-用法" class="headerlink" title="hosts.add_host、hosts.rm_host 和 hosts.set_host 用法"></a>hosts.add_host、hosts.rm_host 和 hosts.set_host 用法</h5><blockquote>
+<p>前者是追加，中着是删除、后者是覆盖</p>
+</blockquote>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># hosts.add 会先判断 /etc/hosts 里面有没有这个 <span class="built_in">IP</span> <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.113</span>，如果有 foreman.puppet 会将 alias 名追加到这个 <span class="built_in">IP</span> 后面，跟之前的解析别名一起使用这个 <span class="built_in">IP</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.add_host <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.113</span> foreman.puppet</span><br><span class="line"></span><br><span class="line"># 如果没有这个<span class="built_in">IP</span>，则会新创建一行 hosts 记录，但是 <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.113</span> 那条还是存在的，两条记录</span><br><span class="line">salt <span class="string">'*'</span> hosts.add_host <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> foreman.puppet</span><br><span class="line"></span><br><span class="line"># hosts.set_host 这个的不同之处就是</span><br><span class="line"># 如果这个 <span class="built_in">IP</span> 不存在则创建新的一条 hosts 记录</span><br><span class="line"># 如果 hosts 存在这个 <span class="built_in">IP</span> 的解析记录，会完全覆盖掉，也就是旧的 <span class="built_in">IP</span> 解析记录完全变成现在的结果</span><br><span class="line">salt <span class="string">'*'</span> hosts.set_host <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> <span class="keyword">test</span>.hahahah</span><br><span class="line"></span><br><span class="line"># 删除 <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> <span class="keyword">test</span>.haha 这条解析记录</span><br><span class="line">salt <span class="string">'*'</span> hosts.rm_host <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> <span class="keyword">test</span>.haha</span><br><span class="line"># 如果 <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> 这行有多条解析记录，而只会删除 <span class="keyword">test</span>.haha 这条记录</span><br><span class="line"># 其他的 <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.114</span> xxx.xxx，还会存在不会删除，可以说是有选择性的删除</span><br></pre></td></tr></table></figure>
+<h5 id="其他查看-hosts-解析的用法"><a href="#其他查看-hosts-解析的用法" class="headerlink" title="其他查看 hosts 解析的用法"></a>其他查看 hosts 解析的用法</h5><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 192.168.1.114 这个 IP 对应的别名解析，如果有则返回对应的 hosts 别名解析记录，没有则什么都不返回</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.get_alias <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 这个就是返回 wo.haha 在 /etc/hosts 里面对应的IP</span></span><br><span class="line"><span class="meta"># 但是有个问题，如果有多条只会返回文件最上方的那一条对应的 IP 地址</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.get_ip wo.haha</span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果有这条别名解析记录，则返回True，如果没有则返回False</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.has_pair <span class="number">192.168</span><span class="number">.1</span><span class="number">.113</span> foreman.puppet</span><br><span class="line"></span><br><span class="line"><span class="meta"># 类似于 cat /etc/hosts 的操作</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.list_hosts</span><br><span class="line"><span class="meta"># 但是不同的是，这相当于一个汇总，会以第一行是IP：下一行是其对应的别名解析的方式来呈现，比如一个 IP 有好几行的解析，这所有的解析记录都会汇总到这个 IP 下面，注释过的别名解析的行不会出现在这个汇总信息里面</span></span><br></pre></td></tr></table></figure>
+<h4 id="cron模块常用方法"><a href="#cron模块常用方法" class="headerlink" title="cron模块常用方法"></a>cron模块常用方法</h4><h5 id="cron-raw-cron-用法"><a href="#cron-raw-cron-用法" class="headerlink" title="cron.raw_cron 用法"></a>cron.raw_cron 用法</h5><blockquote>
+<p>cron.list_tab 和 cron.ls 和跟其效果一样，格式也一样必须要指定某一个用户，都是显示指定用户 crontab 文件里面的定时任务</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">salt</span> <span class="string">'*'</span> cron.raw_cron root  <span class="comment">#必须指定用户，这里是显示root的crontab文件里面的内容，注释的行也会显示</span></span><br></pre></td></tr></table></figure>
+<h5 id="cron-set-job-用法"><a href="#cron-set-job-用法" class="headerlink" title="cron.set_job 用法"></a>cron.set_job 用法</h5><blockquote>
+<p> 为指定用户设置一个定时任务</p>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> cron.set_job root <span class="string">'0'</span> <span class="string">'0'</span> <span class="string">'*'</span> <span class="string">'*'</span> <span class="string">'*'</span> <span class="string">'/bin/bash /opt/scripts/scp.sh &gt; /dev/null 2&gt;&amp;1'</span></span><br><span class="line"><span class="meta"># 如果 '/bin/bash /opt/scripts/scp.sh &gt; /dev/null 2&gt;&amp;1'</span></span><br><span class="line"><span class="meta"># 这一部分存在了，那么这一步操作就是 update，也就是更新前面执行 crontab 的时间，如果不存在，这就相当于一条添加定时任务的操作返回内容为 new</span></span><br></pre></td></tr></table></figure>
+<h5 id="cron-rm-job-用法"><a href="#cron-rm-job-用法" class="headerlink" title="cron.rm_job 用法"></a>cron.rm_job 用法</h5><blockquote>
+<p>删除指定用户指定的的定时任务</p>
+</blockquote>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意格式是用户 后面跟要删除的任务，不要加前面的时间，成功会返回 removed，如果没有这条记录会返回 absent</span></span><br><span class="line">salt '*' cron.rm_job root '<span class="string">/bin/bash</span> <span class="string">/opt/scripts/scp.sh</span> &gt; <span class="string">/dev/null</span> 2&gt;&amp;1'</span><br></pre></td></tr></table></figure>
+<h5 id="network-模块常用方法"><a href="#network-模块常用方法" class="headerlink" title="network 模块常用方法"></a>network 模块常用方法</h5><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 返回minion的主机名</span></span><br><span class="line">salt <span class="string">'*'</span> network.get_hostname</span><br><span class="line"></span><br><span class="line"><span class="meta"># 返回指定网络接口的mac地址</span></span><br><span class="line">salt <span class="string">'*'</span> network.hw_addr eth0</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看主机在某个子网内就返回True，如果不在的话就返回False，多子网用空格隔开</span></span><br><span class="line">salt <span class="string">'*'</span> network.in_subnet <span class="number">192.168</span><span class="number">.1</span><span class="number">.0</span>/<span class="number">24</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看 minion 端绑定的 IP 地址，多 IP 也会显示出来，127.0.0.1除外</span></span><br><span class="line">salt <span class="string">'*'</span> network.ip_addrs</span><br><span class="line"></span><br><span class="line"><span class="meta"># 会显示所有接口的详细信息，但是别名的网卡类似于 eth0:1 这种不会显示</span></span><br><span class="line">salt <span class="string">'*'</span> network.interfaces</span><br><span class="line"></span><br><span class="line"><span class="meta"># 显示指定网卡接口上面的 IP，只会显示 IP 不会显示其他内容</span></span><br><span class="line"><span class="meta"># network.interface 会连网关子网掩码也显示</span></span><br><span class="line">salt <span class="string">'*'</span> network.interface_ip eth0</span><br><span class="line"></span><br><span class="line"><span class="meta"># 修改某一个minion的主机名，显然这一步操作只适合在初始化的时候而且不适合执行所有主机</span></span><br><span class="line">salt <span class="string">'agent1.salt'</span> network.mod_hostname test1.salt</span><br><span class="line"></span><br><span class="line">salt <span class="string">'*'</span> network.ping www.baidu.com return_boolean=True timeout=<span class="number">3</span></span><br><span class="line"><span class="meta"># 如果不加 return_boolean=True 显示的是 ping 的结果信息，加了就是如果 ping 通了就返回True，ping 不通就返回 False</span></span><br><span class="line"><span class="meta"># timeout=3 就是 ping 的时间，3秒超时这样能快速返回结果</span></span><br><span class="line"><span class="meta"># 这个其实挺好用的，比如我们可以测试哪些主机的 DNS 设置有问题不能正常解析啊，或是我们内网 DNS 指向了一个非公网的域名解析，可以通过这个看哪些主机设置了内网 DNS 而哪些没设置内网 DNS</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 返回主机所属的子网</span></span><br><span class="line">salt <span class="string">'*'</span> network.subnets</span><br></pre></td></tr></table></figure>
+<h4 id="sys模块常用方法"><a href="#sys模块常用方法" class="headerlink" title="sys模块常用方法"></a>sys模块常用方法</h4><h5 id="sys-argspec-用法"><a href="#sys-argspec-用法" class="headerlink" title="sys.argspec 用法"></a>sys.argspec 用法</h5><blockquote>
+<p>返回 Salt 执行模块中函数的参数说明。对于我们后期写 .sls文件 很有帮助</p>
+</blockquote>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看 pkg.install 函数的参数说明</span><br><span class="line">salt <span class="string">'*'</span> sys.argspec pkg.install</span><br><span class="line"></span><br><span class="line"># 查看sys模块里面所有函数的规则说明，或者#salt <span class="string">'*'</span> sys.argspec <span class="string">'sys.*'</span></span><br><span class="line">salt <span class="string">'*'</span> sys.argspec sys</span><br></pre></td></tr></table></figure>
+<h5 id="sys-doc-用法"><a href="#sys-doc-用法" class="headerlink" title="sys.doc 用法"></a>sys.doc 用法</h5><blockquote>
+<p>显示模块下函数的使用文档信息类似于man帮助，前面已介绍过，多模块或者多函数之间用空格隔开</p>
+</blockquote>
+<h5 id="sys-list-functions-和-sys-list-modules-用法"><a href="#sys-list-functions-和-sys-list-modules-用法" class="headerlink" title="sys.list_functions 和 sys.list_modules 用法"></a>sys.list_functions 和 sys.list_modules 用法</h5><blockquote>
+<p>前者就是列出所有模块下面的函数，多模块也是用空格隔开。后者是将所有模块列出来</p>
+</blockquote>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 可以用这种方法将所有 sys.list 开头的函数列出来</span></span><br><span class="line">salt <span class="string">'*'</span> sys.list_functions <span class="string">'sys.list_*'</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 列出所有的模块</span></span><br><span class="line">salt <span class="string">'*'</span> sys.list_modules</span><br><span class="line"></span><br><span class="line"><span class="meta"># 列出所有以 s 开头的模块</span></span><br><span class="line">salt <span class="string">'*'</span> sys.list_modules <span class="string">'s*'</span></span><br></pre></td></tr></table></figure>
+<h4 id="service-模块常用方法"><a href="#service-模块常用方法" class="headerlink" title="service 模块常用方法"></a>service 模块常用方法</h4><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 查看某个命令的服务是否可用，这里是查看sshd服务是否可用，可用返回True，不可用返回False</span></span><br><span class="line">salt <span class="string">'*'</span> service.available sshd</span><br><span class="line"></span><br><span class="line"><span class="meta"># 禁止某个服务开机启动，这里是禁止 postfix 服务开机启动</span></span><br><span class="line">salt <span class="string">'*'</span> service.disable postfix</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看某个服务是否已经开机不启动，这里是以postfix服务为例，是返回True，否则返回False</span></span><br><span class="line">salt <span class="string">'*'</span> service.disabled postfix</span><br><span class="line"></span><br><span class="line"><span class="meta"># 设置某个服务开机启动，这里以 postfix 为例</span></span><br><span class="line">salt <span class="string">'*'</span> service.enable postfix</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看某个服务是否开机启动，这里以 postfix 服务为例</span></span><br><span class="line">salt <span class="string">'*'</span> service.enabled postfix</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看所有的服务项</span></span><br><span class="line">salt <span class="string">'*'</span> service.get_all</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看所有开机启动的服务</span></span><br><span class="line">salt <span class="string">'*'</span> service.get_enabled</span><br><span class="line"></span><br><span class="line"><span class="meta"># 重新加载指定名称的服务</span></span><br><span class="line">salt <span class="string">'*'</span> service.reload &lt;service name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 重新启动指定名称的服务</span></span><br><span class="line">salt <span class="string">'*'</span> service.restart &lt;service name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 启动指定名称的服务</span></span><br><span class="line">salt <span class="string">'*'</span> service.start &lt;service name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看指定服务的状态，启动状态是True，关闭状态是False</span></span><br><span class="line">salt <span class="string">'*'</span> service.status &lt;service name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta"># 关闭指定名称的服务</span></span><br><span class="line">salt <span class="string">'*'</span> service.stop &lt;service name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="pkg-模块常用方法"><a href="#pkg-模块常用方法" class="headerlink" title="pkg 模块常用方法"></a>pkg 模块常用方法</h4><h5 id="pkg-install-用法"><a href="#pkg-install-用法" class="headerlink" title="pkg.install 用法"></a>pkg.install 用法</h5><blockquote>
+<p>安装传递的包，在安装包之前，添加 refresh=True 来清理 yum 数据库</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 参数介绍</span></span><br><span class="line">name    <span class="comment"># 要安装的软件包的名称。如果传递了 "pkgs" 或 "sources" 此参数则会被忽略</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如这就相当于在 minion 端执行 yum -y install httpd 操作</span></span><br><span class="line">salt '*' pkg.<span class="keyword">install</span> httpd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果是第一个 yum 的话，还是可以 refresh 参数，相当于 yum clean all 操作</span></span><br><span class="line">salt '*' pkg.<span class="keyword">install</span> httpd refresh=<span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">skip_verify    <span class="comment"># 跳过 GPG 验证检查</span></span><br><span class="line">version        <span class="comment"># 安装包的特定版本</span></span><br><span class="line">fromrepo       <span class="comment"># 指定从哪个 repo 库来安装软件</span></span><br><span class="line">pkgs           <span class="comment"># 指定多个软件包，一定是要以列表传递</span></span><br><span class="line"></span><br><span class="line">salt '*' pkg.<span class="keyword">install</span> pkgs='[<span class="string">"foo"</span>, <span class="string">"bar"</span>]'</span><br><span class="line">salt '*' pkg.<span class="keyword">install</span> pkgs='[<span class="string">"foo"</span>, &#123;<span class="string">"bar"</span>: <span class="string">"1.2.3-4.el5"</span>&#125;]'</span><br><span class="line"></span><br><span class="line">sources    <span class="comment"># 要安装的RPM软件包列表，其中的键是包名称，值作为包的源URI或本地路径</span></span><br><span class="line"></span><br><span class="line">salt '*' pkg.<span class="keyword">install</span> sources='[&#123;<span class="string">"foo"</span>: <span class="string">"salt://foo.rpm"</span>&#125;, &#123;<span class="string">"bar"</span>: <span class="string">"salt://bar.rpm"</span>&#125;]'</span><br></pre></td></tr></table></figure>
+<h5 id="pkg-latest-version-用法"><a href="#pkg-latest-version-用法" class="headerlink" title="pkg.latest_version 用法"></a>pkg.latest_version 用法</h5><blockquote>
+<p>更新软件包至最新版本</p>
+</blockquote>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 更新指定的软件包</span></span><br><span class="line">salt <span class="string">'*'</span> pkg.latest_version <span class="params">&lt;package name&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 指定 repo 源来更新软件包</span></span><br><span class="line">salt <span class="string">'*'</span> pkg.latest_version <span class="params">&lt;package name&gt;</span> fromrepo=epel-testing</span><br><span class="line"></span><br><span class="line"><span class="meta"># 多个要更新的软件之间用空格隔开</span></span><br><span class="line">salt <span class="string">'*'</span> pkg.latest_version <span class="params">&lt;package1&gt;</span> <span class="params">&lt;package2&gt;</span> <span class="params">&lt;package3&gt;</span> ...</span><br></pre></td></tr></table></figure>
+<h5 id="pkg-remove-用法"><a href="#pkg-remove-用法" class="headerlink" title="pkg.remove 用法"></a>pkg.remove 用法</h5><blockquote>
+<p>删除软件的操作</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 卸载指定的软件</span><br><span class="line">salt <span class="string">'*'</span> pkg.<span class="built_in">remove</span> &lt;package name&gt;</span><br><span class="line"></span><br><span class="line"># 多软件可以用空格隔开</span><br><span class="line">salt <span class="string">'*'</span> pkg.<span class="built_in">remove</span> <span class="symbol">&lt;package1&gt;</span>,<span class="symbol">&lt;package2&gt;</span>,<span class="symbol">&lt;package3&gt;</span></span><br><span class="line"></span><br><span class="line"># 也可以用 pkgs 使用 <span class="keyword">python</span> 列表的形式</span><br><span class="line">salt <span class="string">'*'</span> pkg.<span class="built_in">remove</span> pkgs=<span class="string">'["foo", "bar"]'</span></span><br></pre></td></tr></table></figure>
+<h5 id="salt-‘-’-pkg-version-用法"><a href="#salt-‘-’-pkg-version-用法" class="headerlink" title="salt ‘*’ pkg.version 用法"></a>salt ‘*’ pkg.version 用法</h5><blockquote>
+<p>查看软件的版本</p>
+</blockquote>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 查看指定软件的版本号</span></span><br><span class="line">salt <span class="string">'*'</span> pkg.version <span class="params">&lt;package name&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 查看多软件版本号</span></span><br><span class="line">salt <span class="string">'*'</span> pkg.version <span class="params">&lt;package1&gt;</span> <span class="params">&lt;package2&gt;</span> <span class="params">&lt;package3&gt;</span> ...</span><br></pre></td></tr></table></figure>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://blog.51niux.com/?id=116" target="_blank" rel="noopener">http://blog.51niux.com/?id=116</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SaltStack常用模块/" rel="tag"># SaltStack常用模块</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/08/06/持续集成CI持续交付CD/" rel="next" title="持续集成CI持续交付CD">
+                <i class="fa fa-chevron-left"></i> 持续集成CI持续交付CD
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20180226143321.jpg"
+                alt="G加菲" />
+            
+              <p class="site-author-name" itemprop="name">G加菲</p>
+              <p class="site-description motion-element" itemprop="description">很喜欢吃~吃完就睡~所以长得很胖</p>
+          </div>
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 
+          src="//music.163.com/outchain/player?type=0&id=2188265841&auto=1&height=90"></iframe>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jy00278439" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gmlyo.com/" title="G加菲" target="_blank">G加菲</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SaltStack-常用模块"><span class="nav-number">1.</span> <span class="nav-text">SaltStack 常用模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SaltStack-内置模块汇总"><span class="nav-number">1.1.</span> <span class="nav-text">SaltStack 内置模块汇总</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SaltStack-常用模块介绍"><span class="nav-number">1.2.</span> <span class="nav-text">SaltStack 常用模块介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cmd-模块常用方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">cmd 模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cmd-retcode-用法"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">cmd.retcode 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cmd-run-用法"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">cmd.run 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cmd-script-和-cmd-script-retcode"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">cmd.script 和 cmd.script_retcode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cmd-shell-和-cmd-shells"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">cmd.shell 和 cmd.shells</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cmd-which-和-cmd-which-bin-用法"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">cmd.which 和 cmd.which_bin 用法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp模块常用方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">cp模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cp-get-dir-和-cp-get-file-用法"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">cp.get_dir 和 cp.get_file 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp-get-url-用法"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">cp.get_url 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cp-list-master-和-cp-list-master-dirs-用法"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">cp.list_master 和 cp.list_master_dirs 用法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-模块常用方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">file 模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#file-access-用法"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">file.access 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-append-和-file-write-用法"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">file.append 和 file.write 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-chgrp、file-chown-和-file-set-mode-用法"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">file.chgrp、file.chown 和 file.set_mode 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-comment-和-file-comment-line-用法"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">file.comment 和 file.comment_line 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-copy-用法"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">file.copy 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-directory-exists-和-file-dirname-用法"><span class="nav-number">1.2.3.6.</span> <span class="nav-text">file.directory_exists 和 file.dirname 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-find-用法"><span class="nav-number">1.2.3.7.</span> <span class="nav-text">file.find 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-get-gid、file-get-uid-和-file-get-group、file-get-user-用法"><span class="nav-number">1.2.3.8.</span> <span class="nav-text">file.get_gid、file.get_uid 和 file.get_group、file.get_user 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-grep-用法"><span class="nav-number">1.2.3.9.</span> <span class="nav-text">file.grep 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-link-和-file-symlink-用法"><span class="nav-number">1.2.3.10.</span> <span class="nav-text">file.link 和 file.symlink 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-mkdir-和-file-makedirs-用法"><span class="nav-number">1.2.3.11.</span> <span class="nav-text">file.mkdir 和 file.makedirs 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-remove、file-rmdir-和-file-rename-用法"><span class="nav-number">1.2.3.12.</span> <span class="nav-text">file.remove、file.rmdir 和 file.rename 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file-touch-和-file-truncate-的用法"><span class="nav-number">1.2.3.13.</span> <span class="nav-text">file.touch 和 file.truncate 的用法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hosts模块常用方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">hosts模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hosts-add-host、hosts-rm-host-和-hosts-set-host-用法"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">hosts.add_host、hosts.rm_host 和 hosts.set_host 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他查看-hosts-解析的用法"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">其他查看 hosts 解析的用法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cron模块常用方法"><span class="nav-number">1.2.5.</span> <span class="nav-text">cron模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#cron-raw-cron-用法"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">cron.raw_cron 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cron-set-job-用法"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">cron.set_job 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cron-rm-job-用法"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">cron.rm_job 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#network-模块常用方法"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">network 模块常用方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sys模块常用方法"><span class="nav-number">1.2.6.</span> <span class="nav-text">sys模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#sys-argspec-用法"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">sys.argspec 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sys-doc-用法"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">sys.doc 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sys-list-functions-和-sys-list-modules-用法"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">sys.list_functions 和 sys.list_modules 用法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#service-模块常用方法"><span class="nav-number">1.2.7.</span> <span class="nav-text">service 模块常用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pkg-模块常用方法"><span class="nav-number">1.2.8.</span> <span class="nav-text">pkg 模块常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pkg-install-用法"><span class="nav-number">1.2.8.1.</span> <span class="nav-text">pkg.install 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pkg-latest-version-用法"><span class="nav-number">1.2.8.2.</span> <span class="nav-text">pkg.latest_version 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pkg-remove-用法"><span class="nav-number">1.2.8.3.</span> <span class="nav-text">pkg.remove 用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#salt-‘-’-pkg-version-用法"><span class="nav-number">1.2.8.4.</span> <span class="nav-text">salt ‘*’ pkg.version 用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.3.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">G加菲</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数(UV)
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量(PV)
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
