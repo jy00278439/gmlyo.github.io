@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SaltStack_network模块]]></title>
+    <url>%2F%2Fblog%2F2018%2F08%2F08%2FSaltStack_network%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[network模块 返回 Minion 主机的网络信息 获取 minion01 主机 ping 域名信息1salt 'minion01' network.ping www.baidu.com 获取 minion 的主机名1salt '*' network.get_hostname 获取指定网络接口的 mac 地址1salt '*' network.hw_addr eth0 获取主机是否在某个子网内 在就返回True，如果不在的话就返回 False，多子网用空格隔开1salt '*' network.in_subnet 192.168.1.0/24 查看 minion 端绑定的 IP 地址 多 IP 也会显示出来，127.0.0.1 除外1salt '*' network.ip_addrs 显示所有接口的详细信息 但是别名的网卡类似于 eth0:1 这种不会显示1salt '*' network.interfaces 显示指定网卡接口上面的 IP 只会显示IP不会显示其他内容1salt '*' network.interface_ip eth0 network.interface 会连网关子网掩码也显示 修改某一个 minion 的主机名 显然这一步操作只适合在初始化的时候而且不适合执行所有主机1salt 'agent1.salt' network.mod_hostname test1.salt 显示的 ping 的结果信息 如果不加 return_boolean=True 显示的是 ping 的结果信息，加了就是如果 ping 通了就返回 True，ping不通就返回 False1salt '*' network.ping www.baidu.com return_boolean=True timeout=3 timeout=3 就是 ping 的时间，3秒超时这样能快速返回结果这个其实挺好用的，比如我们可以测试哪些主机的 DNS 设置有问题不能正常解析啊，或者是我们内网 DNS 指向了一个非公网的域名解析，可以通过这个看哪些主机设置了内网 DNS 而哪些没设置内网 DNS 获取主机所属的子网1salt '*' network.subnets]]></content>
+      <categories>
+        <category>SaltStack笔记</category>
+      </categories>
+      <tags>
+        <tag>SaltStack_network模块</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SaltStack_host模块]]></title>
     <url>%2F%2Fblog%2F2018%2F08%2F08%2FSaltStack_hosts%E6%A8%A1%E5%9D%97%2F</url>
     <content type="text"><![CDATA[hosts 模块 通过这个命令可以查看详细用法1salt '*' sys.doc hosts 我们生产中如果没有用内建 DNS 服务，使用 hosts 模块修改 /etc/hosts 还是经常会用到的 hosts.add_host 追加123salt '*' hosts.add_host 192.168.1.113 minion01# hosts.add 会先判断 /etc/hosts 里面有没有这个 IP 192.168.1.113# 如果有 minion01 会将 alias 名追加到这个 IP 后面，跟之前的解析别名一起使用这个 IP 12salt '*' hosts.add_host 192.168.1.114 minion01# 如果没有这个 IP，则会新创建一行 hosts 记录，但是 192.168.1.113 那条还是存在的。两条记录 hosts.set_host 覆盖123salt '*' hosts.set_host 192.168.1.114 minion02hosts.set_host 这个的不同之处就是，如果这个 IP 不存在则创建新的一条 hosts 记录，如果 hosts 存在这个 IP 的解析记录。会完全覆盖掉也就是旧的 IP 解析记录完全变成现在的结果 hosts.rm_host 删除123salt '*' hosts.rm_host 192.168.1.114 minion02# 删除 192.168.1.114 minion02 这条解析记录# 如果 192.168.1.114 这行有多条解析记录，而只会删除 minion02 这条记录，其他的 192.168.1.114 xxx.xxx，还会存在不会删除，可以说是有选择性的删除 查看 hosts 解析的用法 123# 192.168.1.114 这个 IP 对应的别名解析salt '*' hosts.get_alias 192.168.1.114# 如果有则返回对应的 hosts 别名解析记录，没有则什么都不返回 123# 这个就是返回 minion01 在 /etc/hosts 里面对应的 IPsalt '*' hosts.get_ip minion01# 但是有个问题，如果有多条只会返回文件最上方的那一条对应的 IP 地址 12# 如果有这条别名解析记录，则返回True，如果没有则返回Falsesalt '*' hosts.has_pair 192.168.1.113 minion01 1234# 类似于 cat /etc/hosts 的操作salt '*' hosts.list_hosts# 不同的是，这相当于一个汇总，会以第一行是 IP：下一行是其对应的别名解析的方式来呈现# 比如一个 IP 有好几行的解析，这所有的解析记录都会汇总到这个 IP 下面，注释过的别名解析的行不会出现在这个汇总信息里面 dnsutil 模块 Minion 主机通用 DNS 操作添加 192.168.2.71 www.test.com 到 minion01 端 /etc/hosts 下1salt 'minion01' dnsutil.hosts_append /etc/hosts 192.168.2.71 www.test.com]]></content>
@@ -650,17 +661,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo安装]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
-      <categories>
-        <category>Hexo笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
@@ -669,6 +669,17 @@
       </categories>
       <tags>
         <tag>Kickstart自动应答文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo安装]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo安装</tag>
       </tags>
   </entry>
   <entry>
