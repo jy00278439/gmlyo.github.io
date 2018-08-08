@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SaltStack_host模块]]></title>
+    <url>%2F%2Fblog%2F2018%2F08%2F08%2FSaltStack_hosts%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[hosts 模块 通过这个命令可以查看详细用法1salt '*' sys.doc hosts 我们生产中如果没有用内建 DNS 服务，使用 hosts 模块修改 /etc/hosts 还是经常会用到的 hosts.add_host 追加123salt '*' hosts.add_host 192.168.1.113 minion01# hosts.add 会先判断 /etc/hosts 里面有没有这个 IP 192.168.1.113# 如果有 minion01 会将 alias 名追加到这个 IP 后面，跟之前的解析别名一起使用这个 IP 12salt '*' hosts.add_host 192.168.1.114 minion01# 如果没有这个 IP，则会新创建一行 hosts 记录，但是 192.168.1.113 那条还是存在的。两条记录 hosts.set_host 覆盖123salt '*' hosts.set_host 192.168.1.114 minion02hosts.set_host 这个的不同之处就是，如果这个 IP 不存在则创建新的一条 hosts 记录，如果 hosts 存在这个 IP 的解析记录。会完全覆盖掉也就是旧的 IP 解析记录完全变成现在的结果 hosts.rm_host 删除123salt '*' hosts.rm_host 192.168.1.114 minion02# 删除 192.168.1.114 minion02 这条解析记录# 如果 192.168.1.114 这行有多条解析记录，而只会删除 minion02 这条记录，其他的 192.168.1.114 xxx.xxx，还会存在不会删除，可以说是有选择性的删除 查看 hosts 解析的用法 123# 192.168.1.114 这个 IP 对应的别名解析salt '*' hosts.get_alias 192.168.1.114# 如果有则返回对应的 hosts 别名解析记录，没有则什么都不返回 123# 这个就是返回 minion01 在 /etc/hosts 里面对应的 IPsalt '*' hosts.get_ip minion01# 但是有个问题，如果有多条只会返回文件最上方的那一条对应的 IP 地址 12# 如果有这条别名解析记录，则返回True，如果没有则返回Falsesalt '*' hosts.has_pair 192.168.1.113 minion01 1234# 类似于 cat /etc/hosts 的操作salt '*' hosts.list_hosts# 不同的是，这相当于一个汇总，会以第一行是 IP：下一行是其对应的别名解析的方式来呈现# 比如一个 IP 有好几行的解析，这所有的解析记录都会汇总到这个 IP 下面，注释过的别名解析的行不会出现在这个汇总信息里面 dnsutil 模块 Minion 主机通用 DNS 操作添加 192.168.2.71 www.test.com 到 minion01 端 /etc/hosts 下1salt 'minion01' dnsutil.hosts_append /etc/hosts 192.168.2.71 www.test.com]]></content>
+      <categories>
+        <category>SaltStack笔记</category>
+      </categories>
+      <tags>
+        <tag>SaltStack_host模块</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SaltStack_group模块]]></title>
+    <url>%2F%2Fblog%2F2018%2F08%2F08%2FSaltStack_group%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[group 模块 添加指定用户组 group.add 方法123[root@salt-master ~]# salt 'salt-minion02' group.add user1 1000salt-minion02: True 返回用户组信息 group.info 方法12345678910[root@salt-master ~]# salt 'salt-minion02' group.info user1salt-minion02: ---------- gid: 1000 members: name: user1 passwd: x 返回所有用户组的信息 group.getent 方法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485[root@salt-master ~]# salt 'salt-minion02' group.getentsalt-minion02: |_ ---------- gid: 0 members: name: root passwd: x |_ ---------- gid: 1 members: - bin - daemon name: bin passwd: x |_ ---------- gid: 2 members: - bin - daemon name: daemon passwd: x |_ ---------- gid: 3 members: - bin - adm name: sys passwd: x |_ ---------- gid: 4 members: - adm - daemon name: adm passwd: x |_ ---------- gid: 5 members: name: tty passwd: x |_ ---------- gid: 6 members: name: disk passwd: x |_ ---------- gid: 7 members: - daemon name: lp passwd: x |_....... 添加一个用户到指定组中 group.adduser 方法必须是一个已经存在的组和已存在的用户123[root@salt-master ~]# salt 'salt-minion02' group.adduser user1 zabbixsalt-minion02: True 将用户从用户组中移除 group.deluser 方法123[root@salt-master ~]# salt 'salt-minion02' group.deluser user1 zabbixsalt-minion02: True 移除指定用户组 group.delete 方法123[root@salt-master ~]# salt 'salt-minion02' group.delete user1salt-minion02: True]]></content>
+      <categories>
+        <category>SaltStack笔记</category>
+      </categories>
+      <tags>
+        <tag>SaltStack_group模块</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SaltStack_user模块]]></title>
     <url>%2F%2Fblog%2F2018%2F08%2F08%2FSaltStack_user%E6%A8%A1%E5%9D%97%2F</url>
     <content type="text"><![CDATA[user模块 用于用户管理，如创建用户，删除用户，更改用户信息等官方文档https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html 在 minion 端上创建一个用户 语法1salt '*' user.add name &lt;uid&gt; &lt;gid&gt; &lt;groups&gt; &lt;home&gt; &lt;shell&gt; 创建用户 创建一个 test 用户，其它都和 useradd 一样默认12345salt * user.add test[root@salt-master ~]# salt 'salt-minion02' user.add test 610 605 zabbix /home/test /bin/bashsalt-minion02: True 获取用户信息 user.info 方法返回用户信息123456789101112131415161718192021[root@salt-master ~]# salt 'salt-minion02' user.info testsalt-minion02: ---------- fullname: gid: 605 groups: - zabbix home: /home/test homephone: name: test passwd: x roomnumber: shell: /bin/bash uid: 610 workphone: 获取所有系统用户信息的列表 user.getent 方法返回所有系统用户信息的列表1234567891011121314151617181920212223242526272829303132333435363738394041424344454647[root@salt-master ~]# salt 'salt-minion02' user.getent salt-minion02: |_ ---------- fullname: root gid: 0 groups: - root home: /root homephone: name: root passwd: x roomnumber: shell: /bin/bash uid: 0 workphone: |_ ---------- fullname: bin gid: 1 groups: - bin - daemon - sys home: /bin homephone: name: bin passwd: x roomnumber: shell: /sbin/nologin uid: 1 workphone: ...... 查看所有用户 查看所有用户1salt * user.list_users 列出指定用户所属组的列表 user.list_groups 方法列出指定用户所属组的列表123[root@salt-master ~]# salt 'salt-minion02' user.list_groups zabbixsalt-minion02.contoso.com: - zabbix 创建用户指定 shell 创建用户时指定 shell1salt * user.add test shell=/sbin/nologin 创建用户时指定不创建家目录 创建用户时指定不创建家目录1salt * user.add test createhome=False 创建用户时指定附加组 创建用户时指定附加组1salt * user.add test groups=nginx 将用户加入到其他组，为附加组 将 test 用户加入到 nginx 组，此为附加组1salt * user.chgroups test nginx 查看用户所有的组 查看 test 用户所有的组1salt * user.list_groups test 删除用户 user.delete 方法删除 test 用户1salt * user.delete test remove=True 在 minion 端删除一个用户123[root@salt-master ~]# salt 'salt-minion02' user.delete testsalt-minion02: True 修改用户名 user.rename 方法123[root@salt-master ~]# salt 'salt-minion02' user.rename test testusersalt-minion02.contoso.com: False 虽然返回 False 但是操作是成功完成了的 编辑 user.sls 文件12345678vim /srv/salt/nginx/create_users.sls# usernginx_user: user.present: # 用户创建 - name: nginx - createhome: False # 不用家目录 - gid_from_name: True - shell: /sbin/nologin # 指定shell]]></content>
@@ -628,17 +650,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Kickstart自动应答文件]]></title>
-    <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
-      <categories>
-        <category>Cobbler笔记</category>
-      </categories>
-      <tags>
-        <tag>Kickstart自动应答文件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo安装]]></title>
     <url>%2F%2Fblog%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
@@ -647,6 +658,17 @@
       </categories>
       <tags>
         <tag>Hexo安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kickstart自动应答文件]]></title>
+    <url>%2F%2Fblog%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
+      <categories>
+        <category>Cobbler笔记</category>
+      </categories>
+      <tags>
+        <tag>Kickstart自动应答文件</tag>
       </tags>
   </entry>
   <entry>
