@@ -401,13 +401,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-08-06T07:47:12.804Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/SaltStack%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/</loc>
         <lastmod>2018-08-07T12:32:12.493Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -445,6 +438,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/SaltStack-network%E6%A8%A1%E5%9D%97/</loc>
         <lastmod>2018-08-08T10:08:59.127Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2018-08-09T09:02:32.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
