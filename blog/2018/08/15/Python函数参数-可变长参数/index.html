@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Python函数参数（二）可变长参数 指的是在调用函数时，传入的实参个数可以不固定实参两种形式：  位置实参 关键字实参所以对应的，形参也必须对应两种解决方案，专门用于接收溢出的位置实参和关键字实参   接收溢出的位置实参 星（*）：接收溢出的位置实参，存成元组类型，然后赋值给（*）后边跟的那个变量名  用法一：在形参中使用（*）1234567891011121314def foo(x, y, *">
+<meta name="description" content="Python函数参数-可变长参数">
 <meta name="keywords" content="Python函数参数-可变长参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python函数参数-可变长参数">
 <meta property="og:url" content="http://www.gmlyo.com/blog/2018/08/15/Python函数参数-可变长参数/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Python函数参数（二）可变长参数 指的是在调用函数时，传入的实参个数可以不固定实参两种形式：  位置实参 关键字实参所以对应的，形参也必须对应两种解决方案，专门用于接收溢出的位置实参和关键字实参   接收溢出的位置实参 星（*）：接收溢出的位置实参，存成元组类型，然后赋值给（*）后边跟的那个变量名  用法一：在形参中使用（*）1234567891011121314def foo(x, y, *">
+<meta property="og:description" content="Python函数参数-可变长参数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-15T07:26:47.656Z">
+<meta property="og:updated_time" content="2018-08-15T07:33:34.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python函数参数-可变长参数">
-<meta name="twitter:description" content="Python函数参数（二）可变长参数 指的是在调用函数时，传入的实参个数可以不固定实参两种形式：  位置实参 关键字实参所以对应的，形参也必须对应两种解决方案，专门用于接收溢出的位置实参和关键字实参   接收溢出的位置实参 星（*）：接收溢出的位置实参，存成元组类型，然后赋值给（*）后边跟的那个变量名  用法一：在形参中使用（*）1234567891011121314def foo(x, y, *">
+<meta name="twitter:description" content="Python函数参数-可变长参数">
 
 
 
@@ -423,7 +423,8 @@
       
 
       
-        <h2 id="Python函数参数（二）"><a href="#Python函数参数（二）" class="headerlink" title="Python函数参数（二）"></a>Python函数参数（二）</h2><h3 id="可变长参数"><a href="#可变长参数" class="headerlink" title="可变长参数"></a>可变长参数</h3><blockquote>
+        <h2 id="Python函数参数-可变长参数"><a href="#Python函数参数-可变长参数" class="headerlink" title="Python函数参数-可变长参数"></a>Python函数参数-可变长参数</h2><a id="more"></a>
+<h3 id="可变长参数"><a href="#可变长参数" class="headerlink" title="可变长参数"></a>可变长参数</h3><blockquote>
 <p>指的是在调用函数时，传入的实参个数可以不固定<br>实参两种形式：</p>
 <ol>
 <li>位置实参</li>
@@ -693,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python函数参数（二）"><span class="nav-number">1.</span> <span class="nav-text">Python函数参数（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可变长参数"><span class="nav-number">1.1.</span> <span class="nav-text">可变长参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收溢出的位置实参"><span class="nav-number">1.2.</span> <span class="nav-text">接收溢出的位置实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用法一：在形参中使用（-）"><span class="nav-number">1.2.1.</span> <span class="nav-text">用法一：在形参中使用（*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用法二：在实参中用（-）"><span class="nav-number">1.2.2.</span> <span class="nav-text">用法二：在实参中用（*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意以下传参问题："><span class="nav-number">1.2.3.</span> <span class="nav-text">注意以下传参问题：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收溢出的关键字实参"><span class="nav-number">1.3.</span> <span class="nav-text">接收溢出的关键字实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用法一：在形参中使用（-）-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">用法一：在形参中使用（**）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用法二：在实参中使用（-）"><span class="nav-number">1.3.2.</span> <span class="nav-text">用法二：在实参中使用（**）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收任意形式，任意长度的参数"><span class="nav-number">1.4.</span> <span class="nav-text">接收任意形式，任意长度的参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python函数参数-可变长参数"><span class="nav-number">1.</span> <span class="nav-text">Python函数参数-可变长参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可变长参数"><span class="nav-number">1.1.</span> <span class="nav-text">可变长参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收溢出的位置实参"><span class="nav-number">1.2.</span> <span class="nav-text">接收溢出的位置实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用法一：在形参中使用（-）"><span class="nav-number">1.2.1.</span> <span class="nav-text">用法一：在形参中使用（*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用法二：在实参中用（-）"><span class="nav-number">1.2.2.</span> <span class="nav-text">用法二：在实参中用（*）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意以下传参问题："><span class="nav-number">1.2.3.</span> <span class="nav-text">注意以下传参问题：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收溢出的关键字实参"><span class="nav-number">1.3.</span> <span class="nav-text">接收溢出的关键字实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用法一：在形参中使用（-）-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">用法一：在形参中使用（**）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用法二：在实参中使用（-）"><span class="nav-number">1.3.2.</span> <span class="nav-text">用法二：在实参中使用（**）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收任意形式，任意长度的参数"><span class="nav-number">1.4.</span> <span class="nav-text">接收任意形式，任意长度的参数</span></a></li></ol></li></ol></div>
             
 
           </div>
