@@ -77,13 +77,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-06-22T05:47:18.621Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/ActiveMQ%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-06-27T15:57:10.638Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -156,6 +149,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/Python%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-08-21T08:07:51.951Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Tomcat%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-08-23T10:03:03.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
