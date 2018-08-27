@@ -18,8 +18,8 @@
   
   <entry>
     <title>Python闭包函数</title>
-    <link href="http://www.gmlyo.com//2018/08/27/Python%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.gmlyo.com//2018/08/27/Python闭包函数/</id>
+    <link href="http://www.gmlyo.com/2018/08/27/Python%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.gmlyo.com/2018/08/27/Python闭包函数/</id>
     <published>2018-08-27T11:00:40.000Z</published>
     <updated>2018-08-27T11:03:18.286Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>Python 函数之 global 与 nonlocal 关键字</title>
-    <link href="http://www.gmlyo.com//2018/08/26/Python%E5%87%BD%E6%95%B0%E4%B9%8Bglobal%E4%B8%8Enonlocal%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    <id>http://www.gmlyo.com//2018/08/26/Python函数之global与nonlocal关键字/</id>
+    <link href="http://www.gmlyo.com/2018/08/26/Python%E5%87%BD%E6%95%B0%E4%B9%8Bglobal%E4%B8%8Enonlocal%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://www.gmlyo.com/2018/08/26/Python函数之global与nonlocal关键字/</id>
     <published>2018-08-26T03:11:40.000Z</published>
     <updated>2018-08-26T07:51:35.570Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>Python名称空间与作用域</title>
-    <link href="http://www.gmlyo.com//2018/08/23/Python%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>http://www.gmlyo.com//2018/08/23/Python名称空间与作用域/</id>
+    <link href="http://www.gmlyo.com/2018/08/23/Python%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://www.gmlyo.com/2018/08/23/Python名称空间与作用域/</id>
     <published>2018-08-23T11:20:56.000Z</published>
     <updated>2018-08-25T12:19:10.010Z</updated>
     
@@ -84,8 +84,8 @@
   
   <entry>
     <title>Python 函数嵌套</title>
-    <link href="http://www.gmlyo.com//2018/08/21/Python%E5%87%BD%E6%95%B0%E5%B5%8C%E5%A5%97/"/>
-    <id>http://www.gmlyo.com//2018/08/21/Python函数嵌套/</id>
+    <link href="http://www.gmlyo.com/2018/08/21/Python%E5%87%BD%E6%95%B0%E5%B5%8C%E5%A5%97/"/>
+    <id>http://www.gmlyo.com/2018/08/21/Python函数嵌套/</id>
     <published>2018-08-21T08:07:37.000Z</published>
     <updated>2018-08-21T08:07:51.951Z</updated>
     
@@ -106,8 +106,8 @@
   
   <entry>
     <title>Python 函数对象</title>
-    <link href="http://www.gmlyo.com//2018/08/20/Python%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://www.gmlyo.com//2018/08/20/Python函数对象/</id>
+    <link href="http://www.gmlyo.com/2018/08/20/Python%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://www.gmlyo.com/2018/08/20/Python函数对象/</id>
     <published>2018-08-20T09:56:49.000Z</published>
     <updated>2018-08-20T23:52:52.338Z</updated>
     
@@ -128,8 +128,8 @@
   
   <entry>
     <title>Python 函数参数-命名关键字参数</title>
-    <link href="http://www.gmlyo.com//2018/08/20/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0-%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0/"/>
-    <id>http://www.gmlyo.com//2018/08/20/Python函数参数-命名关键字参数/</id>
+    <link href="http://www.gmlyo.com/2018/08/20/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0-%E5%91%BD%E5%90%8D%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0/"/>
+    <id>http://www.gmlyo.com/2018/08/20/Python函数参数-命名关键字参数/</id>
     <published>2018-08-20T03:39:10.000Z</published>
     <updated>2018-08-20T04:30:58.008Z</updated>
     
@@ -150,8 +150,8 @@
   
   <entry>
     <title>Python函数参数-可变长参数</title>
-    <link href="http://www.gmlyo.com//2018/08/15/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0-%E5%8F%AF%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0/"/>
-    <id>http://www.gmlyo.com//2018/08/15/Python函数参数-可变长参数/</id>
+    <link href="http://www.gmlyo.com/2018/08/15/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0-%E5%8F%AF%E5%8F%98%E9%95%BF%E5%8F%82%E6%95%B0/"/>
+    <id>http://www.gmlyo.com/2018/08/15/Python函数参数-可变长参数/</id>
     <published>2018-08-15T07:24:51.000Z</published>
     <updated>2018-08-15T12:56:05.317Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>Python函数参数</title>
-    <link href="http://www.gmlyo.com//2018/08/12/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/"/>
-    <id>http://www.gmlyo.com//2018/08/12/Python函数参数/</id>
+    <link href="http://www.gmlyo.com/2018/08/12/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/"/>
+    <id>http://www.gmlyo.com/2018/08/12/Python函数参数/</id>
     <published>2018-08-12T14:30:50.000Z</published>
     <updated>2018-08-20T04:33:21.113Z</updated>
     
@@ -194,8 +194,8 @@
   
   <entry>
     <title>SaltStack_network模块</title>
-    <link href="http://www.gmlyo.com//2018/08/08/SaltStack_network%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/08/SaltStack_network模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/08/SaltStack_network%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/08/SaltStack_network模块/</id>
     <published>2018-08-08T10:08:09.000Z</published>
     <updated>2018-08-08T10:08:59.127Z</updated>
     
@@ -216,8 +216,8 @@
   
   <entry>
     <title>SaltStack_host模块</title>
-    <link href="http://www.gmlyo.com//2018/08/08/SaltStack_hosts%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/08/SaltStack_hosts模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/08/SaltStack_hosts%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/08/SaltStack_hosts模块/</id>
     <published>2018-08-08T09:58:35.000Z</published>
     <updated>2018-08-08T09:58:49.137Z</updated>
     
@@ -238,8 +238,8 @@
   
   <entry>
     <title>SaltStack_group模块</title>
-    <link href="http://www.gmlyo.com//2018/08/08/SaltStack_group%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/08/SaltStack_group模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/08/SaltStack_group%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/08/SaltStack_group模块/</id>
     <published>2018-08-08T09:56:25.000Z</published>
     <updated>2018-08-08T09:58:03.776Z</updated>
     
@@ -260,8 +260,8 @@
   
   <entry>
     <title>SaltStack_user模块</title>
-    <link href="http://www.gmlyo.com//2018/08/08/SaltStack_user%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/08/SaltStack_user模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/08/SaltStack_user%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/08/SaltStack_user模块/</id>
     <published>2018-08-08T09:02:12.000Z</published>
     <updated>2018-08-08T09:02:48.936Z</updated>
     
@@ -282,8 +282,8 @@
   
   <entry>
     <title>SaltStack_archive模块</title>
-    <link href="http://www.gmlyo.com//2018/08/08/SaltStack_archive%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/08/SaltStack_archive模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/08/SaltStack_archive%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/08/SaltStack_archive模块/</id>
     <published>2018-08-08T05:02:01.000Z</published>
     <updated>2018-08-08T05:48:03.359Z</updated>
     
@@ -304,8 +304,8 @@
   
   <entry>
     <title>SaltStack常用模块</title>
-    <link href="http://www.gmlyo.com//2018/08/07/SaltStack%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/"/>
-    <id>http://www.gmlyo.com//2018/08/07/SaltStack常用模块/</id>
+    <link href="http://www.gmlyo.com/2018/08/07/SaltStack%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/"/>
+    <id>http://www.gmlyo.com/2018/08/07/SaltStack常用模块/</id>
     <published>2018-08-07T10:03:47.000Z</published>
     <updated>2018-08-07T12:32:12.493Z</updated>
     
@@ -326,8 +326,8 @@
   
   <entry>
     <title>持续集成CI持续交付CD</title>
-    <link href="http://www.gmlyo.com//2018/08/06/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90CI%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98CD/"/>
-    <id>http://www.gmlyo.com//2018/08/06/持续集成CI持续交付CD/</id>
+    <link href="http://www.gmlyo.com/2018/08/06/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90CI%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98CD/"/>
+    <id>http://www.gmlyo.com/2018/08/06/持续集成CI持续交付CD/</id>
     <published>2018-08-06T05:10:03.000Z</published>
     <updated>2018-08-06T07:46:05.767Z</updated>
     
@@ -348,8 +348,8 @@
   
   <entry>
     <title>Python函数基础</title>
-    <link href="http://www.gmlyo.com//2018/08/03/Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/"/>
-    <id>http://www.gmlyo.com//2018/08/03/Python函数基础/</id>
+    <link href="http://www.gmlyo.com/2018/08/03/Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.gmlyo.com/2018/08/03/Python函数基础/</id>
     <published>2018-08-03T07:07:48.000Z</published>
     <updated>2018-08-03T07:54:09.248Z</updated>
     
@@ -370,8 +370,8 @@
   
   <entry>
     <title>Python修改文件内容</title>
-    <link href="http://www.gmlyo.com//2018/08/01/Python%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/"/>
-    <id>http://www.gmlyo.com//2018/08/01/Python修改文件内容/</id>
+    <link href="http://www.gmlyo.com/2018/08/01/Python%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9/"/>
+    <id>http://www.gmlyo.com/2018/08/01/Python修改文件内容/</id>
     <published>2018-07-31T17:48:27.000Z</published>
     <updated>2018-07-31T18:26:21.462Z</updated>
     
@@ -392,8 +392,8 @@
   
   <entry>
     <title>Python字典操作</title>
-    <link href="http://www.gmlyo.com//2018/07/30/Python%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.gmlyo.com//2018/07/30/Python字典操作/</id>
+    <link href="http://www.gmlyo.com/2018/07/30/Python%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.gmlyo.com/2018/07/30/Python字典操作/</id>
     <published>2018-07-30T15:04:12.000Z</published>
     <updated>2018-07-30T15:04:24.333Z</updated>
     
@@ -414,8 +414,8 @@
   
   <entry>
     <title>Python文件内指针移动</title>
-    <link href="http://www.gmlyo.com//2018/07/28/Python%E6%96%87%E4%BB%B6%E5%86%85%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8/"/>
-    <id>http://www.gmlyo.com//2018/07/28/Python文件内光标移动/</id>
+    <link href="http://www.gmlyo.com/2018/07/28/Python%E6%96%87%E4%BB%B6%E5%86%85%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8/"/>
+    <id>http://www.gmlyo.com/2018/07/28/Python文件内光标移动/</id>
     <published>2018-07-27T17:20:34.000Z</published>
     <updated>2018-07-27T17:20:35.434Z</updated>
     
@@ -436,8 +436,8 @@
   
   <entry>
     <title>RabbitMQ集群配置</title>
-    <link href="http://www.gmlyo.com//2018/07/25/RabbitMQ%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.gmlyo.com//2018/07/25/RabbitMQ集群配置/</id>
+    <link href="http://www.gmlyo.com/2018/07/25/RabbitMQ%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.gmlyo.com/2018/07/25/RabbitMQ集群配置/</id>
     <published>2018-07-25T15:25:46.000Z</published>
     <updated>2018-07-26T06:50:37.982Z</updated>
     
