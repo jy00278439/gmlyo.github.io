@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python文件处理," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="G加菲" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="文件处理">
+<meta name="keywords" content="Python文件处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python文件处理">
+<meta property="og:url" content="http://www.gmlyo.com/2018/07/11/Python文件处理/index.html">
+<meta property="og:site_name" content="G加菲">
+<meta property="og:description" content="文件处理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-27T17:17:45.226Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python文件处理">
+<meta name="twitter:description" content="文件处理">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gmlyo.com/2018/07/11/Python文件处理/"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d322328"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>Python文件处理 | G加菲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G加菲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/07/11/Python文件处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python文件处理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:24:39+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Python笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h2><a id="more"></a>
+<blockquote>
+<p>应用程序中需要经常将内存的数据永久保存下来，而应用程序又无法直接操作硬件<br>只能通过操作系统提供的虚拟单位去间接地操作硬盘</p>
+</blockquote>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><blockquote>
+<p><code>open(&#39;文件的路径&#39;, mode=&#39;打开文件的模式&#39;, encoding=&#39;操作文件的字符编码&#39;)</code><br><code>r</code> 表示 <code>原始字符串</code>，不转义任何特殊字符</p>
+<ol>
+<li>向操作系统发送打开文件的请求</li>
+<li>向操作系统发送打开文件的请求</li>
+</ol>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open(<span class="string">r'/tmp/a.txt'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>open 有返回值<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">r'/tmp/a.txt'</span>, mode=<span class="string">'r'</span>)</span><br><span class="line">print(f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">&lt;_io.TextIOWrapper name=<span class="string">'/tmp/a.txt'</span> mode=<span class="string">'r'</span> encoding=<span class="string">'UTF-8'</span>&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>f =&gt; 应用程序中的一个值 =&gt; 操作系统打开的文件 a.txt =&gt; 硬盘中的一块空间</p>
+</blockquote>
+<h3 id="读-写"><a href="#读-写" class="headerlink" title="读/写"></a>读/写</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 应用程序向操作系统发送请求，打开文件</span></span><br><span class="line"><span class="title">f</span>.read()    # 把文件内容全都读到内存里去</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> = open(r'a.txt', mode='r')</span><br><span class="line"><span class="class"><span class="keyword">data</span> = f.read()</span></span><br><span class="line"><span class="title">print</span>(<span class="class"><span class="keyword">data</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 输出结果</span></span><br><span class="line"><span class="type">UnicodeDecodeError</span>: 'gbk' codec can't decode byte <span class="number">0x8a</span> <span class="keyword">in</span> position <span class="number">8</span>: illegal multibyte sequenc</span><br><span class="line"><span class="meta"># 注意 不同 操作系统平台 字符编码问题</span></span><br><span class="line"><span class="meta"># Windows gbk</span></span><br><span class="line"><span class="meta"># Linux utf-8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">r'a.txt'</span>, mode=<span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)   <span class="comment"># 指定打开文件的字符编码为 utf-8</span></span><br><span class="line">data = f.read()    <span class="comment"># 在读取的时候就会以 utf-8 的编码读取</span></span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">你好啊</span><br><span class="line">aaa</span><br><span class="line">woca 嘞</span><br></pre></td></tr></table></figure>
+<h3 id="关闭文件，释放资源"><a href="#关闭文件，释放资源" class="headerlink" title="关闭文件，释放资源"></a>关闭文件，释放资源</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f.close()    <span class="comment"># 回收操作系统的资源，操作系统会定期回收资源</span></span><br><span class="line">print(f)     <span class="comment"># f 的资源会自动被 Python 回收掉</span></span><br><span class="line">f.<span class="built_in">read</span>()</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">ValueError: I/O operation <span class="keyword">on</span> closed <span class="built_in">file</span>.</span><br><span class="line"></span><br><span class="line"><span class="comment"># del f    # 手动回收 f 资源，不要在 f.close() 之前用这个</span></span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>文件处理的步骤</p>
+<ol>
+<li>打开文件</li>
+<li>读/写文件</li>
+<li>关闭文件</li>
+</ol>
+</blockquote>
+<h3 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f1 = open(<span class="string">r'a1.txt'</span>, mode=<span class="string">'r'</span>)</span><br><span class="line">f2 = open(<span class="string">r'a2.txt'</span>, mode=<span class="string">'r'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>操作系统资源 =&gt; 文件描述符<br>应用程序资源</p>
+</blockquote>
+<h3 id="with-上下文管理"><a href="#with-上下文管理" class="headerlink" title="with 上下文管理"></a><code>with</code> 上下文管理</h3><blockquote>
+<p>帮你打开文件<br>先将操作系统把文件打开<br>然后把打开结果赋值给 f（占用两个资源）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'a.txt'</span>, mode=<span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(<span class="string">'==&gt;'</span>)       <span class="comment"># 运行 with 的子代码块</span></span><br><span class="line">    print(f.read())    <span class="comment"># 在这里基于 with 打开的文件，做读写操作</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>with</code> 会帮我们自动 <code>close</code></p>
+</blockquote>
+<h3 id="with-打开多个文件"><a href="#with-打开多个文件" class="headerlink" title="with 打开多个文件"></a><code>with</code> 打开多个文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'a.txt'</span>, mode=<span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f1,\</span><br><span class="line">        open(<span class="string">r'b.txt'</span>, mode=<span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f2:</span><br><span class="line">    print(<span class="string">'==&gt;'</span>)</span><br><span class="line">    print(f1.read())</span><br><span class="line">    print(f2.read())</span><br></pre></td></tr></table></figure>
+<h3 id="文件的打开模式"><a href="#文件的打开模式" class="headerlink" title="文件的打开模式"></a>文件的打开模式</h3><h4 id="三种纯净模式"><a href="#三种纯净模式" class="headerlink" title="三种纯净模式"></a>三种纯净模式</h4><blockquote>
+<p><code>r</code> 只读模式（默认模式，文件必须存在，不存在则抛出异常）<br><code>w</code> 只写模式（不可读，不存在则创建；存在则清空内容）<br><code>a</code> 只追加写模式（不可读，不存在则创建；存在则追加内容）</p>
+</blockquote>
+<h3 id="控制操作文件内容的模式"><a href="#控制操作文件内容的模式" class="headerlink" title="控制操作文件内容的模式"></a>控制操作文件内容的模式</h3><h4 id="两种模式"><a href="#两种模式" class="headerlink" title="两种模式"></a>两种模式</h4><blockquote>
+<p>不能单独使用，必须与 <code>r</code>，<code>w</code>，<code>a</code> 连用<br><code>t（默认）</code>：<code>text</code>文本模式，该模式操作文件内容的单位都是字符串，该模式只适用于文本文件<br><code>注意：</code> 该模式下必须指定 <code>encoding=&quot;字符编码&quot;</code><br><code>b</code>：<code>bytes</code> 二进制模式，该模式下操作文件的内容单位都是bytes，该模式适用于所有类型文件</p>
+</blockquote>
+<h4 id="r-模式，只读模式"><a href="#r-模式，只读模式" class="headerlink" title="r 模式，只读模式"></a><code>r</code> 模式，只读模式</h4><blockquote>
+<p>默认单位：<code>t</code>，可以不指定<br>默认文件的打开模式是 <code>rt</code> 模式<br>文件必须存在，不存在则报错<br>文件存在则打开文件，并且将文件指针跳到文件的开头</p>
+</blockquote>
+<h5 id="read-方法"><a href="#read-方法" class="headerlink" title="read() 方法"></a><code>read()</code> 方法</h5><blockquote>
+<p>读取所有内容，光标移动到文件末尾<br>把文件内容一次性全都读出，读成 <code>str字符串</code> 数据类型</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    data = <span class="keyword">f</span>.<span class="keyword">read</span>()</span><br><span class="line">    <span class="keyword">print</span>(<span class="built_in">type</span>(data))</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.<span class="built_in">read</span>()</span><br><span class="line">    print(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">你好啊</span><br><span class="line">aaa</span><br><span class="line">woca 了</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    data1 = <span class="keyword">f</span>.<span class="keyword">read</span>()</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'第一次'</span>, data1)</span><br><span class="line">    data2 = <span class="keyword">f</span>.<span class="keyword">read</span>()</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'第二次'</span>, data2)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">第一次 你好啊</span><br><span class="line">aaa</span><br><span class="line">woca 了</span><br><span class="line">第二次</span><br></pre></td></tr></table></figure>
+<h5 id="readable-判断文件是否可读"><a href="#readable-判断文件是否可读" class="headerlink" title="readable() 判断文件是否可读"></a><code>readable()</code> 判断文件是否可读</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readable())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h5 id="writable-判断文件是否可写"><a href="#writable-判断文件是否可写" class="headerlink" title="writable() 判断文件是否可写"></a><code>writable()</code> 判断文件是否可写</h5><blockquote>
+<p><code>r</code> 读模式，不能写，只能读</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.writable())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">False</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">io.UnsupportedOperation: <span class="keyword">not</span> writable</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f.closed    <span class="comment"># 文件是否关闭</span></span><br><span class="line">f.encoding    <span class="comment"># 如果文件打开模式为b，则没有该属性</span></span><br><span class="line">f.flush()    <span class="comment"># 立刻将文件内容从内存刷到硬盘</span></span><br><span class="line">f.<span class="built_in">name</span></span><br></pre></td></tr></table></figure>
+<h5 id="readline-方法"><a href="#readline-方法" class="headerlink" title="readline() 方法"></a><code>readline()</code> 方法</h5><blockquote>
+<p>一次读一行<br>读取一行内容，光标移动到第二行首部</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="built_in">line</span> = <span class="keyword">f</span>.readline()</span><br><span class="line">    <span class="keyword">print</span>(<span class="built_in">line</span>, end=<span class="string">''</span>)  # end=<span class="string">''</span> 取消 <span class="keyword">print</span>() 自带的换行</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'====&gt;'</span>)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">你好啊</span><br><span class="line">====&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">with <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) as f:</span><br><span class="line">    line1 = f.readline()</span><br><span class="line">    <span class="built_in">print</span>(line1, <span class="keyword">end</span>=<span class="string">''</span>)  # <span class="keyword">end</span>=<span class="string">''</span> 取消 <span class="built_in">print</span>() 自带的换行</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'====&gt;'</span>)</span><br><span class="line">    line2 = f.readline()</span><br><span class="line">    <span class="built_in">print</span>(line2, <span class="keyword">end</span>=<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">你好啊</span><br><span class="line">====&gt;</span><br><span class="line">aaa</span><br></pre></td></tr></table></figure>
+<h5 id="readlines-方法"><a href="#readlines-方法" class="headerlink" title="readlines() 方法"></a><code>readlines()</code> 方法</h5><blockquote>
+<p>读取每一行内容，存放于列表中<br>把文件内容一次性全都读出，读成 <code>list列表</code> 数据类型，和 <code>read()</code> 类似</p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">l</span> = <span class="keyword">f</span>.readlines()</span><br><span class="line">    <span class="keyword">print</span>(<span class="built_in">type</span>(<span class="keyword">l</span>))</span><br><span class="line">    <span class="keyword">print</span>(<span class="keyword">l</span>)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">&lt;class <span class="string">'list'</span>&gt;</span><br><span class="line">[<span class="string">'你好啊\n'</span>, <span class="string">'aaa\n'</span>, <span class="string">'woca 了'</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="w-模式，只写模式"><a href="#w-模式，只写模式" class="headerlink" title="w 模式，只写模式"></a><code>w</code> 模式，只写模式</h4><blockquote>
+<p>只写模式<br>文件存在，会将文件内容情空，并且将文件指针跳到文件的开头<br>文件不存在，则创建一个空文件，并且将文件指针跳到文件的开头</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readable())</span><br><span class="line">    print(f.writable())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.readline()</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">io.UnsupportedOperation: <span class="keyword">not</span> readable</span><br></pre></td></tr></table></figure>
+<h5 id="write-方法"><a href="#write-方法" class="headerlink" title="write() 方法"></a><code>write()</code> 方法</h5><blockquote>
+<p>针对文本模式的写，需要自己写换行符</p>
+</blockquote>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f.write('<span class="number">1111</span>\n<span class="number">2222</span>\n')</span><br><span class="line">f.write('<span class="number">1111</span>\n<span class="number">2222</span>\n'.encode('utf-8'))</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'你好啊'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">你好啊</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'你好啊'</span>)</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'我的天'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">你好啊我的天</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'你好啊\n'</span>)</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'我的天'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">你好啊</span><br><span class="line">我的天</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>注意：</code><br>如果每次都是重新打开文件，那么文件内容总会清空，指针永远跳到开头<br>如果在打开文件不关闭的情况下，连续的写入，本次写入会基于上一次指针所在的位置往后继续写</p>
+</blockquote>
+<h5 id="writelines-方法"><a href="#writelines-方法" class="headerlink" title="writelines() 方法"></a><code>writelines()</code> 方法</h5><blockquote>
+<p>文件模式<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">f</span><span class="selector-class">.writelines</span>([<span class="string">'333\n'</span>,<span class="string">'444\n'</span>])</span><br><span class="line"><span class="selector-tag">f</span><span class="selector-class">.writelines</span>([bytes(<span class="string">'333\n'</span>, encoding=<span class="string">'utf-8'</span>), <span class="string">'444\n'</span>.encode(<span class="string">'utf-8'</span>)])</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    l = [<span class="string">'1111\n'</span>, <span class="string">'2222\n'</span>, <span class="string">'3333\n'</span>]</span><br><span class="line">    f.writelines(l)</span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line"><span class="number">1111</span></span><br><span class="line"><span class="number">2222</span></span><br><span class="line"><span class="number">3333</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 相当于</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    l = [<span class="string">'1111\n'</span>, <span class="string">'2222\n'</span>, <span class="string">'3333\n'</span>]</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> l:</span><br><span class="line">        f.<span class="built_in">write</span>(<span class="built_in">line</span>)</span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line"><span class="number">1111</span></span><br><span class="line"><span class="number">2222</span></span><br><span class="line"><span class="number">3333</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'1111\n\2222\n3333\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line"><span class="number">1111</span></span><br><span class="line"><span class="number">2222</span></span><br><span class="line"><span class="number">3333</span></span><br></pre></td></tr></table></figure>
+<h5 id="换行符"><a href="#换行符" class="headerlink" title="换行符"></a>换行符</h5><blockquote>
+<p><code>\n</code> Unix/Linux平台<br><code>\r</code> 老 Mac OS<br><code>\n</code> 新 Mac OS X<br><code>\r\n</code> Windows平台</p>
+</blockquote>
+<blockquote>
+<p>查看换行符<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">b<span class="string">'1111\r\n2222\r\n3333\r\n'</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'a.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">l</span> = <span class="keyword">f</span>.readlines()</span><br><span class="line">    <span class="keyword">print</span>(<span class="keyword">l</span>)</span><br><span class="line">    <span class="keyword">print</span>(<span class="built_in">type</span>(<span class="keyword">l</span>))</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">[<span class="string">'1111\n'</span>, <span class="string">'2222\n'</span>, <span class="string">'3333'</span>]</span><br><span class="line">&lt;class <span class="string">'list'</span>&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>write()</code> 将内容一次性写入文件中</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>writelines()</code> 将内容循环写入文件中</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines(<span class="string">'hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相当于</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'b.txt'</span>, mode=<span class="string">'wt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">'hello'</span>:</span><br><span class="line">        f.<span class="built_in">write</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 b.txt</span></span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+<h4 id="a-模式，只追加写模式"><a href="#a-模式，只追加写模式" class="headerlink" title="a 模式，只追加写模式"></a><code>a</code> 模式，只追加写模式</h4><blockquote>
+<p>文件不存在，则创建一个空文件，并且将文件指针跳到文件的末尾<br>文件存在，则会将文件指针跳到文件的末尾</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'at'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>, mode=<span class="string">'at'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.writable())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'at'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readable())</span><br><span class="line">    f.<span class="built_in">read</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">False</span><br><span class="line">io.UnsupportedOperation: <span class="keyword">not</span> readable</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'at'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'你好\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 a.txt</span></span><br><span class="line"><span class="number">1111</span></span><br><span class="line"><span class="number">2222</span></span><br><span class="line"><span class="number">3333</span>你好</span><br><span class="line">你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'at'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.writelines([<span class="string">'aaaa\n'</span>, <span class="string">'bbbb\n'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件 a.txt</span></span><br><span class="line"><span class="number">1111</span></span><br><span class="line"><span class="number">2222</span></span><br><span class="line"><span class="number">3333</span>你好</span><br><span class="line">你好</span><br><span class="line">你好</span><br><span class="line">aaaa</span><br><span class="line">bbbb</span><br></pre></td></tr></table></figure>
+<h3 id="b-模式-操作文件内容"><a href="#b-模式-操作文件内容" class="headerlink" title="b 模式 操作文件内容"></a><code>b 模式</code> 操作文件内容</h3><blockquote>
+<p>操作文件内容 <code>t模式</code> 有局限性<br>优点：读写文件以 <code>字符串</code> 为单位，不用自己去进行编码解码的转换<br>缺点：仅仅只适用于文本文件<br>我们不仅仅要操作文本文件，还要操作 <code>图片</code>，<code>视频</code>，等，再用 <code>t模式</code> 就无法处理了<br><code>文本文件</code> 里存的是 <code>字符</code>，而 <code>图片</code>，<code>视频</code>文件中存的是 <code>二进制</code></p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'1.mp4'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">read</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">UnicodeDecodeError: <span class="string">'utf-8'</span> codec can<span class="string">'t decode byte 0x86 in position 37: invalid start byte</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>b模式</code> 字节，二进制模式，一种原始的模式，在硬盘上存的都是二进制模式，如果打开的文件时 <code>b模式</code>，意味告诉操作系统，不用做转换，文件存的是什么，读出来就是什么<br><code></code>bytes` 二进制模式，该模式下操作文件的内容单位都是bytes，该模式适用于所有类型文件</p>
+</blockquote>
+<blockquote>
+<p><code>注意：</code> <code>b模式</code> 不需要指定 <code>encoding</code> 参数<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'1.mp4'</span>, mode=<span class="string">'rb'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">read</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">ValueError: binary mode doesn<span class="string">'t take an encoding argument</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>获取 <code>音频文件</code> 二进制内容</p>
+</blockquote>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">with</span> open('<span class="number">1.</span>mp4', mode='rb') <span class="keyword">as</span> f:</span><br><span class="line">    <span class="class"><span class="keyword">data</span> = f.readline()    # 文件大，文件内容多，用 readline()</span></span><br><span class="line">    print(<span class="class"><span class="keyword">type</span>(<span class="title">data</span>))</span></span><br><span class="line">    print(<span class="class"><span class="keyword">data</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 输出结果</span></span><br><span class="line">&lt;<span class="keyword">class</span> 'bytes'&gt;</span><br><span class="line"><span class="title">b'</span>\x00\x00\x00\xlcftypisom\x00\x00\x02\x00isomiso2mp41\x00\x00\x08free\t...'</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>获取 <code>文本文件</code> 二进制内容</p>
+</blockquote>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">with open('d.txt', mode='rb') as f:</span><br><span class="line">    data = f.read()    # 文件小，文件内容少，用 read()</span><br><span class="line">    print(type(data))</span><br><span class="line">    print(data)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">&lt;class 'bytes'&gt;</span><br><span class="line">b'<span class="symbol">\x</span>e4<span class="symbol">\x</span>bd<span class="symbol">\x</span>a0<span class="symbol">\x</span>e5<span class="symbol">\x</span>a5<span class="symbol">\x</span>bd<span class="symbol">\x</span>e5<span class="symbol">\x</span>95<span class="symbol">\x</span>8a<span class="symbol">\r</span><span class="symbol">\n</span>aaaa<span class="symbol">\r</span><span class="symbol">\n</span>bbbbccc<span class="symbol">\r</span><span class="symbol">\n</span>1111'</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">with <span class="keyword">open</span>(<span class="string">'d.txt'</span>, <span class="keyword">mode</span>=<span class="string">'rb'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    data = <span class="keyword">f</span>.<span class="keyword">read</span>()</span><br><span class="line">    <span class="keyword">res</span> = data.decode(<span class="string">'utf-8'</span>)    # 将读出的二进制内容解码，转换成人类可识别的内容</span><br><span class="line">    <span class="keyword">print</span>(<span class="keyword">res</span>)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">你好啊</span><br><span class="line">aaaa</span><br><span class="line">bbbbccc</span><br><span class="line"><span class="number">1111</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'d.txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'你好，Python'</span>.encode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="遍历文件内容的方式"><a href="#遍历文件内容的方式" class="headerlink" title="遍历文件内容的方式"></a>遍历文件内容的方式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'd.txt'</span>, mode=<span class="string">'rt'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">   <span class="keyword">for</span> line <span class="keyword">in</span> f:    <span class="comment"># 如果文件过大，使用 for循环 读文件内容</span></span><br><span class="line">       print(line, end=<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">你好，Python</span><br><span class="line">你好，Python</span><br><span class="line">你好，Python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'd.txt'</span>, mode=<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readline())</span><br><span class="line">    print(f.readline())</span><br><span class="line">    print(f.readline())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>二进制</code>文件内容，<code>换行符</code>不会被识别</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(b<span class="string">'11111111\n'</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'===================='</span>)</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出 <code>二进制文件</code> 内容时，<code>print()</code> 内不要加 <code>end=&#39;&#39;</code><br>遍历 <code>音频文件</code> 内容</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'1.mp4'</span>, mode=<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f:</span><br><span class="line">        print(<span class="built_in">line</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="练习：利用-b模式，编写一个-cp工具"><a href="#练习：利用-b模式，编写一个-cp工具" class="headerlink" title="练习：利用 b模式，编写一个 cp工具"></a>练习：利用 <code>b模式</code>，编写一个 <code>cp工具</code></h3><h4 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'D:\test.jpg'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> read_f,\</span><br><span class="line">        open(<span class="string">r'E:\test.jpg'</span>, mode=<span class="string">'wb'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> read_f:</span><br><span class="line">        write_f.write(line)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src_file_path = input(<span class="string">'源文件路径：'</span>).strip()</span><br><span class="line">dst_file_path = input(<span class="string">'目标文件路径'</span>).strip()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">r'%s'</span> % src_file_path, <span class="string">'rb'</span>) <span class="keyword">as</span> read_f,\</span><br><span class="line">        open(<span class="string">r'%s'</span> % dst_file_path, mode=<span class="string">'wb'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> read_f:</span><br><span class="line">        write_f.write(line)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">src_file_path = sys.argv[<span class="number">1</span>]</span><br><span class="line">dst_file_path = sys.argv[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">r'%s'</span> % src_file_path, <span class="string">'rb'</span>) <span class="keyword">as</span> read_f,\</span><br><span class="line">        open(<span class="string">r'%s'</span> % dst_file_path, mode=<span class="string">'wb'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> read_f:</span><br><span class="line">        write_f.write(line)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line">python3 copy.py test.jpg test2.jpg</span><br></pre></td></tr></table></figure>
+<h4 id="示例二"><a href="#示例二" class="headerlink" title="示例二"></a>示例二</h4><blockquote>
+<ol>
+<li>既可以拷贝文本又可以拷贝视频，图片等文件</li>
+<li>用户一旦参数错误，打印命令的正确使用方法，如 <code>usage: cp source_file target_file</code><br>提示：可以用 <code>import sys</code>，然后用 <code>sys.argv</code> 获取脚本后面跟的参数</li>
+</ol>
+</blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(sys.<span class="built_in">argv</span>)</span><br><span class="line"></span><br><span class="line"># 执行结果</span><br><span class="line"><span class="keyword">python3</span> <span class="keyword">cp</span>.<span class="keyword">py</span> src.txt dst.txt</span><br><span class="line">[<span class="string">'cp.py'</span>, <span class="string">'src.txt'</span>, <span class="string">'dst.txt'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">sys</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">print</span>(<span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[1]</span>)</span><br><span class="line"><span class="selector-tag">print</span>(<span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[2]</span>)</span><br><span class="line"></span><br><span class="line"># 执行结果</span><br><span class="line"><span class="selector-tag">python3</span> <span class="selector-tag">cp</span><span class="selector-class">.py</span> <span class="selector-tag">src</span><span class="selector-class">.txt</span> <span class="selector-tag">dst</span><span class="selector-class">.txt</span></span><br><span class="line"><span class="selector-tag">src</span><span class="selector-class">.txt</span></span><br><span class="line"><span class="selector-tag">dst</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.<span class="built_in">argv</span>) != <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'usage: cp source_file target_file'</span>)</span><br><span class="line">    sys.<span class="keyword">exit</span>()</span><br><span class="line"></span><br><span class="line">source_file, target_file=sys.<span class="built_in">argv</span>[<span class="number">1</span>], sys.<span class="built_in">argv</span>[<span class="number">2</span>]</span><br><span class="line">with <span class="keyword">open</span>(source_file,<span class="string">'rb'</span>) <span class="keyword">as</span> read_f, \</span><br><span class="line">        <span class="keyword">open</span>(target_file,<span class="string">'wb'</span>) <span class="keyword">as</span> write_f:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> in read_f:</span><br><span class="line">        write_f.<span class="keyword">write</span>(<span class="built_in">line</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="可读可写模式"><a href="#可读可写模式" class="headerlink" title="可读可写模式 +"></a>可读可写模式 <code>+</code></h3><blockquote>
+<p>r+t，r+b<br>w+t，w+b<br>a+t，a+b</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>, mode=<span class="string">'r+t'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readable())</span><br><span class="line">    print(f.writable())</span><br><span class="line"></span><br><span class="line"><span class="comment"># r+t 模式，在没有文件的情况下，会报找不到文件的提示</span></span><br><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'a.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'r+t'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">333</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'a.txt'</span>, mode=<span class="string">'r+t'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line">    f.<span class="built_in">write</span>(<span class="string">'444\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行后，查看 a.txt 文件</span></span><br><span class="line"><span class="number">111</span></span><br><span class="line"><span class="number">222</span></span><br><span class="line"><span class="number">333444</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python文件处理/" rel="tag"># Python文件处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/10/Python列表类型/" rel="next" title="Python列表类型">
+                <i class="fa fa-chevron-left"></i> Python列表类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/17/Nginx修改隐藏版本号/" rel="prev" title="Nginx修改隐藏版本号">
+                Nginx修改隐藏版本号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20180226143321.jpg"
+                alt="G加菲" />
+            
+              <p class="site-author-name" itemprop="name">G加菲</p>
+              <p class="site-description motion-element" itemprop="description">很喜欢吃~吃完就睡~所以长得很胖</p>
+          </div>
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 
+          src="//music.163.com/outchain/player?type=0&id=2188265841&auto=1&height=90"></iframe>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jy00278439" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gmlyo.com/" title="G加菲" target="_blank">G加菲</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件处理"><span class="nav-number">1.</span> <span class="nav-text">文件处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读-写"><span class="nav-number">1.2.</span> <span class="nav-text">读/写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭文件，释放资源"><span class="nav-number">1.3.</span> <span class="nav-text">关闭文件，释放资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开多个文件"><span class="nav-number">1.5.</span> <span class="nav-text">打开多个文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#with-上下文管理"><span class="nav-number">1.6.</span> <span class="nav-text">with 上下文管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#with-打开多个文件"><span class="nav-number">1.7.</span> <span class="nav-text">with 打开多个文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的打开模式"><span class="nav-number">1.8.</span> <span class="nav-text">文件的打开模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三种纯净模式"><span class="nav-number">1.8.1.</span> <span class="nav-text">三种纯净模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制操作文件内容的模式"><span class="nav-number">1.9.</span> <span class="nav-text">控制操作文件内容的模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两种模式"><span class="nav-number">1.9.1.</span> <span class="nav-text">两种模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r-模式，只读模式"><span class="nav-number">1.9.2.</span> <span class="nav-text">r 模式，只读模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#read-方法"><span class="nav-number">1.9.2.1.</span> <span class="nav-text">read() 方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#readable-判断文件是否可读"><span class="nav-number">1.9.2.2.</span> <span class="nav-text">readable() 判断文件是否可读</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#writable-判断文件是否可写"><span class="nav-number">1.9.2.3.</span> <span class="nav-text">writable() 判断文件是否可写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#readline-方法"><span class="nav-number">1.9.2.4.</span> <span class="nav-text">readline() 方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#readlines-方法"><span class="nav-number">1.9.2.5.</span> <span class="nav-text">readlines() 方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#w-模式，只写模式"><span class="nav-number">1.9.3.</span> <span class="nav-text">w 模式，只写模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#write-方法"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">write() 方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#writelines-方法"><span class="nav-number">1.9.3.2.</span> <span class="nav-text">writelines() 方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#换行符"><span class="nav-number">1.9.3.3.</span> <span class="nav-text">换行符</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a-模式，只追加写模式"><span class="nav-number">1.9.4.</span> <span class="nav-text">a 模式，只追加写模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-模式-操作文件内容"><span class="nav-number">1.10.</span> <span class="nav-text">b 模式 操作文件内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历文件内容的方式"><span class="nav-number">1.11.</span> <span class="nav-text">遍历文件内容的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习：利用-b模式，编写一个-cp工具"><span class="nav-number">1.12.</span> <span class="nav-text">练习：利用 b模式，编写一个 cp工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例一"><span class="nav-number">1.12.1.</span> <span class="nav-text">示例一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例二"><span class="nav-number">1.12.2.</span> <span class="nav-text">示例二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可读可写模式"><span class="nav-number">1.13.</span> <span class="nav-text">可读可写模式 +</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">G加菲</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数(UV)
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量(PV)
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
