@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F%2F2018%2F08%2F26%2FPython%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0%2F</url>
+    <title><![CDATA[Python 闭包函数]]></title>
+    <url>%2F%2F2018%2F08%2F27%2FPython%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[Python 闭包函数 前提：函数的作用域关系是在函数定义阶段就已经固定死的，与调用位置无关 闭包函数介绍 定义在函数的内部的函数 该内部函数包含对其外层函数作用域名字的引用 闭包函数通常需要结合函数对象的概念，将闭包函数返回到外部使用 示例一123456789101112def outter(): x = 100 def inner(): print(x) return innerf = outter()x = 200f()# 执行结果100 示例二1234567891011121314def outter(): x = 100 def inner(): print(x) return innerdef foo(): x = 300 f()foo()# 执行结果100 示例三 12345678910111213141516171819def outter(): x = 100 def inner(): print(x) return innerf = outter()def foo(): x = 300 def bar(): x = 400 f() bar()foo()# 执行结果100 闭 指的是 -&gt; 定义在函数的内部的函数闭 指的就是将一个函数闭合在另一个函数内部包 指的是 -&gt; 该内部函数包含对其外层函数作用域名字的引用 闭包函数的使用12345def outter(): x = 1 def inner(): print(x) return inner 闭包函数的基本形式 1234def outter(x): def inner(): print(x) return inner 求两个数的和 直接通过参数为其传值 12345def sum2(x, y): res = x + y return ressum2(1, 2) 将 值 包给 函数 sum2 12345678910def outter(x, y): # x = 1 # y = 2 def sum2(): res = x + y return res return sum2sum2 = outter(1, 2)sum2() 示例示例一 12345import requestsresponse = requests.get('https://www.jd.com')# if response.status_code = 200:print(response.text) 通过参数的形式为函数体传值 123456789import requestsdef get(url): response = requests.get(url) print(len(response.text))get('https://www.baidu.com')get('https://www.jd.com')get('https://www.tmall.com') 将值包给函数 12345678910import requestsdef outter(url): # url = 'https://www.jd.com' def get(): response = requests.get(url) print(len(response.text)) return getjd = outter('https://www.jd.com')]]></content>
+      <categories>
+        <category>Python笔记</category>
+      </categories>
+      <tags>
+        <tag>Python 闭包函数</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python 函数之 global 与 nonlocal 关键字]]></title>
