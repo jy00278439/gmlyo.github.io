@@ -98,13 +98,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Linux%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-07-03T13:10:27.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Shadowsocks%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-07-16T17:43:55.070Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -155,7 +148,14 @@
 
     <url>
         <loc>http://www.gmlyo.com/categories/Python%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-08-29T15:08:01.584Z</lastmod>
+        <lastmod>2018-08-30T08:42:45.948Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Linux%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-08-30T14:11:57.586Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
