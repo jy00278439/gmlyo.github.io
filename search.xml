@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker kill 命令]]></title>
+    <url>%2F2018%2F08%2F31%2FDocker%20kill%20%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker kill 命令 docker kill : 杀掉一个运行中的容器。 语法1docker kill [OPTIONS] CONTAINER [CONTAINER...] OPTIONS说明： -s : 向容器发送一个信号 实例杀掉运行中的容器 mynginx12docker kill -s KILL mynginxmynginx]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker kill 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker start/stop/restart 命令]]></title>
     <url>%2F2018%2F08%2F31%2FDocker%20start%20stop%20restart%20%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[Docker start/stop/restart 命令docker start: 启动一个或多少已经被停止的容器docker stop: 停止一个运行中的容器docker restart: 重启容器 语法123docker start [OPTIONS] CONTAINER [CONTAINER...]docker stop [OPTIONS] CONTAINER [CONTAINER...]docker restart [OPTIONS] CONTAINER [CONTAINER...] 实例启动已被停止的容器 myrunoob 1docker start myrunoob 停止运行中的容器 myrunoob 1docker stop myrunoob 重启容器 myrunoob 1docker restart myrunoob]]></content>
+    <content type="text"><![CDATA[Docker start/stop/restart 命令 docker start: 启动一个或多少已经被停止的容器docker stop: 停止一个运行中的容器docker restart: 重启容器 语法123docker start [OPTIONS] CONTAINER [CONTAINER...]docker stop [OPTIONS] CONTAINER [CONTAINER...]docker restart [OPTIONS] CONTAINER [CONTAINER...] 实例启动已被停止的容器 myrunoob 1docker start myrunoob 停止运行中的容器 myrunoob 1docker stop myrunoob 重启容器 myrunoob 1docker restart myrunoob]]></content>
       <categories>
         <category>Docker笔记</category>
       </categories>
