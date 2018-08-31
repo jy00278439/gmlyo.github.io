@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker create 命令]]></title>
+    <url>%2F2018%2F08%2F31%2FDocker%20create%20%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker create 命令docker create ：创建一个新的容器但不启动它 用法同 docker run 语法1docker create [OPTIONS] IMAGE [COMMAND] [ARG...] 语法同 docker run 实例使用 docker 镜像 nginx:latest 创建一个容器，并将容器命名为 myrunoob 12docker create --name myrunoob nginx:latest09b93464c2f75b7b69f83d56a9cfc23ceb50a48a9db7652ee4c27e3e2cb1961f 参考文档http://www.runoob.com/docker/docker-create-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker create 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[find 命令结合 exec 和 xargs 使用的区别]]></title>
     <url>%2F2018%2F08%2F30%2Ffind%E5%91%BD%E4%BB%A4%E7%BB%93%E5%90%88exec%E5%92%8Cxargs%E4%BD%BF%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[find 命令结合 exec 和 xargs 使用的区别 -exec xargs 区别一 该参数是将查找的结果文件名逐个传递给后面的命令执行，如果文件比较多则执行的效率会较低 该命令是将查找的结果一次性传给后面的命令执行，命令执行效率高，可以使用 -n 参数控制一次传递文件的个数 区别二 文件名有空格等特殊字符也照常处理 处理特殊的文件名（例如：文件名有空格）需要采用特殊的方式(find . -name “edu” -print0 使用 -exec 选项命令操作示例及结果如下 1234567891011121314151617# 从命令执行的结果可以看到，每次获得一个文件就输出一次find . -type f -exec echo oldboyedu &#123;&#125; \ ;oldboyedu ./.viminfooldboyedu ./anaconda-ks.cfgoldboyedu ./install.logoldboyedu ./install.log.syslogoldboyedu ./.bash_logoutoldboyedu ./.cshrcoldboyedu ./ls.txtoldboyedu ./.bash_historyoldboyedu ./.lesshstoldboyedu ./oldboy. Logoldboyedu ./test. txtoldboyedu ./.tcshrcoldboyedu ./GB2312.txtoldboyedu ./.bash_profileoldboyedu ./.bashrc 使用 xargs 命令操作示例及结果如下 123# 输出结果只有一行，xargs 获取到所有文件名一次性输出find . -type f | xargs echo oldboyeduoldboyedu ./.viminfo ./anaconda-ks.cfg ./install.log ./install.log.syslog ./.bash_logout ./.cshrc ./ls.txt ./.bash_history ./.lesshst ./oldboy.log ./test.txt ./.tcshrc ./GB2312.txt ./.bash_profile ./.bashrc xargs 还能控制每行输出的参数个数，示例如下，更多使用方法见 xargs 命令 1234567# 使用 -n 3 指定每次输出 3 个参数find . -type f | xargs -n 3 echo oldboyeduoldboyedu ./.viminfo ./anaconda-ks.cfg ./install.logoldboyedu ././install.log.syslog ./.bash_logout ./.cshrcoldboyedu ./ls.txt ./.bash_history ./.lesshstoldboyedu ./oldboy.log ./test.txt ./.tcshrcoldboyedu ./GB2312.txt ./.bash_profile ./.bashrc 验证区别二的案例 123456789101112131415# 创建一个文件名带有空格的特殊文件touch "oldboy edu"ll -h "oldboy edu"-rw-r--r-- 1 root root 0 May 17 16:30 oldboy edu# 使用 -exec 参数正常使用find . -name "*oldboy*" -exec ls -lh &#123;&#125; \;-rw-r--r-- 1 root root 0 May 17 16:30 ./oldboy edu# 使用 xargs 命令无法正常打印find . -name "*edu*" | xargs ls -lhls: cannot access ./oldboy: No such file or directoryls: cannot access edu: No such file or directoryfind . -name "*edu*" -print0 | xargs -0 ls -lh-rw-r--r-- 1 root root 0 May 17 16:30 . /oldboy edu]]></content>
