@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-08-31T03:02:58.895Z</updated>
+  <updated>2018-08-31T03:37:05.813Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://www.gmlyo.com/2018/08/31/Docker%20create%20%E5%91%BD%E4%BB%A4/"/>
     <id>http://www.gmlyo.com/2018/08/31/Docker create 命令/</id>
     <published>2018-08-31T03:00:27.000Z</published>
-    <updated>2018-08-31T03:02:58.895Z</updated>
+    <updated>2018-08-31T03:37:05.813Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Docker-create-命令"><a href="#Docker-create-命令" class="headerlink" title="Docker create 命令"></a>Docker create 命令</h1><p><strong>docker create ：</strong>创建一个新的容器但不启动它</p><p>用法同 <a href="https://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/">docker run</a></p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create <span class="string">[OPTIONS]</span> IMAGE <span class="string">[COMMAND]</span> <span class="string">[ARG...]</span></span><br></pre></td></tr></table></figure><p>语法同 <a href="https://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/">docker run</a></p><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>使用 docker 镜像 nginx:latest 创建一个容器，并将容器命名为 myrunoob</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">create</span>  <span class="comment">--name myrunoob  nginx:latest</span></span><br><span class="line"><span class="number">09</span>b93464c2f75b7b69f83d56a9cfc23ceb50a48a9db7652ee4c27e3e2cb1961f</span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-create-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-create-command.html</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Docker-create-命令"><a href="#Docker-create-命令" class="headerlink" title="Docker create 命令"></a>Docker create 命令</h1><a id="more"></a><p><strong>docker create ：</strong>创建一个新的容器但不启动它</p><p>用法同 <a href="https://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/">docker run</a></p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create <span class="string">[OPTIONS]</span> IMAGE <span class="string">[COMMAND]</span> <span class="string">[ARG...]</span></span><br></pre></td></tr></table></figure><p>语法同 <a href="https://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/">docker run</a></p><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>使用 docker 镜像 nginx:latest 创建一个容器，并将容器命名为 myrunoob</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">create</span>  <span class="comment">--name myrunoob  nginx:latest</span></span><br><span class="line"><span class="number">09</span>b93464c2f75b7b69f83d56a9cfc23ceb50a48a9db7652ee4c27e3e2cb1961f</span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-create-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-create-command.html</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Docker-create-命令&quot;&gt;&lt;a href=&quot;#Docker-create-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker create 命令&quot;&gt;&lt;/a&gt;Docker create 命令&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;docker
-      
+      &lt;h1 id=&quot;Docker-create-命令&quot;&gt;&lt;a href=&quot;#Docker-create-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker create 命令&quot;&gt;&lt;/a&gt;Docker create 命令&lt;/h1&gt;
     
     </summary>
     
