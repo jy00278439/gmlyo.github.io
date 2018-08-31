@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/08/31/Docker%20exec%20%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-08-31T09:05:06.947Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/2018/08/31/Docker%20pause%20unpause%20%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-08-31T09:03:39.425Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2018/08/31/Docker%20rm%20%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T08:58:00.794Z</lastmod>
         <changefreq>weekly</changefreq>
