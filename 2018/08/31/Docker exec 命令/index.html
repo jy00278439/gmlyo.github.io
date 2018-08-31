@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Docker exec 命令docker exec ： 在运行的容器中执行命令 语法1docker exec [OPTIONS] CONTAINER COMMAND [ARG...] OPTIONS说明：  -d : 分离模式: 在后台运行 -i : 即使没有附加也保持 STDIN 打开 -t : 分配一个伪终端  实例在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh">
+<meta name="description" content="Docker exec 命令">
 <meta name="keywords" content="Docker exec 命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker exec 命令">
 <meta property="og:url" content="http://www.gmlyo.com/2018/08/31/Docker exec 命令/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Docker exec 命令docker exec ： 在运行的容器中执行命令 语法1docker exec [OPTIONS] CONTAINER COMMAND [ARG...] OPTIONS说明：  -d : 分离模式: 在后台运行 -i : 即使没有附加也保持 STDIN 打开 -t : 分配一个伪终端  实例在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh">
+<meta property="og:description" content="Docker exec 命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T09:05:06.947Z">
+<meta property="og:updated_time" content="2018-08-31T09:25:12.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker exec 命令">
-<meta name="twitter:description" content="Docker exec 命令docker exec ： 在运行的容器中执行命令 语法1docker exec [OPTIONS] CONTAINER COMMAND [ARG...] OPTIONS说明：  -d : 分离模式: 在后台运行 -i : 即使没有附加也保持 STDIN 打开 -t : 分配一个伪终端  实例在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh">
+<meta name="twitter:description" content="Docker exec 命令">
 
 
 
@@ -423,7 +423,8 @@
       
 
       
-        <h1 id="Docker-exec-命令"><a href="#Docker-exec-命令" class="headerlink" title="Docker exec 命令"></a>Docker exec 命令</h1><p><strong>docker exec ：</strong> 在运行的容器中执行命令</p>
+        <h1 id="Docker-exec-命令"><a href="#Docker-exec-命令" class="headerlink" title="Docker exec 命令"></a>Docker exec 命令</h1><a id="more"></a>
+<p><strong>docker exec ：</strong> 在运行的容器中执行命令</p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> [OPTIONS] CONTAINER COMMAND [ARG...]</span><br></pre></td></tr></table></figure>
 <p>OPTIONS说明：</p>
 <ul>
@@ -435,6 +436,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker <span class="built_in">exec</span> -it mynginx /bin/sh /root/runoob.sh</span><br><span class="line">http://www.runoob.com/</span><br></pre></td></tr></table></figure>
 <p>在容器 mynginx 中开启一个交互模式的终端</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker <span class="built_in">exec</span> -i -t  mynginx /bin/bash</span><br><span class="line">root@b1a0703e41e7:/<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-exec-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-exec-command.html</a></p>
 
       
     </div>
@@ -656,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-exec-命令"><span class="nav-number">1.</span> <span class="nav-text">Docker exec 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">1.2.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-exec-命令"><span class="nav-number">1.</span> <span class="nav-text">Docker exec 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">1.3.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
             
 
           </div>
