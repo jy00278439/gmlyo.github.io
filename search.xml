@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker start/stop/restart 命令]]></title>
+    <url>%2F2018%2F08%2F31%2FDocker%20start%20stop%20restart%20%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker start/stop/restart 命令docker start: 启动一个或多少已经被停止的容器docker stop: 停止一个运行中的容器docker restart: 重启容器 语法123docker start [OPTIONS] CONTAINER [CONTAINER...]docker stop [OPTIONS] CONTAINER [CONTAINER...]docker restart [OPTIONS] CONTAINER [CONTAINER...] 实例启动已被停止的容器 myrunoob 1docker start myrunoob 停止运行中的容器 myrunoob 1docker stop myrunoob 重启容器 myrunoob 1docker restart myrunoob]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker start/stop/restart 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker create 命令]]></title>
     <url>%2F2018%2F08%2F31%2FDocker%20create%20%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker create 命令 docker create ：创建一个新的容器但不启动它 用法同 docker run 语法1docker create [OPTIONS] IMAGE [COMMAND] [ARG...] 语法同 docker run 实例使用 docker 镜像 nginx:latest 创建一个容器，并将容器命名为 myrunoob 12docker create --name myrunoob nginx:latest09b93464c2f75b7b69f83d56a9cfc23ceb50a48a9db7652ee4c27e3e2cb1961f 参考文档http://www.runoob.com/docker/docker-create-command.html]]></content>
