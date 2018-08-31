@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/08/31/Docker%20ps%20%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-08-31T09:33:26.684Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-08-31T09:30:07.984Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2018/08/31/Docker%20start%20stop%20restart%20%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T09:25:57.227Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +65,6 @@
     <url>
         <loc>http://www.gmlyo.com/2018/08/31/Docker%20create%20%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T03:37:05.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/2018/08/27/Docker%20run%20%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-08-31T02:57:18.780Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
