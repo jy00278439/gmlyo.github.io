@@ -520,13 +520,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Docker-create-%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-08-31T03:37:05.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Docker-kill-%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T09:23:14.643Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -606,6 +599,13 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Docker-export-%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-09-01T08:45:03.483Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Docker-create-%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-09-01T08:49:44.713Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
