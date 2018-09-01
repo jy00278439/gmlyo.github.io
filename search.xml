@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker save 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-save-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker save 命令 docker save : 将指定镜像保存成 tar 归档文件。 语法1docker save [OPTIONS] IMAGE [IMAGE...] OPTIONS 说明： -o : 输出到的文件。 实例将镜像 runoob/ubuntu:v3 生成 my_ubuntu_v3.tar 文档 123[root@localhost ~] docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3[root@localhost ~] ll my_ubuntu_v3.tar-rw------- 1 runoob runoob 142102016 Jul 11 01:37 my_ubuntu_v3.ta Docker 容器导入导出有两种方法一种是使用 save 和 load 命令使用例子如下： 12docker save ubuntu:load &gt; /root/ubuntu.tardocker load &lt; ubuntu.tar 一种是使用 export 和 import 命令使用例子如下： 12docker export 98ca36 &gt; ubuntu.tarcat ubuntu.tar | sudo docker import - ubuntu:import 需要注意两种方法不可混用。]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker save 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker build 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-build-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker build 命令 docker build 命令用于使用 Dockerfile 创建镜像。 语法1docker build [OPTIONS] PATH | URL | - OPTIONS说明： –build-arg=[] : 设置镜像创建时的变量； –cpu-shares : 设置 CPU 使用权重； –cpu-period : 限制 CPU CFS周期； –cpu-quota : 限制 CPU CFS配额； –cpuset-cpus : 指定使用的CPU id； –cpuset-mems : 指定使用的内存 id； –disable-content-trust : 忽略校验，默认开启； -f : 指定要使用的 Dockerfile 路径； –force-rm : 设置镜像过程中删除中间容器； –isolation : 使用容器隔离技术； –label=[] : 设置镜像使用的元数据； -m : 设置内存最大值； –memory-swap : 设置 swap 的最大值为 内存+swap，”-1” 表示不限 swap； –no-cache : 创建镜像的过程不使用缓存； –pull : 尝试去更新镜像的新版本； –quiet, -q : 安静模式，成功后只输出镜像 ID； –rm : 设置镜像成功后删除中间容器； –shm-size : 设置 /dev/shm 的大小，默认值是 64M； –ulimit : Ulimit 配置。 –tag, -t: 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。 –network: 默认 default。在构建期间设置RUN指令的网络模式 实例使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。 1docker build -t runoob/ubuntu:v1 . 使用 URL github.com/creack/docker-firefox 的 Dockerfile 创建镜像。 1docker build github.com/creack/docker-firefox 也可以通过 -f Dockerfile 文件的位置： 1docker build -f /path/to/a/Dockerfile . 在 Docker 守护进程执行 Dockerfile 中的指令前，首先会对 Dockerfile 进行语法检查，有语法错误时会返回： 123docker build -t test/myapp .Sending build context to Docker daemon 2.048 kBError response from daemon: Unknown instruction: RUNCMD 参考文档http://www.runoob.com/docker/docker-build-command.html]]></content>
