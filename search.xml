@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker rmi 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-rmi-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker rmi 命令 docker rmi : 删除本地一个或多个镜像。 语法1docker rmi [OPTIONS] IMAGE [IMAGE...] OPTIONS 说明： -f : 强制删除； –no-prune : 不移除该镜像的过程镜像，默认移除； 实例强制删除本地镜像 runoob/ubuntu:v4。 1234[root@localhost ~] docker rmi -f runoob/ubuntu:v4Untagged: runoob/ubuntu:v4Deleted: sha256:1c06aa18edee44230f93a90a7d88139235de12cd4c089d41eed8419b503072beDeleted: sha256:85feb446e89a28d58ee7d80ea5ce367eebb7cec70f0ec18aa4faa874cbd97c73 参考文档http://www.runoob.com/docker/docker-rmi-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker rmi 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker cp 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-cp-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker cp 命令 docker cp : 用于容器与主机之间的数据拷贝。 语法12docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH OPTIONS 说明： -L : 保持源目标中的链接 实例将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 的 /www 目录下。 1docker cp /www/runoob 96f7f14e99ab:/www/ 将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 中，目录重命名为 www。 1docker cp /www/runoob 96f7f14e99ab:/www 将容器 96f7f14e99ab 的 /www 目录拷贝到主机的 /tmp 目录中。 1docker cp 96f7f14e99ab:/www /tmp/ 参考文档http://www.runoob.com/docker/docker-cp-command.html]]></content>
@@ -91,7 +102,7 @@
   <entry>
     <title><![CDATA[Docker ps 命令]]></title>
     <url>%2F2018%2F08%2F31%2FDocker-ps-%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[Docker ps 命令 docker ps : 列出容器 语法1docker ps [OPTIONS] OPTIONS 说明： -a : 显示所有的容器，包括未运行的。 -f : 根据条件过滤显示的内容。 –format : 指定返回值的模板文件。 -l : 显示最近创建的容器。 -n : 列出最近创建的n个容器。 –no-trunc : 不截断输出。 -q : 静默模式，只显示容器编号。 -s : 显示总的文件大小。 实例列出所有在运行的容器信息 1234runoob@runoob:~$ docker psCONTAINER ID IMAGE COMMAND ... PORTS NAMES09b93464c2f7 nginx:latest "nginx -g 'daemon off" ... 80/tcp, 443/tcp myrunoob96f7f14e99ab mysql:5.6 "docker-entrypoint.sh" ... 0.0.0.0:3306-&gt;3306/tcp mymysql 列出最近创建的 5 个容器信息 1234567runoob@runoob:~$ docker ps -n 5CONTAINER ID IMAGE COMMAND CREATED 09b93464c2f7 nginx:latest "nginx -g 'daemon off" 2 days ago ... b8573233d675 nginx:latest "/bin/bash" 2 days ago ... b1a0703e41e7 nginx:latest "nginx -g 'daemon off" 2 days ago ... f46fb1dec520 5c6e1090e771 "/bin/sh -c 'set -x \t" 2 days ago ... a63b4a5597de 860c279d2fec "bash" 2 days ago ... 列出所有创建的容器ID 123456789101112runoob@runoob:~$ docker ps -a -q09b93464c2f7b8573233d675b1a0703e41e7f46fb1dec520a63b4a5597de6a4aa42e947bde7bb36e796843a432b73776664a8ab1a585ba52eb632bbd... 参考文档http://www.runoob.com/docker/docker-ps-command.html]]></content>
+    <content type="text"><![CDATA[Docker ps 命令 docker ps : 列出容器 语法1docker ps [OPTIONS] OPTIONS 说明： -a : 显示所有的容器，包括未运行的。 -f : 根据条件过滤显示的内容。 –format : 指定返回值的模板文件。 -l : 显示最近创建的容器。 -n : 列出最近创建的 n 个容器。 –no-trunc : 不截断输出。 -q : 静默模式，只显示容器编号。 -s : 显示总的文件大小。 实例列出所有在运行的容器信息 1234runoob@runoob:~$ docker psCONTAINER ID IMAGE COMMAND ... PORTS NAMES09b93464c2f7 nginx:latest "nginx -g 'daemon off" ... 80/tcp, 443/tcp myrunoob96f7f14e99ab mysql:5.6 "docker-entrypoint.sh" ... 0.0.0.0:3306-&gt;3306/tcp mymysql 列出最近创建的 5 个容器信息 1234567runoob@runoob:~$ docker ps -n 5CONTAINER ID IMAGE COMMAND CREATED 09b93464c2f7 nginx:latest "nginx -g 'daemon off" 2 days ago ... b8573233d675 nginx:latest "/bin/bash" 2 days ago ... b1a0703e41e7 nginx:latest "nginx -g 'daemon off" 2 days ago ... f46fb1dec520 5c6e1090e771 "/bin/sh -c 'set -x \t" 2 days ago ... a63b4a5597de 860c279d2fec "bash" 2 days ago ... 列出所有创建的容器ID 123456789101112runoob@runoob:~$ docker ps -a -q09b93464c2f7b8573233d675b1a0703e41e7f46fb1dec520a63b4a5597de6a4aa42e947bde7bb36e796843a432b73776664a8ab1a585ba52eb632bbd... 参考文档http://www.runoob.com/docker/docker-ps-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
       </categories>
@@ -124,7 +135,7 @@
   <entry>
     <title><![CDATA[Docker rm 命令]]></title>
     <url>%2F2018%2F08%2F31%2FDocker-rm-%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[Docker rm 命令 docker rm ：删除一个或多少容器 语法1docker rm [OPTIONS] CONTAINER [CONTAINER...] OPTIONS 说明： -f : 通过SIGKILL信号强制删除一个运行中的容器 -l : 移除容器间的网络连接，而非容器本身 -v : 删除与容器关联的卷 实例强制删除容器 db01、db02 1docker rm -f db01 db02 移除容器 nginx01 对容器 db01 的连接，连接名 db 1docker rm -l db 删除容器 nginx01，并删除容器挂载的数据卷 1docker rm -v nginx01 参考文档http://www.runoob.com/docker/docker-rm-command.html]]></content>
+    <content type="text"><![CDATA[Docker rm 命令 docker rm ：删除一个或多个容器 语法1docker rm [OPTIONS] CONTAINER [CONTAINER...] OPTIONS 说明： -f : 通过 SIGKILL 信号强制删除一个运行中的容器 -l : 移除容器间的网络连接，而非容器本身 -v : 删除与容器关联的卷 实例强制删除容器 db01、db02 1docker rm -f db01 db02 移除容器 nginx01 对容器 db01 的连接，连接名 db 1docker rm -l db 删除容器 nginx01，并删除容器挂载的数据卷 1docker rm -v nginx01 参考文档http://www.runoob.com/docker/docker-rm-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
       </categories>
@@ -947,17 +958,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Kickstart自动应答文件]]></title>
-    <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
-      <categories>
-        <category>Cobbler笔记</category>
-      </categories>
-      <tags>
-        <tag>Kickstart自动应答文件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo安装]]></title>
     <url>%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
@@ -966,6 +966,17 @@
       </categories>
       <tags>
         <tag>Hexo安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kickstart自动应答文件]]></title>
+    <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
+      <categories>
+        <category>Cobbler笔记</category>
+      </categories>
+      <tags>
+        <tag>Kickstart自动应答文件</tag>
       </tags>
   </entry>
   <entry>

@@ -534,13 +534,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Docker-rm-%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-08-31T09:24:17.047Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Docker-exec-%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T09:25:12.665Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -557,13 +550,6 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Docker-run-%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-08-31T09:30:07.984Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/tags/Docker-ps-%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-08-31T09:37:58.648Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -627,6 +613,27 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Docker-cp-%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-09-01T09:20:01.585Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Docker-rm-%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-09-01T09:28:30.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Docker-rmi-%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-09-01T09:28:46.334Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Docker-ps-%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-09-01T09:29:01.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
