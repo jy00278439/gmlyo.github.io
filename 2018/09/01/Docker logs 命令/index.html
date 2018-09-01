@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Chrome自带的长截屏功能," />
+  <meta name="keywords" content="Docker logs 命令," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Chrome自带的长截屏功能 在 Google Chrome 里面，打开开发人员工具 按F12或网站上任意空白处右键 – 选择 “检查” 或者“审查元素” 快捷键 Ctrl + Shift + P，会看到右边的审查元素出现了一个输入框输入 screenshot 然后回车保存图片">
-<meta name="keywords" content="Chrome自带的长截屏功能">
+<meta name="description" content="Docker logs 命令">
+<meta name="keywords" content="Docker logs 命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chrome自带的长截屏功能">
-<meta property="og:url" content="http://www.gmlyo.com/2018/06/10/Chrome自带的长截屏功能/index.html">
+<meta property="og:title" content="Docker logs 命令">
+<meta property="og:url" content="http://www.gmlyo.com/2018/09/01/Docker logs 命令/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Chrome自带的长截屏功能 在 Google Chrome 里面，打开开发人员工具 按F12或网站上任意空白处右键 – 选择 “检查” 或者“审查元素” 快捷键 Ctrl + Shift + P，会看到右边的审查元素出现了一个输入框输入 screenshot 然后回车保存图片">
+<meta property="og:description" content="Docker logs 命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T07:23:58.993Z">
+<meta property="og:updated_time" content="2018-09-01T08:39:11.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chrome自带的长截屏功能">
-<meta name="twitter:description" content="Chrome自带的长截屏功能 在 Google Chrome 里面，打开开发人员工具 按F12或网站上任意空白处右键 – 选择 “检查” 或者“审查元素” 快捷键 Ctrl + Shift + P，会看到右边的审查元素出现了一个输入框输入 screenshot 然后回车保存图片">
+<meta name="twitter:title" content="Docker logs 命令">
+<meta name="twitter:description" content="Docker logs 命令">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/2018/06/10/Chrome自带的长截屏功能/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/2018/09/01/Docker logs 命令/"/>
 
 
 
@@ -138,7 +138,7 @@
   </script>
 
 
-  <title>Chrome自带的长截屏功能 | G加菲</title>
+  <title>Docker logs 命令 | G加菲</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/06/10/Chrome自带的长截屏功能/">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/09/01/Docker logs 命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="G加菲">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chrome自带的长截屏功能</h1>
+          <h1 class="post-title" itemprop="name headline">Docker logs 命令</h1>
         
 
         <div class="post-meta">
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T15:22:15+08:00">
-                2018-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T16:38:24+08:00">
+                2018-09-01
               </time>
             
 
@@ -381,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Chrome笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Chrome笔记</span>
+                  <a href="/categories/Docker笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker笔记</span>
                   </a>
                 </span>
 
@@ -423,10 +423,21 @@
       
 
       
-        <h2 id="Chrome自带的长截屏功能"><a href="#Chrome自带的长截屏功能" class="headerlink" title="Chrome自带的长截屏功能"></a>Chrome自带的长截屏功能</h2><blockquote>
-<p>在 <code>Google Chrome</code> 里面，打开开发人员工具 <code>按F12</code><br>或<br>网站上任意空白处右键 – 选择 “检查” 或者“审查元素”</p>
-<p>快捷键 <code>Ctrl + Shift + P</code>，会看到右边的审查元素出现了一个输入框<br>输入 <code>screenshot</code> 然后回车<br>保存图片</p>
-</blockquote>
+        <h1 id="Docker-logs-命令"><a href="#Docker-logs-命令" class="headerlink" title="Docker logs 命令"></a>Docker logs 命令</h1><a id="more"></a>
+<p><strong>docker logs :</strong> 获取容器的日志</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span></span><br></pre></td></tr></table></figure>
+<p>OPTIONS 说明：</p>
+<ul>
+<li><strong>-f :</strong> 跟踪日志输出</li>
+<li><strong>–since :</strong> 显示某个开始时间的所有日志</li>
+<li><strong>-t :</strong> 显示时间戳</li>
+<li><strong>–tail :</strong>仅列出最新N条容器日志</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>跟踪查看容器 mynginx 的日志输出。</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[root@localhost ~]</span># docker logs -f mynginx</span><br><span class="line"><span class="number">192.168.239.1</span> - - <span class="string">[10/Jul/2016:16:53:33 +0000]</span> <span class="string">"<span class="keyword">GET</span> / HTTP/1.1"</span> <span class="number">200</span> <span class="number">612</span> <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36"</span> <span class="string">"-"</span></span><br><span class="line"><span class="number">2016</span>/<span class="number">07</span>/<span class="number">10</span> <span class="number">16</span>:<span class="number">53</span>:<span class="number">33</span> <span class="string">[error]</span> <span class="number">5</span>#<span class="number">5</span>: *<span class="number">1</span> open() <span class="string">"/usr/share/nginx/html/favicon.ico"</span> failed (<span class="number">2</span>: No such file or directory), client: <span class="number">192.168.239.1</span>, server: localhost, request: <span class="string">"<span class="keyword">GET</span> /favicon.ico HTTP/1.1"</span>, host: <span class="string">"192.168.239.130"</span>, referrer: <span class="string">"http://192.168.239.130/"</span></span><br><span class="line"><span class="number">192.168.239.1</span> - - <span class="string">[10/Jul/2016:16:53:33 +0000]</span> <span class="string">"<span class="keyword">GET</span> /favicon.ico HTTP/1.1"</span> <span class="number">404</span> <span class="number">571</span> <span class="string">"http://192.168.239.130/"</span> <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36"</span> <span class="string">"-"</span></span><br><span class="line"><span class="number">192.168.239.1</span> - - <span class="string">[10/Jul/2016:16:53:59 +0000]</span> <span class="string">"<span class="keyword">GET</span> / HTTP/1.1"</span> <span class="number">304</span> <span class="number">0</span> <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36"</span> <span class="string">"-"</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>查看容器 mynginx 从 2016年7月1日 后的最新 10条 日志。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs <span class="attribute">--since</span>=<span class="string">"2016-07-01"</span> <span class="attribute">--tail</span>=10 mynginx</span><br></pre></td></tr></table></figure>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-logs-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-logs-command.html</a></p>
 
       
     </div>
@@ -445,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Chrome自带的长截屏功能/" rel="tag"># Chrome自带的长截屏功能</a>
+            <a href="/tags/Docker-logs-命令/" rel="tag"># Docker logs 命令</a>
           
         </div>
       
@@ -458,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/10/Chevereto图床/" rel="next" title="Chevereto图床">
-                <i class="fa fa-chevron-left"></i> Chevereto图床
+              <a href="/2018/09/01/Docker attach 命令/" rel="next" title="Docker attach 命令">
+                <i class="fa fa-chevron-left"></i> Docker attach 命令
               </a>
             
           </div>
@@ -467,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/10/添加看板娘/" rel="prev" title="添加看板娘">
-                添加看板娘 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome自带的长截屏功能"><span class="nav-number">1.</span> <span class="nav-text">Chrome自带的长截屏功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-logs-命令"><span class="nav-number">1.</span> <span class="nav-text">Docker logs 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.0.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.0.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.0.3.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
