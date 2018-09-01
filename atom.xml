@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-09-01T09:58:46.496Z</updated>
+  <updated>2018-09-01T10:27:07.627Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker 资源汇总</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-资源汇总/</id>
+    <published>2018-09-01T10:26:21.000Z</published>
+    <updated>2018-09-01T10:27:07.627Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-资源汇总"><a href="#Docker-资源汇总" class="headerlink" title="Docker 资源汇总"></a>Docker 资源汇总</h1><h3 id="Docker官方英文资源"><a href="#Docker官方英文资源" class="headerlink" title="Docker官方英文资源"></a>Docker官方英文资源</h3><p>docker官网：<a href="http://www.docker.com/" target="_blank" rel="noopener">http://www.docker.com</a><br>Docker windows入门：<a href="https://docs.docker.com/windows/" target="_blank" rel="noopener">https://docs.docker.com/windows/</a><br>Docker Linux 入门：<a href="https://docs.docker.com/linux/" target="_blank" rel="noopener">https://docs.docker.com/linux/</a><br>Docker mac 入门：<a href="https://docs.docker.com/mac/" target="_blank" rel="noopener">https://docs.docker.com/mac/</a><br>Docker 用户指引：<a href="https://docs.docker.com/engine/userguide/" target="_blank" rel="noopener">https://docs.docker.com/engine/userguide/</a><br>Docker 官方博客：<a href="http://blog.docker.com/" target="_blank" rel="noopener">http://blog.docker.com/</a><br>Docker Hub: <a href="https://hub.docker.com/" target="_blank" rel="noopener">https://hub.docker.com/</a><br>Docker开源： <a href="https://www.docker.com/open-source" target="_blank" rel="noopener">https://www.docker.com/open-source</a></p><h3 id="Docker中文资源"><a href="#Docker中文资源" class="headerlink" title="Docker中文资源"></a>Docker中文资源</h3><p>Docker中文网站：<a href="https://www.docker-cn.com/" target="_blank" rel="noopener">https://www.docker-cn.com/</a><br>Docker安装手册：<a href="https://docs.docker-cn.com/engine/installation/" target="_blank" rel="noopener">https://docs.docker-cn.com/engine/installation/</a></p><h3 id="Docker-国内镜像"><a href="#Docker-国内镜像" class="headerlink" title="Docker 国内镜像"></a>Docker 国内镜像</h3><p>网易加速器：<a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a><br>官方中国加速器：<a href="https://registry.docker-cn.com" target="_blank" rel="noopener">https://registry.docker-cn.com</a><br>ustc的镜像：<a href="https://docker.mirrors.ustc.edu.cn" target="_blank" rel="noopener">https://docker.mirrors.ustc.edu.cn</a><br>daocloud：<a href="https://www.daocloud.io/mirror#accelerator-doc（注册后使用）" target="_blank" rel="noopener">https://www.daocloud.io/mirror#accelerator-doc（注册后使用）</a></p><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-resources.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-resources.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Docker-资源汇总&quot;&gt;&lt;a href=&quot;#Docker-资源汇总&quot; class=&quot;headerlink&quot; title=&quot;Docker 资源汇总&quot;&gt;&lt;/a&gt;Docker 资源汇总&lt;/h1&gt;&lt;h3 id=&quot;Docker官方英文资源&quot;&gt;&lt;a href=&quot;#Docke
+      
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker 资源汇总" scheme="http://www.gmlyo.com/tags/Docker-%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker tag 命令</title>
@@ -431,28 +456,6 @@
     
     
       <category term="Docker inspect 命令" scheme="http://www.gmlyo.com/tags/Docker-inspect-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker ps 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-ps-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-ps-命令/</id>
-    <published>2018-08-31T09:33:14.000Z</published>
-    <updated>2018-09-01T09:29:01.672Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-ps-命令"><a href="#Docker-ps-命令" class="headerlink" title="Docker ps 命令"></a>Docker ps 命令</h1><a id="more"></a><p><strong>docker ps :</strong> 列出容器</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps <span class="string">[OPTIONS]</span></span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>-a :</strong> 显示所有的容器，包括未运行的。</li><li><strong>-f :</strong> 根据条件过滤显示的内容。</li><li><strong>–format :</strong> 指定返回值的模板文件。</li><li><strong>-l :</strong> 显示最近创建的容器。</li><li><strong>-n :</strong> 列出最近创建的 n 个容器。</li><li><strong>–no-trunc :</strong> 不截断输出。</li><li><strong>-q :</strong> 静默模式，只显示容器编号。</li><li><strong>-s :</strong> 显示总的文件大小。</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>列出所有在运行的容器信息</p><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker ps</span><br><span class="line">CONTAINER ID   IMAGE          COMMAND                ...  PORTS                    NAMES</span><br><span class="line"><span class="number">09</span>b93464c2f7   nginx:latest   <span class="string">"nginx -g 'daemon off"</span> ...  <span class="number">80</span>/tcp, <span class="number">443</span>/tcp          myrunoob</span><br><span class="line"><span class="number">96</span>f7f14e99ab   mysql:<span class="number">5.6</span>      <span class="string">"docker-entrypoint.sh"</span> ...  <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">3306</span>-&gt;<span class="number">3306</span>/tcp   mymysql</span><br></pre></td></tr></table></figure><p>列出最近创建的 5 个容器信息</p><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">runoob@runo<span class="symbol">ob:</span>~$ docker ps -<span class="built_in">n</span> <span class="number">5</span></span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                   CREATED           </span><br><span class="line"><span class="number">09</span>b93464c2f7        ngi<span class="symbol">nx:la</span>test        <span class="string">"nginx -g 'daemon off"</span>    <span class="number">2</span> <span class="built_in">days</span> ago   ...     </span><br><span class="line">b8573233d675        ngi<span class="symbol">nx:la</span>test        <span class="string">"/bin/bash"</span>               <span class="number">2</span> <span class="built_in">days</span> ago   ...     </span><br><span class="line">b1a0703e41e7        ngi<span class="symbol">nx:la</span>test        <span class="string">"nginx -g 'daemon off"</span>    <span class="number">2</span> <span class="built_in">days</span> ago   ...    </span><br><span class="line">f46fb1dec520        <span class="number">5</span>c6e1090e771        <span class="string">"/bin/sh -c 'set -x \t"</span>   <span class="number">2</span> <span class="built_in">days</span> ago   ...   </span><br><span class="line">a63b4a5597de        <span class="number">860</span>c279d2fec        <span class="string">"bash"</span>                    <span class="number">2</span> <span class="built_in">days</span> ago   ...</span><br></pre></td></tr></table></figure><p>列出所有创建的容器ID</p><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">runoob</span><span class="comment">@runoob:~$ docker ps -a -q</span></span><br><span class="line"><span class="number">09</span>b93464c2f7</span><br><span class="line"><span class="keyword">b8573233d675</span></span><br><span class="line"><span class="keyword">b1a0703e41e7</span></span><br><span class="line"><span class="keyword">f46fb1dec520</span></span><br><span class="line"><span class="keyword">a63b4a5597de</span></span><br><span class="line"><span class="keyword">6a4aa42e947b</span></span><br><span class="line"><span class="keyword">de7bb36e7968</span></span><br><span class="line"><span class="keyword">43a432b73776</span></span><br><span class="line"><span class="keyword">664a8ab1a585</span></span><br><span class="line"><span class="keyword">ba52eb632bbd</span></span><br><span class="line"><span class="keyword">...</span></span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-ps-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-ps-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-ps-命令&quot;&gt;&lt;a href=&quot;#Docker-ps-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker ps 命令&quot;&gt;&lt;/a&gt;Docker ps 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker ps 命令" scheme="http://www.gmlyo.com/tags/Docker-ps-%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
