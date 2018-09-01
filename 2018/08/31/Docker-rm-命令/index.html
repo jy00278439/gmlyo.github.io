@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Docker pause/unpause 命令," />
+  <meta name="keywords" content="Docker rm 命令," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Docker pause/unpause 命令">
-<meta name="keywords" content="Docker pause&#x2F;unpause 命令">
+<meta name="description" content="Docker rm 命令">
+<meta name="keywords" content="Docker rm 命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker pause&#x2F;unpause 命令">
-<meta property="og:url" content="http://www.gmlyo.com/2018/08/31/Docker pause unpause 命令/index.html">
+<meta property="og:title" content="Docker rm 命令">
+<meta property="og:url" content="http://www.gmlyo.com/2018/08/31/Docker-rm-命令/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="Docker pause/unpause 命令">
+<meta property="og:description" content="Docker rm 命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T09:23:50.718Z">
+<meta property="og:updated_time" content="2018-08-31T09:24:17.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker pause&#x2F;unpause 命令">
-<meta name="twitter:description" content="Docker pause/unpause 命令">
+<meta name="twitter:title" content="Docker rm 命令">
+<meta name="twitter:description" content="Docker rm 命令">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/2018/08/31/Docker pause unpause 命令/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/2018/08/31/Docker-rm-命令/"/>
 
 
 
@@ -138,7 +138,7 @@
   </script>
 
 
-  <title>Docker pause/unpause 命令 | G加菲</title>
+  <title>Docker rm 命令 | G加菲</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/31/Docker pause unpause 命令/">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/31/Docker-rm-命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="G加菲">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker pause/unpause 命令</h1>
+          <h1 class="post-title" itemprop="name headline">Docker rm 命令</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T17:03:29+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T16:57:24+08:00">
                 2018-08-31
               </time>
             
@@ -423,14 +423,22 @@
       
 
       
-        <h1 id="Docker-pause-unpause-命令"><a href="#Docker-pause-unpause-命令" class="headerlink" title="Docker pause/unpause 命令"></a>Docker pause/unpause 命令</h1><a id="more"></a>
-<p><strong>docker pause :</strong> 暂停容器中所有的进程。<br><strong>docker unpause :</strong> 恢复容器中所有的进程。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pause <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br><span class="line">docker unpause <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>暂停数据库容器 db01 提供服务。</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">pause</span> db01</span><br></pre></td></tr></table></figure>
-<p>恢复数据库容器 db01 提供服务。</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> unpause db01</span><br></pre></td></tr></table></figure>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-pause-unpause-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-pause-unpause-command.html</a></p>
+        <h1 id="Docker-rm-命令"><a href="#Docker-rm-命令" class="headerlink" title="Docker rm 命令"></a>Docker rm 命令</h1><a id="more"></a>
+<p><strong>docker rm ：</strong>删除一个或多少容器</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure>
+<p>OPTIONS 说明：</p>
+<ul>
+<li><strong>-f :</strong> 通过SIGKILL信号强制删除一个运行中的容器</li>
+<li><strong>-l :</strong> 移除容器间的网络连接，而非容器本身</li>
+<li><strong>-v :</strong> 删除与容器关联的卷</li>
+</ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>强制删除容器 db01、db02</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> rm -f db01 db02</span><br></pre></td></tr></table></figure>
+<p>移除容器 nginx01 对容器 db01 的连接，连接名 db</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">rm</span> -<span class="keyword">l</span> <span class="keyword">db</span></span><br></pre></td></tr></table></figure>
+<p>删除容器 nginx01，并删除容器挂载的数据卷</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v <span class="symbol">nginx01</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-rm-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-rm-command.html</a></p>
 
       
     </div>
@@ -449,7 +457,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Docker-pause-unpause-命令/" rel="tag"># Docker pause/unpause 命令</a>
+            <a href="/tags/Docker-rm-命令/" rel="tag"># Docker rm 命令</a>
           
         </div>
       
@@ -462,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/31/Docker rm 命令/" rel="next" title="Docker rm 命令">
-                <i class="fa fa-chevron-left"></i> Docker rm 命令
+              <a href="/2018/08/31/Docker-kill-命令/" rel="next" title="Docker kill 命令">
+                <i class="fa fa-chevron-left"></i> Docker kill 命令
               </a>
             
           </div>
@@ -472,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/31/Docker exec 命令/" rel="prev" title="Docker exec 命令">
-                Docker exec 命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/31/Docker-pause-unpause-命令/" rel="prev" title="Docker pause/unpause 命令">
+                Docker pause/unpause 命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -656,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-pause-unpause-命令"><span class="nav-number">1.</span> <span class="nav-text">Docker pause/unpause 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">1.3.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-rm-命令"><span class="nav-number">1.</span> <span class="nav-text">Docker rm 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">1.3.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
             
 
           </div>

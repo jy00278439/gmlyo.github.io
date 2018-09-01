@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Docker export 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-export-%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[Docker export 命令 docker export : 将文件系统作为一个 tar 归档文件导出到 STDOUT。 语法1docker export [OPTIONS] CONTAINER OPTIONS 说明： -o : 将输入内容写到文件。 实例将 id 为 a404c6c174a2 的容器按日期保存为 tar 文件。 123[root@localhost ~]# docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2[root@localhost ~]# ls mysql-`date +%Y%m%d`.tarmysql-20160711.tar]]></content>
+    <content type="text"><![CDATA[Docker export 命令 docker export : 将文件系统作为一个 tar 归档文件导出到 STDOUT。 语法1docker export [OPTIONS] CONTAINER OPTIONS 说明： -o : 将输入内容写到文件。 实例将 id 为 a404c6c174a2 的容器按日期保存为 tar 文件。 123[root@localhost ~]# docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2[root@localhost ~]# ls mysql-`date +%Y%m%d`.tarmysql-20160711.tar 参考文档http://www.runoob.com/docker/docker-export-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
       </categories>
@@ -13,7 +13,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker logs 命令]]></title>
-    <url>%2F2018%2F09%2F01%2FDocker%20logs%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F09%2F01%2FDocker-logs-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker logs 命令 docker logs : 获取容器的日志 语法1docker logs [OPTIONS] CONTAINER OPTIONS 说明： -f : 跟踪日志输出 –since : 显示某个开始时间的所有日志 -t : 显示时间戳 –tail :仅列出最新N条容器日志 实例跟踪查看容器 mynginx 的日志输出。 123456[root@localhost ~]# docker logs -f mynginx192.168.239.1 - - [10/Jul/2016:16:53:33 +0000] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36" "-"2016/07/10 16:53:33 [error] 5#5: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.239.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.239.130", referrer: "http://192.168.239.130/"192.168.239.1 - - [10/Jul/2016:16:53:33 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://192.168.239.130/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36" "-"192.168.239.1 - - [10/Jul/2016:16:53:59 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36" "-"... 查看容器 mynginx 从 2016年7月1日 后的最新 10条 日志。 1docker logs --since="2016-07-01" --tail=10 mynginx 参考文档http://www.runoob.com/docker/docker-logs-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker attach 命令]]></title>
-    <url>%2F2018%2F09%2F01%2FDocker%20attach%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F09%2F01%2FDocker-attach-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker attach 命令 docker attach : 连接到正在运行中的容器。 语法1docker attach [OPTIONS] CONTAINER 要 attach 上去的容器必须正在运行，可以同时连接上同一个 container 来共享屏幕（与 screen 命令的 attach 类似）。 官方文档中说 attach 后可以通过 CTRL-C 来 detach，但实际上经过测试，如果 container 当前在运行 bash，CTRL-C 自然是当前行的输入，没有退出；如果 container 当前正在前台运行进程，如输出 nginx 的 access.log 日志，CTRL-C 不仅会导致退出容器，而且还 stop 了。这不是我们想要的，detach 的意思按理应该是脱离容器终端，但容器依然运行。好在 attach 是可以带上 --sig-proxy=false 来确保 CTRL-D 或 CTRL-C 不会关闭容器。 实例容器 mynginx 将访问日志指到标准输出，连接到容器查看访问信息。 12[root@localhost ~]# docker attach --sig-proxy=false mynginx192.168.239.1 - - [10/Jul/2016:16:54:26 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36" "-" 参考文档http://www.runoob.com/docker/docker-attach-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker top 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20top%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-top-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker top 命令 docker top : 查看容器中运行的进程信息，支持 ps 命令参数。 语法1docker top [OPTIONS] CONTAINER [ps OPTIONS] 容器运行时不一定有 /bin/bash 终端来交互执行 top 命令，而且容器还不一定有 top 命令，可以使用docker top 来实现查看 container 中正在运行的进程。 实例查看容器 mymysql 的进程信息。 123[root@localhost mysql]# docker top mymysqlUID PID PPID C STIME TTY TIME CMD999 40347 40331 18 00:58 ? 00:00:02 mysqld 查看所有运行容器的进程信息。 1for i in `docker ps | grep Up | awk '&#123;print $1&#125;'`; do echo \ &amp;&amp; docker top $i; done 参考文档http://www.runoob.com/docker/docker-top-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker inspect 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20inspect%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-inspect-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker inspect 命令 docker inspect : 获取容器/镜像的元数据。 语法1docker inspect [OPTIONS] NAME|ID [NAME|ID...] OPTIONS说明： -f : 指定返回值的模板文件。 -s : 显示总的文件大小。 –type : 为指定类型返回JSON。 实例获取镜像 mysql:5.6 的元信息。 1234567891011121314151617181920212223runoob@runoob:~$ docker inspect mysql:5.6[ &#123; "Id": "sha256:2c0964ec182ae9a045f866bbc2553087f6e42bfc16074a74fb820af235f070ec", "RepoTags": [ "mysql:5.6" ], "RepoDigests": [], "Parent": "", "Comment": "", "Created": "2016-05-24T04:01:41.168371815Z", "Container": "e0924bc460ff97787f34610115e9363e6363b30b8efa406e28eb495ab199ca54", "ContainerConfig": &#123; "Hostname": "b0cf605c7757", "Domainname": "", "User": "", "AttachStdin": false, "AttachStdout": false, "AttachStderr": false, "ExposedPorts": &#123; "3306/tcp": &#123;&#125; &#125;,... 获取正在运行的容器 mymysql 的 IP。 12runoob@runoob:~$ docker inspect --format='&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;' mymysql172.17.0.3 参考文档http://www.runoob.com/docker/docker-inspect-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -57,7 +57,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker ps 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20ps%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-ps-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker ps 命令 docker ps : 列出容器 语法1docker ps [OPTIONS] OPTIONS 说明： -a : 显示所有的容器，包括未运行的。 -f : 根据条件过滤显示的内容。 –format : 指定返回值的模板文件。 -l : 显示最近创建的容器。 -n : 列出最近创建的n个容器。 –no-trunc : 不截断输出。 -q : 静默模式，只显示容器编号。 -s : 显示总的文件大小。 实例列出所有在运行的容器信息 1234runoob@runoob:~$ docker psCONTAINER ID IMAGE COMMAND ... PORTS NAMES09b93464c2f7 nginx:latest "nginx -g 'daemon off" ... 80/tcp, 443/tcp myrunoob96f7f14e99ab mysql:5.6 "docker-entrypoint.sh" ... 0.0.0.0:3306-&gt;3306/tcp mymysql 列出最近创建的 5 个容器信息 1234567runoob@runoob:~$ docker ps -n 5CONTAINER ID IMAGE COMMAND CREATED 09b93464c2f7 nginx:latest "nginx -g 'daemon off" 2 days ago ... b8573233d675 nginx:latest "/bin/bash" 2 days ago ... b1a0703e41e7 nginx:latest "nginx -g 'daemon off" 2 days ago ... f46fb1dec520 5c6e1090e771 "/bin/sh -c 'set -x \t" 2 days ago ... a63b4a5597de 860c279d2fec "bash" 2 days ago ... 列出所有创建的容器ID 123456789101112runoob@runoob:~$ docker ps -a -q09b93464c2f7b8573233d675b1a0703e41e7f46fb1dec520a63b4a5597de6a4aa42e947bde7bb36e796843a432b73776664a8ab1a585ba52eb632bbd... 参考文档http://www.runoob.com/docker/docker-ps-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -68,7 +68,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker exec 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20exec%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-exec-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker exec 命令 docker exec ： 在运行的容器中执行命令 语法1docker exec [OPTIONS] CONTAINER COMMAND [ARG...] OPTIONS说明： -d : 分离模式: 在后台运行 -i : 即使没有附加也保持 STDIN 打开 -t : 分配一个伪终端 实例在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh 脚本 12runoob@runoob:~$ docker exec -it mynginx /bin/sh /root/runoob.shhttp://www.runoob.com/ 在容器 mynginx 中开启一个交互模式的终端 12runoob@runoob:~$ docker exec -i -t mynginx /bin/bashroot@b1a0703e41e7:/# 参考文档http://www.runoob.com/docker/docker-exec-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -79,7 +79,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker pause/unpause 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20pause%20unpause%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-pause-unpause-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker pause/unpause 命令 docker pause : 暂停容器中所有的进程。docker unpause : 恢复容器中所有的进程。 语法12docker pause [OPTIONS] CONTAINER [CONTAINER...]docker unpause [OPTIONS] CONTAINER [CONTAINER...] 实例暂停数据库容器 db01 提供服务。 1docker pause db01 恢复数据库容器 db01 提供服务。 1docker unpause db01 参考文档http://www.runoob.com/docker/docker-pause-unpause-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -90,7 +90,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker rm 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20rm%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-rm-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker rm 命令 docker rm ：删除一个或多少容器 语法1docker rm [OPTIONS] CONTAINER [CONTAINER...] OPTIONS 说明： -f : 通过SIGKILL信号强制删除一个运行中的容器 -l : 移除容器间的网络连接，而非容器本身 -v : 删除与容器关联的卷 实例强制删除容器 db01、db02 1docker rm -f db01 db02 移除容器 nginx01 对容器 db01 的连接，连接名 db 1docker rm -l db 删除容器 nginx01，并删除容器挂载的数据卷 1docker rm -v nginx01 参考文档http://www.runoob.com/docker/docker-rm-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -101,7 +101,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker kill 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20kill%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-kill-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker kill 命令 docker kill : 杀掉一个运行中的容器。 语法1docker kill [OPTIONS] CONTAINER [CONTAINER...] OPTIONS说明： -s : 向容器发送一个信号 实例杀掉运行中的容器 mynginx12docker kill -s KILL mynginxmynginx 参考文档http://www.runoob.com/docker/docker-kill-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -112,7 +112,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker start/stop/restart 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20start%20stop%20restart%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-start-stop-restart-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker start/stop/restart 命令 docker start: 启动一个或多少已经被停止的容器docker stop: 停止一个运行中的容器docker restart: 重启容器 语法123docker start [OPTIONS] CONTAINER [CONTAINER...]docker stop [OPTIONS] CONTAINER [CONTAINER...]docker restart [OPTIONS] CONTAINER [CONTAINER...] 实例启动已被停止的容器 myrunoob 1docker start myrunoob 停止运行中的容器 myrunoob 1docker stop myrunoob 重启容器 myrunoob 1docker restart myrunoob 参考文档http://www.runoob.com/docker/docker-start-stop-restart-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -123,7 +123,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker create 命令]]></title>
-    <url>%2F2018%2F08%2F31%2FDocker%20create%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F31%2FDocker-create-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker create 命令 docker create ：创建一个新的容器但不启动它 用法同 docker run 语法1docker create [OPTIONS] IMAGE [COMMAND] [ARG...] 语法同 docker run 实例使用 docker 镜像 nginx:latest 创建一个容器，并将容器命名为 myrunoob 12docker create --name myrunoob nginx:latest09b93464c2f75b7b69f83d56a9cfc23ceb50a48a9db7652ee4c27e3e2cb1961f 参考文档http://www.runoob.com/docker/docker-create-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -145,7 +145,7 @@
   </entry>
   <entry>
     <title><![CDATA[Docker run 命令]]></title>
-    <url>%2F2018%2F08%2F27%2FDocker%20run%20%E5%91%BD%E4%BB%A4%2F</url>
+    <url>%2F2018%2F08%2F27%2FDocker-run-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker run 命令 docker run ：创建一个新的容器并运行一个命令 语法1docker run [OPTIONS] IMAGE [COMMAND] [ARG...] OPTIONS 说明： -a stdin: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项； -d: 后台运行容器，并返回容器ID； -i: 以交互模式运行容器，通常与 -t 同时使用； -p: 端口映射，格式为：主机(宿主)端口:容器端口 -t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用； –name=”nginx-lb”: 为容器指定一个名称； –dns 8.8.8.8: 指定容器使用的DNS服务器，默认和宿主一致； –dns-search example.com: 指定容器DNS搜索域名，默认和宿主一致； -h “mars”: 指定容器的hostname； -e username=”ritchie”: 设置环境变量； –env-file=[]: 从指定文件读入环境变量； –cpuset=”0-2” or –cpuset=”0,1,2”: 绑定容器到指定CPU运行； -m : 设置容器使用内存最大值； –net=”bridge”: 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型； –link=[]: 添加链接到另一个容器； –expose=[]: 开放一个端口或一组端口； 实例使用 docker 镜像 nginx:latest 以后台模式启动一个容器,并将容器命名为 mynginx。 1docker run --name mynginx -d nginx:latest 使用镜像 nginx:latest 以后台模式启动一个容器,并将容器的 80 端口映射到主机随机端口。 1docker run -P -d nginx:latest 使用镜像 nginx:latest，以后台模式启动一个容器,将容器的 80 端口映射到主机的 80 端口，主机的目录 /data 映射到容器的 /data。 1docker run -p 80:80 -v /data:/data -d nginx:latest 绑定容器的 8080 端口，并将其映射到本地主机 127.0.0.1 的 80 端口上。 1docker run -p 127.0.0.1:80:8080/tcp ubuntu bash 使用镜像 nginx:latest 以交互模式启动一个容器,在容器内执行 /bin/bash 命令。 12docker run -it nginx:latest /bin/bashroot@b8573233d675:/# 参考文档http://www.runoob.com/docker/docker-run-command.html]]></content>
       <categories>
         <category>Docker笔记</category>
@@ -914,17 +914,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Kickstart自动应答文件]]></title>
-    <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
-      <categories>
-        <category>Cobbler笔记</category>
-      </categories>
-      <tags>
-        <tag>Kickstart自动应答文件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo安装]]></title>
     <url>%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
@@ -933,6 +922,17 @@
       </categories>
       <tags>
         <tag>Hexo安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kickstart自动应答文件]]></title>
+    <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
+      <categories>
+        <category>Cobbler笔记</category>
+      </categories>
+      <tags>
+        <tag>Kickstart自动应答文件</tag>
       </tags>
   </entry>
   <entry>
