@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker cp 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-cp-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker cp 命令 docker cp : 用于容器与主机之间的数据拷贝。 语法12docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH OPTIONS 说明： -L : 保持源目标中的链接 实例将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 的 /www 目录下。 1docker cp /www/runoob 96f7f14e99ab:/www/ 将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 中，目录重命名为 www。 1docker cp /www/runoob 96f7f14e99ab:/www 将容器 96f7f14e99ab 的 /www 目录拷贝到主机的 /tmp 目录中。 1docker cp 96f7f14e99ab:/www /tmp/ 参考文档http://www.runoob.com/docker/docker-cp-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker cp 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker commit 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-commit-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker commit 命令 docker commit : 从容器创建一个新的镜像。 语法1docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] OPTIONS 说明： -a : 提交的镜像作者； -c : 使用 Dockerfile 指令来创建镜像； -m : 提交时的说明文字； -p : 在 commit 时，将容器暂停。 实例将容器 a404c6c174a2 保存为新的镜像，并添加提交人信息和说明信息。 12345[root@localhost ~] docker commit -a "runoob.com" -m "my apache" a404c6c174a2 mymysql:v1 sha256:37af1236adef1544e8886be23010b66577647a40bc02c0885a6600b33ee28057[root@localhost ~] docker images mymysql:v1REPOSITORY TAG IMAGE ID CREATED SIZEmymysql v1 37af1236adef 15 seconds ago 329 MB 参考文档http://www.runoob.com/docker/docker-commit-command.html]]></content>
