@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2018-09-01T09:49:24.818Z</updated>
+  <updated>2018-09-01T09:58:46.496Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker tag 命令</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-tag-%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-tag-命令/</id>
+    <published>2018-09-01T09:58:14.000Z</published>
+    <updated>2018-09-01T09:58:46.496Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-tag-命令"><a href="#Docker-tag-命令" class="headerlink" title="Docker tag 命令"></a>Docker tag 命令</h1><a id="more"></a><p><strong>docker tag :</strong> 标记本地镜像，将其归入某一仓库。</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag [<span class="string">OPTIONS</span>] IMAGE[<span class="string">:TAG</span>] [<span class="string">REGISTRYHOST/</span>][<span class="symbol">USERNAME/</span>]NAME[:TAG]</span><br></pre></td></tr></table></figure><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将镜像 ubuntu:15.10 标记为 runoob/ubuntu:v3 镜像。</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhsot ~] docker <span class="keyword">tag</span> <span class="title">ubuntu</span>:<span class="number">15.10</span> runoob/ubuntu:v3</span><br><span class="line">[root@localhsot ~] docker images runoob/ubuntu:v3</span><br><span class="line">REPOSITORY          <span class="keyword">TAG</span>                 <span class="title">IMAGE</span> ID            CREATED             SIZE</span><br><span class="line">runoob/ubuntu       v3                  <span class="number">4</span>e3b13c8a266        <span class="number">3</span> months ago        <span class="number">136.3</span> MB</span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-tag-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-tag-command.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker-tag-命令&quot;&gt;&lt;a href=&quot;#Docker-tag-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker tag 命令&quot;&gt;&lt;/a&gt;Docker tag 命令&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker tag 命令" scheme="http://www.gmlyo.com/tags/Docker-tag-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker search 命令</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-search-%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-search-命令/</id>
+    <published>2018-09-01T09:56:02.000Z</published>
+    <updated>2018-09-01T09:56:24.774Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-search-命令"><a href="#Docker-search-命令" class="headerlink" title="Docker search 命令"></a>Docker search 命令</h1><a id="more"></a><p><strong>docker search :</strong> 从 Docker Hub 查找镜像</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search <span class="string">[OPTIONS]</span> TERM</span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>–automated :</strong> 只列出 automated build 类型的镜像；</li><li><strong>–no-trunc :</strong> 显示完整的镜像描述；</li><li><strong>-s :</strong> 列出收藏数不小于指定值的镜像。</li></ul><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>从 Docker Hub 查找所有镜像名包含 java，并且收藏数大于 10 的镜像</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] docker search -s <span class="number">10</span> java</span><br><span class="line">NAME                  DESCRIPTION                           STARS   OFFICIAL   AUTOMATED</span><br><span class="line">java                  Java is a concurrent, class-based...   <span class="number">1037</span>    [OK]       </span><br><span class="line">anapsix/alpine-java   Oracle Java <span class="number">8</span> (and <span class="number">7</span>) with GLIBC ...   <span class="number">115</span>                [OK]</span><br><span class="line">develar/java                                                 <span class="number">46</span>                 [OK]</span><br><span class="line">isuper/java-oracle    This repository contains all java...   <span class="number">38</span>                 [OK]</span><br><span class="line">lwieske/java<span class="number">-8</span>        Oracle Java <span class="number">8</span> Container - Full + ...   <span class="number">27</span>                 [OK]</span><br><span class="line">nimmis/java-centos    This is docker images of CentOS <span class="number">7.</span>..   <span class="number">13</span>                 [OK]</span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-search-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-search-command.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker-search-命令&quot;&gt;&lt;a href=&quot;#Docker-search-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker search 命令&quot;&gt;&lt;/a&gt;Docker search 命令&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker search 命令" scheme="http://www.gmlyo.com/tags/Docker-search-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker push 命令</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-push-%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-push-命令/</id>
+    <published>2018-09-01T09:54:02.000Z</published>
+    <updated>2018-09-01T09:54:24.363Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-push-命令"><a href="#Docker-push-命令" class="headerlink" title="Docker push 命令"></a>Docker push 命令</h1><a id="more"></a><p><strong>docker push :</strong> 将本地的镜像上传到镜像仓库，要先登陆到镜像仓库。</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push <span class="string">[OPTIONS]</span> NAME<span class="string">[:TAG]</span></span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>–disable-content-trust :</strong> 忽略镜像的校验，默认开启。</li></ul><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>上传本地镜像 <code>myapache:v1</code> 到镜像仓库中。</p><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">docker</span> <span class="keyword">push </span>myapache:<span class="built_in">v1</span></span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-push-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-push-command.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker-push-命令&quot;&gt;&lt;a href=&quot;#Docker-push-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker push 命令&quot;&gt;&lt;/a&gt;Docker push 命令&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker push 命令" scheme="http://www.gmlyo.com/tags/Docker-push-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker pull 命令</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-pull-%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-pull-命令/</id>
+    <published>2018-09-01T09:52:02.000Z</published>
+    <updated>2018-09-01T09:52:51.904Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-pull-命令"><a href="#Docker-pull-命令" class="headerlink" title="Docker pull 命令"></a>Docker pull 命令</h1><a id="more"></a><p><strong>docker pull :</strong> 从镜像仓库中拉取或者更新指定镜像</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull [OPTIONS] NAME[<span class="symbol">:TAG|</span><span class="variable">@DIGEST</span>]</span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>-a :</strong> 拉取所有 tagged 镜像</li><li><strong>–disable-content-trust :</strong> 忽略镜像的校验，默认开启</li></ul><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>从 Docker Hub 下载 java 最新版镜像。</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker pull java</span></span><br></pre></td></tr></table></figure><p>从 Docker Hub 下载 REPOSITORY 为 java 的所有镜像。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull -<span class="selector-tag">a</span> java</span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-pull-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-pull-command.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker-pull-命令&quot;&gt;&lt;a href=&quot;#Docker-pull-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker pull 命令&quot;&gt;&lt;/a&gt;Docker pull 命令&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker pull 命令" scheme="http://www.gmlyo.com/tags/Docker-pull-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker version 命令</title>
@@ -145,6 +233,28 @@
     
     
       <category term="Docker rmi 命令" scheme="http://www.gmlyo.com/tags/Docker-rmi-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker images 命令</title>
+    <link href="http://www.gmlyo.com/2018/09/01/Docker-images-%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.gmlyo.com/2018/09/01/Docker-images-命令/</id>
+    <published>2018-09-01T09:25:10.000Z</published>
+    <updated>2018-09-01T09:26:09.582Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-images-命令"><a href="#Docker-images-命令" class="headerlink" title="Docker images 命令"></a>Docker images 命令</h1><a id="more"></a><p><strong>docker images :</strong> 列出本地镜像。</p><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images <span class="comment">[OPTIONS]</span> <span class="comment">[REPOSITORY<span class="comment">[:TAG]</span>]</span></span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>-a :</strong> 列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）；</li><li><strong>–digests :</strong> 显示镜像的摘要信息；</li><li><strong>-f :</strong> 显示满足条件的镜像；</li><li><strong>–format :</strong> 指定返回值的模板文件；</li><li><strong>–no-trunc :</strong> 显示完整的镜像信息；</li><li><strong>-q :</strong> 只显示镜像ID。</li></ul><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查看本地镜像列表。</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] docker images</span><br><span class="line">REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">mymysql                 v1                  <span class="number">37</span>af1236adef        <span class="number">5</span> minutes ago       <span class="number">329</span> MB</span><br><span class="line">runoob/ubuntu           v4                  <span class="number">1</span>c06aa18edee        <span class="number">2</span> days ago          <span class="number">142.1</span> MB</span><br><span class="line">&lt;none&gt;                  &lt;none&gt;              <span class="number">5</span>c6e1090e771        <span class="number">2</span> days ago          <span class="number">165.9</span> MB</span><br><span class="line">httpd                   latest              ed38aaffef30        <span class="number">11</span> days ago         <span class="number">195.1</span> MB</span><br><span class="line">alpine                  latest              <span class="number">4e38</span>e38c8ce0        <span class="number">2</span> weeks ago         <span class="number">4.799</span> MB</span><br><span class="line">mongo                   <span class="number">3.2</span>                 <span class="number">282</span>fd552add6        <span class="number">3</span> weeks ago         <span class="number">336.1</span> MB</span><br><span class="line">redis                   latest              <span class="number">4465e4</span>bcad80        <span class="number">3</span> weeks ago         <span class="number">185.7</span> MB</span><br><span class="line">php                     <span class="number">5.6</span>-fpm             <span class="number">025041</span>cd3aa5        <span class="number">3</span> weeks ago         <span class="number">456.3</span> MB</span><br><span class="line">python                  <span class="number">3.5</span>                 <span class="number">045767</span>ddf24a        <span class="number">3</span> weeks ago         <span class="number">684.1</span> MB</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>列出本地镜像中 REPOSITORY 为 ubuntu 的镜像列表。</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] docker images ubuntu</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">ubuntu              <span class="number">14.04</span>               <span class="number">90</span>d5884b1ee0        <span class="number">9</span> weeks ago         <span class="number">188</span> MB</span><br><span class="line">ubuntu              <span class="number">15.10</span>               <span class="number">4e3</span>b13c8a266        <span class="number">3</span> months ago        <span class="number">136.3</span> MB</span><br></pre></td></tr></table></figure><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.runoob.com/docker/docker-images-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-images-command.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker-images-命令&quot;&gt;&lt;a href=&quot;#Docker-images-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker images 命令&quot;&gt;&lt;/a&gt;Docker images 命令&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Docker images 命令" scheme="http://www.gmlyo.com/tags/Docker-images-%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
@@ -343,116 +453,6 @@
     
     
       <category term="Docker ps 命令" scheme="http://www.gmlyo.com/tags/Docker-ps-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker exec 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-exec-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-exec-命令/</id>
-    <published>2018-08-31T09:04:54.000Z</published>
-    <updated>2018-08-31T09:25:12.665Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-exec-命令"><a href="#Docker-exec-命令" class="headerlink" title="Docker exec 命令"></a>Docker exec 命令</h1><a id="more"></a><p><strong>docker exec ：</strong> 在运行的容器中执行命令</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> [OPTIONS] CONTAINER COMMAND [ARG...]</span><br></pre></td></tr></table></figure><p>OPTIONS说明：</p><ul><li><strong>-d :</strong> 分离模式: 在后台运行</li><li><strong>-i :</strong> 即使没有附加也保持 STDIN 打开</li><li><strong>-t :</strong> 分配一个伪终端</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>在容器 mynginx 中以交互模式执行容器内 /root/runoob.sh 脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker <span class="built_in">exec</span> -it mynginx /bin/sh /root/runoob.sh</span><br><span class="line">http://www.runoob.com/</span><br></pre></td></tr></table></figure><p>在容器 mynginx 中开启一个交互模式的终端</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker <span class="built_in">exec</span> -i -t  mynginx /bin/bash</span><br><span class="line">root@b1a0703e41e7:/<span class="comment">#</span></span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-exec-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-exec-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-exec-命令&quot;&gt;&lt;a href=&quot;#Docker-exec-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker exec 命令&quot;&gt;&lt;/a&gt;Docker exec 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker exec 命令" scheme="http://www.gmlyo.com/tags/Docker-exec-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker pause/unpause 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-pause-unpause-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-pause-unpause-命令/</id>
-    <published>2018-08-31T09:03:29.000Z</published>
-    <updated>2018-08-31T09:23:50.718Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-pause-unpause-命令"><a href="#Docker-pause-unpause-命令" class="headerlink" title="Docker pause/unpause 命令"></a>Docker pause/unpause 命令</h1><a id="more"></a><p><strong>docker pause :</strong> 暂停容器中所有的进程。<br><strong>docker unpause :</strong> 恢复容器中所有的进程。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pause <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br><span class="line">docker unpause <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>暂停数据库容器 db01 提供服务。</p><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">pause</span> db01</span><br></pre></td></tr></table></figure><p>恢复数据库容器 db01 提供服务。</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> unpause db01</span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-pause-unpause-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-pause-unpause-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-pause-unpause-命令&quot;&gt;&lt;a href=&quot;#Docker-pause-unpause-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker pause/unpause 命令&quot;&gt;&lt;/a&gt;Docker pause/unpause 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker pause/unpause 命令" scheme="http://www.gmlyo.com/tags/Docker-pause-unpause-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker rm 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-rm-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-rm-命令/</id>
-    <published>2018-08-31T08:57:24.000Z</published>
-    <updated>2018-09-01T09:28:30.124Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-rm-命令"><a href="#Docker-rm-命令" class="headerlink" title="Docker rm 命令"></a>Docker rm 命令</h1><a id="more"></a><p><strong>docker rm ：</strong>删除一个或多个容器</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure><p>OPTIONS 说明：</p><ul><li><strong>-f :</strong> 通过 <code>SIGKILL</code> 信号强制删除一个运行中的容器</li><li><strong>-l :</strong> 移除容器间的网络连接，而非容器本身</li><li><strong>-v :</strong> 删除与容器关联的卷</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>强制删除容器 db01、db02</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> rm -f db01 db02</span><br></pre></td></tr></table></figure><p>移除容器 nginx01 对容器 db01 的连接，连接名 db</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">rm</span> -<span class="keyword">l</span> <span class="keyword">db</span></span><br></pre></td></tr></table></figure><p>删除容器 nginx01，并删除容器挂载的数据卷</p><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v <span class="symbol">nginx01</span></span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-rm-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-rm-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-rm-命令&quot;&gt;&lt;a href=&quot;#Docker-rm-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker rm 命令&quot;&gt;&lt;/a&gt;Docker rm 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker rm 命令" scheme="http://www.gmlyo.com/tags/Docker-rm-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker kill 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-kill-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-kill-命令/</id>
-    <published>2018-08-31T08:50:31.000Z</published>
-    <updated>2018-08-31T09:23:14.643Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-kill-命令"><a href="#Docker-kill-命令" class="headerlink" title="Docker kill 命令"></a>Docker kill 命令</h1><a id="more"></a><p><strong>docker kill :</strong> 杀掉一个运行中的容器。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure><p>OPTIONS说明：</p><ul><li><strong>-s :</strong> 向容器发送一个信号</li></ul><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>杀掉运行中的容器 mynginx<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">kill</span> -<span class="keyword">s</span> <span class="keyword">KILL</span> mynginx</span><br><span class="line">mynginx</span><br></pre></td></tr></table></figure></p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-kill-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-kill-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-kill-命令&quot;&gt;&lt;a href=&quot;#Docker-kill-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker kill 命令&quot;&gt;&lt;/a&gt;Docker kill 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker kill 命令" scheme="http://www.gmlyo.com/tags/Docker-kill-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker start/stop/restart 命令</title>
-    <link href="http://www.gmlyo.com/2018/08/31/Docker-start-stop-restart-%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.gmlyo.com/2018/08/31/Docker-start-stop-restart-命令/</id>
-    <published>2018-08-31T08:46:15.000Z</published>
-    <updated>2018-08-31T09:25:57.227Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-start-stop-restart-命令"><a href="#Docker-start-stop-restart-命令" class="headerlink" title="Docker start/stop/restart 命令"></a>Docker start/stop/restart 命令</h1><a id="more"></a><p><strong>docker start: </strong> 启动一个或多少已经被停止的容器<br><strong>docker stop: </strong> 停止一个运行中的容器<br><strong>docker restart: </strong> 重启容器</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker start <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br><span class="line">docker stop <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br><span class="line">docker restart <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> <span class="comment">[CONTAINER...]</span></span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>启动已被停止的容器 myrunoob</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="literal">start</span> myrunoob</span><br></pre></td></tr></table></figure><p>停止运行中的容器 myrunoob</p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">stop</span> myrunoob</span><br></pre></td></tr></table></figure><p>重启容器 myrunoob</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker restart myrunoob</span></span><br></pre></td></tr></table></figure><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.runoob.com/docker/docker-start-stop-restart-command.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-start-stop-restart-command.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Docker-start-stop-restart-命令&quot;&gt;&lt;a href=&quot;#Docker-start-stop-restart-命令&quot; class=&quot;headerlink&quot; title=&quot;Docker start/stop/restart 命令&quot;&gt;&lt;/a&gt;Docker start/stop/restart 命令&lt;/h1&gt;
-    
-    </summary>
-    
-      <category term="Docker笔记" scheme="http://www.gmlyo.com/categories/Docker%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Docker start/stop/restart 命令" scheme="http://www.gmlyo.com/tags/Docker-start-stop-restart-%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
