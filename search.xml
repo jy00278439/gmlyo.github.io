@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker import 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-import-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker import 命令 docker import : 从归档文件中创建镜像。 语法1docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]] OPTIONS 说明： -c : 应用 docker 指令创建镜像； -m : 提交时的说明文字； 实例从镜像归档文件 my_ubuntu_v3.tar 创建镜像，命名为 runoob/ubuntu:v4 12345[root@localhost ~] docker import my_ubuntu_v3.tar runoob/ubuntu:v4 sha256:63ce4a6d6bc3fabb95dbd6c561404a309b7bdfc4e21c1d59fe9fe4299cbfea39[root@localhost ~] docker images runoob/ubuntu:v4REPOSITORY TAG IMAGE ID CREATED SIZErunoob/ubuntu v4 63ce4a6d6bc3 20 seconds ago 142.1 MB 参考文档http://www.runoob.com/docker/docker-import-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker import 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker save 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-save-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker save 命令 docker save : 将指定镜像保存成 tar 归档文件。 语法1docker save [OPTIONS] IMAGE [IMAGE...] OPTIONS 说明： -o : 输出到的文件。 实例将镜像 runoob/ubuntu:v3 生成 my_ubuntu_v3.tar 文档 123[root@localhost ~] docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3[root@localhost ~] ll my_ubuntu_v3.tar-rw------- 1 runoob runoob 142102016 Jul 11 01:37 my_ubuntu_v3.ta Docker 容器导入导出有两种方法一种是使用 save 和 load 命令使用例子如下： 12docker save ubuntu:load &gt; /root/ubuntu.tardocker load &lt; ubuntu.tar 一种是使用 export 和 import 命令使用例子如下： 12docker export 98ca36 &gt; ubuntu.tarcat ubuntu.tar | sudo docker import - ubuntu:import 需要注意两种方法不可混用。 参考文档http://www.runoob.com/docker/docker-save-command.html]]></content>
