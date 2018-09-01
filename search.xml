@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker build 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-build-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker build 命令 docker build 命令用于使用 Dockerfile 创建镜像。 语法1docker build [OPTIONS] PATH | URL | - OPTIONS说明： –build-arg=[] : 设置镜像创建时的变量； –cpu-shares : 设置 CPU 使用权重； –cpu-period : 限制 CPU CFS周期； –cpu-quota : 限制 CPU CFS配额； –cpuset-cpus : 指定使用的CPU id； –cpuset-mems : 指定使用的内存 id； –disable-content-trust : 忽略校验，默认开启； -f : 指定要使用的 Dockerfile 路径； –force-rm : 设置镜像过程中删除中间容器； –isolation : 使用容器隔离技术； –label=[] : 设置镜像使用的元数据； -m : 设置内存最大值； –memory-swap : 设置 swap 的最大值为 内存+swap，”-1” 表示不限 swap； –no-cache : 创建镜像的过程不使用缓存； –pull : 尝试去更新镜像的新版本； –quiet, -q : 安静模式，成功后只输出镜像 ID； –rm : 设置镜像成功后删除中间容器； –shm-size : 设置 /dev/shm 的大小，默认值是 64M； –ulimit : Ulimit 配置。 –tag, -t: 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。 –network: 默认 default。在构建期间设置RUN指令的网络模式 实例使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。 1docker build -t runoob/ubuntu:v1 . 使用 URL github.com/creack/docker-firefox 的 Dockerfile 创建镜像。 1docker build github.com/creack/docker-firefox 也可以通过 -f Dockerfile 文件的位置： 1docker build -f /path/to/a/Dockerfile . 在 Docker 守护进程执行 Dockerfile 中的指令前，首先会对 Dockerfile 进行语法检查，有语法错误时会返回： 123docker build -t test/myapp .Sending build context to Docker daemon 2.048 kBError response from daemon: Unknown instruction: RUNCMD 参考文档http://www.runoob.com/docker/docker-build-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker build 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker rmi 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-rmi-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker rmi 命令 docker rmi : 删除本地一个或多个镜像。 语法1docker rmi [OPTIONS] IMAGE [IMAGE...] OPTIONS 说明： -f : 强制删除； –no-prune : 不移除该镜像的过程镜像，默认移除； 实例强制删除本地镜像 runoob/ubuntu:v4。 1234[root@localhost ~] docker rmi -f runoob/ubuntu:v4Untagged: runoob/ubuntu:v4Deleted: sha256:1c06aa18edee44230f93a90a7d88139235de12cd4c089d41eed8419b503072beDeleted: sha256:85feb446e89a28d58ee7d80ea5ce367eebb7cec70f0ec18aa4faa874cbd97c73 参考文档http://www.runoob.com/docker/docker-rmi-command.html]]></content>
@@ -958,17 +969,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo安装]]></title>
-    <url>%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
-      <categories>
-        <category>Hexo笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Kickstart自动应答文件]]></title>
     <url>%2F2018%2F06%2F03%2FKickstart%E8%87%AA%E5%8A%A8%E5%BA%94%E7%AD%94%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Kickstart 自动应答文件 Cobbler vim /var/lib/cobbler/kickstarts/centos7.5-ks.cfg1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768# Cobbler for Kickstart Configurator for CentOS 7 by clsninstallurl --url=$treetextlang en_US.UTF-8keyboard uszerombrbootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"#Network information$SNIPPET('network_config')#network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS7timezone --utc Asia/Shanghaiauthconfig --enableshadow --passalgo=sha512rootpw --iscrypted $default_password_cryptedclearpart --all --initlabel# Disk partitioning informationpart pv.374 --fstype="lvmpv" --ondisk=sda --size=2052part pv.671 --fstype="lvmpv" --ondisk=sda --size=20484part pv.639 --fstype="lvmpv" --ondisk=sda --size=1 --growpart /boot --fstype="xfs" --ondisk=sda --size=500volgroup vgswap --pesize=4096 pv.374volgroup vgroot --pesize=4096 pv.671volgroup vgdata --pesize=4096 pv.639logvol / --fstype="xfs" --size=20480 --name=lvroot --vgname=vgrootlogvol swap --fstype="swap" --size=2048 --name=lvswap --vgname=vgswaplogvol /data --fstype="xfs" --size=1 --grow --name=lvdata --vgname=vgdatafirstboot --disableselinux --disabledfirewall --disabledlogging --level=inforeboot%pre$SNIPPET('log_ks_pre')$SNIPPET('kickstart_start')$SNIPPET('pre_install_network_config')# Enable installation monitoring$SNIPPET('pre_anamon')%end%packages@^minimal@compat-libraries@core@debugging@developmentbash-completionchronydos2unixkexec-toolslrzsznmapsysstattelnettreevimwgetnet-tools%end%postsystemctl disable postfix.service%end]]></content>
@@ -977,6 +977,17 @@
       </categories>
       <tags>
         <tag>Kickstart自动应答文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo安装]]></title>
+    <url>%2F2018%2F06%2F03%2FHexo%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 简介 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 安装 进入 D:\Blog\gmlyo\ 自定义目录，右键鼠标，点击 Git Bash Here，输入 npm 命令即可安装 12345678910111213141516右击 Git Bash Herecd /d/Blog/gmlyo/npm install hexo -g 或 npm install hexo-cli -ghexo init 或 hexo init blog; cd blog/# 第一句是安装 hexo# 第二句是安装 hexo 部署到 git page 的 deployer# 两个都需要安装# Hexo 初始化配置（有点漫长的等待。。。）npm initHexo 初始化完成后，Hexo 将会在指定文件夹中新建所需要的文件hexo clean # 清楚 public 目录，不然有时因为缓存问题，服务器更新不了主题hexo g # 或 hexo generatehexo s # 或 hexo server 可以在打开浏览器访问 http://localhost:4000/ 查看 查看 hexo 版本信息12345678910111213141516171819# 查看 hexo 版本信息hexo -vhexo: 3.7.1hexo-cli: 1.1.0os: Windows_NT 10.0.16299 win32 x64http_parser: 2.8.0node: 10.3.0v8: 6.6.346.32-node.9uv: 1.20.3zlib: 1.2.11ares: 1.14.0modules: 64nghttp2: 1.29.0napi: 3openssl: 1.1.0hicu: 61.1unicode: 10.0cldr: 33.0tz: 2018c 常用 Hexo 命令123456# 生成静态文件，会在当前目录下生成一个新的叫做 public 的文件夹hexo generate (hexo g)# 启动本地 Web 服务，用于博客的预览hexo server (hexo s)# 部署播客到远端（比如github, heroku等平台）hexo deploy (hexo d) 其他常用命令12hexo new "postName" # 新建文章hexo new page "pageName" # 新建页面 常用简写1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy 常用组合12hexo d -g # 生成部署hexo s -g # 生成预览]]></content>
+      <categories>
+        <category>Hexo笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo安装</tag>
       </tags>
   </entry>
   <entry>
