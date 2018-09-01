@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker version 命令]]></title>
+    <url>%2F2018%2F09%2F01%2FDocker-version-%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Docker version 命令 docker version : 显示 Docker 版本信息。 语法1docker version [OPTIONS] OPTIONS 说明： -f : 指定返回值的模板文件。 实例显示 Docker 版本信息。 12345678910111213141516docker versionClient: Version: 1.8.2 API version: 1.20 Go version: go1.4.2 Git commit: 0a8c2e3 Built: Thu Sep 10 19:19:00 UTC 2015 OS/Arch: linux/amd64Server: Version: 1.8.2 API version: 1.20 Go version: go1.4.2 Git commit: 0a8c2e3 Built: Thu Sep 10 19:19:00 UTC 2015 OS/Arch: linux/amd64 参考文档http://www.runoob.com/docker/docker-version-command.html]]></content>
+      <categories>
+        <category>Docker笔记</category>
+      </categories>
+      <tags>
+        <tag>Docker version 命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker info 命令]]></title>
     <url>%2F2018%2F09%2F01%2FDocker-info-%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[Docker info 命令 docker info : 显示 Docker 系统信息，包括镜像和容器数。 语法1docker info [OPTIONS] 实例查看 docker 系统信息。 12345678910111213141516docker infoContainers: 12Images: 41Storage Driver: aufs Root Dir: /var/lib/docker/aufs Backing Filesystem: extfs Dirs: 66 Dirperm1 Supported: falseExecution Driver: native-0.2Logging Driver: json-fileKernel Version: 3.13.0-32-genericOperating System: Ubuntu 14.04.1 LTSCPUs: 1Total Memory: 1.954 GiBName: iZ23mtq8bs1ZID: M5N4:K6WN:PUNC:73ZN:AONJ:AUHL:KSYH:2JPI:CH3K:O4MK:6OCX:5OYW 参考文档http://www.runoob.com/docker/docker-info-command.html]]></content>
