@@ -133,13 +133,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/SaltStack%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-08-08T10:08:59.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Linux%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-08-30T14:23:52.635Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -162,7 +155,14 @@
 
     <url>
         <loc>http://www.gmlyo.com/categories/Python%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-09-02T15:16:00.515Z</lastmod>
+        <lastmod>2018-09-03T11:39:02.098Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/SaltStack%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-09-04T05:06:29.052Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

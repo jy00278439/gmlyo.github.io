@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="SaltStack_archive模块," />
+  <meta name="keywords" content="SaltStack group模块," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="archive 模块">
-<meta name="keywords" content="SaltStack_archive模块">
+<meta name="description" content="group 模块">
+<meta name="keywords" content="SaltStack group模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SaltStack_archive模块">
-<meta property="og:url" content="http://www.gmlyo.com/2018/08/08/SaltStack_archive模块/index.html">
+<meta property="og:title" content="SaltStack group模块">
+<meta property="og:url" content="http://www.gmlyo.com/2018/08/08/SaltStack-group模块/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="archive 模块">
+<meta property="og:description" content="group 模块">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T05:48:03.359Z">
+<meta property="og:updated_time" content="2018-09-04T03:18:27.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SaltStack_archive模块">
-<meta name="twitter:description" content="archive 模块">
+<meta name="twitter:title" content="SaltStack group模块">
+<meta name="twitter:description" content="group 模块">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/2018/08/08/SaltStack_archive模块/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/2018/08/08/SaltStack-group模块/"/>
 
 
 
@@ -138,7 +138,7 @@
   </script>
 
 
-  <title>SaltStack_archive模块 | G加菲</title>
+  <title>SaltStack group模块 | G加菲</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/08/SaltStack_archive模块/">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/08/SaltStack-group模块/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="G加菲">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SaltStack_archive模块</h1>
+          <h1 class="post-title" itemprop="name headline">SaltStack group模块</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T13:02:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T17:56:25+08:00">
                 2018-08-08
               </time>
             
@@ -423,34 +423,24 @@
       
 
       
-        <h2 id="archive-模块"><a href="#archive-模块" class="headerlink" title="archive 模块"></a>archive 模块</h2><a id="more"></a>
-<blockquote>
-<p>主要用于打包，压缩和归档使用<br>官方文档<br><a href="https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.archive.html" target="_blank" rel="noopener">https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.archive.html</a><br>实现系统层面的压缩包调用，支持 gunzip、gzip、rar、tar、unrar、unzip 等</p>
+        <h2 id="group-模块"><a href="#group-模块" class="headerlink" title="group 模块"></a>group 模块</h2><a id="more"></a>
+<h3 id="添加指定用户组"><a href="#添加指定用户组" class="headerlink" title="添加指定用户组"></a>添加指定用户组</h3><blockquote>
+<p>group.add 方法<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> group.add user1 1000</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>可以设置为 “jinja” 或另一个受支持的模板引擎，以便在执行之前呈现命令参数<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">''</span> archive<span class="selector-class">.tar</span> cjvf /tmp/salt<span class="selector-class">.tar</span><span class="selector-class">.bz2</span> &#123;&#123;grains.saltpath&#125;&#125; template=jinja</span><br></pre></td></tr></table></figure></p>
+<h3 id="返回用户组信息"><a href="#返回用户组信息" class="headerlink" title="返回用户组信息"></a>返回用户组信息</h3><blockquote>
+<p>group.info 方法<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[root@salt-master</span> <span class="string">~]#</span> <span class="string">salt</span> <span class="string">'salt-minion02'</span> <span class="string">group.info</span> <span class="string">user1</span></span><br><span class="line"><span class="attr">salt-minion02:</span></span><br><span class="line"><span class="bullet">    -</span><span class="bullet">---------</span></span><br><span class="line"><span class="attr">    gid:</span></span><br><span class="line">        <span class="number">1000</span></span><br><span class="line"><span class="attr">    members:</span></span><br><span class="line"><span class="attr">    name:</span></span><br><span class="line">        <span class="string">user1</span></span><br><span class="line"><span class="attr">    passwd:</span></span><br><span class="line">        <span class="string">x</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>将 /tmp/file_1,/tmp/file_2 打包压缩成 tarfile.tar.bz2 文件 到 /tmp 目录下<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">''</span> archive<span class="selector-class">.tar</span> cjvf /tmp/tarfile<span class="selector-class">.tar</span><span class="selector-class">.bz2</span> /tmp/file_1,/tmp/file_2</span><br></pre></td></tr></table></figure></p>
+<h3 id="返回所有用户组的信息"><a href="#返回所有用户组的信息" class="headerlink" title="返回所有用户组的信息"></a>返回所有用户组的信息</h3><blockquote>
+<p>group.getent 方法<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]# salt 'salt-minion02' group.getent</span><br><span class="line">salt-minion02:</span><br><span class="line">    |_</span><br><span class="line">      -<span class="ruby">---------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">0</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          root</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">1</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">          - bin</span></span><br><span class="line"><span class="ruby">          - daemon</span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          bin</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">2</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">          - bin</span></span><br><span class="line"><span class="ruby">          - daemon</span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          daemon</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">3</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">          - bin</span></span><br><span class="line"><span class="ruby">          - adm</span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          sys</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">4</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">          - adm</span></span><br><span class="line"><span class="ruby">          - daemon</span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          adm</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">5</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          tty</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">6</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          disk</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">      ----------</span></span><br><span class="line"><span class="ruby">      <span class="symbol">gid:</span></span></span><br><span class="line"><span class="ruby">          <span class="number">7</span></span></span><br><span class="line"><span class="ruby">      <span class="symbol">members:</span></span></span><br><span class="line"><span class="ruby">          - daemon</span></span><br><span class="line"><span class="ruby">      <span class="symbol">name:</span></span></span><br><span class="line"><span class="ruby">          lp</span></span><br><span class="line"><span class="ruby">      <span class="symbol">passwd:</span></span></span><br><span class="line"><span class="ruby">          x</span></span><br><span class="line"><span class="ruby">    <span class="params">|_</span></span></span><br><span class="line"><span class="ruby">.......</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>解压缩 foo.tar 文件到 /target/directory 目录下<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> archive<span class="selector-class">.tar</span> xf foo<span class="selector-class">.tar</span> dest=/target/directory</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加一个用户到指定组中"><a href="#添加一个用户到指定组中" class="headerlink" title="添加一个用户到指定组中"></a>添加一个用户到指定组中</h3><blockquote>
+<p>group.adduser 方法<br>必须是一个已经存在的组和已存在的用户<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> group.adduser user1 zabbix</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>执行压缩命令<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">salt '*' archive.tar zcvf /root/test.tar.gz /root/python,/root/testa</span><br><span class="line">192.168.10.249:</span><br><span class="line">-<span class="ruby"> <span class="symbol">tar:</span> Removing leading <span class="string">`/' from member names</span></span></span><br><span class="line"><span class="ruby">- <span class="regexp">/root/python</span><span class="regexp">/</span></span></span><br><span class="line"><span class="ruby">- <span class="regexp">/root/python</span><span class="regexp">/p2</span></span></span><br><span class="line"><span class="ruby">- <span class="regexp">/root/python</span><span class="regexp">/p1</span></span></span><br><span class="line"><span class="ruby">- <span class="regexp">/root/testa</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="将用户从用户组中移除"><a href="#将用户从用户组中移除" class="headerlink" title="将用户从用户组中移除"></a>将用户从用户组中移除</h3><blockquote>
+<p>group.deluser 方法<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> group.deluser user1 zabbix</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<blockquote>
-<p>通过该方法压缩的文件，解压后带有全路径，可通过 cwd 指定执行的目录<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> archive<span class="selector-class">.tar</span> zcvf /root/test/test<span class="selector-class">.tar</span><span class="selector-class">.gz</span> python,testa cwd=/root</span><br><span class="line"><span class="number">192.168</span>.<span class="number">10.249</span>:</span><br><span class="line">python/</span><br><span class="line">python/p2</span><br><span class="line">python/p1</span><br><span class="line">testa</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>执行解压缩命令<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">salt '*' archive.tar zxvf /root/test/test.tar.gz dest=/root/test</span><br><span class="line">192.168.10.249:</span><br><span class="line">-<span class="ruby"> python/</span></span><br><span class="line"><span class="ruby">- python/p2</span></span><br><span class="line"><span class="ruby">- python/p1</span></span><br><span class="line"><span class="ruby">- testa</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 采用 gzip 压缩 sourcefile.txt 文件</span></span><br><span class="line">salt <span class="string">'*'</span> archive.gzip sourcefile.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 采用 gzip 压缩 test.txt 文件</span></span><br><span class="line">salt <span class="string">'minion01'</span> archive.gzip test.txt</span><br><span class="line"></span><br><span class="line"><span class="meta"># 采用 gunzip 解压 sourcefile.txt.gz 包</span></span><br><span class="line">salt <span class="string">'*'</span> archive.gunzip sourcefile.txt.gz</span><br></pre></td></tr></table></figure>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压在 /root 目录下</span></span><br><span class="line">salt <span class="string">'minion01'</span> archive.tar xf <span class="regexp">/tmp/</span>access.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩在 /tmp 目录下</span></span><br><span class="line">salt <span class="string">'minion01'</span> archive.tar  <span class="regexp">/tmp/</span>test.txt</span><br></pre></td></tr></table></figure>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 打包指定文件，多个文件使用空隔分开，打包后的名称为 <span class="keyword">test</span>.<span class="keyword">zip</span></span><br><span class="line">salt minion* archive.cmd_zip /opt/<span class="keyword">test</span>.<span class="keyword">zip</span> /tmp/<span class="keyword">test</span>.<span class="keyword">sh</span></span><br><span class="line"></span><br><span class="line"># 打包目录</span><br><span class="line">salt minion* archive.cmd_zip /opt/<span class="keyword">test</span>.<span class="keyword">zip</span> /tmp/init</span><br><span class="line"></span><br><span class="line"># 将 init.<span class="keyword">zip</span> 解压至 /root 目录下面</span><br><span class="line">salt minion* archive.cmd_unzip /opt/init.<span class="keyword">zip</span> /root/</span><br><span class="line"></span><br><span class="line"># 将 <span class="keyword">test</span>.<span class="keyword">sh</span> 打包为 <span class="keyword">test</span>.<span class="keyword">sh</span>.gz，打包后就在当前目录</span><br><span class="line">salt minion* archive.gzip /tmp/<span class="keyword">test</span>.<span class="keyword">sh</span></span><br><span class="line"></span><br><span class="line"># 将 <span class="keyword">test</span>.<span class="keyword">sh</span>.gz 解压，解压后就在当前目录</span><br><span class="line">salt minion* archive.gunzip /tmp/<span class="keyword">test</span>.<span class="keyword">sh</span>.gz</span><br><span class="line"></span><br><span class="line"># 对 /tmp/init 目录打包后压缩为 tar.gz</span><br><span class="line">salt minion* archive.tar czvf /opt/init.tar.gz /tmp/init</span><br><span class="line"></span><br><span class="line"># 解压 init.tar.gz，默认放到 /root 目录下面，因为 minion 进程是以 root 用户启动的</span><br><span class="line">salt minion* archive.tar xvzf /opt/init.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="api-调用"><a href="#api-调用" class="headerlink" title="api 调用"></a>api 调用</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">client</span>.cmd(<span class="string">'*'</span>, <span class="string">'archive.gunzip'</span>, [<span class="string">'sourcefile.txt.gz'</span>])</span><br><span class="line"><span class="keyword">client</span>.cmd(<span class="string">'minion01'</span>, <span class="string">'archive.tar'</span>, [<span class="string">'xf'</span>, <span class="string">'/tmp/access.tar.gz'</span>])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>通过 Python 扩展模块，使用 API<br>通过调用 master client 模块，实例化一个 LocalClient 对象，再调用 cmd() 方法来实现<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># API 实现 archive.gzip</span></span><br><span class="line">vim archive_gzip.py</span><br><span class="line">import salt.<span class="keyword">client</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">client</span> = salt.<span class="keyword">client</span>.LocalClient()</span><br><span class="line">res = <span class="keyword">client</span>.cmd(<span class="string">'*'</span>, <span class="string">'archive.gzip'</span>, <span class="string">'/tmp/test.txt'</span>)</span><br><span class="line">print(res)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 执行结果返回一个字典</span></span><br><span class="line">&#123;<span class="string">'minion01'</span>: <span class="string">'/tmp/test.txt.gz'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="移除指定用户组"><a href="#移除指定用户组" class="headerlink" title="移除指定用户组"></a>移除指定用户组</h3><blockquote>
+<p>group.delete 方法<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> group.delete user1</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -470,7 +460,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SaltStack-archive模块/" rel="tag"># SaltStack_archive模块</a>
+            <a href="/tags/SaltStack-group模块/" rel="tag"># SaltStack group模块</a>
           
         </div>
       
@@ -483,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/07/SaltStack常用模块/" rel="next" title="SaltStack常用模块">
-                <i class="fa fa-chevron-left"></i> SaltStack常用模块
+              <a href="/2018/08/08/SaltStack-user模块/" rel="next" title="SaltStack user模块">
+                <i class="fa fa-chevron-left"></i> SaltStack user模块
               </a>
             
           </div>
@@ -493,8 +483,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/08/SaltStack_user模块/" rel="prev" title="SaltStack_user模块">
-                SaltStack_user模块 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/08/SaltStack-hosts模块/" rel="prev" title="SaltStack host模块">
+                SaltStack host模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">105</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +591,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">105</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -677,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#archive-模块"><span class="nav-number">1.</span> <span class="nav-text">archive 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#api-调用"><span class="nav-number">1.1.</span> <span class="nav-text">api 调用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#group-模块"><span class="nav-number">1.</span> <span class="nav-text">group 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加指定用户组"><span class="nav-number">1.1.</span> <span class="nav-text">添加指定用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回用户组信息"><span class="nav-number">1.2.</span> <span class="nav-text">返回用户组信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回所有用户组的信息"><span class="nav-number">1.3.</span> <span class="nav-text">返回所有用户组的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加一个用户到指定组中"><span class="nav-number">1.4.</span> <span class="nav-text">添加一个用户到指定组中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将用户从用户组中移除"><span class="nav-number">1.5.</span> <span class="nav-text">将用户从用户组中移除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除指定用户组"><span class="nav-number">1.6.</span> <span class="nav-text">移除指定用户组</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="SaltStack_user模块," />
+  <meta name="keywords" content="SaltStack host模块," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="user模块">
-<meta name="keywords" content="SaltStack_user模块">
+<meta name="description" content="hosts 模块">
+<meta name="keywords" content="SaltStack host模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SaltStack_user模块">
-<meta property="og:url" content="http://www.gmlyo.com/2018/08/08/SaltStack_user模块/index.html">
+<meta property="og:title" content="SaltStack host模块">
+<meta property="og:url" content="http://www.gmlyo.com/2018/08/08/SaltStack-hosts模块/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="user模块">
+<meta property="og:description" content="hosts 模块">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T09:02:48.936Z">
+<meta property="og:updated_time" content="2018-09-04T03:18:06.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SaltStack_user模块">
-<meta name="twitter:description" content="user模块">
+<meta name="twitter:title" content="SaltStack host模块">
+<meta name="twitter:description" content="hosts 模块">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.gmlyo.com/2018/08/08/SaltStack_user模块/"/>
+  <link rel="canonical" href="http://www.gmlyo.com/2018/08/08/SaltStack-hosts模块/"/>
 
 
 
@@ -138,7 +138,7 @@
   </script>
 
 
-  <title>SaltStack_user模块 | G加菲</title>
+  <title>SaltStack host模块 | G加菲</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/08/SaltStack_user模块/">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/08/08/SaltStack-hosts模块/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="G加菲">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SaltStack_user模块</h1>
+          <h1 class="post-title" itemprop="name headline">SaltStack host模块</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T17:02:12+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T17:58:35+08:00">
                 2018-08-08
               </time>
             
@@ -423,57 +423,27 @@
       
 
       
-        <h2 id="user模块"><a href="#user模块" class="headerlink" title="user模块"></a>user模块</h2><a id="more"></a>
+        <h2 id="hosts-模块"><a href="#hosts-模块" class="headerlink" title="hosts 模块"></a>hosts 模块</h2><a id="more"></a>
 <blockquote>
-<p>用于用户管理，如创建用户，删除用户，更改用户信息等<br>官方文档<br><a href="https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html" target="_blank" rel="noopener">https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html</a></p>
-</blockquote>
-<blockquote>
-<p>在 minion 端上创建一个用户</p>
-</blockquote>
-<p><strong>语法</strong><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> user.<span class="built_in">add</span> name <span class="symbol">&lt;uid&gt;</span> <span class="symbol">&lt;gid&gt;</span> <span class="symbol">&lt;groups&gt;</span> <span class="symbol">&lt;home&gt;</span> <span class="symbol">&lt;shell&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><blockquote>
-<p>创建一个 test 用户，其它都和 useradd 一样默认<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">salt * user.add test</span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> user.add test 610 605 zabbix /home/test /bin/bash</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="获取用户信息"><a href="#获取用户信息" class="headerlink" title="获取用户信息"></a>获取用户信息</h3><blockquote>
-<p>user.info 方法<br>返回用户信息<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[root@salt-master</span> <span class="string">~]#</span> <span class="string">salt</span> <span class="string">'salt-minion02'</span> <span class="string">user.info</span> <span class="string">test</span></span><br><span class="line"><span class="attr">salt-minion02:</span></span><br><span class="line"><span class="bullet">    -</span><span class="bullet">---------</span></span><br><span class="line"><span class="attr">    fullname:</span></span><br><span class="line"><span class="attr">    gid:</span></span><br><span class="line">        <span class="number">605</span></span><br><span class="line"><span class="attr">    groups:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">zabbix</span></span><br><span class="line"><span class="attr">    home:</span></span><br><span class="line">        <span class="string">/home/test</span></span><br><span class="line"><span class="attr">    homephone:</span></span><br><span class="line"><span class="attr">    name:</span></span><br><span class="line">        <span class="string">test</span></span><br><span class="line"><span class="attr">    passwd:</span></span><br><span class="line">        <span class="string">x</span></span><br><span class="line"><span class="attr">    roomnumber:</span></span><br><span class="line"><span class="attr">    shell:</span></span><br><span class="line">        <span class="string">/bin/bash</span></span><br><span class="line"><span class="attr">    uid:</span></span><br><span class="line">        <span class="number">610</span></span><br><span class="line"><span class="attr">    workphone:</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="获取所有系统用户信息的列表"><a href="#获取所有系统用户信息的列表" class="headerlink" title="获取所有系统用户信息的列表"></a>获取所有系统用户信息的列表</h3><blockquote>
-<p>user.getent 方法<br>返回所有系统用户信息的列表<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[root@salt-master</span> <span class="string">~]#</span> <span class="string">salt</span> <span class="string">'salt-minion02'</span> <span class="string">user.getent</span> </span><br><span class="line"><span class="attr">salt-minion02:</span></span><br><span class="line">    <span class="string">|_</span></span><br><span class="line"><span class="bullet">      -</span><span class="bullet">---------</span></span><br><span class="line"><span class="attr">      fullname:</span></span><br><span class="line">          <span class="string">root</span></span><br><span class="line"><span class="attr">      gid:</span></span><br><span class="line">          <span class="number">0</span></span><br><span class="line"><span class="attr">      groups:</span></span><br><span class="line"><span class="bullet">          -</span> <span class="string">root</span></span><br><span class="line"><span class="attr">      home:</span></span><br><span class="line">          <span class="string">/root</span></span><br><span class="line"><span class="attr">      homephone:</span></span><br><span class="line"><span class="attr">      name:</span></span><br><span class="line">          <span class="string">root</span></span><br><span class="line"><span class="attr">      passwd:</span></span><br><span class="line">          <span class="string">x</span></span><br><span class="line"><span class="attr">      roomnumber:</span></span><br><span class="line"><span class="attr">      shell:</span></span><br><span class="line">          <span class="string">/bin/bash</span></span><br><span class="line"><span class="attr">      uid:</span></span><br><span class="line">          <span class="number">0</span></span><br><span class="line"><span class="attr">      workphone:</span></span><br><span class="line">    <span class="string">|_</span></span><br><span class="line"><span class="bullet">      -</span><span class="bullet">---------</span></span><br><span class="line"><span class="attr">      fullname:</span></span><br><span class="line">          <span class="string">bin</span></span><br><span class="line"><span class="attr">      gid:</span></span><br><span class="line">          <span class="number">1</span></span><br><span class="line"><span class="attr">      groups:</span></span><br><span class="line"><span class="bullet">          -</span> <span class="string">bin</span></span><br><span class="line"><span class="bullet">          -</span> <span class="string">daemon</span></span><br><span class="line"><span class="bullet">          -</span> <span class="string">sys</span></span><br><span class="line"><span class="attr">      home:</span></span><br><span class="line">          <span class="string">/bin</span></span><br><span class="line"><span class="attr">      homephone:</span></span><br><span class="line"><span class="attr">      name:</span></span><br><span class="line">          <span class="string">bin</span></span><br><span class="line"><span class="attr">      passwd:</span></span><br><span class="line">          <span class="string">x</span></span><br><span class="line"><span class="attr">      roomnumber:</span></span><br><span class="line"><span class="attr">      shell:</span></span><br><span class="line">          <span class="string">/sbin/nologin</span></span><br><span class="line"><span class="attr">      uid:</span></span><br><span class="line">          <span class="number">1</span></span><br><span class="line"><span class="attr">      workphone:</span></span><br><span class="line">  <span class="string">......</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="查看所有用户"><a href="#查看所有用户" class="headerlink" title="查看所有用户"></a>查看所有用户</h3><blockquote>
-<p>查看所有用户<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">salt</span> * <span class="selector-tag">user</span><span class="selector-class">.list_users</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="列出指定用户所属组的列表"><a href="#列出指定用户所属组的列表" class="headerlink" title="列出指定用户所属组的列表"></a>列出指定用户所属组的列表</h3><blockquote>
-<p>user.list_groups 方法<br>列出指定用户所属组的列表<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> user.list_groups zabbix</span></span><br><span class="line">salt-minion02.contoso.com:</span><br><span class="line">    - zabbix</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="创建用户指定-shell"><a href="#创建用户指定-shell" class="headerlink" title="创建用户指定 shell"></a>创建用户指定 shell</h3><blockquote>
-<p>创建用户时指定 shell<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.<span class="builtin-name">add</span> test <span class="attribute">shell</span>=/sbin/nologin</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="创建用户时指定不创建家目录"><a href="#创建用户时指定不创建家目录" class="headerlink" title="创建用户时指定不创建家目录"></a>创建用户时指定不创建家目录</h3><blockquote>
-<p>创建用户时指定不创建家目录<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.<span class="builtin-name">add</span> test <span class="attribute">createhome</span>=<span class="literal">False</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="创建用户时指定附加组"><a href="#创建用户时指定附加组" class="headerlink" title="创建用户时指定附加组"></a>创建用户时指定附加组</h3><blockquote>
-<p>创建用户时指定附加组<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.<span class="builtin-name">add</span> test <span class="attribute">groups</span>=nginx</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="将用户加入到其他组，为附加组"><a href="#将用户加入到其他组，为附加组" class="headerlink" title="将用户加入到其他组，为附加组"></a>将用户加入到其他组，为附加组</h3><blockquote>
-<p>将 test 用户加入到 nginx 组，此为附加组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.chgroups <span class="built_in">test</span> nginx</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="查看用户所有的组"><a href="#查看用户所有的组" class="headerlink" title="查看用户所有的组"></a>查看用户所有的组</h3><blockquote>
-<p>查看 test 用户所有的组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.list_groups <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><blockquote>
-<p>user.delete 方法<br>删除 test 用户<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt * user.<span class="keyword">delete</span> test <span class="built_in">remove</span>=True</span><br></pre></td></tr></table></figure></p>
+<p>通过这个命令可以查看详细用法<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> sys<span class="selector-class">.doc</span> hosts</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>在 minion 端删除一个用户<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> user.delete test</span></span><br><span class="line">salt-minion02:</span><br><span class="line">    <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<p>我们生产中如果没有用内建 DNS 服务，使用 hosts 模块修改 /etc/hosts 还是经常会用到的</p>
 </blockquote>
-<h3 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h3><blockquote>
-<p>user.rename 方法<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@salt</span>-master ~]<span class="meta"># salt <span class="string">'salt-minion02'</span> user.rename test testuser</span></span><br><span class="line">salt-minion02.contoso.com:</span><br><span class="line">    <span class="literal">False</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<h3 id="hosts-add-host-追加"><a href="#hosts-add-host-追加" class="headerlink" title="hosts.add_host 追加"></a>hosts.add_host 追加</h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> hosts.add_host <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.113</span> minion01</span><br><span class="line"># hosts.add 会先判断 /etc/hosts 里面有没有这个 <span class="built_in">IP</span> <span class="number">192.168</span><span class="meta">.1</span><span class="meta">.113</span></span><br><span class="line"># 如果有 minion01 会将 alias 名追加到这个 <span class="built_in">IP</span> 后面，跟之前的解析别名一起使用这个 <span class="built_in">IP</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">salt '*' hosts.add_host <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> minion01</span><br><span class="line"># 如果没有这个 IP，则会新创建一行 hosts 记录，但是 <span class="number">192.168</span><span class="number">.1</span><span class="number">.113</span> 那条还是存在的。两条记录</span><br></pre></td></tr></table></figure>
+<h3 id="hosts-set-host-覆盖"><a href="#hosts-set-host-覆盖" class="headerlink" title="hosts.set_host 覆盖"></a>hosts.set_host 覆盖</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'*'</span> hosts<span class="selector-class">.set_host</span> <span class="number">192.168</span>.<span class="number">1.114</span> minion02</span><br><span class="line">hosts<span class="selector-class">.set_host</span> 这个的不同之处就是，如果这个 IP 不存在则创建新的一条 hosts 记录，如果 hosts 存在这个 IP 的解析记录。会完全覆盖掉</span><br><span class="line">也就是旧的 IP 解析记录完全变成现在的结果</span><br></pre></td></tr></table></figure>
+<h3 id="hosts-rm-host-删除"><a href="#hosts-rm-host-删除" class="headerlink" title="hosts.rm_host 删除"></a>hosts.rm_host 删除</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">salt '*' hosts.rm_host <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> minion02</span><br><span class="line"># 删除 <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> minion02 这条解析记录</span><br><span class="line"># 如果 <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> 这行有多条解析记录，而只会删除 minion02 这条记录，其他的 <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> xxx.xxx，还会存在不会删除，可以说是有选择性的删除</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>虽然返回 False 但是操作是成功完成了的</p>
+<p>查看 hosts 解析的用法</p>
 </blockquote>
-<h3 id="编辑-user-sls-文件"><a href="#编辑-user-sls-文件" class="headerlink" title="编辑 user.sls 文件"></a>编辑 user.sls 文件</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">vim</span> <span class="string">/srv/salt/nginx/create_users.sls</span></span><br><span class="line"><span class="comment"># user</span></span><br><span class="line"><span class="attr">nginx_user:</span></span><br><span class="line">  <span class="string">user.present:</span>               <span class="comment"># 用户创建</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    - createhome:</span> <span class="literal">False</span>       <span class="comment"># 不用家目录</span></span><br><span class="line"><span class="attr">    - gid_from_name:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">    - shell:</span> <span class="string">/sbin/nologin</span>    <span class="comment"># 指定shell</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span> 这个 IP 对应的别名解析</span><br><span class="line">salt '*' hosts.get_alias <span class="number">192.168</span><span class="number">.1</span><span class="number">.114</span></span><br><span class="line"># 如果有则返回对应的 hosts 别名解析记录，没有则什么都不返回</span><br></pre></td></tr></table></figure>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 这个就是返回 minion01 在 /etc/hosts 里面对应的 IP</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.get_ip minion01</span><br><span class="line"><span class="meta"># 但是有个问题，如果有多条只会返回文件最上方的那一条对应的 IP 地址</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 如果有这条别名解析记录，则返回<span class="literal">True</span>，如果没有则返回<span class="literal">False</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.has_pair <span class="number">192.168</span><span class="number">.1</span><span class="number">.113</span> minion01</span><br></pre></td></tr></table></figure>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 类似于 cat /etc/hosts 的操作</span></span><br><span class="line">salt <span class="string">'*'</span> hosts.list_hosts</span><br><span class="line"><span class="meta"># 不同的是，这相当于一个汇总，会以第一行是 IP：下一行是其对应的别名解析的方式来呈现</span></span><br><span class="line"><span class="meta"># 比如一个 IP 有好几行的解析，这所有的解析记录都会汇总到这个 IP 下面，注释过的别名解析的行不会出现在这个汇总信息里面</span></span><br></pre></td></tr></table></figure>
+<h3 id="dnsutil-模块"><a href="#dnsutil-模块" class="headerlink" title="dnsutil 模块"></a>dnsutil 模块</h3><blockquote>
+<p>Minion 主机通用 DNS 操作<br>添加 192.168.2.71 <a href="http://www.test.com" target="_blank" rel="noopener">www.test.com</a> 到 minion01 端 /etc/hosts 下<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt <span class="string">'minion01'</span> dnsutil<span class="selector-class">.hosts_append</span> /etc/hosts <span class="number">192.168</span>.<span class="number">2.71</span> www<span class="selector-class">.test</span><span class="selector-class">.com</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -492,7 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SaltStack-user模块/" rel="tag"># SaltStack_user模块</a>
+            <a href="/tags/SaltStack-host模块/" rel="tag"># SaltStack host模块</a>
           
         </div>
       
@@ -505,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/08/SaltStack_archive模块/" rel="next" title="SaltStack_archive模块">
-                <i class="fa fa-chevron-left"></i> SaltStack_archive模块
+              <a href="/2018/08/08/SaltStack-group模块/" rel="next" title="SaltStack group模块">
+                <i class="fa fa-chevron-left"></i> SaltStack group模块
               </a>
             
           </div>
@@ -515,8 +485,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/08/SaltStack_group模块/" rel="prev" title="SaltStack_group模块">
-                SaltStack_group模块 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/08/SaltStack-network模块/" rel="prev" title="SaltStack network模块">
+                SaltStack network模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -601,7 +571,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">105</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -623,7 +593,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">105</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -699,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#user模块"><span class="nav-number">1.</span> <span class="nav-text">user模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户"><span class="nav-number">1.1.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户信息"><span class="nav-number">1.2.</span> <span class="nav-text">获取用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取所有系统用户信息的列表"><span class="nav-number">1.3.</span> <span class="nav-text">获取所有系统用户信息的列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看所有用户"><span class="nav-number">1.4.</span> <span class="nav-text">查看所有用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出指定用户所属组的列表"><span class="nav-number">1.5.</span> <span class="nav-text">列出指定用户所属组的列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户指定-shell"><span class="nav-number">1.6.</span> <span class="nav-text">创建用户指定 shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户时指定不创建家目录"><span class="nav-number">1.7.</span> <span class="nav-text">创建用户时指定不创建家目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户时指定附加组"><span class="nav-number">1.8.</span> <span class="nav-text">创建用户时指定附加组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将用户加入到其他组，为附加组"><span class="nav-number">1.9.</span> <span class="nav-text">将用户加入到其他组，为附加组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看用户所有的组"><span class="nav-number">1.10.</span> <span class="nav-text">查看用户所有的组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除用户"><span class="nav-number">1.11.</span> <span class="nav-text">删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改用户名"><span class="nav-number">1.12.</span> <span class="nav-text">修改用户名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-user-sls-文件"><span class="nav-number">1.13.</span> <span class="nav-text">编辑 user.sls 文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hosts-模块"><span class="nav-number">1.</span> <span class="nav-text">hosts 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts-add-host-追加"><span class="nav-number">1.1.</span> <span class="nav-text">hosts.add_host 追加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts-set-host-覆盖"><span class="nav-number">1.2.</span> <span class="nav-text">hosts.set_host 覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts-rm-host-删除"><span class="nav-number">1.3.</span> <span class="nav-text">hosts.rm_host 删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dnsutil-模块"><span class="nav-number">1.4.</span> <span class="nav-text">dnsutil 模块</span></a></li></ol></li></ol></div>
             
 
           </div>
