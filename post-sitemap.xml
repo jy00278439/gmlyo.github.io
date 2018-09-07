@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/07/05/Python%E5%AD%97%E5%85%B8%E7%B1%BB%E5%9E%8B/</loc>
+        <lastmod>2018-09-07T08:14:52.177Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2018/09/06/SaltStack-states-sls-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2018-09-06T13:29:28.012Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -465,14 +473,6 @@
     <url>
         <loc>http://www.gmlyo.com/2018/07/30/Python%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C/</loc>
         <lastmod>2018-07-30T15:04:24.333Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/2018/07/05/Python%E5%AD%97%E5%85%B8%E7%B1%BB%E5%9E%8B/</loc>
-        <lastmod>2018-07-30T15:03:01.982Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
