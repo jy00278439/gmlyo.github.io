@@ -737,27 +737,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/SaltStack-%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2018-09-05T09:34:48.430Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/tags/SaltStack-%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F-Pillar/</loc>
-        <lastmod>2018-09-05T19:38:02.297Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/tags/SaltStack-%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F-Grains/</loc>
-        <lastmod>2018-09-06T07:28:12.668Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/SaltStack-states-sls-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2018-09-06T13:29:28.012Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -781,6 +760,27 @@
     <url>
         <loc>http://www.gmlyo.com/tags/GitLab-CI-%E4%B8%8E-GitLab-Runner/</loc>
         <lastmod>2018-09-08T03:31:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/SaltStack-%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-09-08T18:17:59.910Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/SaltStack-%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F-Grains/</loc>
+        <lastmod>2018-09-08T18:20:16.324Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/SaltStack-%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F-Pillar/</loc>
+        <lastmod>2018-09-08T18:24:28.773Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
