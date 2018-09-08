@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/09/08/GitLab-CI-%E4%B8%8E-GitLab-Runner/</loc>
+        <lastmod>2018-09-08T03:31:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/2018/09/08/GitLab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90-(.gitlab-ci.yml)/</loc>
+        <lastmod>2018-09-08T03:31:32.424Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2018/07/05/Python%E5%AD%97%E5%85%B8%E7%B1%BB%E5%9E%8B/</loc>
         <lastmod>2018-09-07T08:14:52.177Z</lastmod>
         <changefreq>weekly</changefreq>
