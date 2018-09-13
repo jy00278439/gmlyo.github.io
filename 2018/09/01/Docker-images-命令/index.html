@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Docker images 命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T09:26:09.582Z">
+<meta property="og:updated_time" content="2018-09-13T05:28:26.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker images 命令">
 <meta name="twitter:description" content="Docker images 命令">
@@ -428,12 +428,12 @@
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images <span class="comment">[OPTIONS]</span> <span class="comment">[REPOSITORY<span class="comment">[:TAG]</span>]</span></span><br></pre></td></tr></table></figure>
 <p>OPTIONS 说明：</p>
 <ul>
-<li><strong>-a :</strong> 列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）；</li>
-<li><strong>–digests :</strong> 显示镜像的摘要信息；</li>
-<li><strong>-f :</strong> 显示满足条件的镜像；</li>
-<li><strong>–format :</strong> 指定返回值的模板文件；</li>
-<li><strong>–no-trunc :</strong> 显示完整的镜像信息；</li>
-<li><strong>-q :</strong> 只显示镜像ID。</li>
+<li><code>-a</code> 列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）</li>
+<li><code>--digests</code> 显示镜像的摘要信息</li>
+<li><code>-f</code> 显示满足条件的镜像</li>
+<li><code>--format</code> 指定返回值的模板文件</li>
+<li><code>--no-trunc</code> 显示完整的镜像信息</li>
+<li><code>-q</code> 只显示镜像ID</li>
 </ul>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查看本地镜像列表。</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] docker images</span><br><span class="line">REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">mymysql                 v1                  <span class="number">37</span>af1236adef        <span class="number">5</span> minutes ago       <span class="number">329</span> MB</span><br><span class="line">runoob/ubuntu           v4                  <span class="number">1</span>c06aa18edee        <span class="number">2</span> days ago          <span class="number">142.1</span> MB</span><br><span class="line">&lt;none&gt;                  &lt;none&gt;              <span class="number">5</span>c6e1090e771        <span class="number">2</span> days ago          <span class="number">165.9</span> MB</span><br><span class="line">httpd                   latest              ed38aaffef30        <span class="number">11</span> days ago         <span class="number">195.1</span> MB</span><br><span class="line">alpine                  latest              <span class="number">4e38</span>e38c8ce0        <span class="number">2</span> weeks ago         <span class="number">4.799</span> MB</span><br><span class="line">mongo                   <span class="number">3.2</span>                 <span class="number">282</span>fd552add6        <span class="number">3</span> weeks ago         <span class="number">336.1</span> MB</span><br><span class="line">redis                   latest              <span class="number">4465e4</span>bcad80        <span class="number">3</span> weeks ago         <span class="number">185.7</span> MB</span><br><span class="line">php                     <span class="number">5.6</span>-fpm             <span class="number">025041</span>cd3aa5        <span class="number">3</span> weeks ago         <span class="number">456.3</span> MB</span><br><span class="line">python                  <span class="number">3.5</span>                 <span class="number">045767</span>ddf24a        <span class="number">3</span> weeks ago         <span class="number">684.1</span> MB</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
