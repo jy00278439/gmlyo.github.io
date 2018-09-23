@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://pa2bdkuiw.bkt.clouddn.com/%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83.png">
 <meta property="og:image" content="http://pa2bdkuiw.bkt.clouddn.com/%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83%E6%96%87%E4%BB%B6.png">
 <meta property="og:image" content="http://pa2bdkuiw.bkt.clouddn.com/%E8%BF%90%E8%A1%8Cstart.png">
-<meta property="og:updated_time" content="2018-09-23T17:13:59.558Z">
+<meta property="og:updated_time" content="2018-09-23T17:41:15.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 软件开发的目录规范">
 <meta name="twitter:description" content="Python 软件开发的目录规范">
@@ -450,7 +450,7 @@
 <p>编辑 <code>setting.py</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</span><br><span class="line">DB_PATH = <span class="string">'%s\%s\%s'</span> % (BASE_DIR, <span class="string">'db'</span>, <span class="string">'db.txt'</span>)</span><br><span class="line"></span><br><span class="line">print(DB_PATH)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line">E:\Project\db\db.txt</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>这种方式拼接方式有缺陷，如果是 Linux 系统，<code>\</code> 右斜杠就不能用了</p>
+<p>这种拼接方式有缺陷，如果是 Linux 系统，<code>\</code> 右斜杠就不能用了</p>
 </blockquote>
 <h3 id="解决跨平台路径格式的问题"><a href="#解决跨平台路径格式的问题" class="headerlink" title="解决跨平台路径格式的问题"></a>解决跨平台路径格式的问题</h3><blockquote>
 <p>使用 <code>os.path.join</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</span><br><span class="line">DB_PATH = os.path.join(BASE_DIR, <span class="string">'db'</span>, <span class="string">'db.txt'</span>)</span><br><span class="line"></span><br><span class="line">print(DB_PATH)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行结果</span></span><br><span class="line">E:\Project\db\db.txt</span><br></pre></td></tr></table></figure></p>
