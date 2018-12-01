@@ -12,14 +12,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Shell 查看截取某时间段内的日志]]></title>
+    <title><![CDATA[Shell 按时间截取日志]]></title>
     <url>%2F2018%2F10%2F29%2FShell-%E6%8C%89%E6%97%B6%E9%97%B4%E6%88%AA%E5%8F%96%E6%97%A5%E5%BF%97%2F</url>
     <content type="text"><![CDATA[Shell 按时间截取日志截取查看某时间段内的日志 sed 截取 精确到 时分秒 1sed -n '/2018-10-22|10:23:44/,/2018-10-22|11:23:44/' access.log &gt; 10-11_access.log 精确到小时 1sed -n '/2018-10-22|10/,/2018-10-22|11/' access.log &gt; 10-11_access.log sed -n &#39;/开始时间/,/结束时间/&#39; 被截取日志原文件 &gt; 截取后日志新文件$p 显示到最后一行 1234# 查看某时间段到当前的 messages 系统日志sed -n '/May 20 17/,$p' /var/log/messages | lesssed -n '/2018-10-29 09:00:00/,$p' access.log &gt; /tmp/access.log sed 截取 10:00:00 到 现在的 catalina.out 日志内容 1sed -n '/2018-04-11 10:[0-9][0-9]:[0-9][0-9]/,$p' catalina.out | less sed 截取 2018-04-11 这天 到 现在的 catalina.out 日志内容 1sed -n '/2018-04-11 [0-9][0-9]:[0-9][0-9]:[0-9][0-9]/,$p' catalina.out | less sed 截取 2018-03-14 09:00:00 2018-03-14 12:00:00 的日志 1sed -n '/2018-03-14 09:[0][0]:[0][0]/,/2018-03-14 12:[0][0]:[0][0]/p' catalina.out &gt; /tmp/catalina.log grep 截取 egrep 截取 13:38 到 14:00 之间的日志内容 1egrep '13:3[8-9]:[0-9][0-9]|13:[4-5][0-9]:[0-9][0-9]' catalina.out | less egrep 截取 2018-04-11 到 2018-04-12 之间的日志内容 1egrep '2018-04-11 [0-9][0-9]:[0-9][0-9]:[0-9][0-9]|2018-04-12 [0-9][0-9]:[0-9][0-9]:[0-9][0-9]' catalina.out | less 截取 Nginx 访问日志 查看 21/Jul/2014:14:37:50 到 21/Jul/2014:14:38:00 时间段内 access.log 的访问日志 1cat access.log | awk '$4 &gt;="[21/Jul/2014:14:37:50" &amp;&amp; $4 &lt;="[21/Jul/2014:14:38:00"' 时间转换在线工具地址https://tool.lu/timestamp/]]></content>
       <categories>
         <category>Shell笔记</category>
       </categories>
       <tags>
-        <tag>Shell 查看截取某时间段内的日志</tag>
+        <tag>Shell 按时间截取日志</tag>
       </tags>
   </entry>
   <entry>
