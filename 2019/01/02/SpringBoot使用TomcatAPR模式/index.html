@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SpringBoot 使用 Tomcat APR 模式," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="G加菲" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="SpringBoot 使用 Tomcat APR 模式">
+<meta name="keywords" content="SpringBoot 使用 Tomcat APR 模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 使用 Tomcat APR 模式">
+<meta property="og:url" content="http://www.gmlyo.com/2019/01/02/SpringBoot使用TomcatAPR模式/index.html">
+<meta property="og:site_name" content="G加菲">
+<meta property="og:description" content="SpringBoot 使用 Tomcat APR 模式">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-02T03:32:56.539Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot 使用 Tomcat APR 模式">
+<meta name="twitter:description" content="SpringBoot 使用 Tomcat APR 模式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gmlyo.com/2019/01/02/SpringBoot使用TomcatAPR模式/"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d322328"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>SpringBoot 使用 Tomcat APR 模式 | G加菲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G加菲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2019/01/02/SpringBoot使用TomcatAPR模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringBoot 使用 Tomcat APR 模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T11:19:20+08:00">
+                2019-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringBoot笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SpringBoot-使用-Tomcat-APR-模式"><a href="#SpringBoot-使用-Tomcat-APR-模式" class="headerlink" title="SpringBoot 使用 Tomcat APR 模式"></a>SpringBoot 使用 Tomcat APR 模式</h1><a id="more"></a>
+<p>SpringBoot 内置的是 Tomcat Embed 容器，就是把 Tomcat 打包成一个 jar包库 来使用，直接运行 Application 就可以启动 Web服务器。本质没有区别，默认独立的 Tomcat 性能高于 SpringBoot 内置的 Tomcat。因为独立的 Tomcat 很多都配置了 APR 模式特性，大多数比较的时候 SpringBoot 内置的 Tomcat 并没有开启这个模式。可以选择自己启动这个特性。</p>
+<p>从 GitHub 上的讨论看，如果需要 TLS 支持，使用 APR 是比较好的。否则没必要使用 APR，未来 APR 在 Tomcat 10 中可能会被移除。<br><a href="https://github.com/spring-projects/spring-boot/pull/10079" target="_blank" rel="noopener">https://github.com/spring-projects/spring-boot/pull/10079</a></p>
+<h2 id="在-Tomcat-中提供了三种方式：BIO、NIO、APR。"><a href="#在-Tomcat-中提供了三种方式：BIO、NIO、APR。" class="headerlink" title="在 Tomcat 中提供了三种方式：BIO、NIO、APR。"></a>在 Tomcat 中提供了三种方式：BIO、NIO、APR。</h2><h3 id="BIO-模式"><a href="#BIO-模式" class="headerlink" title="BIO 模式"></a>BIO 模式</h3><p>Tomcat 7 以下的版本都是BIO，就是一个请求是一个独立的线程。不能适用高并发的场景。阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</p>
+<h3 id="NIO-模式"><a href="#NIO-模式" class="headerlink" title="NIO 模式"></a>NIO 模式</h3><p>Tomcat 8 以上的版本，默认都是 NIO。同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式</p>
+<h3 id="APR-模式"><a href="#APR-模式" class="headerlink" title="APR 模式"></a>APR 模式</h3><p>APR(Apache Portable Runtime)<br>APR 的整体模式还是非阻塞IO，实现的线程模型也是按照 NIO 的标准模型实现的，<br>APR 是一种基于 JNI 形式调用http服务器的核心动态链接库来处理的文件和网络读写模式（文件读取和网络传输操作）。需要预先编译安装 APR库，现在很多高版本的 Tomcat 默认都走它了。在 Tomcat 中配置，很好配置，直接修改 protocol 就可以了。但是在 SpringBoot 中，配置是在 Java 代码中写的。<br>从官方文档 <a href="http://apr.apache.org/docs/apr/1.6/modules.html" target="_blank" rel="noopener">http://apr.apache.org/docs/apr/1.6/modules.html</a><br>可以看到 APR 根据不同操作系统，分别用 C 重写了大部分IO和系统线程操作模块，<br>这就是为什么 APR 在不改动代码的情况下能够提升。</p>
+<h2 id="SpringBoot-开启-APR-模式"><a href="#SpringBoot-开启-APR-模式" class="headerlink" title="SpringBoot 开启 APR 模式"></a>SpringBoot 开启 APR 模式</h2><p>在 SpringBoot 中内嵌的 Tomcat 默认启动开启的是 NIO 模式，这里如果我们要在 Linux 内核的系统上使用 APR 模式，那么需要安装一些 lib库，可以通过 rpm -q | grep apr 来查看是否安装了 apr，如果安装了则不再需要安装。</p>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install apr-devel gcc gcc-devel openssl openssl-devel expat-devel</span><br></pre></td></tr></table></figure>
+<h2 id="OpenSSL-安装"><a href="#OpenSSL-安装" class="headerlink" title="OpenSSL 安装"></a>OpenSSL 安装</h2><p>OpenSSL 需要版本大于 1.0.2，如果不使用 https openssl 也可以不安装，就是在启动的时候会报 OpenSSL 的错误，直接忽视就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenSSL 下载地址</span></span><br><span class="line">https://www.openssl.org/<span class="built_in">source</span>/</span><br><span class="line"></span><br><span class="line">wget -c https://www.openssl.org/<span class="built_in">source</span>/openssl-1.1.1a.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="安装-OpenSSL"><a href="#安装-OpenSSL" class="headerlink" title="安装 OpenSSL"></a>安装 OpenSSL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf openssl-1.1.1a.tar.gz</span><br><span class="line"><span class="built_in">cd</span> openssl-1.1.1a/</span><br><span class="line">./config --prefix=/usr/<span class="built_in">local</span>/openssl</span><br><span class="line">./config -t</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="将-openssl-的-lib-加入系统-ldconfig-中"><a href="#将-openssl-的-lib-加入系统-ldconfig-中" class="headerlink" title="将 openssl 的 lib 加入系统 ldconfig 中"></a>将 openssl 的 lib 加入系统 ldconfig 中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ld.so.conf.d/openssl.conf</span><br><span class="line">/usr/<span class="built_in">local</span>/openssl/lib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一下</span></span><br><span class="line">ldconfig -v</span><br><span class="line">ldconfig -v | grep libssl</span><br></pre></td></tr></table></figure>
+<h3 id="查看-OpenSSL-版本"><a href="#查看-OpenSSL-版本" class="headerlink" title="查看 OpenSSL 版本"></a>查看 OpenSSL 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/openssl/</span><br><span class="line">./bin/openssl version -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果遇到以下错误</span></span><br><span class="line">openssl: error <span class="keyword">while</span> loading shared libraries: libssl.so.1.1: cannot open shared object file: No such file or directory</span><br><span class="line">openssl: error <span class="keyword">while</span> loading shared libraries: libcrypto.so.1.1: cannot open shared object file: No such file or directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是由于 OpenSSL 库的位置不正确造成的</span></span><br><span class="line"><span class="comment"># 做一下软链接，就好了</span></span><br><span class="line">ln -svnf /usr/<span class="built_in">local</span>/openssl/lib/libssl.so.1.1 /usr/lib64/libssl.so.1.1</span><br><span class="line">ln -svnf /usr/<span class="built_in">local</span>/openssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1</span><br></pre></td></tr></table></figure>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile.d/openssl.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> OPENSSL_HOME=/usr/<span class="built_in">local</span>/openssl</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$OPENSSL_HOME</span>/bin</span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> profile</span><br><span class="line">openssl version -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或把原来的命令备份一下，做个软链接</span></span><br><span class="line">ll -h /usr/bin/openssl</span><br><span class="line">mv /usr/bin/openssl&#123;,_bak&#125;</span><br><span class="line">mv /usr/include/openssl&#123;,openssl_bak&#125;</span><br><span class="line">ln -svnf /usr/<span class="built_in">local</span>/openssl/bin/openssl /usr/bin/openssl</span><br><span class="line">ln -svnf /usr/<span class="built_in">local</span>/openssl/include/openssl /usr/include/openssl</span><br></pre></td></tr></table></figure>
+<h2 id="APR-安装"><a href="#APR-安装" class="headerlink" title="APR 安装"></a>APR 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># APR 下载地址</span></span><br><span class="line">http://apr.apache.org/download.cgi</span><br></pre></td></tr></table></figure>
+<h3 id="安装-apr"><a href="#安装-apr" class="headerlink" title="安装 apr"></a>安装 apr</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /data/tools/</span><br><span class="line">tar -zxvf apr-1.6.5.tar.gz</span><br><span class="line"><span class="built_in">cd</span> apr-1.6.5/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否符合安装条件并配置安装参数，检查是否缺失类库，一般来说如果安装的不是精简版系统都是能顺利通过的</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/apr</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br><span class="line"><span class="comment"># 如果不设置安装路径，系统默认安装路径为 /usr/apr/lib</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-apr-util"><a href="#安装-apr-util" class="headerlink" title="安装 apr-util"></a>安装 apr-util</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /data/tools/</span><br><span class="line">tar -zxvf apr-util-1.6.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> apr-util-1.6.1/</span><br><span class="line"><span class="comment"># 安装 apr-util 需要配置 apr路径 和 jvm路径，否则会报错找不到apr</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/apr-utils \</span><br><span class="line">--with-apr=/usr/<span class="built_in">local</span>/apr</span><br><span class="line"><span class="comment"># --with-java-home=/data/jdk1.8.0_192</span></span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="安装-apr-iconv"><a href="#安装-apr-iconv" class="headerlink" title="安装 apr-iconv"></a>安装 apr-iconv</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 expat 开发库</span></span><br><span class="line">yum -y install expat-devel</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /data/tools/</span><br><span class="line">tar -xvf apr-iconv-1.2.2.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> apr-iconv-1.2.2/</span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/<span class="built_in">local</span>/apr-iconv \</span><br><span class="line">--with-apr=/usr/<span class="built_in">local</span>/apr</span><br><span class="line"><span class="comment"># --with-java-home=/data/jdk1.8.0_192</span></span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="安装-tomcat-native"><a href="#安装-tomcat-native" class="headerlink" title="安装 tomcat native"></a>安装 tomcat native</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 libtool 依赖库</span></span><br><span class="line">yum -y install libtool libtool-devel</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /data/tools/</span><br><span class="line">tar -zxvf apache-tomcat-8.5.37.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> apache-tomcat-8.5.37/bin/</span><br><span class="line">tar -zxvf tomcat-native.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> tomcat-native-1.2.19-src/native/</span><br><span class="line">./configure \</span><br><span class="line">--with-apr=/usr/<span class="built_in">local</span>/apr \</span><br><span class="line">--with-java-home=/data/jdk1.8.0_192 \</span><br><span class="line">--with-ssl=/usr/<span class="built_in">local</span>/openssl \</span><br><span class="line">--with-ssl=yes</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="配置-Apr"><a href="#配置-Apr" class="headerlink" title="配置 Apr"></a>配置 Apr</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/profile</span></span><br><span class="line">vim /etc/profile.d/apr.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/usr/<span class="built_in">local</span>/apr/lib</span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="新增-APRConfig-类"><a href="#新增-APRConfig-类" class="headerlink" title="新增 APRConfig 类"></a>新增 APRConfig 类</h2><blockquote>
+<p>网上大部分讲解配置tomcat apr的文章，都只是讲了如何在独立 Tomcat 服务上如何配置 apr，<br>只需要修改 server.xml 中的 connnector 的 protocol 就可以了，<br>对于 SpringBoot 会稍微复杂些，需要增加一个 apr 配置类在启动的时候修改 Embed 的 tomcat connector 网络接入协议</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">packagecom.ochain.data2chain.gateway.config;</span><br><span class="line"></span><br><span class="line">importorg.apache.catalina.LifecycleListener;</span><br><span class="line">importorg.apache.catalina.core.AprLifecycleListener;</span><br><span class="line">importorg.springframework.beans.factory.annotation.Value;</span><br><span class="line">importorg.springframework.boot.context.embedded.EmbeddedServletContainerFactory;</span><br><span class="line">importorg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;</span><br><span class="line">importorg.springframework.context.annotation.Bean;</span><br><span class="line">importorg.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">APRConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;tomcat.apr:false&#125;"</span>)</span><br><span class="line">    privateboolean enabled;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function">publicEmbeddedServletContainerFactory <span class="title">servletContainer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        TomcatEmbeddedServletContainerFactory container = <span class="keyword">new</span> TomcatEmbeddedServletContainerFactory();</span><br><span class="line">        <span class="keyword">if</span>(enabled) &#123;</span><br><span class="line">            LifecycleListener arpLifecycle = <span class="keyword">new</span> AprLifecycleListener();</span><br><span class="line">            container.setProtocol(<span class="string">"org.apache.coyote.http11.Http11AprProtocol"</span>);</span><br><span class="line">            container.addContextLifecycleListeners(arpLifecycle);</span><br><span class="line">        &#125;</span><br><span class="line">       returncontainer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.catalina.core.AprLifecycleListener;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">APRConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">// https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#howto-discover-build-in-options-for-external-properties</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> EmbeddedServletContainerFactory <span class="title">servletContainer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        TomcatEmbeddedServletContainerFactory tomcat = <span class="keyword">new</span> TomcatEmbeddedServletContainerFactory();</span><br><span class="line">        tomcat.setProtocol(<span class="string">"org.apache.coyote.http11.Http11AprProtocol"</span>);</span><br><span class="line">        tomcat.addContextLifecycleListeners(<span class="keyword">new</span> AprLifecycleListener());</span><br><span class="line">        <span class="keyword">return</span> tomcat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置完启动，有可能会报错"><a href="#配置完启动，有可能会报错" class="headerlink" title="配置完启动，有可能会报错"></a>配置完启动，有可能会报错</h2><h3 id="错误问题"><a href="#错误问题" class="headerlink" title="错误问题"></a>错误问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2019-01-02 00:45:55,891 [main] ERROR org.apache.catalina.core.StandardService:181 - Failed to start connector [Connector[org.apache.coyote.http11.Http11AprProtocol-8080]]</span><br><span class="line">org.apache.catalina.LifecycleException: Failed to initialize component [Connector[org.apache.coyote.http11.Http11AprProtocol-8080]]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要在启动 SpringBoot 的服务器上安装 tomcat-native 和 apr 的模块</p>
+</blockquote>
+<h3 id="启动-SpringBoot-系统找不到-apr-的-lib-库"><a href="#启动-SpringBoot-系统找不到-apr-的-lib-库" class="headerlink" title="启动 SpringBoot 系统找不到 apr 的 lib 库"></a>启动 SpringBoot 系统找不到 apr 的 lib 库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.boot.context.embedded.tomcat.ConnectorStartFailedException: Connector configured tolisten onport 8080 failed tostart</span><br><span class="line">...</span><br><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TOSTART</span><br><span class="line">***************************</span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">The Tomcat connector configured tolisten onport 8080 failed tostart. Theport may already be inuse orthe connector may be misconfigured.</span><br></pre></td></tr></table></figure>
+<h3 id="打开-debug-后查看系统日志发现真正的原因是系统找不到-apr-的-lib库"><a href="#打开-debug-后查看系统日志发现真正的原因是系统找不到-apr-的-lib库" class="headerlink" title="打开 debug 后查看系统日志发现真正的原因是系统找不到 apr 的 lib库"></a>打开 debug 后查看系统日志发现真正的原因是系统找不到 apr 的 lib库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org.apache.catalina.LifecycleException: The configured protocol [org.apache.coyote.http11.Http11AprProtocol] requires the APR/native library <span class="built_in">which</span> is not available</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解决方法<br>在启动命令行中添加指定 apr库路径</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Djava.library.path=/usr/<span class="built_in">local</span>/apr/lib -jar xxxx-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+<h3 id="启动-SpringBoot"><a href="#启动-SpringBoot" class="headerlink" title="启动 SpringBoot"></a>启动 SpringBoot</h3><blockquote>
+<p>启动成功后看到日志中输出以下内容，则表示 apr 模式启动成功</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2019-01-02 15:31:19,032 - Initializing ProtocolHandler [<span class="string">"http-apr-8080"</span>]</span><br><span class="line">2019-01-02 15:31:19,051 - Starting ProtocolHandler [<span class="string">"http-apr-8080"</span>]</span><br><span class="line">2019-01-02 15:31:19,080 - Tomcat started on port(s): 8080(http)</span><br></pre></td></tr></table></figure>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://www.jianshu.com/p/f716726ba340" target="_blank" rel="noopener">https://www.jianshu.com/p/f716726ba340</a><br><a href="https://www.cnblogs.com/yueli/p/9668088.html" target="_blank" rel="noopener">https://www.cnblogs.com/yueli/p/9668088.html</a><br><a href="http://www.cnblogs.com/xing901022/p/9145914.html" target="_blank" rel="noopener">http://www.cnblogs.com/xing901022/p/9145914.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot-使用-Tomcat-APR-模式/" rel="tag"># SpringBoot 使用 Tomcat APR 模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/02/Next-解决-Busuanzi-统计浏览失效/" rel="next" title="Next 解决 Busuanzi 统计浏览失效">
+                <i class="fa fa-chevron-left"></i> Next 解决 Busuanzi 统计浏览失效
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20180226143321.jpg"
+                alt="G加菲" />
+            
+              <p class="site-author-name" itemprop="name">G加菲</p>
+              <p class="site-description motion-element" itemprop="description">很喜欢吃~吃完就睡~所以长得很胖</p>
+          </div>
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 
+          src="//music.163.com/outchain/player?type=0&id=2188265841&auto=1&height=90"></iframe>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jy00278439" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gmlyo.com/" title="G加菲" target="_blank">G加菲</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-使用-Tomcat-APR-模式"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot 使用 Tomcat APR 模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Tomcat-中提供了三种方式：BIO、NIO、APR。"><span class="nav-number">1.1.</span> <span class="nav-text">在 Tomcat 中提供了三种方式：BIO、NIO、APR。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BIO-模式"><span class="nav-number">1.1.1.</span> <span class="nav-text">BIO 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NIO-模式"><span class="nav-number">1.1.2.</span> <span class="nav-text">NIO 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APR-模式"><span class="nav-number">1.1.3.</span> <span class="nav-text">APR 模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot-开启-APR-模式"><span class="nav-number">1.2.</span> <span class="nav-text">SpringBoot 开启 APR 模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖"><span class="nav-number">1.3.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenSSL-安装"><span class="nav-number">1.4.</span> <span class="nav-text">OpenSSL 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-OpenSSL"><span class="nav-number">1.4.1.</span> <span class="nav-text">安装 OpenSSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-openssl-的-lib-加入系统-ldconfig-中"><span class="nav-number">1.4.2.</span> <span class="nav-text">将 openssl 的 lib 加入系统 ldconfig 中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-OpenSSL-版本"><span class="nav-number">1.4.3.</span> <span class="nav-text">查看 OpenSSL 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.4.4.</span> <span class="nav-text">配置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APR-安装"><span class="nav-number">1.5.</span> <span class="nav-text">APR 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr"><span class="nav-number">1.5.1.</span> <span class="nav-text">安装 apr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-util"><span class="nav-number">1.5.2.</span> <span class="nav-text">安装 apr-util</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-apr-iconv"><span class="nav-number">1.5.3.</span> <span class="nav-text">安装 apr-iconv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-tomcat-native"><span class="nav-number">1.5.4.</span> <span class="nav-text">安装 tomcat native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Apr"><span class="nav-number">1.5.5.</span> <span class="nav-text">配置 Apr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增-APRConfig-类"><span class="nav-number">1.6.</span> <span class="nav-text">新增 APRConfig 类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置完启动，有可能会报错"><span class="nav-number">1.7.</span> <span class="nav-text">配置完启动，有可能会报错</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误问题"><span class="nav-number">1.7.1.</span> <span class="nav-text">错误问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-SpringBoot-系统找不到-apr-的-lib-库"><span class="nav-number">1.7.2.</span> <span class="nav-text">启动 SpringBoot 系统找不到 apr 的 lib 库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开-debug-后查看系统日志发现真正的原因是系统找不到-apr-的-lib库"><span class="nav-number">1.7.3.</span> <span class="nav-text">打开 debug 后查看系统日志发现真正的原因是系统找不到 apr 的 lib库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-SpringBoot"><span class="nav-number">1.7.4.</span> <span class="nav-text">启动 SpringBoot</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">1.8.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">G加菲</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数(UV)
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量(PV)
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
