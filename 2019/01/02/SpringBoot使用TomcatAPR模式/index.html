@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="SpringBoot 使用 Tomcat APR 模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T03:39:40.059Z">
+<meta property="og:updated_time" content="2019-01-02T03:41:36.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 使用 Tomcat APR 模式">
 <meta name="twitter:description" content="SpringBoot 使用 Tomcat APR 模式">
@@ -443,7 +443,9 @@
 <p>在 SpringBoot 中内嵌的 Tomcat 默认启动开启的是 NIO 模式，这里如果我们要在 Linux 内核的系统上使用 APR 模式，那么需要安装一些 lib库，可以通过 rpm -q | grep apr 来查看是否安装了 apr，如果安装了则不再需要安装。</p>
 </blockquote>
 <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install apr-devel gcc gcc-devel openssl openssl-devel expat-devel</span><br></pre></td></tr></table></figure>
-<h2 id="OpenSSL-安装"><a href="#OpenSSL-安装" class="headerlink" title="OpenSSL 安装"></a>OpenSSL 安装</h2><p>OpenSSL 需要版本大于 1.0.2，如果不使用 https openssl 也可以不安装，就是在启动的时候会报 OpenSSL 的错误，直接忽视就可以了。</p>
+<h2 id="OpenSSL-安装"><a href="#OpenSSL-安装" class="headerlink" title="OpenSSL 安装"></a>OpenSSL 安装</h2><blockquote>
+<p>OpenSSL 需要版本大于 1.0.2，如果不使用 https openssl 也可以不安装，就是在启动的时候会报 OpenSSL 的错误，直接忽视就可以了。</p>
+</blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OpenSSL 下载地址</span></span><br><span class="line">https://www.openssl.org/<span class="built_in">source</span>/</span><br><span class="line"></span><br><span class="line">wget -c https://www.openssl.org/<span class="built_in">source</span>/openssl-1.1.1a.tar.gz</span><br></pre></td></tr></table></figure>
 <h3 id="安装-OpenSSL"><a href="#安装-OpenSSL" class="headerlink" title="安装 OpenSSL"></a>安装 OpenSSL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf openssl-1.1.1a.tar.gz</span><br><span class="line"><span class="built_in">cd</span> openssl-1.1.1a/</span><br><span class="line">./config --prefix=/usr/<span class="built_in">local</span>/openssl</span><br><span class="line">./config -t</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 <h3 id="将-openssl-的-lib-加入系统-ldconfig-中"><a href="#将-openssl-的-lib-加入系统-ldconfig-中" class="headerlink" title="将 openssl 的 lib 加入系统 ldconfig 中"></a>将 openssl 的 lib 加入系统 ldconfig 中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ld.so.conf.d/openssl.conf</span><br><span class="line">/usr/<span class="built_in">local</span>/openssl/lib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载一下</span></span><br><span class="line">ldconfig -v</span><br><span class="line">ldconfig -v | grep libssl</span><br></pre></td></tr></table></figure>
