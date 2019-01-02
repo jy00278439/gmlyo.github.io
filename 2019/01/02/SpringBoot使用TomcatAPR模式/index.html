@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="SpringBoot 使用 Tomcat APR 模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T03:58:07.408Z">
+<meta property="og:updated_time" content="2019-01-02T04:12:03.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 使用 Tomcat APR 模式">
 <meta name="twitter:description" content="SpringBoot 使用 Tomcat APR 模式">
@@ -431,13 +431,13 @@
 <p>从 GitHub 上的讨论看，如果需要 TLS 支持，使用 APR 是比较好的。否则没必要使用 APR，未来 APR 在 Tomcat 10 中可能会被移除。<br><a href="https://github.com/spring-projects/spring-boot/pull/10079" target="_blank" rel="noopener">https://github.com/spring-projects/spring-boot/pull/10079</a></p>
 </blockquote>
 <h2 id="在-Tomcat-中提供了三种方式：BIO、NIO、APR。"><a href="#在-Tomcat-中提供了三种方式：BIO、NIO、APR。" class="headerlink" title="在 Tomcat 中提供了三种方式：BIO、NIO、APR。"></a>在 Tomcat 中提供了三种方式：BIO、NIO、APR。</h2><h3 id="BIO-模式"><a href="#BIO-模式" class="headerlink" title="BIO 模式"></a>BIO 模式</h3><blockquote>
-<p>Tomcat 7 以下的版本都是BIO，就是一个请求是一个独立的线程。不能适用高并发的场景。阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</p>
+<p>采用 Java IO 技术，单线程处理单请求（Tomcat7以下默认）<br>Tomcat 7 以下的版本都是 BIO，就是一个请求是一个独立的线程。不能适用高并发的场景。阻塞式 I/O，采用传统的 java I/O 进行操作，该模式下每个请求都会创建一个线程，适用于并发量小的场景</p>
 </blockquote>
 <h3 id="NIO-模式"><a href="#NIO-模式" class="headerlink" title="NIO 模式"></a>NIO 模式</h3><blockquote>
-<p>Tomcat 8 以上的版本，默认都是 NIO。同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式</p>
+<p>采用 Java NIO 技术，少量线程处理大量请求（Tomcat8以上默认）<br>Tomcat 8 以上的版本，默认都是 NIO。同步非阻塞，比传统 BIO 能更好的支持大并发，Tomcat 8.0 后默认采用该模式</p>
 </blockquote>
 <h3 id="APR-模式"><a href="#APR-模式" class="headerlink" title="APR 模式"></a>APR 模式</h3><blockquote>
-<p>APR(Apache Portable Runtime)<br>APR 的整体模式还是非阻塞IO，实现的线程模型也是按照 NIO 的标准模型实现的，<br>APR 是一种基于 JNI 形式调用http服务器的核心动态链接库来处理的文件和网络读写模式（文件读取和网络传输操作）。需要预先编译安装 APR库，现在很多高版本的 Tomcat 默认都走它了。在 Tomcat 中配置，很好配置，直接修改 protocol 就可以了。但是在 SpringBoot 中，配置是在 Java 代码中写的。<br>从官方文档 <a href="http://apr.apache.org/docs/apr/1.6/modules.html" target="_blank" rel="noopener">http://apr.apache.org/docs/apr/1.6/modules.html</a><br>可以看到 APR 根据不同操作系统，分别用 C 重写了大部分IO和系统线程操作模块，<br>这就是为什么 APR 在不改动代码的情况下能够提升。</p>
+<p>APR(Apache Portable Runtime)<br>采用 JNI 技术，从操作层面解决 I/O 阻塞问题，适合高并发场景<br>APR 的整体模式还是非阻塞 I/O，实现的线程模型也是按照 NIO 的标准模型实现的，<br>APR 是一种基于 JNI 形式调用http服务器的核心动态链接库来处理的文件和网络读写模式（文件读取和网络传输操作）。需要预先编译安装 APR库，现在很多高版本的 Tomcat 默认都走它了。在 Tomcat 中配置，很好配置，直接修改 protocol 就可以了。但是在 SpringBoot 中，配置是在 Java 代码中写的。<br>从官方文档 <a href="http://apr.apache.org/docs/apr/1.6/modules.html" target="_blank" rel="noopener">http://apr.apache.org/docs/apr/1.6/modules.html</a><br>可以看到 APR 根据不同操作系统，分别用 C 重写了大部分IO和系统线程操作模块，<br>这就是为什么 APR 在不改动代码的情况下能够提升。</p>
 </blockquote>
 <h2 id="SpringBoot-开启-APR-模式"><a href="#SpringBoot-开启-APR-模式" class="headerlink" title="SpringBoot 开启 APR 模式"></a>SpringBoot 开启 APR 模式</h2><blockquote>
 <p>在 SpringBoot 中内嵌的 Tomcat 默认启动开启的是 NIO 模式，这里如果我们要在 Linux 内核的系统上使用 APR 模式，那么需要安装一些 lib库，可以通过 rpm -q | grep apr 来查看是否安装了 apr，如果安装了则不再需要安装。</p>
