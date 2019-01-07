@@ -126,13 +126,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Kubernetes%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-09-10T10:21:08.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/SaltStack%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-09-10T12:47:07.667Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -184,6 +177,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/SpringBoot%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2019-01-02T04:12:03.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Kubernetes%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2019-01-07T05:34:24.988Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

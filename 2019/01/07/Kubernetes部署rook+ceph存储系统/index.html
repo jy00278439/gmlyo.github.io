@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Kubernetes部署rook+ceph存储系统," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="G加菲" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Kubernetes部署rook+ceph存储系统">
+<meta name="keywords" content="Kubernetes部署rook+ceph存储系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kubernetes部署rook+ceph存储系统">
+<meta property="og:url" content="http://www.gmlyo.com/2019/01/07/Kubernetes部署rook+ceph存储系统/index.html">
+<meta property="og:site_name" content="G加菲">
+<meta property="og:description" content="Kubernetes部署rook+ceph存储系统">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104133544110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104133558632.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190106123334504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134300431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134335201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134341810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134348345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019010413440155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134752317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104134923802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190104135002395.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-01-07T05:34:24.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kubernetes部署rook+ceph存储系统">
+<meta name="twitter:description" content="Kubernetes部署rook+ceph存储系统">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190104133544110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gmlyo.com/2019/01/07/Kubernetes部署rook+ceph存储系统/"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d322328"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>Kubernetes部署rook+ceph存储系统 | G加菲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G加菲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2019/01/07/Kubernetes部署rook+ceph存储系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Kubernetes部署rook+ceph存储系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T13:15:37+08:00">
+                2019-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kubernetes笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Kubernetes笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Kubernetes部署rook-ceph存储系统"><a href="#Kubernetes部署rook-ceph存储系统" class="headerlink" title="Kubernetes部署rook+ceph存储系统"></a>Kubernetes部署rook+ceph存储系统</h1><a id="more"></a>
+<h2 id="rook简介"><a href="#rook简介" class="headerlink" title="rook简介"></a>rook简介</h2><p>Rook官网：<a href="https://rook.io" target="_blank" rel="noopener">https://rook.io</a></p>
+<h3 id="容器的持久化存储"><a href="#容器的持久化存储" class="headerlink" title="容器的持久化存储"></a>容器的持久化存储</h3><p>容器的持久化存储是保存容器存储状态的重要手段，存储插件会在容器里挂载一个基于网络或者其他机制的远程数据卷，使得在容器里创建的文件，实际上是保存在远程存储服务器上，或者以分布式的方式保存在多个节点上，而与当前宿主机没有任何绑定关系。这样，无论你在其他哪个宿主机上启动新的容器，都可以请求挂载指定的持久化存储卷，从而访问到数据卷里保存的内容。<br>由于 Kubernetes 本身的松耦合设计，绝大多数存储项目，比如 Ceph、GlusterFS、NFS 等，都可以为 Kubernetes 提供持久化存储能力。</p>
+<h3 id="Ceph分布式存储系统"><a href="#Ceph分布式存储系统" class="headerlink" title="Ceph分布式存储系统"></a>Ceph分布式存储系统</h3><p>Ceph是一种高度可扩展的分布式存储解决方案，提供对象、文件和块存储。在每个存储节点上，您将找到Ceph存储对象的文件系统和Ceph OSD（对象存储守护程序）进程。在Ceph集群上，您还可以找到Ceph MON（监控）守护程序，它们确保Ceph集群保持高可用性。</p>
+<h3 id="Rook"><a href="#Rook" class="headerlink" title="Rook"></a>Rook</h3><p>Rook 是一个开源的cloud-native storage编排, 提供平台和框架；为各种存储解决方案提供平台、框架和支持，以便与云原生环境本地集成。<br>Rook 将存储软件转变为自我管理、自我扩展和自我修复的存储服务，它通过自动化部署、引导、配置、置备、扩展、升级、迁移、灾难恢复、监控和资源管理来实现此目的。<br>Rook 使用底层云本机容器管理、调度和编排平台提供的工具来实现它自身的功能。<br>Rook 目前支持Ceph、NFS、Minio Object Store和CockroachDB。</p>
+<p>Rook使用Kubernetes原语使Ceph存储系统能够在Kubernetes上运行。下图说明了Ceph Rook如何与Kubernetes集成：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104133544110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>随着Rook在Kubernetes集群中运行，Kubernetes应用程序可以挂载由Rook管理的块设备和文件系统，或者可以使用S3 / Swift API提供对象存储。Rook oprerator自动配置存储组件并监控群集，以确保存储处于可用和健康状态。<br>Rook oprerator是一个简单的容器，具有引导和监视存储集群所需的全部功能。oprerator将启动并监控ceph monitor pods和OSDs的守护进程，它提供基本的RADOS存储。oprerator通过初始化运行服务所需的pod和其他组件来管理池，对象存储（S3 / Swift）和文件系统的CRD。<br>oprerator将监视存储后台驻留程序以确保群集正常运行。Ceph mons将在必要时启动或故障转移，并在群集增长或缩小时进行其他调整。oprerator还将监视api服务请求的所需状态更改并应用更改。<br>Rook oprerator还创建了Rook agent。这些agent是在每个Kubernetes节点上部署的pod。每个agent都配置一个Flexvolume插件，该插件与Kubernetes的volume controller集成在一起。处理节点上所需的所有存储操作，例如附加网络存储设备，安装卷和格式化文件系统。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104133558632.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>该rook容器包括所有必需的Ceph守护进程和工具来管理和存储所有数据 - 数据路径没有变化。 rook并没有试图与Ceph保持完全的忠诚度。 许多Ceph概念（如placement groups和crush maps）都是隐藏的，因此您无需担心它们。 相反，Rook为管理员创建了一个简化的用户体验，包括物理资源，池，卷，文件系统和buckets。 同时，可以在需要时使用Ceph工具应用高级配置。<br>Rook在golang中实现。Ceph在C ++中实现，其中数据路径被高度优化。我们相信这种组合可以提供两全其美的效果。</p>
+<h2 id="部署环境准备"><a href="#部署环境准备" class="headerlink" title="部署环境准备"></a>部署环境准备</h2><h3 id="官方参考："><a href="#官方参考：" class="headerlink" title="官方参考："></a>官方参考：</h3><p>root项目地址：<a href="https://github.com/rook/rook" target="_blank" rel="noopener">https://github.com/rook/rook</a><br>rook官方参考文档：<a href="https://rook.github.io/docs/rook/v0.9/ceph-quickstart.html" target="_blank" rel="noopener">https://rook.github.io/docs/rook/v0.9/ceph-quickstart.html</a></p>
+<h3 id="kubernetes集群准备"><a href="#kubernetes集群准备" class="headerlink" title="kubernetes集群准备"></a>kubernetes集群准备</h3><p>kubeadm部署3节点kubernetes1.13.1集群（,master节点x1，node节点x2），集群部署参考：<br><a href="https://blog.csdn.net/networken/article/details/84991940" target="_blank" rel="noopener">https://blog.csdn.net/networken/article/details/84991940</a><br>集群节点信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">192.168.92.56 k8s-master</span><br><span class="line">192.168.92.57 k8s-node1</span><br><span class="line">192.168.92.58 k8s-node2</span><br></pre></td></tr></table></figure>
+<p>在集群中至少有三个节点可用，满足ceph高可用要求，这里已配置master节点使其支持运行pod。</p>
+<h3 id="rook使用存储方式"><a href="#rook使用存储方式" class="headerlink" title="rook使用存储方式"></a>rook使用存储方式</h3><p>rook默认使用所有节点的所有资源，rook operator自动在所有节点上启动OSD设备，Rook会用如下标准监控并发现可用设备：</p>
+<ul>
+<li>设备没有分区</li>
+<li>设备没有格式化的文件系统</li>
+</ul>
+<p>Rook不会使用不满足以上标准的设备。另外也可以通过修改配置文件，指定哪些节点或者设备会被使用。</p>
+<h3 id="添加新磁盘"><a href="#添加新磁盘" class="headerlink" title="添加新磁盘"></a>添加新磁盘</h3><p>这里在所有节点添加1块50GB的新磁盘：/dev/sdb，作为OSD盘，提供存储空间，添加完成后扫描磁盘，确保主机能够正常识别到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 扫描 SCSI总线并添加 SCSI 设备</span></span><br><span class="line"><span class="keyword">for</span> host <span class="keyword">in</span> $(ls /sys/class/scsi_host) ; <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">"- - -"</span> &gt; /sys/class/scsi_host/<span class="variable">$host</span>/scan; <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新扫描 SCSI 总线</span></span><br><span class="line"><span class="keyword">for</span> scsi_device <span class="keyword">in</span> $(ls /sys/class/scsi_device/); <span class="keyword">do</span> <span class="built_in">echo</span> 1 &gt; /sys/class/scsi_device/<span class="variable">$scsi_device</span>/device/rescan; <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已添加的磁盘，能够看到sdb说明添加成功</span></span><br><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+<p>本次搭建的基本原理图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190106123334504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>无另外说明，以下全部操作都在master节点执行。</p>
+<h2 id="部署Rook-Operator"><a href="#部署Rook-Operator" class="headerlink" title="部署Rook Operator"></a>部署Rook Operator</h2><p>克隆rook github仓库到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/rook/rook.git</span><br><span class="line"><span class="built_in">cd</span> rook/cluster/examples/kubernetes/ceph/</span><br></pre></td></tr></table></figure>
+<p>执行yaml文件部署rook系统组件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ceph]$ kubectl apply -f operator.yaml</span><br><span class="line">namespace/rook-ceph-system created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/cephclusters.ceph.rook.io created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/cephfilesystems.ceph.rook.io created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/cephobjectstores.ceph.rook.io created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/cephobjectstoreusers.ceph.rook.io created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/cephblockpools.ceph.rook.io created</span><br><span class="line">customresourcedefinition.apiextensions.k8s.io/volumes.rook.io created</span><br><span class="line">clusterrole.rbac.authorization.k8s.io/rook-ceph-cluster-mgmt created</span><br><span class="line">role.rbac.authorization.k8s.io/rook-ceph-system created</span><br><span class="line">clusterrole.rbac.authorization.k8s.io/rook-ceph-global created</span><br><span class="line">clusterrole.rbac.authorization.k8s.io/rook-ceph-mgr-cluster created</span><br><span class="line">serviceaccount/rook-ceph-system created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-system created</span><br><span class="line">clusterrolebinding.rbac.authorization.k8s.io/rook-ceph-global created</span><br><span class="line">deployment.apps/rook-ceph-operator created</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure></p>
+<p>如上所示，它会创建如下资源：</p>
+<ol>
+<li>namespace：rook-ceph-system，之后的所有rook相关的pod都会创建在该namespace下面</li>
+<li>CRD：创建五个CRDs，.ceph.rook.io</li>
+<li>role &amp; clusterrole：用户资源控制</li>
+<li>serviceaccount：ServiceAccount资源，给Rook创建的Pod使用</li>
+<li>deployment：rook-ceph-operator，部署rook ceph相关的组件</li>
+</ol>
+<p>部署rook-ceph-operator过程中，会触发以DaemonSet的方式在集群部署Agent和Discoverpods。<br>operator会在集群内的每个主机创建两个pod:rook-discover,rook-ceph-agent：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get pod -n rook-ceph-system  -o wide</span><br><span class="line">NAME                                  READY   STATUS    RESTARTS   AGE     IP              NODE         NOMINATED NODE   READINESS GATES</span><br><span class="line">rook-ceph-agent-49w7t                 1/1     Running   0          7m48s   192.168.92.57   k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-agent-dpxkq                 1/1     Running   0          111s    192.168.92.58   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-agent-wb6r8                 1/1     Running   0          7m48s   192.168.92.56   k8s-master   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-operator-85d64cfb99-2c78k   1/1     Running   0          9m3s    10.244.1.2      k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-discover-597sk                   1/1     Running   0          7m48s   10.244.0.4      k8s-master   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-discover-7h89z                   1/1     Running   0          111s    10.244.2.2      k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-discover-hjdjt                   1/1     Running   0          7m48s   10.244.1.3      k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<h2 id="创建rook-Cluster"><a href="#创建rook-Cluster" class="headerlink" title="创建rook Cluster"></a>创建rook Cluster</h2><p>当检查到Rook operator, agent, and discover pods已经是running状态后，就可以部署roo cluster了。<br>执行yaml文件结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ceph]$ kubectl apply -f cluster.yaml </span><br><span class="line">namespace/rook-ceph created</span><br><span class="line">serviceaccount/rook-ceph-osd created</span><br><span class="line">serviceaccount/rook-ceph-mgr created</span><br><span class="line">role.rbac.authorization.k8s.io/rook-ceph-osd created</span><br><span class="line">role.rbac.authorization.k8s.io/rook-ceph-mgr-system created</span><br><span class="line">role.rbac.authorization.k8s.io/rook-ceph-mgr created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-cluster-mgmt created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-osd created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-mgr created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-mgr-system created</span><br><span class="line">rolebinding.rbac.authorization.k8s.io/rook-ceph-mgr-cluster created</span><br><span class="line">cephcluster.ceph.rook.io/rook-ceph created</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>如上所示，它会创建如下资源：</p>
+<ol>
+<li>namespace：rook-ceph，之后的所有Ceph集群相关的pod都会创建在该namespace下</li>
+<li>serviceaccount：ServiceAccount资源，给Ceph集群的Pod使用</li>
+<li>role &amp; rolebinding：用户资源控制</li>
+<li>cluster：rook-ceph，创建的Ceph集群</li>
+</ol>
+<p>Ceph集群部署成功后，可以查看到的pods如下，其中osd数量取决于你的节点数量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get pod -n rook-ceph -o wide</span><br><span class="line">NAME                                     READY   STATUS      RESTARTS   AGE     IP           NODE         NOMINATED NODE   READINESS GATES</span><br><span class="line">rook-ceph-mgr<span class="_">-a</span>-8649f78d9b-hlg7t         1/1     Running     0          3h30m   10.244.2.6   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-mon<span class="_">-a</span>-7c7df4b5bb-984x8         1/1     Running     0          3h31m   10.244.0.5   k8s-master   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-mon-b-7b9bc8b6c4-8trmz         1/1     Running     0          3h31m   10.244.1.4   k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-mon-c-54b5fb5955-5dgr7         1/1     Running     0          3h30m   10.244.2.5   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-0-b9bb5df49-gt4vs          1/1     Running     0          3h29m   10.244.0.7   k8s-master   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-1-9c6dbf797-2dg8p          1/1     Running     0          3h29m   10.244.2.8   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-2-867ddc447d-xkh7k         1/1     Running     0          3h29m   10.244.1.6   k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-prepare-k8s-master-m8tvr   0/2     Completed   0          3h29m   10.244.0.6   k8s-master   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-prepare-k8s-node1-jf7qz    0/2     Completed   1          3h29m   10.244.1.5   k8s-node1    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">rook-ceph-osd-prepare-k8s-node2-tcqdl    0/2     Completed   0          3h29m   10.244.2.7   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>可以看出部署的Ceph集群有：</p>
+<ol>
+<li>Ceph Monitors：默认启动三个ceph-mon，可以在cluster.yaml里配置</li>
+<li>Ceph Mgr：默认启动一个，可以在cluster.yaml里配置</li>
+<li>Ceph OSDs：根据cluster.yaml里的配置启动，默认在所有的可用节点上启动<br>上述Ceph组件对应kubernetes的kind是deployment：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl -n rook-ceph get deployment</span><br><span class="line">NAME              READY   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">rook-ceph-mgr<span class="_">-a</span>   1/1     1            1           5h34m</span><br><span class="line">rook-ceph-mon<span class="_">-a</span>   1/1     1            1           5h36m</span><br><span class="line">rook-ceph-mon-b   1/1     1            1           5h35m</span><br><span class="line">rook-ceph-mon-c   1/1     1            1           5h35m</span><br><span class="line">rook-ceph-osd-0   1/1     1            1           5h34m</span><br><span class="line">rook-ceph-osd-1   1/1     1            1           5h34m</span><br><span class="line">rook-ceph-osd-2   1/1     1            1           5h34m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<h3 id="删除Ceph集群"><a href="#删除Ceph集群" class="headerlink" title="删除Ceph集群"></a>删除Ceph集群</h3><p>如果要删除已创建的Ceph集群，可执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete -f cluster.yaml</span><br></pre></td></tr></table></figure>
+<p>删除Ceph集群后，在之前部署Ceph组件节点的/var/lib/rook/目录，会遗留下Ceph集群的配置信息。<br>若之后再部署新的Ceph集群，先把之前Ceph集群的这些信息删除，不然启动monitor会失败；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat clean-rook-dir.sh</span><br><span class="line">hosts=(</span><br><span class="line">  k8s-master</span><br><span class="line">  k8s-node1</span><br><span class="line">  k8s-node2</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> host <span class="keyword">in</span> <span class="variable">$&#123;hosts[@]&#125;</span> ; <span class="keyword">do</span></span><br><span class="line">  ssh <span class="variable">$host</span> <span class="string">"rm -rf /var/lib/rook/*"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置ceph-dashboard"><a href="#配置ceph-dashboard" class="headerlink" title="配置ceph dashboard"></a>配置ceph dashboard</h2><p>在cluster.yaml文件中默认已经启用了ceph dashboard，查看dashboard的service：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get service -n rook-ceph</span><br><span class="line">NAME                                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE</span><br><span class="line">rook-ceph-mgr                            ClusterIP   10.107.77.188    &lt;none&gt;        9283/TCP         3h33m</span><br><span class="line">rook-ceph-mgr-dashboard                  ClusterIP   10.96.135.98     &lt;none&gt;        8443/TCP         3h33m</span><br><span class="line">rook-ceph-mon<span class="_">-a</span>                          ClusterIP   10.105.153.93    &lt;none&gt;        6790/TCP         3h35m</span><br><span class="line">rook-ceph-mon-b                          ClusterIP   10.105.107.254   &lt;none&gt;        6790/TCP         3h34m</span><br><span class="line">rook-ceph-mon-c                          ClusterIP   10.104.1.238     &lt;none&gt;        6790/TCP         3h34m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>rook-ceph-mgr-dashboard监听的端口是8443，创建nodeport类型的service以便集群外部访问。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f rook/cluster/examples/kubernetes/ceph/dashboard-external-https.yaml</span><br></pre></td></tr></table></figure>
+<p>查看一下nodeport暴露的端口，这里是32483端口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get service -n rook-ceph | grep dashboard</span><br><span class="line">rook-ceph-mgr-dashboard                  ClusterIP   10.96.135.98     &lt;none&gt;        8443/TCP         3h37m</span><br><span class="line">rook-ceph-mgr-dashboard-external-https   NodePort    10.97.181.103    &lt;none&gt;        8443:32483/TCP   3h29m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>获取Dashboard的登陆账号和密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ MGR_POD=`kubectl get pod -n rook-ceph | grep mgr | awk <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line">[centos@k8s-master ~]$ kubectl -n rook-ceph logs <span class="variable">$MGR_POD</span> | grep password</span><br><span class="line">2019-01-03 05:44:00.585 7fced4782700  0 log_channel(audit) <span class="built_in">log</span> [DBG] : from=<span class="string">'client.4151 10.244.1.2:0/3446600469'</span> entity=<span class="string">'client.admin'</span> cmd=[&#123;<span class="string">"username"</span>: <span class="string">"admin"</span>, <span class="string">"prefix"</span>: <span class="string">"dashboard set-login-credentials"</span>, <span class="string">"password"</span>: <span class="string">"8v2AbqHDj6"</span>, <span class="string">"target"</span>: [<span class="string">"mgr"</span>, <span class="string">""</span>], <span class="string">"format"</span>: <span class="string">"json"</span>&#125;]: dispatch</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>找到username和password字段，我这里是admin，8v2AbqHDj6<br>打开浏览器输入任意一个Node的IP+nodeport端口，这里使用master节点 ip访问：<br><a href="https://192.168.92.56:32483" target="_blank" rel="noopener">https://192.168.92.56:32483</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134300431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>登录后界面如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134335201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>查看hosts状态：<br>运行了1个mgr、3个mon和3个osd</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134341810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>查看monitors状态：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134348345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>查看OSD状态<br>3个osd状态正常，每个容量50GB.</p>
+<p><img src="https://img-blog.csdnimg.cn/2019010413440155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h2 id="部署Ceph-toolbox"><a href="#部署Ceph-toolbox" class="headerlink" title="部署Ceph toolbox"></a>部署Ceph toolbox</h2><p>默认启动的Ceph集群，是开启Ceph认证的，这样你登陆Ceph组件所在的Pod里，是没法去获取集群状态，以及执行CLI命令，这时需要部署Ceph toolbox，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f rook/cluster/examples/kubernetes/ceph/ toolbox.yaml</span><br></pre></td></tr></table></figure>
+<p>部署成功后，pod如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ceph]$  kubectl -n rook-ceph get pods -o wide | grep ceph-tools</span><br><span class="line">rook-ceph-tools-76c7d559b6-8w7bk         1/1     Running     0          11s     192.168.92.58   k8s-node2    &lt;none&gt;           &lt;none&gt;</span><br><span class="line">[centos@k8s-master ceph]$</span><br></pre></td></tr></table></figure>
+<p>然后可以登陆该pod后，执行Ceph CLI命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ceph]$ kubectl -n rook-ceph <span class="built_in">exec</span> -it rook-ceph-tools-76c7d559b6-8w7bk bash</span><br><span class="line">bash: warning: setlocale: LC_CTYPE: cannot change locale (en_US.UTF-8): No such file or directory</span><br><span class="line">bash: warning: setlocale: LC_COLLATE: cannot change locale (en_US.UTF-8): No such file or directory</span><br><span class="line">bash: warning: setlocale: LC_MESSAGES: cannot change locale (en_US.UTF-8): No such file or directory</span><br><span class="line">bash: warning: setlocale: LC_NUMERIC: cannot change locale (en_US.UTF-8): No such file or directory</span><br><span class="line">bash: warning: setlocale: LC_TIME: cannot change locale (en_US.UTF-8): No such file or directory</span><br><span class="line">[root@k8s-node2 /]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>查看ceph集群状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-node2 /]<span class="comment"># ceph status</span></span><br><span class="line">  cluster:</span><br><span class="line">    id:     abddff95-5fa0-47dc-a001-7fb291a42bc6</span><br><span class="line">    health: HEALTH_OK</span><br><span class="line"> </span><br><span class="line">  services:</span><br><span class="line">    mon: 3 daemons, quorum c,b,a</span><br><span class="line">    mgr: a(active)</span><br><span class="line">    osd: 3 osds: 3 up, 3 <span class="keyword">in</span></span><br><span class="line"> </span><br><span class="line">  data:</span><br><span class="line">    pools:   1 pools, 100 pgs</span><br><span class="line">    objects: 0  objects, 0 B</span><br><span class="line">    usage:   12 GiB used, 129 GiB / 141 GiB avail</span><br><span class="line">    pgs:     100 active+clean</span><br><span class="line"> </span><br><span class="line">[root@k8s-node2 /]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>查看ceph配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-node2 /]<span class="comment"># cd /etc/ceph/</span></span><br><span class="line">[root@k8s-node2 ceph]<span class="comment"># ll</span></span><br><span class="line">total 12</span><br><span class="line">-rw-r--r-- 1 root root 121 Jan  3 11:28 ceph.conf</span><br><span class="line">-rw-r--r-- 1 root root  62 Jan  3 11:28 keyring</span><br><span class="line">-rw-r--r-- 1 root root  92 Sep 24 18:15 rbdmap</span><br><span class="line">[root@k8s-node2 ceph]<span class="comment"># cat ceph.conf </span></span><br><span class="line">[global]</span><br><span class="line">mon_host = 10.104.1.238:6790,10.105.153.93:6790,10.105.107.254:6790</span><br><span class="line"></span><br><span class="line">[client.admin]</span><br><span class="line">keyring = /etc/ceph/keyring</span><br><span class="line">[root@k8s-node2 ceph]<span class="comment"># cat keyring</span></span><br><span class="line">[client.admin]</span><br><span class="line">key = AQBjoC1cXKJ7KBAA3ZnhWyxvyGa8+fnLFK7ykw==</span><br><span class="line">[root@k8s-node2 ceph]<span class="comment"># cat rbdmap </span></span><br><span class="line"><span class="comment"># RbdDevice             Parameters</span></span><br><span class="line"><span class="comment">#poolname/imagename     id=client,keyring=/etc/ceph/ceph.client.keyring</span></span><br><span class="line">[root@k8s-node2 ceph]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="rook提供RBD服务"><a href="#rook提供RBD服务" class="headerlink" title="rook提供RBD服务"></a>rook提供RBD服务</h2><p>rook可以提供以下3类型的存储：<br> Block: Create block storage to be consumed by a pod<br> Object: Create an object store that is accessible inside or outside the Kubernetes cluster<br> Shared File System: Create a file system to be shared across multiple pods<br>在提供（Provisioning）块存储之前，需要先创建StorageClass和存储池。K8S需要这两类资源，才能和Rook交互，进而分配持久卷（PV）。<br>在kubernetes集群里，要提供rbd块设备服务，需要有如下步骤：</p>
+<ol>
+<li>创建rbd-provisioner pod</li>
+<li>创建rbd对应的storageclass</li>
+<li>创建pvc，使用rbd对应的storageclass</li>
+<li>创建pod使用rbd pvc</li>
+</ol>
+<p>通过rook创建Ceph Cluster之后，rook自身提供了rbd-provisioner服务，所以我们不需要再部署其provisioner。<br>备注：代码位置pkg/operator/ceph/provisioner/provisioner.go</p>
+<h3 id="创建pool和StorageClass"><a href="#创建pool和StorageClass" class="headerlink" title="创建pool和StorageClass"></a>创建pool和StorageClass</h3><p>查看storageclass.yaml的配置（默认）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ vim rook/cluster/examples/kubernetes/ceph/storageclass.yaml</span><br><span class="line">apiVersion: ceph.rook.io/v1</span><br><span class="line">kind: CephBlockPool</span><br><span class="line">metadata:</span><br><span class="line">  name: replicapool</span><br><span class="line">  namespace: rook-ceph</span><br><span class="line">spec:</span><br><span class="line">  replicated:</span><br><span class="line">    size: 1</span><br><span class="line">---</span><br><span class="line">apiVersion: storage.k8s.io/v1</span><br><span class="line">kind: StorageClass</span><br><span class="line">metadata:</span><br><span class="line">   name: rook-ceph-block</span><br><span class="line">provisioner: ceph.rook.io/block</span><br><span class="line">parameters:</span><br><span class="line">  blockPool: replicapool</span><br><span class="line">  <span class="comment"># Specify the namespace of the rook cluster from which to create volumes.</span></span><br><span class="line">  <span class="comment"># If not specified, it will use `rook` as the default namespace of the cluster.</span></span><br><span class="line">  <span class="comment"># This is also the namespace where the cluster will be</span></span><br><span class="line">  clusterNamespace: rook-ceph</span><br><span class="line">  <span class="comment"># Specify the filesystem type of the volume. If not specified, it will use `ext4`.</span></span><br><span class="line">  fstype: xfs</span><br><span class="line">  <span class="comment"># (Optional) Specify an existing Ceph user that will be used for mounting storage with this StorageClass.</span></span><br><span class="line">  <span class="comment">#mountUser: user1</span></span><br><span class="line">  <span class="comment"># (Optional) Specify an existing Kubernetes secret name containing just one key holding the Ceph user secret.</span></span><br><span class="line">  <span class="comment"># The secret must exist in each namespace(s) where the storage will be consumed.</span></span><br><span class="line">  <span class="comment">#mountSecret: ceph-user1-secret</span></span><br></pre></td></tr></table></figure>
+<p>配置文件中包含了一个名为replicapool的存储池，和名为rook-ceph-block的storageClass。</p>
+<p>运行yaml文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f /rook/cluster/examples/kubernetes/ceph/storageclass.yaml</span><br></pre></td></tr></table></figure>
+<p>查看创建的storageclass：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get storageclass</span><br><span class="line">NAME              PROVISIONER          AGE</span><br><span class="line">rook-ceph-block   ceph.rook.io/block   171m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure></p>
+<p>登录ceph dashboard查看创建的存储池：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134752317.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="使用存储"><a href="#使用存储" class="headerlink" title="使用存储"></a>使用存储</h3><p>以官方wordpress示例为例，创建一个经典的wordpress和mysql应用程序来使用Rook提供的块存储，这两个应用程序都将使用Rook提供的block volumes。<br>查看yaml文件配置，主要看定义的pvc和挂载volume部分，以wordpress.yaml为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ cat rook/cluster/examples/kubernetes/wordpress.yaml </span><br><span class="line">......</span><br><span class="line">---</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: PersistentVolumeClaim</span><br><span class="line">metadata:</span><br><span class="line">  name: wp-pv-claim</span><br><span class="line">  labels:</span><br><span class="line">    app: wordpress</span><br><span class="line">spec:</span><br><span class="line">  storageClassName: rook-ceph-block</span><br><span class="line">  accessModes:</span><br><span class="line">  - ReadWriteOnce</span><br><span class="line">  resources:</span><br><span class="line">    requests:</span><br><span class="line">      storage: 20Gi</span><br><span class="line">---</span><br><span class="line">......</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: wordpress-persistent-storage</span><br><span class="line">          mountPath: /var/www/html</span><br><span class="line">      volumes:</span><br><span class="line">      - name: wordpress-persistent-storage</span><br><span class="line">        persistentVolumeClaim:</span><br><span class="line">          claimName: wp-pv-claim</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>yaml文件里定义了一个名为wp-pv-claim的pvc，指定storageClassName为rook-ceph-block，申请的存储空间大小为20Gi。最后一部分创建了一个名为wordpress-persistent-storage的volume，并且指定 claimName为pvc的名称，最后将volume挂载到pod的/var/lib/mysql目录下。<br>启动mysql和wordpress：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f rook/cluster/examples/kubernetes/mysql.yaml</span><br><span class="line">kubectl apply -f rook/cluster/examples/kubernetes/wordpress.yaml</span><br></pre></td></tr></table></figure>
+<p>这2个应用都会创建一个块存储卷，并且挂载到各自的pod中，查看声明的pvc和pv：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get pvc</span><br><span class="line">NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS      AGE</span><br><span class="line">mysql-pv-claim   Bound    pvc-5bfbe28e-0fc9-11e9-b90d-000c291c25f3   20Gi       RWO            rook-ceph-block   32m</span><br><span class="line">wp-pv-claim      Bound    pvc-5f56c6d6-0fc9-11e9-b90d-000c291c25f3   20Gi       RWO            rook-ceph-block   32m</span><br><span class="line">[centos@k8s-master ~]$ kubectl get pv</span><br><span class="line">NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS      REASON   AGE</span><br><span class="line">pvc-5bfbe28e-0fc9-11e9-b90d-000c291c25f3   20Gi       RWO            Delete           Bound    default/mysql-pv-claim   rook-ceph-block            32m</span><br><span class="line">pvc-5f56c6d6-0fc9-11e9-b90d-000c291c25f3   20Gi       RWO            Delete           Bound    default/wp-pv-claim      rook-ceph-block            32m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>注意：这里的pv会自动创建，当提交了包含 StorageClass 字段的 PVC 之后，Kubernetes 就会根据这个 StorageClass 创建出对应的 PV，这是用到的是Dynamic Provisioning机制来动态创建pv，PV 支持 Static 静态请求，和动态创建两种方式。<br>在Ceph集群端检查：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ceph]$ kubectl -n rook-ceph <span class="built_in">exec</span> -it rook-ceph-tools-76c7d559b6-8w7bk bash</span><br><span class="line">......</span><br><span class="line">[root@k8s-node2 /]<span class="comment"># rbd info -p replicapool pvc-5bfbe28e-0fc9-11e9-b90d-000c291c25f3 </span></span><br><span class="line">rbd image <span class="string">'pvc-5bfbe28e-0fc9-11e9-b90d-000c291c25f3'</span>:</span><br><span class="line">        size 20 GiB <span class="keyword">in</span> 5120 objects</span><br><span class="line">        order 22 (4 MiB objects)</span><br><span class="line">        id: 88156b8b4567</span><br><span class="line">        block_name_prefix: rbd_data.88156b8b4567</span><br><span class="line">        format: 2</span><br><span class="line">        features: layering</span><br><span class="line">        op_features: </span><br><span class="line">        flags: </span><br><span class="line">        create_timestamp: Fri Jan  4 02:35:12 2019</span><br><span class="line">[root@k8s-node2 /]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>登陆pod检查rbd设备：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get pod -o wide</span><br><span class="line">NAME                               READY   STATUS    RESTARTS   AGE    IP            NODE        NOMINATED NODE   READINESS GATES</span><br><span class="line">wordpress-7b6c4c79bb-t5pst         1/1     Running   0          135m   10.244.1.16   k8s-node1   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">wordpress-mysql-6887bf844f-9pmg8   1/1     Running   0          135m   10.244.2.14   k8s-node2   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">[centos@k8s-master ~]$ </span><br><span class="line"></span><br><span class="line">[centos@k8s-master ~]$ kubectl <span class="built_in">exec</span> -it wordpress-7b6c4c79bb-t5pst bash</span><br><span class="line">root@wordpress-7b6c4c79bb-t5pst:/var/www/html<span class="comment">#</span></span><br><span class="line">root@wordpress-7b6c4c79bb-t5pst:/var/www/html<span class="comment">#  mount | grep rbd</span></span><br><span class="line">/dev/rbd0 on /var/www/html <span class="built_in">type</span> xfs (rw,relatime,attr2,inode64,sunit=8192,swidth=8192,noquota)</span><br><span class="line">root@wordpress-7b6c4c79bb-t5pst:/var/www/html<span class="comment"># df -h</span></span><br><span class="line">Filesystem               Size  Used Avail Use% Mounted on</span><br><span class="line">......</span><br><span class="line">/dev/rbd0                 20G   59M   20G   1% /var/www/html</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>登录ceph dashboard查看创建的images</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104134923802.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>一旦wordpress和mysql pods处于运行状态，获取wordpress应用程序的集群IP并使用浏览器访问：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[centos@k8s-master ~]$ kubectl get svc wordpress</span><br><span class="line">NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE</span><br><span class="line">wordpress   LoadBalancer   10.98.178.189   &lt;pending&gt;     80:30001/TCP   136m</span><br><span class="line">[centos@k8s-master ~]$</span><br></pre></td></tr></table></figure>
+<p>访问wordpress：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190104135002395.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25ldHdvcmtlbg==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://blog.csdn.net/networken/article/details/85772418" target="_blank" rel="noopener">https://blog.csdn.net/networken/article/details/85772418</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Kubernetes部署rook-ceph存储系统/" rel="tag"># Kubernetes部署rook+ceph存储系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/SpringBoot使用TomcatAPR模式/" rel="next" title="SpringBoot 使用 Tomcat APR 模式">
+                <i class="fa fa-chevron-left"></i> SpringBoot 使用 Tomcat APR 模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20180226143321.jpg"
+                alt="G加菲" />
+            
+              <p class="site-author-name" itemprop="name">G加菲</p>
+              <p class="site-description motion-element" itemprop="description">很喜欢吃~吃完就睡~所以长得很胖</p>
+          </div>
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 
+          src="//music.163.com/outchain/player?type=0&id=2188265841&auto=1&height=90"></iframe>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jy00278439" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gmlyo.com/" title="G加菲" target="_blank">G加菲</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes部署rook-ceph存储系统"><span class="nav-number">1.</span> <span class="nav-text">Kubernetes部署rook+ceph存储系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rook简介"><span class="nav-number">1.1.</span> <span class="nav-text">rook简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容器的持久化存储"><span class="nav-number">1.1.1.</span> <span class="nav-text">容器的持久化存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ceph分布式存储系统"><span class="nav-number">1.1.2.</span> <span class="nav-text">Ceph分布式存储系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rook"><span class="nav-number">1.1.3.</span> <span class="nav-text">Rook</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署环境准备"><span class="nav-number">1.2.</span> <span class="nav-text">部署环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#官方参考："><span class="nav-number">1.2.1.</span> <span class="nav-text">官方参考：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kubernetes集群准备"><span class="nav-number">1.2.2.</span> <span class="nav-text">kubernetes集群准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rook使用存储方式"><span class="nav-number">1.2.3.</span> <span class="nav-text">rook使用存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新磁盘"><span class="nav-number">1.2.4.</span> <span class="nav-text">添加新磁盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署Rook-Operator"><span class="nav-number">1.3.</span> <span class="nav-text">部署Rook Operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建rook-Cluster"><span class="nav-number">1.4.</span> <span class="nav-text">创建rook Cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除Ceph集群"><span class="nav-number">1.4.1.</span> <span class="nav-text">删除Ceph集群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置ceph-dashboard"><span class="nav-number">1.5.</span> <span class="nav-text">配置ceph dashboard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署Ceph-toolbox"><span class="nav-number">1.6.</span> <span class="nav-text">部署Ceph toolbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rook提供RBD服务"><span class="nav-number">1.7.</span> <span class="nav-text">rook提供RBD服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建pool和StorageClass"><span class="nav-number">1.7.1.</span> <span class="nav-text">创建pool和StorageClass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用存储"><span class="nav-number">1.7.2.</span> <span class="nav-text">使用存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">1.8.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">G加菲</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数(UV)
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量(PV)
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
