@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="iptables防火墙数据包过滤软件iptables 的表 (table) 与链 (chain)Filter（过滤器）主要跟进入 Linux 本机的数据包有关，是默认的 table ！  INPUT：主要与想要进入我们 Linux 本机的数据包有关。 OUTPUT：主要与我们 Linux 本机所要送出的数据包有关。 FORWARD：这个与 Linux 本机比较没有关系，他可以转递数据包到后端的计算">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-17T17:49:45.614Z">
+<meta property="og:updated_time" content="2019-01-17T17:58:55.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables防火墙数据包过滤软件">
 <meta name="twitter:description" content="iptables防火墙数据包过滤软件iptables 的表 (table) 与链 (chain)Filter（过滤器）主要跟进入 Linux 本机的数据包有关，是默认的 table ！  INPUT：主要与想要进入我们 Linux 本机的数据包有关。 OUTPUT：主要与我们 Linux 本机所要送出的数据包有关。 FORWARD：这个与 Linux 本机比较没有关系，他可以转递数据包到后端的计算">
@@ -441,11 +441,11 @@
 <h2 id="列出-nat-table-三条链的规则"><a href="#列出-nat-table-三条链的规则" class="headerlink" title="列出 nat table 三条链的规则"></a>列出 nat table 三条链的规则</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -L -n</span><br><span class="line">Chain PREROUTING (policy ACCEPT)</span><br><span class="line">target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain POSTROUTING (policy ACCEPT)</span><br><span class="line">target     prot opt <span class="built_in">source</span>               destination</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">target     prot opt <span class="built_in">source</span>               destination</span><br></pre></td></tr></table></figure>
 <p>上面的输出结果中，每一个 Chain 就是前面提到的每个链。Chain 那一行括号里面的 policy 就是默认的策略。</p>
 <ul>
-<li>target：代表进行的动作， ACCEPT 是放行，而 REJECT 则是拒绝，此外，尚有 DROP (丢弃) 的项目！</li>
-<li>prot：代表使用的数据包协议，主要有 tcp, udp 及 icmp 三种数据包格式；</li>
-<li>opt：额外的选项说明</li>
-<li>source ：代表此规则是针对哪个 <code>来源IP</code> 进行限制？</li>
-<li>destination ：代表此规则是针对哪个 <code>目标IP</code> 进行限制？</li>
+<li>target：代表进行的操作，ACCEPT 是放行，而 REJECT 则是拒绝，此外，尚有 DROP (丢弃) 的项目。</li>
+<li>prot：代表使用的数据包协议，主要有 TCP、UDP 及 ICMP 3 种数据包格式。</li>
+<li>opt：额外的选项说明。</li>
+<li>source：代表此规则是针对哪个 <code>来源IP</code> 进行限制。</li>
+<li>destination：代表此规则是针对哪个 <code>目标IP</code> 进行限制。</li>
 </ul>
 <p>第一个范例因为没有加上 <code>-t</code> 的选项，所以默认就是 filter 这个表格内的 INPUT、OUTPUT、FORWARD 三条链的规则。<br>若针对单机来说，INPUT 与 FORWARD 算是比较重要的管制防火墙链， 所以可以发现最后一条规则的政策是 REJECT（拒绝）！虽然 INPUT 与 FORWARD 的政策是放行 (ACCEPT)， 不过最后一条规则就已经将全部的数据包都拒绝了！</p>
 <p>这个命令的查看只是做格式化的查看，要详细解释每个规则会比较不容易。举例来说， 我们将 INPUT 的 5 条规则依据输出结果来说明一下，结果会变成：</p>
