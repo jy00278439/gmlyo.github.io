@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="iptables防火墙实例推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
+<meta name="description" content="iptables防火墙实例 推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
 <meta name="keywords" content="iptables防火墙实例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iptables防火墙实例">
 <meta property="og:url" content="http://www.gmlyo.com/2019/01/19/iptables防火墙实例/index.html">
 <meta property="og:site_name" content="G加菲">
-<meta property="og:description" content="iptables防火墙实例推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
+<meta property="og:description" content="iptables防火墙实例 推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/01/20/5c4367adb29cd.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/20/5c4367f988687.png">
-<meta property="og:updated_time" content="2019-01-19T18:10:19.876Z">
+<meta property="og:updated_time" content="2019-01-19T18:16:05.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables防火墙实例">
-<meta name="twitter:description" content="iptables防火墙实例推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
+<meta name="twitter:description" content="iptables防火墙实例 推荐使用脚本来编写防火墙， 然后通过 /etc/init.d/iptables save 来将结果存储到 /etc/sysconfig/iptables 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。">
 <meta name="twitter:image" content="https://i.loli.net/2019/01/20/5c4367adb29cd.png">
 
 
@@ -426,7 +426,9 @@
       
 
       
-        <h1 id="iptables防火墙实例"><a href="#iptables防火墙实例" class="headerlink" title="iptables防火墙实例"></a>iptables防火墙实例</h1><p>推荐使用脚本来编写防火墙， 然后通过 <code>/etc/init.d/iptables save</code> 来将结果存储到 <code>/etc/sysconfig/iptables</code> 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。 </p>
+        <h1 id="iptables防火墙实例"><a href="#iptables防火墙实例" class="headerlink" title="iptables防火墙实例"></a>iptables防火墙实例</h1><blockquote>
+<p>推荐使用脚本来编写防火墙， 然后通过 <code>/etc/init.d/iptables save</code> 来将结果存储到 <code>/etc/sysconfig/iptables</code> 中去。而且此一特色还可以用在呼叫其他的 scripts ，可以让防火墙规则具有较为灵活的使用方式。 </p>
+</blockquote>
 <a id="more"></a>
 <h2 id="规则草拟"><a href="#规则草拟" class="headerlink" title="规则草拟"></a>规则草拟</h2><p>下面介绍的这个防火墙，可以用来作为路由器上的防火墙，也可以用来作为本机的防火墙。 假设硬件连接如同下图所示， Linux 主机本身也是内部 LAN 的路由器，也就是一个简单的 IP 路由器的功能。假设目前网络接口有下面这些：</p>
 <ul>
