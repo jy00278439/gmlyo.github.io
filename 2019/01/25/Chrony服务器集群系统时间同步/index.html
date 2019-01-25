@@ -90,7 +90,7 @@
 <meta property="og:description" content="Chrony 设置服务器集群系统时间同步 RHEL7/CentOS7 新的 NTP 对时服务 Chrony">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/01/25/5c4aa385e3206.png">
-<meta property="og:updated_time" content="2019-01-25T07:21:38.726Z">
+<meta property="og:updated_time" content="2019-01-25T07:51:30.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrony 设置服务器集群系统时间同步">
 <meta name="twitter:description" content="Chrony 设置服务器集群系统时间同步 RHEL7/CentOS7 新的 NTP 对时服务 Chrony">
@@ -429,8 +429,7 @@
 <p>RHEL7/CentOS7 新的 NTP 对时服务 Chrony</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="什么是Chrony？"><a href="#什么是Chrony？" class="headerlink" title="什么是Chrony？"></a>什么是Chrony？</h2><p>Chrony 是一个开源的自由软件，像 CentOS 7 或基于 RHEL 7 操作系统，已经是默认服务，默认配置文件在 <code>/etc/chrony.conf</code> 它能保持系统时间与时间服务器（NTP）同步，让时间始终保持同步。相对于 NTP 时间同步软件，占据很大优势。其用法也很简单。</p>
-<p>Chrony 应用本身已经有几年了，它其实是网络时间协议的 (NTP) 的另一种实现。一直以来众多发行版里标配的都是 ntpd 对时服务，自 rhel7/centos7 起，Chrony 做为了发行版里的标配服务，不过老的 ntpd 服务依旧在 rhel7/centos7 里可以找到。</p>
+<h2 id="什么是Chrony？"><a href="#什么是Chrony？" class="headerlink" title="什么是Chrony？"></a>什么是Chrony？</h2><p>Chrony 是一个开源的自由软件，CentOS7/RHEL7 操作系统，已经是默认服务，默认配置文件在 <code>/etc/chrony.conf</code> 它能保持系统时间与时间服务器（NTP）同步，让时间始终保持同步。相对于 NTP 时间同步软件，占据很大优势。其用法也很简单。Chrony 应用本身已经有几年了，它其实是网络时间协议的 (NTP) 的另一种实现。一直以来众多发行版里标配的都是 ntpd 对时服务，自 CentOS7/RHEL7 起，Chrony 做为了发行版里的标配服务，不过老的 ntpd 服务依旧在 CentOS7/RHEL7 里可以找到。</p>
 <h2 id="Chrony-两个核心组件"><a href="#Chrony-两个核心组件" class="headerlink" title="Chrony 两个核心组件"></a>Chrony 两个核心组件</h2><blockquote>
 <p>Chrony 可以同时做为 NTP 服务的客户端和服务端。默认安装完后有两个程序 <code>chronyd</code> 和 <code>chronyc</code>。</p>
 <p>chronyd（主程序文件）<br>是守护 daemon 进程程序，主要用于调整内核中运行的系统时间和时间服务器同步。它确定计算机增减时间的比率，并对此进行调整补偿。</p>
