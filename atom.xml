@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gmlyo.com/"/>
-  <updated>2019-04-29T04:00:24.878Z</updated>
+  <updated>2019-04-29T05:25:47.468Z</updated>
   <id>http://www.gmlyo.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.gmlyo.com/2019/04/29/grep%E6%98%BE%E7%A4%BA%E5%89%8D%E5%90%8E%E5%87%A0%E8%A1%8C%E4%BF%A1%E6%81%AF/"/>
     <id>http://www.gmlyo.com/2019/04/29/grep显示前后几行信息/</id>
     <published>2019-04-29T04:00:11.000Z</published>
-    <updated>2019-04-29T04:00:24.878Z</updated>
+    <updated>2019-04-29T05:25:47.468Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="grep显示前后几行信息"><a href="#grep显示前后几行信息" class="headerlink" title="grep显示前后几行信息"></a>grep显示前后几行信息</h1><a id="more"></a><h2 id="显示foo及前5行"><a href="#显示foo及前5行" class="headerlink" title="显示foo及前5行"></a>显示foo及<code>前5行</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -B 5 foo file</span><br></pre></td></tr></table></figure><h2 id="显示foo及后5行"><a href="#显示foo及后5行" class="headerlink" title="显示foo及后5行"></a>显示foo及<code>后5行</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -A 5 foo file</span><br></pre></td></tr></table></figure><h2 id="显示-file-文件里匹配-foo-字串那行以及上下5行"><a href="#显示-file-文件里匹配-foo-字串那行以及上下5行" class="headerlink" title="显示 file 文件里匹配 foo 字串那行以及上下5行"></a>显示 file 文件里匹配 foo 字串那行以及<code>上下5行</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -C 5 foo file</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="grep显示前后几行信息"><a href="#grep显示前后几行信息" class="headerlink" title="grep显示前后几行信息"></a>grep显示前后几行信息</h1><a id="more"></a><h2 id="显示foo及前5行"><a href="#显示foo及前5行" class="headerlink" title="显示foo及前5行"></a>显示foo及前5行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -B 5 foo file</span><br></pre></td></tr></table></figure><h2 id="显示foo及后5行"><a href="#显示foo及后5行" class="headerlink" title="显示foo及后5行"></a>显示foo及后5行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -A 5 foo file</span><br></pre></td></tr></table></figure><h2 id="显示-file-文件里匹配-foo-字串那行以及上下5行"><a href="#显示-file-文件里匹配-foo-字串那行以及上下5行" class="headerlink" title="显示 file 文件里匹配 foo 字串那行以及上下5行"></a>显示 file 文件里匹配 foo 字串那行以及上下5行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -C 5 foo file</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
