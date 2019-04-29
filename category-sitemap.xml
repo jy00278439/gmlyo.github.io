@@ -161,13 +161,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-12-02T03:58:08.277Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/categories/Shadowsocks%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-12-10T08:19:11.065Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -212,6 +205,13 @@
     <url>
         <loc>http://www.gmlyo.com/categories/grep%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2019-04-29T05:25:47.468Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/categories/Hexo%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2019-04-29T05:27:52.228Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
