@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Python定义变量的三个特征">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T18:40:07.577Z">
+<meta property="og:updated_time" content="2019-05-17T04:32:04.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python定义变量的三个特征">
 <meta name="twitter:description" content="Python定义变量的三个特征">
@@ -429,6 +429,7 @@
 <h2 id="变量比较"><a href="#变量比较" class="headerlink" title="变量比较"></a>变量比较</h2><h3 id="判断变量值是否相等用"><a href="#判断变量值是否相等用" class="headerlink" title="判断变量值是否相等用"></a>判断变量值是否相等用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name1=<span class="string">'张三'</span></span><br><span class="line">name2=<span class="string">'李四'</span></span><br><span class="line"></span><br><span class="line">print(name1==name2)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
 <h3 id="判断变量id是否相等"><a href="#判断变量id是否相等" class="headerlink" title="判断变量id是否相等"></a>判断变量id是否相等</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">11</span></span><br><span class="line">y = x</span><br><span class="line">z = <span class="number">11</span></span><br><span class="line"></span><br><span class="line">print(x == y)  <span class="comment"># True</span></span><br><span class="line">print(x <span class="keyword">is</span> y)  <span class="comment"># True</span></span><br><span class="line">print(x <span class="keyword">is</span> z)  <span class="comment"># True，整数池的原因</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">257</span></span><br><span class="line">z = <span class="number">257</span></span><br><span class="line"></span><br><span class="line">print(x <span class="keyword">is</span> z)  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
 <p>从上述的打印消息可以看出<br><code>id</code>相等的变量，<code>值</code>一定相等，指向的是同一个内存地址<br><code>值</code>相等的变量，<code>id</code>不一定相等</p>
+<p>其中在第一次打印<code>print(x is z)</code>的时候就触发了上一章讲的整数池。这可以理解成Python的优化机制，<code>11</code>的值本身不大，并且由于我们快速的再一次使用了<code>11</code>，再由于申请内存空间需要计算机开销，因此Python让<code>x</code>和<code>z</code>都指向同一个<code>11</code>。因为存不是目的，取才是目的，这样进行优化的话并不会影响程序的运行。</p>
 
       
     </div>

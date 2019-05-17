@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python字符串类型," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="G加菲" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="str 字符串类型str 基本使用用途 用于 描述型的数据，姓名，性别，地址，国籍 等">
+<meta name="keywords" content="Python字符串类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python字符串类型">
+<meta property="og:url" content="http://www.gmlyo.com/2018/07/05/Python字符串类型/index.html">
+<meta property="og:site_name" content="G加菲">
+<meta property="og:description" content="str 字符串类型str 基本使用用途 用于 描述型的数据，姓名，性别，地址，国籍 等">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-05T02:08:38.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python字符串类型">
+<meta name="twitter:description" content="str 字符串类型str 基本使用用途 用于 描述型的数据，姓名，性别，地址，国籍 等">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gmlyo.com/2018/07/05/Python字符串类型/"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d322328"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>Python字符串类型 | G加菲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G加菲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gmlyo.com/2018/07/05/Python字符串类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="G加菲">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20180226143321.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G加菲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python字符串类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T00:47:16+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Python笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="str-字符串类型"><a href="#str-字符串类型" class="headerlink" title="str 字符串类型"></a><code>str</code> 字符串类型</h2><h3 id="str-基本使用"><a href="#str-基本使用" class="headerlink" title="str 基本使用"></a><code>str</code> 基本使用</h3><h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><blockquote>
+<p>用于 描述型的数据，姓名，性别，地址，国籍 等</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h4><blockquote>
+<p>在单引号，双引号，三引号内包含一串的字符</p>
+</blockquote>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">msg=<span class="string">"hello world"</span>  <span class="comment"># msg=str("hello world") </span></span><br><span class="line"></span><br><span class="line">res1=str(1)</span><br><span class="line">res2=str(1.2)</span><br><span class="line">res3=str([1,2,3])</span><br><span class="line">print(type(res1),type(res2),type(res3))</span><br><span class="line"></span><br><span class="line">info = 'my name is agon'</span><br><span class="line">name = 'egon'    <span class="comment"># name = str('egon')</span></span><br><span class="line">print(name)</span><br><span class="line">print(type(name))</span><br><span class="line">print(id(name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">egon</span><br><span class="line">&lt;class 'str'&gt;</span><br><span class="line">3172826579048</span><br></pre></td></tr></table></figure>
+<h4 id="常用操作-内置的方法"><a href="#常用操作-内置的方法" class="headerlink" title="常用操作+内置的方法"></a>常用操作+内置的方法</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按索引取值（正向取+反向取），只能取</span></span><br><span class="line">msg = <span class="string">'he lo'</span></span><br><span class="line"><span class="built_in">print</span>(msg[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(msg[<span class="number">3</span>])</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">h</span><br><span class="line">l</span><br><span class="line"></span><br><span class="line">msg = <span class="string">'he lo'</span></span><br><span class="line">msg[<span class="number">2</span>] = <span class="string">'A'</span></span><br><span class="line">TypeError: <span class="string">'str'</span> object does <span class="keyword">not</span> support item assignment</span><br><span class="line"><span class="comment"># 字符串不支持更改内容</span></span><br><span class="line"></span><br><span class="line">msg = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">print</span>(msg[<span class="number">0</span>:])    <span class="comment"># 正向取值</span></span><br><span class="line"><span class="built_in">print</span>(msg[::<span class="number">-1</span>])    <span class="comment"># 反向取值</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">hello</span><br><span class="line">olleh</span><br></pre></td></tr></table></figure>
+<h4 id="切片（顾头不顾尾，步长）"><a href="#切片（顾头不顾尾，步长）" class="headerlink" title="切片（顾头不顾尾，步长）"></a>切片（顾头不顾尾，步长）</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">msg = 'hello world'</span><br><span class="line"><span class="section">print(msg[0:4])    # 从索引 0 开始 到 4 结束</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">hell    <span class="comment"># 遵循 顾头不顾尾 的规则，输出到 o 前面的字符 l 结束</span></span><br><span class="line"></span><br><span class="line"><span class="section">print(msg[0:4:2])    # 步长，隔2步，取一个字符</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">hl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从一个大字符串中切除一个子字符串（骨头不顾尾，步长）</span></span><br><span class="line">msg = 'hello world'</span><br><span class="line"><span class="section">print(msg[1:3])</span></span><br><span class="line"><span class="section">print(msg[6:11])</span></span><br><span class="line"><span class="section">print(msg[6:11:2])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 倒着取值，注意方向要一致</span></span><br><span class="line">msg = 'hello world'</span><br><span class="line"><span class="section">print(msg[6:])</span></span><br><span class="line"><span class="section">print(msg[-1:-6:-1])</span></span><br><span class="line"><span class="section">print(msg[-1::-1])</span></span><br><span class="line"><span class="section">print(msg[::-1])</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">inp = <span class="string">'get a.txt'</span></span><br><span class="line"><span class="keyword">cmd</span><span class="bash"> = inp[0:3]</span></span><br><span class="line"><span class="bash">filepath = inp[4:]</span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(cmd)</span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(filepath)</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 输出结果    获取 命令 和 文件名</span></span></span><br><span class="line"><span class="bash">get</span></span><br><span class="line"><span class="bash">a.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inp = <span class="string">'get a.txt'</span></span><br><span class="line"># inp.<span class="keyword">split</span>()    # 不指定 分割符 默认以空格为分割符</span><br><span class="line"><span class="keyword">res</span> = inp.<span class="keyword">split</span>(<span class="string">' '</span>)</span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">res</span>)</span><br><span class="line"># 输出结果</span><br><span class="line">[<span class="string">'get'</span>, <span class="string">'a.txt'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"1234567890"</span></span><br><span class="line">s = <span class="string">"abcdefghij"</span></span><br><span class="line"><span class="built_in">print</span>(s[-1:])      <span class="comment"># 截取最后一个元素</span></span><br><span class="line"><span class="built_in">print</span>(s[0:3])      <span class="comment"># 截取第一位到第三位的字符</span></span><br><span class="line"><span class="built_in">print</span>(s[:])        <span class="comment"># 截取字符串的全部字符</span></span><br><span class="line"><span class="built_in">print</span>(s[6:])       <span class="comment"># 截取第七个字符到结尾</span></span><br><span class="line"><span class="built_in">print</span>(s[:-3])      <span class="comment"># 截取从头开始到倒数第三个字符之前</span></span><br><span class="line"><span class="built_in">print</span>(s[2])        <span class="comment"># 截取第三个字符</span></span><br><span class="line"><span class="built_in">print</span>(s[::-1])     <span class="comment"># 创建一个与原字符串顺序相反的字符串</span></span><br><span class="line"><span class="built_in">print</span>(s[-3:-1])    <span class="comment"># 截取 倒数第三位 和 倒数第一位 之前的字符</span></span><br><span class="line"><span class="built_in">print</span>(s[-3:])      <span class="comment"># 截取 倒数第三位 到结尾</span></span><br><span class="line"><span class="built_in">print</span>(s[:-12:-2])  <span class="comment"># 逆序截取后个数，每 3 个取一个，而且取是逆向取值</span></span><br><span class="line"><span class="built_in">print</span>(s[:10:2])    <span class="comment"># 前 10 个数，每两个取一个</span></span><br></pre></td></tr></table></figure>
+<h4 id="长度len"><a href="#长度len" class="headerlink" title="长度len"></a>长度len</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">'hello world'</span></span><br><span class="line"><span class="built_in">print</span>(len(msg))    <span class="comment"># 长度是11，索引最大到10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+<h4 id="成员运算-in-和-not-in"><a href="#成员运算-in-和-not-in" class="headerlink" title="成员运算 in 和 not in"></a>成员运算 in 和 not in</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">'hello world alex is SB'</span></span><br><span class="line">print(<span class="string">'alex'</span> <span class="keyword">in</span> msg)    <span class="comment"># 判断 子字符串 'alex' 是否在 msg 变量字符串里</span></span><br><span class="line">print(<span class="string">'SB'</span> <span class="keyword">in</span> msg)</span><br><span class="line">print(<span class="string">'egon'</span> <span class="keyword">not</span> <span class="keyword">in</span> msg)</span><br><span class="line">print(<span class="keyword">not</span> <span class="string">'egon'</span> <span class="keyword">in</span> msg)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">msg = <span class="string">'alex say my name is alex'</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">'alex'</span> <span class="keyword">in</span> msg:</span><br><span class="line">    print(<span class="string">'存在'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">存在</span><br><span class="line"></span><br><span class="line">msg = <span class="string">'alex say my name is alex'</span></span><br><span class="line">print(<span class="string">'alex'</span> <span class="keyword">in</span> msg)</span><br><span class="line">print(<span class="string">'alex'</span> <span class="keyword">not</span> <span class="keyword">in</span> msg)    <span class="comment"># 推荐使用这种形式</span></span><br><span class="line">print(<span class="keyword">not</span> <span class="string">'alex'</span> <span class="keyword">in</span> msg)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h4 id="strip-移除字符串左右两边的字符"><a href="#strip-移除字符串左右两边的字符" class="headerlink" title="strip 移除字符串左右两边的字符"></a>strip 移除字符串左右两边的字符</h4><blockquote>
+<p><code>strip</code> 只能 移除 字符串 左右两边的 字符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'***egon*****'</span></span><br><span class="line"><span class="built_in">print</span>(name.strip(<span class="string">'*'</span>))</span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">egon            <span class="comment"># strip 是生成了一个新的值，并不是改变原值</span></span><br><span class="line">***egon*****</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">name</span> = '     egon   '</span><br><span class="line"><span class="comment"># strip() 不写指定符号，默认去除字符串左右两边的空格</span></span><br><span class="line"><span class="built_in">name</span> = <span class="built_in">name</span>.strip()</span><br><span class="line"><span class="comment"># 将 strip() 生成的新值，重新赋值给 变量name，可以看作是 字符串的变更</span></span><br><span class="line">print(<span class="built_in">name</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">egon</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">'* / , alex is sb -*=*******'</span></span><br><span class="line"><span class="built_in">print</span>(msg.strip(<span class="string">'*, /-='</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">alex <span class="keyword">is</span> sb</span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">name</span> = input(<span class="string">'&gt;&gt;&gt;: '</span>)</span><br><span class="line"><span class="keyword">name</span> = input(<span class="string">'&gt;&gt;&gt;: '</span>).strip()</span><br><span class="line">print(<span class="keyword">name</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    <span class="comment"># cmd = input('cmd&gt;&gt;: ')</span></span><br><span class="line">    <span class="comment"># cmd = cmd.strip()    # 主要用于用户输入时，去除左右两边的空格字符</span></span><br><span class="line">    <span class="keyword">cmd</span><span class="bash"> = input(<span class="string">'cmd&gt;&gt;: '</span>).strip()</span></span><br><span class="line"><span class="bash">    <span class="keyword">if</span> len(cmd) == 0:<span class="built_in">continue</span></span></span><br><span class="line"><span class="bash">    <span class="keyword">if</span> cmd == <span class="string">'q'</span>:<span class="built_in">break</span></span></span><br><span class="line"><span class="bash">    <span class="built_in">print</span>(<span class="string">'%s is running'</span> % cmd)</span></span><br></pre></td></tr></table></figure>
+<h4 id="切分（分割）split"><a href="#切分（分割）split" class="headerlink" title="切分（分割）split"></a>切分（分割）split</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">info = <span class="string">'root:x:0:0:root:/root:/bin/bash'</span></span><br><span class="line"><span class="keyword">print</span>(info)</span><br><span class="line"><span class="keyword">res</span> = info.<span class="keyword">split</span>(<span class="string">':'</span>)  # 不指定分割符，默认从头切到尾</span><br><span class="line"># <span class="keyword">res</span> = info.<span class="keyword">split</span>(<span class="string">':'</span>, maxsplit=-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">res</span>, <span class="built_in">type</span>(<span class="keyword">res</span>))</span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">res</span>[<span class="number">0</span>])    # 经过 <span class="keyword">split</span> 分割后，获取下标为 <span class="number">0</span> 的元素</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">roo<span class="variable">t:x</span>:<span class="number">0</span>:<span class="number">0</span>:roo<span class="variable">t:</span>/roo<span class="variable">t:</span>/bin/bash</span><br><span class="line">[<span class="string">'root'</span>, <span class="string">'x'</span>, <span class="string">'0'</span>, <span class="string">'0'</span>, <span class="string">'root'</span>, <span class="string">'/root'</span>, <span class="string">'/bin/bash'</span>]</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmd</span><span class="bash"> = <span class="string">'get a.txt'</span></span></span><br><span class="line"><span class="bash">res = cmd.split()    <span class="comment"># split() 不写参数，默认以空格分割</span></span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(res[0])</span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(res[1])</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 输出结果    获取 命令 和 文件名</span></span></span><br><span class="line"><span class="bash">get</span></span><br><span class="line"><span class="bash">a.txt</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">cmd = <span class="string">'get a.txt 33333'</span></span></span><br><span class="line"><span class="bash">res = cmd.split(<span class="string">' '</span>, maxsplit=1)</span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(res)</span></span><br></pre></td></tr></table></figure>
+<h4 id="循环（循环取值）"><a href="#循环（循环取值）" class="headerlink" title="循环（循环取值）"></a>循环（循环取值）</h4><blockquote>
+<p><code>while</code> 循环取值<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="symbol">'hello</span> world'</span><br><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(msg[n])</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"># 输出信息</span><br><span class="line">IndexError: <span class="built_in">string</span> index <span class="keyword">out</span> <span class="keyword">of</span> <span class="keyword">range</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">msg = 'hello world'</span><br><span class="line">n = 0    <span class="comment"># 指定一个计数器</span></span><br><span class="line">while n &lt; len(msg):</span><br><span class="line">    print(msg[n])</span><br><span class="line">    n += 1    <span class="comment"># 自加计数器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">h</span><br><span class="line">e</span><br><span class="line">l</span><br><span class="line">l</span><br><span class="line">o</span><br><span class="line"></span><br><span class="line">w</span><br><span class="line">o</span><br><span class="line">r</span><br><span class="line">l</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<h4 id="for循环迭代取值"><a href="#for循环迭代取值" class="headerlink" title="for循环迭代取值"></a>for循环迭代取值</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">msg = 'hello world'</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> msg:</span><br><span class="line">    <span class="keyword">print</span>(item)</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line"><span class="built_in">h</span></span><br><span class="line"><span class="built_in">e</span></span><br><span class="line"><span class="keyword">l</span></span><br><span class="line"><span class="keyword">l</span></span><br><span class="line">o</span><br><span class="line"></span><br><span class="line"><span class="built_in">w</span></span><br><span class="line">o</span><br><span class="line"><span class="built_in">r</span></span><br><span class="line"><span class="keyword">l</span></span><br><span class="line"><span class="built_in">d</span></span><br></pre></td></tr></table></figure>
+<h4 id="strip-lstrip-rstrip"><a href="#strip-lstrip-rstrip" class="headerlink" title="strip, lstrip, rstrip"></a><code>strip</code>, <code>lstrip</code>, <code>rstrip</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">'*****hello*****'</span></span><br><span class="line"><span class="built_in">print</span>(name.strip(<span class="string">'*'</span>))    <span class="comment"># 去除左右两边的字符</span></span><br><span class="line"><span class="built_in">print</span>(name.lstrip(<span class="string">'*'</span>))   <span class="comment"># 去除左边的字符</span></span><br><span class="line"><span class="built_in">print</span>(name.rstrip(<span class="string">'*'</span>))   <span class="comment"># 去除右边的字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">hello</span><br><span class="line">hello*****</span><br><span class="line">*****hello</span><br></pre></td></tr></table></figure>
+<h4 id="lower-upper"><a href="#lower-upper" class="headerlink" title="lower, upper"></a><code>lower</code>, <code>upper</code></h4><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name='hello'</span><br><span class="line"><span class="keyword">print</span>(name.<span class="built_in">lower</span>())    <span class="meta"># 转换小写字母</span></span><br><span class="line"><span class="keyword">print</span>(name)            <span class="meta"># lower 方法不改变原值</span></span><br><span class="line"><span class="keyword">print</span>(name.<span class="built_in">upper</span>())    <span class="meta"># 转换大写字母</span></span><br><span class="line"><span class="keyword">print</span>(name)            <span class="meta"># upper 方法不改变原值</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 输出结果</span></span><br><span class="line">hello</span><br><span class="line">HELLO</span><br><span class="line">Hello</span><br></pre></td></tr></table></figure>
+<h4 id="startswith-endswith"><a href="#startswith-endswith" class="headerlink" title="startswith, endswith"></a><code>startswith</code>, <code>endswith</code></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">'Hello is run'</span></span><br><span class="line"><span class="keyword">print</span>(name.startswith(<span class="string">'Hello'</span>))    <span class="comment"># 以 Hello 开头</span></span><br><span class="line"><span class="keyword">print</span>(name.endswith(<span class="string">'run'</span>))        <span class="comment"># 以 run 结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h4 id="format-字符串格式化输出-的-三种方法"><a href="#format-字符串格式化输出-的-三种方法" class="headerlink" title="format 字符串格式化输出 的 三种方法"></a><code>format</code> 字符串格式化输出 的 三种方法</h4><blockquote>
+<p><code>%s</code> 的方式传值需要记住传值位置<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>('name <span class="built_in">is</span> <span class="built_in">%s</span> age <span class="built_in">is</span> <span class="built_in">%s</span>' <span class="symbol">%</span> ('egon', <span class="number">18</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>缺点严格依赖 <code>%s</code> 的位置</p>
+</blockquote>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># format() 里的参数可以不用对应（推荐使用这种方式）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'name is &#123;name&#125; age is &#123;age&#125;'</span>.format(age=<span class="number">18</span>, name=<span class="string">'egon'</span>))</span><br><span class="line"><span class="comment"># 输出方式</span></span><br><span class="line">name <span class="keyword">is</span> egon age <span class="keyword">is</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此方法类似 %s 的格式化输出</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'name is &#123;&#125; age is &#123;&#125;'</span>.format(<span class="string">'egon'</span>, <span class="number">18</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">name <span class="keyword">is</span> egon age <span class="keyword">is</span> <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'name is &#123;0&#125;&#123;0&#125;&#123;0&#125; age is &#123;1&#125;'</span>.format(<span class="number">18</span>, <span class="string">'egon'</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">name <span class="keyword">is</span> <span class="number">181818</span> age <span class="keyword">is</span> egon</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;1&#125; &#123;0&#125; &#123;1&#125;'</span>.format(<span class="string">'egon'</span>, <span class="number">18</span>, <span class="string">'male'</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="number">18</span> egon <span class="number">18</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'&#123;0&#125; &#123;1&#125; &#123;2&#125;'</span>.format(<span class="string">'egon'</span>, <span class="number">18</span>, <span class="string">'male'</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">egon <span class="number">18</span> male</span><br></pre></td></tr></table></figure>
+<h4 id="split-rsplit"><a href="#split-rsplit" class="headerlink" title="split, rsplit"></a><code>split</code>, <code>rsplit</code></h4><blockquote>
+<p><code>split</code> 可以把 <code>字符串</code> 切割成 <code>列表</code></p>
+</blockquote>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmd</span><span class="bash"> = <span class="string">'get|a.txt|3333'</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(cmd.split(<span class="string">'|'</span>, 1))</span></span><br><span class="line"><span class="bash"><span class="built_in">print</span>(cmd.rsplit(<span class="string">'|'</span>, 1))</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">info = <span class="string">'root:x:0:0:root:/root:/bin/bash'</span></span><br><span class="line"><span class="keyword">print</span>(info.<span class="keyword">split</span>(<span class="string">':'</span>))    <span class="comment"># 这里的分割符指定为(:)冒号，默认分隔符为空格</span></span><br><span class="line"><span class="keyword">print</span>(info.<span class="keyword">split</span>(<span class="string">':'</span>, -<span class="number">1</span>))    <span class="comment"># 默认值为 -1，-1 表示从头切到尾</span></span><br><span class="line"></span><br><span class="line">info = <span class="string">'root:x:0:0:root:/root:/bin/bash'</span>     <span class="comment"># 获取第一个 root</span></span><br><span class="line"><span class="keyword">print</span>(info.<span class="keyword">split</span>(<span class="string">':'</span>, <span class="number">1</span>))    <span class="comment"># 1 表示切一次，从左往右切割一次</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">[<span class="string">'root'</span>, <span class="string">'x:0:0:root:/root:/bin/bash'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">info</span> = <span class="string">'root:x:0:0:root:/root:/bin/bash'</span></span><br><span class="line">print(<span class="literal">info</span>.rsplit(<span class="string">':'</span>, <span class="number">1</span>))    <span class="comment"># 从右开始切割一次</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">[<span class="string">'root:x:0:0:root:/root'</span>, <span class="string">'/bin/bash'</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="join-拼接"><a href="#join-拼接" class="headerlink" title="join 拼接"></a>join 拼接</h4><blockquote>
+<p>join 把 列表 转成 字符串，前提是列表中的所有数据为字符串<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">info</span> = <span class="string">'root:x:0:0:root:/root:/bin/bash'</span></span><br><span class="line">str_to_list = <span class="keyword">info</span>.<span class="keyword">split</span>(<span class="string">':'</span>)</span><br><span class="line">print(str_to_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">[<span class="string">'root'</span>, <span class="string">'x'</span>, <span class="string">'0'</span>, <span class="string">'0'</span>, <span class="string">'root'</span>, <span class="string">'/root'</span>, <span class="string">'/bin/bash'</span>]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="string">'root'</span>, <span class="string">'x'</span>, <span class="string">'0'</span>, <span class="string">'0'</span>, <span class="string">'root'</span>, <span class="string">'/root'</span>, <span class="string">'/bin/bash'</span>]</span><br><span class="line">list_to_str = <span class="string">':'</span>.join(lst)</span><br><span class="line">print(list_to_str)</span><br><span class="line">print(type(list_to_str))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="symbol">root:</span><span class="symbol">x:</span><span class="number">0</span><span class="symbol">:</span><span class="number">0</span><span class="symbol">:root</span><span class="symbol">:/root</span><span class="symbol">:/bin/bash</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="iterable-参数"><a href="#iterable-参数" class="headerlink" title="iterable 参数"></a>iterable 参数</h4><blockquote>
+<p>可被 for 循环的 全都是 iterable<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i in <span class="keyword">ls</span><span class="variable">t:</span></span><br><span class="line">    <span class="keyword">print</span>(i)</span><br><span class="line"></span><br><span class="line"># 注意：<span class="keyword">join</span> 只能连接 所包含的元素 全都为 字符串类型 的列表</span><br><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="string">':'</span>.<span class="keyword">join</span>(lst)</span><br><span class="line">TypeError: sequence item <span class="number">0</span>: expected str instance, <span class="keyword">int</span> found</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="replace-替换字符串"><a href="#replace-替换字符串" class="headerlink" title="replace 替换字符串"></a>replace 替换字符串</h4><blockquote>
+<p><code>replace</code> 不会改变原值<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">msg = '<span class="keyword">my</span> <span class="built_in">name</span> <span class="keyword">is</span> alex, alex <span class="built_in">say</span> hello'</span><br><span class="line">print(msg.replace('alex', 'egon'))        <span class="comment"># 不指定，表示全部替换</span></span><br><span class="line">print(msg.replace('alex', 'egon', <span class="number">1</span>))     <span class="comment"># 1 表示 替换第一个</span></span><br><span class="line">print(msg.replace('alex', 'egon', <span class="number">-1</span>))    <span class="comment"># -1 表示全部替换</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">my</span> <span class="built_in">name</span> <span class="keyword">is</span> egon, egon <span class="built_in">say</span> hello</span><br><span class="line"><span class="keyword">my</span> <span class="built_in">name</span> <span class="keyword">is</span> egon, alex <span class="built_in">say</span> hello</span><br><span class="line"><span class="keyword">my</span> <span class="built_in">name</span> <span class="keyword">is</span> egon, egon <span class="built_in">say</span> hello</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="isdigit-判断-字符串-是否是-纯数字"><a href="#isdigit-判断-字符串-是否是-纯数字" class="headerlink" title="isdigit 判断 字符串 是否是 纯数字"></a><code>isdigit</code> 判断 <code>字符串</code> 是否是 <code>纯数字</code></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span>(<span class="string">'10101'</span>.isdigit())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'abc123'</span>.isdigit())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>判断 <code>bytes</code> 和 <code>unicode</code> 类型，是最常用的用于于判断 字符 是否为 “数字” 的方法</p>
+</blockquote>
+<blockquote>
+<p> 猜年龄演示错误结果</p>
+</blockquote>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">age=<span class="string">'abcdefg'</span></span><br><span class="line"><span class="keyword">int</span>(age)</span><br><span class="line"><span class="meta"># 不是整型的报错信息</span></span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> <span class="keyword">int</span>() with base <span class="number">10</span>: <span class="string">'abcdefg'</span></span><br><span class="line"></span><br><span class="line">age = <span class="number">50</span></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    age = <span class="keyword">input</span>(<span class="string">'&gt;&gt;: '</span>).strip()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> age.isdigit():<span class="keyword">continue</span></span><br><span class="line">    age = <span class="keyword">int</span>(age)</span><br><span class="line">    <span class="keyword">if</span> age &gt; <span class="number">50</span>:</span><br><span class="line">        <span class="keyword">print</span>(<span class="string">'too big'</span>)</span><br><span class="line">    elif age &lt; <span class="number">50</span>:</span><br><span class="line">        <span class="keyword">print</span>(<span class="string">'too small'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span>(<span class="string">'you got it'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h4 id="find-rfind-index-rindex-coun"><a href="#find-rfind-index-rindex-coun" class="headerlink" title="find, rfind, index, rindex, coun"></a><code>find</code>, <code>rfind</code>, <code>index</code>, <code>rindex</code>, <code>coun</code></h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">'my name is egon, egon is nb'</span></span><br><span class="line"><span class="built_in">print</span>(msg.find(<span class="string">'egon'</span>))    <span class="comment"># 查找 子字符串 在 大字符串中的起始位置</span></span><br><span class="line">                           <span class="comment"># 找的是 'egon' 在大字符串 msg 中的起始索引</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(msg.find(<span class="string">'egon'</span>, <span class="number">1</span>, <span class="number">5</span>)    <span class="comment"># 从 1 开始 到 5 结束</span></span><br><span class="line">                                 <span class="comment"># 顾头不顾尾，找不到则返回 -1 不会报错，找到了则显示索引</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(msg.index(<span class="string">'egon'</span>, <span class="number">1</span>, <span class="number">3</span>))    <span class="comment"># 同上，但是找不到会报错</span></span><br><span class="line"><span class="comment"># 报错信息</span></span><br><span class="line">ValueError: substring <span class="keyword">not</span> found</span><br><span class="line"><span class="built_in">print</span>(msg.index(<span class="string">'egon'</span>))    <span class="comment"># 不写位置参数，和 find() 效果一样</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(msg.rfind(<span class="string">'egon'</span>))</span><br><span class="line"><span class="built_in">print</span>(msg.rindex(<span class="string">'egon'</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(msg.count(<span class="string">'egon'</span>))          <span class="comment"># 统计 子字符串 有多少个</span></span><br><span class="line"><span class="built_in">print</span>(msg.count(<span class="string">'egon'</span>, <span class="number">1</span>, <span class="number">3</span>))    <span class="comment"># 顾头不顾尾，如果不指定范围则查找所有</span></span><br></pre></td></tr></table></figure>
+<h4 id="center-ljust-rjust-zfill"><a href="#center-ljust-rjust-zfill" class="headerlink" title="center, ljust, rjust, zfill"></a><code>center</code>, <code>ljust</code>, <code>rjust</code>, <code>zfill</code></h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'info'</span>.center(<span class="number">30</span>,<span class="string">'#'</span>))    # 居中显示，两个参数，宽度，填充字符</span><br><span class="line"># 输出结果</span><br><span class="line">#############info##############</span><br><span class="line"></span><br><span class="line">print(<span class="string">'info'</span>.ljust(<span class="number">30</span>,<span class="string">'*'</span>))    # 左对齐，两个参数，宽度，填充字符</span><br><span class="line"># 输出结果</span><br><span class="line">info**************************</span><br><span class="line"></span><br><span class="line">print(<span class="string">'info'</span>.rjust(<span class="number">30</span>,<span class="string">'='</span>))    # 右对齐，两个参数，宽度，填充字符</span><br><span class="line"># 输出结果</span><br><span class="line">==========================info</span><br><span class="line"></span><br><span class="line">print(<span class="string">'info'</span>.zfill(<span class="number">30</span>))    # 用 <span class="number">0</span> 填充 和 rjust 效果一样</span><br><span class="line"># 输出结果</span><br><span class="line"><span class="number">00000000000000000000000000</span>info</span><br></pre></td></tr></table></figure>
+<h4 id="expandtabs-控制-tab键-的-空格个数"><a href="#expandtabs-控制-tab键-的-空格个数" class="headerlink" title="expandtabs 控制 tab键 的 空格个数"></a><code>expandtabs</code> 控制 <code>tab</code>键 的 空格个数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'aaabbbb'</span>, end=<span class="string">''</span>)</span><br><span class="line">print(<span class="string">'cccc'</span>, end=<span class="string">''</span>)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">aaabbbbcccc</span><br><span class="line"></span><br><span class="line">print(aaaa\nbbbb)</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">aaaa</span><br><span class="line">bbbb</span><br><span class="line"></span><br><span class="line">print(<span class="string">r'a\tb'</span>)    <span class="comment"># \t 表示制表符 tab，如想取消掉这个制表符效果，在字符串前加 r</span></span><br><span class="line">                  <span class="comment"># r开头的字符串内都是原始字符串，右斜杠没有特殊意义</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'a\tb'</span>)     <span class="comment"># r 表示原始字符串(raw string)</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">a\tb</span><br><span class="line">a	b</span><br><span class="line">print(<span class="string">'aaa\tbbb'</span>.expandtabs(<span class="number">3</span>))    <span class="comment"># expandtabs 控制空格数</span></span><br><span class="line">print(<span class="string">'aaa\tbbb'</span>.expandtabs(tabsize=<span class="number">3</span>))</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">aaa   bbb</span><br></pre></td></tr></table></figure>
+<h4 id="captalize-swapcase-title"><a href="#captalize-swapcase-title" class="headerlink" title="captalize, swapcase, title"></a><code>captalize</code>, <code>swapcase</code>, <code>title</code></h4><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">print</span>(<span class="string">'abc'</span>.capitalize())    <span class="comment"># 首字母大写</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">Abc</span><br><span class="line"></span><br><span class="line"><span class="literal">print</span>(<span class="string">'Ab'</span>.swapcase())    <span class="comment"># 大小写翻转</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">aB</span><br><span class="line"></span><br><span class="line"><span class="literal">print</span>(<span class="string">'my name is egon'</span>.title())    <span class="comment"># 每个单词的首字母大写</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">My <span class="keyword">Name</span> Is Egon</span><br></pre></td></tr></table></figure>
+<h4 id="is数字系列"><a href="#is数字系列" class="headerlink" title="is数字系列"></a>is数字系列</h4><blockquote>
+<p>在 <code>Python3</code> 中<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">num1=<span class="string">b'4'</span>    <span class="comment"># bytes</span></span><br><span class="line">num2=<span class="string">u'4'</span>    <span class="comment"># unicode, Python3 中无需加 u 就是 unicode</span></span><br><span class="line">num3=<span class="string">'四'</span>    <span class="comment"># 中文/繁体数字 肆</span></span><br><span class="line">num4=<span class="string">'Ⅳ'</span>    <span class="comment"># 罗马数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># isdigt 判断字符串是否是 bytes，unicode</span></span><br><span class="line"></span><br><span class="line">print(num1.isdigit())    <span class="comment"># 常用（推荐）</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">print(num2.isdigit())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">print(num3.isdigit())    <span class="comment"># 不能判断中文数字</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">print(num4.isdigit())    <span class="comment"># 不能判断罗马数字</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="isnumeric-判断字符串是否是-unicode，中文-繁体数字，罗马数字"><a href="#isnumeric-判断字符串是否是-unicode，中文-繁体数字，罗马数字" class="headerlink" title="isnumeric 判断字符串是否是 unicode，中文/繁体数字，罗马数字"></a><code>isnumeric</code> 判断字符串是否是 <code>unicode</code>，中文/繁体数字，罗马数字</h4><blockquote>
+<p><code>bytes</code> 类型没有 <code>isnumeric</code> 方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">num1=<span class="string">b'4'</span>    <span class="comment"># bytes</span></span><br><span class="line">num2=<span class="string">u'4'</span>    <span class="comment"># unicode, Python3 中无需加 u 就是 unicode</span></span><br><span class="line">num3=<span class="string">'四'</span>    <span class="comment"># 中文/繁体数字 肆</span></span><br><span class="line">num4=<span class="string">'Ⅳ'</span>    <span class="comment"># 罗马数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># isnumeric: unicode, 中文，罗马</span></span><br><span class="line"></span><br><span class="line">print(num2.isnumeric())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">print(num3.isnumeric())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">print(num4.isnumeric())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="isdecimal-判断字符串是否是-uncicode"><a href="#isdecimal-判断字符串是否是-uncicode" class="headerlink" title="isdecimal 判断字符串是否是 uncicode"></a><code>isdecimal</code> 判断字符串是否是 <code>uncicode</code></h4><blockquote>
+<p><code>bytes</code> 类型没有 <code>isdecimal</code> 方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">num1=<span class="string">b'4'</span>    <span class="comment"># bytes</span></span><br><span class="line">num2=<span class="string">u'4'</span>    <span class="comment"># unicode, Python3 中无需加 u 就是 unicode</span></span><br><span class="line">num3=<span class="string">'四'</span>    <span class="comment"># 中文/繁体数字 肆</span></span><br><span class="line">num4=<span class="string">'Ⅳ'</span>    <span class="comment"># 罗马数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># isdecimal:unicode</span></span><br><span class="line"></span><br><span class="line">print(num2.isdecimal())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">print(num3.isdecimal())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">print(num4.isdecimal())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>三者 <code>都不能</code> 判断 <code>浮点数</code></p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num5 = <span class="string">'4.3'</span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(num5.isdigit()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(num5.isdecimal()</span></span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(num5.isnumeric()</span></span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结：<br>最常用的是 <code>isdigit</code>，可以判断 <code>bytes</code> 和 <code>unicode</code> 类型，这也是最常见的数字应用场景<br>如果要判断 中文数字 或 罗马数字，则需要用到 <code>isnumeric</code></p>
+</blockquote>
+<h4 id="is其他"><a href="#is其他" class="headerlink" title="is其他"></a>is其他</h4><blockquote>
+<p>判断字符串内是否是空格<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span>(<span class="string">''</span>.isspace())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'        '</span>.isspace())    <span class="comment"># 判断字符串内是否是空格</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串是否全部由字母组成</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">''</span>.isalpha())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'abcdefg'</span>.isalpha())    <span class="comment"># 判断字符串是否全部由字母组成</span></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'abc123'</span>.isalpha())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串中是否由字母或数字组成</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">''</span>.isalnum())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'abc123'</span>.isalnum())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'abcdefg'</span>.isalnum())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'123456'</span>.isalnum())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串是否全都是小写字母</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'Garfield'</span>.islower())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'garfield'</span>.islower())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串是否全都是大写字母</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'Garfield'</span>.isupper())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'garfield'</span>.isupper())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'GARFIELD'</span>.isupper())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串是否是标题，也就是单词首字母是否大写</span></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'Garfield'</span>.istitle())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'garfield'</span>.istitle())</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">''</span>.isprintable())</span><br><span class="line"><span class="keyword">print</span>(<span class="string">''</span>.isidentifier())</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="str-字符串类型总结"><a href="#str-字符串类型总结" class="headerlink" title="str 字符串类型总结"></a><code>str</code> 字符串类型总结</h4><blockquote>
+<ol>
+<li>只能存一个值</li>
+<li>有序（能够按索引取值的属于有序的）</li>
+<li>不可变类型<br>不可变：值变，id也变。不可变==可hash<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">'abc'</span></span><br><span class="line"><span class="built_in">print</span>(id(x))</span><br><span class="line">x = <span class="string">'bcd'</span></span><br><span class="line"><span class="built_in">print</span>(id(x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">1695860198624</span><br><span class="line">1695860293792</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.cnblogs.com/linhaifeng/articles/7133357.html#_label3" target="_blank" rel="noopener">http://www.cnblogs.com/linhaifeng/articles/7133357.html#_label3</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python字符串类型/" rel="tag"># Python字符串类型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/05/Python字典类型/" rel="next" title="Python字典类型">
+                <i class="fa fa-chevron-left"></i> Python字典类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/10/Python集合类型/" rel="prev" title="Python集合类型">
+                Python集合类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20180226143321.jpg"
+                alt="G加菲" />
+            
+              <p class="site-author-name" itemprop="name">G加菲</p>
+              <p class="site-description motion-element" itemprop="description">很喜欢吃~吃完就睡~所以长得很胖</p>
+          </div>
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 
+          src="//music.163.com/outchain/player?type=0&id=2188265841&auto=1&height=90"></iframe>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">135</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">135</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/jy00278439" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gmlyo.com/" title="G加菲" target="_blank">G加菲</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#str-字符串类型"><span class="nav-number">1.</span> <span class="nav-text">str 字符串类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str-基本使用"><span class="nav-number">1.1.</span> <span class="nav-text">str 基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用途"><span class="nav-number">1.1.1.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义方式"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用操作-内置的方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">常用操作+内置的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切片（顾头不顾尾，步长）"><span class="nav-number">1.1.4.</span> <span class="nav-text">切片（顾头不顾尾，步长）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长度len"><span class="nav-number">1.1.5.</span> <span class="nav-text">长度len</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员运算-in-和-not-in"><span class="nav-number">1.1.6.</span> <span class="nav-text">成员运算 in 和 not in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip-移除字符串左右两边的字符"><span class="nav-number">1.1.7.</span> <span class="nav-text">strip 移除字符串左右两边的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切分（分割）split"><span class="nav-number">1.1.8.</span> <span class="nav-text">切分（分割）split</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环（循环取值）"><span class="nav-number">1.1.9.</span> <span class="nav-text">循环（循环取值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for循环迭代取值"><span class="nav-number">1.1.10.</span> <span class="nav-text">for循环迭代取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip-lstrip-rstrip"><span class="nav-number">1.1.11.</span> <span class="nav-text">strip, lstrip, rstrip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lower-upper"><span class="nav-number">1.1.12.</span> <span class="nav-text">lower, upper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#startswith-endswith"><span class="nav-number">1.1.13.</span> <span class="nav-text">startswith, endswith</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format-字符串格式化输出-的-三种方法"><span class="nav-number">1.1.14.</span> <span class="nav-text">format 字符串格式化输出 的 三种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-rsplit"><span class="nav-number">1.1.15.</span> <span class="nav-text">split, rsplit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join-拼接"><span class="nav-number">1.1.16.</span> <span class="nav-text">join 拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iterable-参数"><span class="nav-number">1.1.17.</span> <span class="nav-text">iterable 参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace-替换字符串"><span class="nav-number">1.1.18.</span> <span class="nav-text">replace 替换字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isdigit-判断-字符串-是否是-纯数字"><span class="nav-number">1.1.19.</span> <span class="nav-text">isdigit 判断 字符串 是否是 纯数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find-rfind-index-rindex-coun"><span class="nav-number">1.1.20.</span> <span class="nav-text">find, rfind, index, rindex, coun</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#center-ljust-rjust-zfill"><span class="nav-number">1.1.21.</span> <span class="nav-text">center, ljust, rjust, zfill</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#expandtabs-控制-tab键-的-空格个数"><span class="nav-number">1.1.22.</span> <span class="nav-text">expandtabs 控制 tab键 的 空格个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#captalize-swapcase-title"><span class="nav-number">1.1.23.</span> <span class="nav-text">captalize, swapcase, title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#is数字系列"><span class="nav-number">1.1.24.</span> <span class="nav-text">is数字系列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isnumeric-判断字符串是否是-unicode，中文-繁体数字，罗马数字"><span class="nav-number">1.1.25.</span> <span class="nav-text">isnumeric 判断字符串是否是 unicode，中文/繁体数字，罗马数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isdecimal-判断字符串是否是-uncicode"><span class="nav-number">1.1.26.</span> <span class="nav-text">isdecimal 判断字符串是否是 uncicode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#is其他"><span class="nav-number">1.1.27.</span> <span class="nav-text">is其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#str-字符串类型总结"><span class="nav-number">1.1.28.</span> <span class="nav-text">str 字符串类型总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文档"><span class="nav-number">1.2.</span> <span class="nav-text">参考文档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">G加菲</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数(UV)
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量(PV)
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
