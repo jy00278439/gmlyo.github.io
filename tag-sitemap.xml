@@ -387,13 +387,6 @@
     </url>
 
     <url>
-        <loc>http://www.gmlyo.com/tags/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-08-20T10:10:45.179Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.gmlyo.com/tags/Python-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/</loc>
         <lastmod>2018-08-20T23:52:52.338Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -949,6 +942,20 @@
     <url>
         <loc>http://www.gmlyo.com/tags/Python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
         <lastmod>2019-05-17T16:41:16.844Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+        <lastmod>2019-05-18T03:40:27.520Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.gmlyo.com/tags/Python%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2019-06-06T09:29:36.262Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
