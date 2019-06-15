@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Markdown代码块中有反引号处理]]></title>
     <url>%2F2019%2F06%2F16%2FMarkdown%E4%BB%A3%E7%A0%81%E5%9D%97%E4%B8%AD%E6%9C%89%E5%8F%8D%E5%BC%95%E5%8F%B7%E5%A4%84%E7%90%86%2F</url>
-    <content type="text"><![CDATA[Markdown代码块中有反引号处理 123456789````html // 这里写4个反引号&lt;details&gt; &lt;summary&gt;点击时的区域标题&lt;/summary&gt; ```bash echo "hello shell" echo "hello python" ```&lt;/details&gt;```` // 这里用4个反引号关闭]]></content>
+    <content type="text"><![CDATA[Markdown代码块中有反引号处理 123456789````html // 这里写4个反引号&lt;details&gt; &lt;summary&gt;点击时的区域标题&lt;/summary&gt; ```bash echo "hello shell" echo "hello python" ```&lt;/details&gt;```` // 这里用4个反引号关闭 参考文档https://www.jianshu.com/p/d6ca2d4dfaab]]></content>
       <categories>
         <category>Markdown笔记</category>
       </categories>
