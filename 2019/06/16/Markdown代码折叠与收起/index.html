@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Markdown代码折叠与收起介绍：有的时候，代码太长，全部展开显得很臃肿，所以我们可以采用代码折叠的方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-15T18:25:20.576Z">
+<meta property="og:updated_time" content="2019-06-15T18:36:10.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown代码折叠与收起">
 <meta name="twitter:description" content="Markdown代码折叠与收起介绍：有的时候，代码太长，全部展开显得很臃肿，所以我们可以采用代码折叠的方式。">
@@ -429,7 +429,7 @@
 <h2 id="代码折叠"><a href="#代码折叠" class="headerlink" title="代码折叠"></a>代码折叠</h2><p>折叠语法：<code>&lt;details&gt;</code> 标签</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">summary</span>&gt;</span>点击时的区域标题：点击查看详细内容<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span> - 测试 测试测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">code</span>&gt;</span>title，value，callBack可以缺省<span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>details</code>：折叠语法标签<br><code>summary</code>：折叠语法展示的摘要<br><code>pre</code>：以原有格式显示元素内的文字是已经格式化的文本<br><code>code</code>：指定代码范例<br><code>blockcode</code>：表示程序的代码块</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">summary</span>&gt;</span>点击时的区域标题<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line">  \`\`\`</span><br><span class="line">  echo "hello shell"</span><br><span class="line">  echo "hello python"</span><br><span class="line">  \`\`\`</span><br><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">summary</span>&gt;</span>点击时的区域标题<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line">  ```bash</span><br><span class="line">  echo "hello shell"</span><br><span class="line">  echo "hello python"</span><br><span class="line">  ```</span><br><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><details><br>  <summary>点击时的区域标题：点击查看详细内容</summary><br>  <p> - 测试 测试测试</p><br>  <pre><code>title，value，callBack可以缺省</code></pre><br></details>
 
 <details><br>  <summary>点击时的区域标题</summary><br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"hello shell"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello python"</span></span><br></pre></td></tr></table></figure><br><br></details>
@@ -476,6 +476,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/16/Markdown代码块中有反引号处理/" rel="prev" title="Markdown代码块中有反引号处理">
+                Markdown代码块中有反引号处理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -559,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">138</span>
+                  <span class="site-state-item-count">139</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -581,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">138</span>
+                  <span class="site-state-item-count">139</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
