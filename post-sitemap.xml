@@ -7,6 +7,26 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/06/03/Hexo%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2019-06-15T20:33:32.111Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+        <image:image>
+
+            <image:loc>https://i.loli.net/2018/12/02/5c0357c606d16.jpg</image:loc>
+
+        </image:image>
+
+        <image:image>
+
+            <image:loc>https://i.loli.net/2018/12/02/5c0357c672e14.jpg</image:loc>
+
+        </image:image>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2019/06/16/Markdown%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0%E4%B8%8E%E6%94%B6%E8%B5%B7/</loc>
         <lastmod>2019-06-15T18:50:07.368Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -67,26 +87,6 @@
         <lastmod>2019-05-15T15:18:03.248Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/2018/06/03/Hexo%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2019-04-29T05:27:52.228Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-        <image:image>
-
-            <image:loc>https://i.loli.net/2018/12/02/5c0357c606d16.jpg</image:loc>
-
-        </image:image>
-
-        <image:image>
-
-            <image:loc>https://i.loli.net/2018/12/02/5c0357c672e14.jpg</image:loc>
-
-        </image:image>
 
     </url>
 
