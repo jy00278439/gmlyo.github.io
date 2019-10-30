@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="G加菲">
 <meta property="og:description" content="Shadowsocks 安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-30T08:18:16.368Z">
+<meta property="og:updated_time" content="2019-10-30T08:37:25.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks 安装">
 <meta name="twitter:description" content="Shadowsocks 安装">
@@ -424,7 +424,7 @@
 
       
         <h1 id="Shadowsocks-安装"><a href="#Shadowsocks-安装" class="headerlink" title="Shadowsocks 安装"></a>Shadowsocks 安装</h1><a id="more"></a>
-<h2 id="CentOS7-yum-安装-pip"><a href="#CentOS7-yum-安装-pip" class="headerlink" title="CentOS7 yum 安装 pip"></a>CentOS7 yum 安装 pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install python-pip</span><br></pre></td></tr></table></figure>
+<h2 id="CentOS7-yum-安装-pip"><a href="#CentOS7-yum-安装-pip" class="headerlink" title="CentOS7 yum 安装 pip"></a>CentOS7 yum 安装 pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install python-pip</span><br></pre></td></tr></table></figure>
 <h2 id="升级-pip"><a href="#升级-pip" class="headerlink" title="升级 pip"></a>升级 pip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade pip</span><br></pre></td></tr></table></figure>
 <h2 id="安装-shadowsocks"><a href="#安装-shadowsocks" class="headerlink" title="安装 shadowsocks"></a>安装 shadowsocks</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br><span class="line"><span class="built_in">which</span> ssserver</span><br></pre></td></tr></table></figure>
 <h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -pv /data/app/shadowsocks/&#123;bin,config,logs,tmp&#125;</span><br></pre></td></tr></table></figure>
