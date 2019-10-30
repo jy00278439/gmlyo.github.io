@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.gmlyo.com/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
+        <lastmod>2019-10-30T08:18:16.368Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.gmlyo.com/2019/07/18/Python%E5%A6%82%E4%BD%95%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B8%BA%E5%AD%97%E5%85%B8/</loc>
         <lastmod>2019-07-18T05:48:48.820Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -157,14 +165,6 @@
     <url>
         <loc>http://www.gmlyo.com/2019/01/02/SpringBoot%E4%BD%BF%E7%94%A8TomcatAPR%E6%A8%A1%E5%BC%8F/</loc>
         <lastmod>2019-01-02T04:12:03.229Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.gmlyo.com/2018/06/06/Shadowsocks%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-12-10T08:19:11.065Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
